@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QuantBot Backtest Lab v0.5</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d14;--card:#151925;--card2:#10141e;--line:#252b3b;--muted:#8f98ad;--green:#40e38c;--red:#ff5d73;--yellow:#ffd166;--blue:#6ea8fe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:620px;margin:auto;padding:24px 18px 56px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:8px}h1{font-size:30px;margin:0}.sub{color:var(--muted);font-size:12px;margin-top:4px}.badge{color:var(--blue);font-weight:800}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-top:18px}.label{color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.02em}.value{font-size:26px;font-weight:850;margin-top:5px}.tiny{color:var(--muted);font-size:11px;line-height:1.45}.notice{margin-top:12px;padding:13px;background:#111521;border:1px solid #2a3040;border-radius:14px;color:#b2bacb;font-size:12px;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.small{background:var(--card2);border-radius:16px;padding:15px}.green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}select,button{width:100%;border-radius:14px;padding:13px 14px;font-size:14px;font-weight:800;margin-top:12px}select{background:#10141e;color:#fff;border:1px solid #2a3040}button{border:0;background:#26314a;color:#fff}button:disabled{opacity:.55}.progress{height:9px;background:#0c1018;border-radius:999px;overflow:hidden;margin-top:12px}.progress>div{height:100%;width:0;background:var(--blue);transition:width .2s}.status{font-size:12px;color:#b8c0d1;margin-top:9px;min-height:18px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.metric{background:var(--card2);border-radius:15px;padding:14px}.metric .value{font-size:21px}.sectionTitle{font-size:22px;font-weight:900;margin-top:4px}.trade{display:grid;grid-template-columns:54px 1fr 72px;gap:8px;align-items:center;padding:12px 0;border-bottom:1px solid #252b3b;font-size:12px}.trade:last-child{border-bottom:0}.tag{display:inline-block;padding:5px 7px;border-radius:9px;font-weight:850;font-size:11px;text-align:center}.tag.long{color:var(--green);background:rgba(64,227,140,.1)}.tag.short{color:var(--red);background:rgba(255,93,115,.1)}.pnl{text-align:right;font-weight:850}.canvasWrap{margin-top:14px;background:#0f131d;border-radius:14px;padding:8px}canvas{width:100%;height:170px;display:block}.footer{text-align:center;color:#6f788c;margin-top:25px;font-size:12px;line-height:1.5}.linkbtn{display:block;text-align:center;text-decoration:none;color:#fff;background:#171e2e;border:1px solid #293147;border-radius:14px;padding:12px;margin-top:12px;font-weight:800;font-size:13px}@media(max-width:390px){.wrap{padding-left:14px;padding-right:14px}.value{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><h1>QuantBot</h1><div class="sub">Historical research & backtest lab</div></div>
+    <div class="badge">v0.5</div>
+  </div>
+
+  <div class="card">
+    <div class="label">BACKTEST ENGINE</div>
+    <div class="sectionTitle">Run a historical simulation</div>
+    <div class="notice">This lab uses Coinbase 5-minute BTC/USD candles and reconstructs 15m, 1H and 4H context. It is deliberately conservative: if stop and target are both touched in the same candle, the stop is assumed to happen first. This is research only, not a profit guarantee.</div>
+    <select id="days">
+      <option value="14">14 days — faster</option>
+      <option value="21" selected>21 days — recommended</option>
+      <option value="30">30 days — slower</option>
+    </select>
+    <button id="runBtn">Run Backtest</button>
+    <div class="progress"><div id="bar"></div></div>
+    <div id="status" class="status">Ready.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">ALL-SAMPLE RESULTS</div>
+    <div class="sectionTitle">Performance</div>
+    <div class="metrics">
+      <div class="metric"><div class="label">Trades</div><div id="trades" class="value">—</div></div>
+      <div class="metric"><div class="label">Win Rate</div><div id="win" class="value">—</div></div>
+      <div class="metric"><div class="label">Net Return</div><div id="ret" class="value">—</div></div>
+      <div class="metric"><div class="label">Profit Factor</div><div id="pf" class="value">—</div></div>
+      <div class="metric"><div class="label">Max Drawdown</div><div id="dd" class="value">—</div></div>
+      <div class="metric"><div class="label">Expectancy</div><div id="exp" class="value">—</div></div>
+    </div>
+    <div class="canvasWrap"><canvas id="eq" width="560" height="170"></canvas></div>
+  </div>
+
+  <div class="card">
+    <div class="label">OUT-OF-SAMPLE CHECK</div>
+    <div class="sectionTitle">Last 30% of the period</div>
+    <div class="metrics">
+      <div class="metric"><div class="label">OOS Trades</div><div id="otrades" class="value">—</div></div>
+      <div class="metric"><div class="label">OOS Win Rate</div><div id="owin" class="value">—</div></div>
+      <div class="metric"><div class="label">OOS Net</div><div id="oret" class="value">—</div></div>
+      <div class="metric"><div class="label">OOS Profit Factor</div><div id="opf" class="value">—</div></div>
+    </div>
+    <div id="verdict" class="notice">Run the backtest to compare the recent unseen segment with the full sample.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">LATEST BACKTEST TRADES</div>
+    <div class="sectionTitle">Trade log</div>
+    <div id="tradeList" class="notice">No backtest has run yet.</div>
+  </div>
+
+  <div class="card">
+    <div class="label">SIMULATION RULES</div>
+    <div class="notice">Start balance: $10,000 • Risk per trade: 0.5% • Max notional: 2× equity • Fee assumption: 0.10% per side • Signal must repeat twice • Stop: max(1.5× 15m ATR, 0.30%) • T1: 2R then stop moves to breakeven • T2: 3R • One trade at a time.</div>
+    <a class="linkbtn" href="./">Back to Live Paper Engine</a>
+  </div>
+
+  <div class="footer">QuantBot Backtest Lab v0.5 • browser-side historical simulation • paper research only</div>
+</div>
+<script>
+const $=id=>document.getElementById(id),runBtn=$('runBtn'),statusEl=$('status'),bar=$('bar');
+const START=10000,RISK=.005,FEE=.001,MAX_NOTIONAL=2;
+const W=[{label:'5m',weight:1},{label:'15m',weight:1.5},{label:'1H',weight:2.5},{label:'4H',weight:3.5}];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function ema(v,p){if(v.length<p)return null;const k=2/(p+1);let e=v.slice(0,p).reduce((a,b)=>a+b,0)/p;for(let i=p;i<v.length;i++)e=v[i]*k+e*(1-k);return e}
+function emaSeries(v,p){if(v.length<p)return[];const o=new Array(v.length).fill(null),k=2/(p+1);let e=v.slice(0,p).reduce((a,b)=>a+b,0)/p;o[p-1]=e;for(let i=p;i<v.length;i++){e=v[i]*k+e*(1-k);o[i]=e}return o}
+function rsi(v,p=14){if(v.length<=p)return null;let g=0,l=0;for(let i=v.length-p;i<v.length;i++){const d=v[i]-v[i-1];if(d>=0)g+=d;else l-=d}if(l===0)return 100;const rs=(g/p)/(l/p);return 100-100/(1+rs)}
+function atr(c,p=14){if(c.length<=p)return null;const t=[];for(let i=1;i<c.length;i++){const x=c[i],q=c[i-1];t.push(Math.max(x.high-x.low,Math.abs(x.high-q.close),Math.abs(x.low-q.close)))}return t.slice(-p).reduce((a,b)=>a+b,0)/p}
+function macdHist(v){if(v.length<35)return null;const a=emaSeries(v,12),b=emaSeries(v,26),m=[];for(let i=0;i<v.length;i++)m.push(a[i]!=null&&b[i]!=null?a[i]-b[i]:null);const c=m.filter(x=>x!=null),s=ema(c,9),z=c[c.length-1];return s==null?null:z-s}
+function slopePct(v,n=5){if(v.length<=n)return 0;const a=v[v.length-1-n],b=v[v.length-1];return a?((b-a)/a)*100:0}
+function aggregate(src,bucketSec){const m=new Map();for(const c of src){const k=Math.floor(c.time/bucketSec)*bucketSec;if(!m.has(k))m.set(k,[]);m.get(k).push(c)}const out=[];for(const [k,g0] of m){const g=g0.sort((a,b)=>a.time-b.time);out.push({time:k,endTime:g[g.length-1].time,open:g[0].open,high:Math.max(...g.map(x=>x.high)),low:Math.min(...g.map(x=>x.low)),close:g[g.length-1].close,volume:g.reduce((a,x)=>a+x.volume,0)})}return out.sort((a,b)=>a.time-b.time)}
+function upto(arr,t,limit=140){let lo=0,hi=arr.length-1,ans=-1;while(lo<=hi){const mid=(lo+hi)>>1;if(arr[mid].endTime<=t){ans=mid;lo=mid+1}else hi=mid-1}if(ans<0)return[];return arr.slice(Math.max(0,ans-limit+1),ans+1)}
+function evaluate(label,c){const v=c.map(x=>x.close),last=v[v.length-1],e20=ema(v,20),e50=ema(v,50),R=rsi(v),M=macdHist(v),A=atr(c),mom=slopePct(v,5);if([last,e20,e50,R,M,A].some(x=>x==null||!Number.isFinite(x)))return{tf:label,ok:false,score:0,dir:'WAIT'};let s=0;if(last>e20&&e20>e50)s+=2.2;else if(last<e20&&e20<e50)s-=2.2;else if(last>e20)s+=.6;else if(last<e20)s-=.6;if(M>0)s+=1;else if(M<0)s-=1;if(R>=52&&R<=68)s+=.8;else if(R<=48&&R>=32)s-=.8;if(R>75)s-=.45;if(R<25)s+=.45;if(mom>.08)s+=1;else if(mom<-.08)s-=1;const atrPct=A/last*100;let dir='NEUTRAL';if(s>=1.35)dir='LONG';else if(s<=-1.35)dir='SHORT';return{tf:label,ok:true,score:clamp(s,-5,5),dir,rsi:R,atr:A,atrPct,last}}
+function decide(r){const g=r.filter(x=>x.ok);if(g.length<4)return{signal:'NO TRADE',bull:50,bear:50,skeptic:100,conf:50};let pos=0,neg=0,totalW=0,al=0,as=0;for(const x of g){const q=W.find(z=>z.label===x.tf),w=q?q.weight:1,z=Math.abs(x.score)/5;totalW+=w;if(x.score>0)pos+=w*z;if(x.score<0)neg+=w*z;if(x.dir==='LONG')al+=w;if(x.dir==='SHORT')as+=w}const bull=clamp(50+50*(pos-neg)/Math.max(.001,totalW),0,100),bear=100-bull,dom=Math.max(bull,bear),dis=1-Math.max(al,as)/totalW;const hi=g.filter(x=>['1H','4H'].includes(x.tf)),hiAgree=hi.length===2&&hi[0].dir===hi[1].dir&&hi[0].dir!=='NEUTRAL',avgAtr=g.map(x=>x.atrPct).reduce((a,b)=>a+b,0)/g.length,ext=g.filter(x=>x.rsi>76||x.rsi<24).length;const sk=clamp(22+dis*45+(dom<62?25:0)+(!hiAgree?12:0)+ext*4+(avgAtr>1.8?10:0),0,100);let signal='NO TRADE';if(bull>=66&&sk<55&&al>=totalW*.55)signal='LONG';else if(bear>=66&&sk<55&&as>=totalW*.55)signal='SHORT';return{signal,bull,bear,skeptic:sk,conf:dom}}
+async function getJSON(url,retry=0){try{const r=await fetch(url,{cache:'no-store'});if(r.status===429&&retry<4){await sleep(700*(retry+1));return getJSON(url,retry+1)}if(!r.ok)throw new Error('HTTP '+r.status);return await r.json()}catch(e){if(retry<3){await sleep(600*(retry+1));return getJSON(url,retry+1)}throw e}}
+async function load5m(days){const end=new Date(),all=[],seen=new Set();for(let d=days;d>0;d--){const a=new Date(end.getTime()-d*86400000),b=new Date(end.getTime()-(d-1)*86400000);statusEl.textContent=`Downloading historical candles… ${days-d+1}/${days}`;bar.style.width=((days-d+1)/days*45)+'%';const u='https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=300&start='+encodeURIComponent(a.toISOString())+'&end='+encodeURIComponent(b.toISOString());const x=await getJSON(u);for(const v of x){const c={time:+v[0],low:+v[1],high:+v[2],open:+v[3],close:+v[4],volume:+v[5]};if(!seen.has(c.time)){seen.add(c.time);all.push(c)}}await sleep(120)}return all.sort((a,b)=>a.time-b.time)}
+function metrics(tr){let bal=START,peak=START,maxDD=0,gp=0,gl=0,w=0,rs=[];const curve=[START];for(const t of tr){bal+=t.pnl;curve.push(bal);if(t.pnl>0){gp+=t.pnl;w++}else gl+=Math.abs(t.pnl);if(Number.isFinite(t.r))rs.push(t.r);peak=Math.max(peak,bal);maxDD=Math.max(maxDD,(peak-bal)/peak*100)}return{n:tr.length,win:tr.length?100*w/tr.length:0,ret:(bal/START-1)*100,pf:gl>0?gp/gl:(gp>0?99:0),dd:maxDD,exp:rs.length?rs.reduce((a,b)=>a+b,0)/rs.length:0,curve}}
+function closePos(pos,exit,reason,balance,trades,time){const gross=pos.side==='LONG'?(exit-pos.entry)*pos.qty:(pos.entry-exit)*pos.qty,exitFee=exit*pos.qty*FEE,pnl=gross-exitFee;balance+=pnl;trades.push({side:pos.side,entry:pos.entry,exit,pnl,r:pnl/Math.max(.01,pos.riskUsd),reason,time,balance});return balance}
+async function run(){runBtn.disabled=true;bar.style.width='2%';statusEl.textContent='Starting…';$('tradeList').textContent='Running…';try{const days=+$('days').value,base=await load5m(days);if(base.length<2500)throw new Error('Not enough historical candles returned.');statusEl.textContent='Building 15m / 1H / 4H context…';bar.style.width='52%';const tf5=base.map(x=>({...x,endTime:x.time})),tf15=aggregate(base,900),tf1h=aggregate(base,3600),tf4h=aggregate(base,14400);let balance=START,pos=null,trades=[],lastSig='NO TRADE',streak=0;const splitTime=base[Math.floor(base.length*.70)].time;for(let i=0;i<base.length-1;i++){
+      const c=base[i];
+      if(pos){
+        if(pos.side==='LONG'){
+          if(c.low<=pos.stop){balance=closePos(pos,pos.stop,pos.t1Hit?'BE/STOP':'STOP',balance,trades,c.time);pos=null}
+          else{if(!pos.t1Hit&&c.high>=pos.t1){pos.t1Hit=true;pos.stop=pos.entry}if(pos&&c.high>=pos.t2){balance=closePos(pos,pos.t2,'T2',balance,trades,c.time);pos=null}}
+        }else{
+          if(c.high>=pos.stop){balance=closePos(pos,pos.stop,pos.t1Hit?'BE/STOP':'STOP',balance,trades,c.time);pos=null}
+          else{if(!pos.t1Hit&&c.low<=pos.t1){pos.t1Hit=true;pos.stop=pos.entry}if(pos&&c.low<=pos.t2){balance=closePos(pos,pos.t2,'T2',balance,trades,c.time);pos=null}}
+        }
+      }
+      if(i%3!==2)continue;
+      const r=[evaluate('5m',upto(tf5,c.time)),evaluate('15m',upto(tf15,c.time)),evaluate('1H',upto(tf1h,c.time)),evaluate('4H',upto(tf4h,c.time))],d=decide(r);
+      if(d.signal===lastSig&&['LONG','SHORT'].includes(d.signal))streak++;else streak=['LONG','SHORT'].includes(d.signal)?1:0;lastSig=d.signal;
+      if(!pos&&streak>=2&&d.skeptic<55&&d.conf>=66){const next=base[i+1],e=next.open,x=r.find(z=>z.tf==='15m'&&z.ok);if(x){const dist=Math.max(x.atr*1.5,e*.003),riskUsd=balance*RISK;let qty=riskUsd/dist;qty=Math.min(qty,(balance*MAX_NOTIONAL)/e);if(qty>0){const entryFee=e*qty*FEE;balance-=entryFee;const side=d.signal,stop=side==='LONG'?e-dist:e+dist,t1=side==='LONG'?e+2*dist:e-2*dist,t2=side==='LONG'?e+3*dist:e-3*dist;pos={side,entry:e,stop,t1,t2,qty,riskUsd,t1Hit:false,entryTime:next.time};streak=0}}}
+      if(i%180===0){bar.style.width=(55+40*i/base.length)+'%';statusEl.textContent=`Simulating… ${Math.round(i/base.length*100)}%`}
+    }
+    if(pos){const last=base[base.length-1];balance=closePos(pos,last.close,'END',balance,trades,last.time);pos=null}
+    bar.style.width='100%';statusEl.textContent=`Done. ${base.length.toLocaleString()} five-minute candles processed.`;const m=metrics(trades),o=metrics(trades.filter(t=>t.time>=splitTime));render(m,o,trades);draw(m.curve);localStorage.setItem('quantbot_v05_last',JSON.stringify({at:Date.now(),days,trades:trades.length,metrics:m,oos:o}));
+  }catch(e){statusEl.textContent='Backtest failed: '+e.message;bar.style.width='0%';$('tradeList').textContent='Try again in a moment. Coinbase may be rate-limiting the browser.'}finally{runBtn.disabled=false}}
+function pct(x){return (x>=0?'+':'')+x.toFixed(2)+'%'}
+function render(m,o,tr){$('trades').textContent=m.n;$('win').textContent=m.win.toFixed(1)+'%';$('ret').textContent=pct(m.ret);$('ret').className='value '+(m.ret>=0?'green':'red');$('pf').textContent=m.pf>=99?'∞':m.pf.toFixed(2);$('dd').textContent=m.dd.toFixed(2)+'%';$('exp').textContent=(m.exp>=0?'+':'')+m.exp.toFixed(2)+'R';$('otrades').textContent=o.n;$('owin').textContent=o.win.toFixed(1)+'%';$('oret').textContent=pct(o.ret);$('oret').className='value '+(o.ret>=0?'green':'red');$('opf').textContent=o.pf>=99?'∞':o.pf.toFixed(2);let v='';if(o.n<3)v='Too few out-of-sample trades to judge reliability yet.';else if(m.ret>0&&o.ret>0&&o.pf>1)v='Promising: both the full sample and the recent out-of-sample segment are positive. More data is still required.';else if(m.ret>0&&o.ret<=0)v='Warning: the full sample is positive but the recent out-of-sample segment is not. This can indicate instability or overfitting.';else v='No reliable historical edge is demonstrated by this run. Keep it paper-only.';$('verdict').textContent=v;const recent=tr.slice(-10).reverse();$('tradeList').innerHTML=recent.length?recent.map(t=>`<div class="trade"><div><span class="tag ${t.side.toLowerCase()}">${t.side}</span></div><div>${new Date(t.time*1000).toLocaleString()}<div class="tiny">${t.reason} • ${t.r.toFixed(2)}R</div></div><div class="pnl ${t.pnl>=0?'green':'red'}">${t.pnl>=0?'+':''}$${t.pnl.toFixed(2)}</div></div>`).join(''):'No trades were generated.'}
+function draw(curve){const c=$('eq'),ctx=c.getContext('2d'),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.fillStyle='#0f131d';ctx.fillRect(0,0,w,h);if(curve.length<2)return;const mn=Math.min(...curve),mx=Math.max(...curve),pad=14,span=Math.max(1,mx-mn);ctx.strokeStyle='#2a3040';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,h/2);ctx.lineTo(w,h/2);ctx.stroke();ctx.strokeStyle=curve[curve.length-1]>=curve[0]?'#40e38c':'#ff5d73';ctx.lineWidth=2;ctx.beginPath();curve.forEach((v,i)=>{const x=pad+(w-2*pad)*i/(curve.length-1),y=pad+(h-2*pad)*(mx-v)/span;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke()}
+runBtn.addEventListener('click',run);
+</script>
+</body>
+</html>
