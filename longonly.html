@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QuantBot Long-Only v0.8</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d14;--card:#151925;--card2:#10141e;--line:#252b3b;--muted:#8f98ad;--green:#40e38c;--red:#ff5d73;--yellow:#ffd166;--blue:#6ea8fe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:780px;margin:auto;padding:24px 18px 60px}.top{display:flex;justify-content:space-between;align-items:flex-start;margin-top:10px}h1{font-size:30px;margin:0}.ver{color:var(--blue);font-weight:900;font-size:18px}.sub{font-size:13px;color:var(--muted);margin-top:5px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-top:18px}.label{color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.04em}.title{font-size:24px;font-weight:900;margin-top:6px}.notice{margin-top:12px;padding:13px 14px;background:#111521;border:1px solid #2a3040;border-radius:14px;color:#b2bbcd;font-size:13px;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.stat{background:var(--card2);padding:15px;border-radius:16px}.stat .v{font-size:24px;font-weight:900;margin-top:6px}.green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}select,button{width:100%;border:1px solid #30384b;background:#10141e;color:#fff;border-radius:14px;padding:14px;font-size:15px;font-weight:800;margin-top:12px}button{background:#202a40;border:0}.progress{height:9px;border-radius:999px;background:#0d1119;overflow:hidden;margin-top:14px}.bar{height:100%;width:0;background:var(--blue);transition:width .2s}.status{margin-top:10px;color:#aeb6c8;font-size:13px;line-height:1.45}.fold,.month{background:#10141e;border-radius:15px;padding:14px;margin-top:10px}.row{display:flex;justify-content:space-between;gap:8px;font-size:13px;margin-top:5px}.table{margin-top:12px;overflow:auto;border:1px solid #283044;border-radius:14px}.tr{display:grid;grid-template-columns:40px 1.7fr 80px 80px 80px;gap:8px;align-items:center;padding:11px 12px;border-bottom:1px solid #242a39;font-size:12px;min-width:610px}.tr:last-child{border-bottom:0}.th{color:var(--muted);font-weight:800;background:#10141e}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#0f1520;border:1px solid #2d3548;font-size:11px;font-weight:800}.small{font-size:12px;color:var(--muted);line-height:1.45}.footer{text-align:center;color:#6f788c;margin-top:26px;font-size:12px;line-height:1.5}@media(max-width:430px){.wrap{padding-left:14px;padding-right:14px}.grid{grid-template-columns:1fr 1fr}.title{font-size:22px}.stat .v{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div><h1>QuantBot</h1><div class="sub">Long-only robustness & walk-forward lab</div></div><div class="ver">v0.8</div></div>
+
+  <div class="card">
+    <div class="label">LONG-ONLY ROBUSTNESS TEST</div><div class="title">Test the one side that survived v0.7 better</div>
+    <div class="notice">SHORT is disabled. This research tests only bullish-regime LONG entries. 1H + 4H define the trend; 15m supplies pullback/reclaim entries. Range and extreme-volatility periods are skipped. Parameters are selected on training data only, then evaluated on unseen data and six walk-forward windows. Paper research only.</div>
+    <select id="days"><option value="120">120 days — faster</option><option value="180" selected>180 days — recommended</option><option value="365">365 days — heavy</option></select>
+    <button id="run">Run v0.8 Long-Only Research</button>
+    <div class="progress"><div id="bar" class="bar"></div></div><div id="status" class="status">Ready.</div>
+  </div>
+
+  <div id="regimeCard" class="card" style="display:none">
+    <div class="label">REGIME COVERAGE</div><div class="title">How much of the period was eligible?</div>
+    <div class="grid">
+      <div class="stat"><div class="label">Bull Regime</div><div id="bullPct" class="v green">—</div></div>
+      <div class="stat"><div class="label">Skipped</div><div id="skipPct" class="v yellow">—</div></div>
+      <div class="stat"><div class="label">High Vol Skip</div><div id="highPct" class="v">—</div></div>
+      <div class="stat"><div class="label">Feature Rows</div><div id="featureCount" class="v">—</div></div>
+    </div>
+  </div>
+
+  <div id="bestCard" class="card" style="display:none">
+    <div class="label">BEST TRAINING MODEL</div><div class="title">Selected before looking at OOS</div>
+    <div id="params" class="notice"></div>
+    <div class="grid">
+      <div class="stat"><div class="label">Train Return</div><div id="trainRet" class="v">—</div></div>
+      <div class="stat"><div class="label">Train PF</div><div id="trainPf" class="v">—</div></div>
+      <div class="stat"><div class="label">Train Trades</div><div id="trainTrades" class="v">—</div></div>
+      <div class="stat"><div class="label">Train DD</div><div id="trainDd" class="v">—</div></div>
+    </div>
+  </div>
+
+  <div id="oosCard" class="card" style="display:none">
+    <div class="label">UNSEEN OOS — LAST 30%</div><div class="title">The test that matters</div>
+    <div class="grid">
+      <div class="stat"><div class="label">OOS Return</div><div id="oosRet" class="v">—</div></div>
+      <div class="stat"><div class="label">Profit Factor</div><div id="oosPf" class="v">—</div></div>
+      <div class="stat"><div class="label">Max Drawdown</div><div id="oosDd" class="v">—</div></div>
+      <div class="stat"><div class="label">Trades</div><div id="oosTrades" class="v">—</div></div>
+      <div class="stat"><div class="label">Win Rate</div><div id="oosWin" class="v">—</div></div>
+      <div class="stat"><div class="label">Expectancy</div><div id="oosExp" class="v">—</div></div>
+    </div>
+    <div id="verdict" class="notice"></div>
+  </div>
+
+  <div id="wfCard" class="card" style="display:none">
+    <div class="label">WALK-FORWARD</div><div class="title">Six expanding-window tests</div>
+    <div class="notice">Every fold re-optimizes using only data available before that fold, then tests the next unseen block. A robust model should not depend on one lucky period.</div>
+    <div id="folds"></div>
+  </div>
+
+  <div id="monthCard" class="card" style="display:none">
+    <div class="label">MONTH-BY-MONTH OOS</div><div class="title">Consistency, not one lucky month</div>
+    <div id="months"></div>
+  </div>
+
+  <div id="topCard" class="card" style="display:none">
+    <div class="label">TOP TRAINING CANDIDATES</div><div class="title">Top 10 + OOS check</div>
+    <div class="table"><div class="tr th"><div>#</div><div>Parameters</div><div>Train Ret</div><div>OOS Ret</div><div>OOS PF</div></div><div id="topRows"></div></div>
+  </div>
+
+  <div class="card">
+    <div class="label">SEARCH SPACE</div>
+    <div class="notice">LONG only • 1H + 4H bullish trend required • Higher-TF ADX 18/22/26 • 15m pullback distance 0.30/0.45/0.60 ATR • RSI entry bands 46–60 / 48–62 / 50–64 • max 1H EMA extension 0.7% / 1.0% • Stop 1.4/1.7/2.0 ATR • Target plan A: T1 1.5R, T2 3R; plan B: T1 2R, T2 3.5R • confirmations 1/2 • high-volatility skip based on 1H ATR%.</div>
+    <button onclick="location.href='regime.html'">Back to v0.7</button>
+    <button onclick="location.href='index.html'">Back to Live Paper Engine</button>
+  </div>
+  <div class="footer">QuantBot v0.8 • long-only browser-side robustness research • paper only</div>
+</div>
+<script>
+var $=function(id){return document.getElementById(id)},statusEl=$('status'),barEl=$('bar');
+var clamp=function(x,a,b){return Math.max(a,Math.min(b,x))};
+var sleep=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
+function emaSeries(v,p){var o=new Array(v.length).fill(null);if(v.length<p)return o;var k=2/(p+1),e=v.slice(0,p).reduce(function(a,b){return a+b},0)/p;o[p-1]=e;for(var i=p;i<v.length;i++){e=v[i]*k+e*(1-k);o[i]=e}return o}
+function rsiSeries(v,p){p=p||14;var o=new Array(v.length).fill(null);if(v.length<=p)return o;var g=0,l=0;for(var i=1;i<=p;i++){var d=v[i]-v[i-1];if(d>=0)g+=d;else l-=d}var ag=g/p,al=l/p;o[p]=al===0?100:100-100/(1+ag/al);for(i=p+1;i<v.length;i++){d=v[i]-v[i-1];var gg=Math.max(d,0),ll=Math.max(-d,0);ag=(ag*(p-1)+gg)/p;al=(al*(p-1)+ll)/p;o[i]=al===0?100:100-100/(1+ag/al)}return o}
+function atrSeries(c,p){p=p||14;var tr=new Array(c.length).fill(null),o=new Array(c.length).fill(null);for(var i=1;i<c.length;i++){var x=c[i],q=c[i-1];tr[i]=Math.max(x.high-x.low,Math.abs(x.high-q.close),Math.abs(x.low-q.close))}var s=0;for(i=1;i<=p&&i<c.length;i++)s+=tr[i];if(c.length>p)o[p]=s/p;for(i=p+1;i<c.length;i++)o[i]=(o[i-1]*(p-1)+tr[i])/p;return o}
+function adxSeries(c,p){p=p||14;var n=c.length,tr=new Array(n).fill(0),pd=new Array(n).fill(0),md=new Array(n).fill(0),dx=new Array(n).fill(null),adx=new Array(n).fill(null);for(var i=1;i<n;i++){var up=c[i].high-c[i-1].high,dn=c[i-1].low-c[i].low;pd[i]=up>dn&&up>0?up:0;md[i]=dn>up&&dn>0?dn:0;tr[i]=Math.max(c[i].high-c[i].low,Math.abs(c[i].high-c[i-1].close),Math.abs(c[i].low-c[i-1].close))}if(n<=p*2)return adx;var at=0,ps=0,ms=0;for(i=1;i<=p;i++){at+=tr[i];ps+=pd[i];ms+=md[i]}for(i=p;i<n;i++){if(i>p){at=at-at/p+tr[i];ps=ps-ps/p+pd[i];ms=ms-ms/p+md[i]}var pdi=at?100*ps/at:0,mdi=at?100*ms/at:0;dx[i]=(pdi+mdi)?100*Math.abs(pdi-mdi)/(pdi+mdi):0}var sum=0;for(i=p;i<p*2;i++)sum+=dx[i]||0;adx[p*2-1]=sum/p;for(i=p*2;i<n;i++)adx[i]=(adx[i-1]*(p-1)+(dx[i]||0))/p;return adx}
+function aggregate(c,mins){var sec=mins*60,m=new Map();for(var i=0;i<c.length;i++){var x=c[i],t=Math.floor(x.time/sec)*sec,g=m.get(t);if(!g){g={time:t,open:x.open,high:x.high,low:x.low,close:x.close,volume:x.volume};m.set(t,g)}else{g.high=Math.max(g.high,x.high);g.low=Math.min(g.low,x.low);g.close=x.close;g.volume+=x.volume}}return Array.from(m.values()).sort(function(a,b){return a.time-b.time})}
+function featureSeries(c){var close=c.map(function(x){return x.close}),e20=emaSeries(close,20),e50=emaSeries(close,50),rsi=rsiSeries(close,14),atr=atrSeries(c,14),adx=adxSeries(c,14);return c.map(function(x,i){return Object.assign({},x,{e20:e20[i],e50:e50[i],rsi:rsi[i],atr:atr[i],adx:adx[i]})})}
+async function fetchChunk(start,end){var u='https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=900&start='+new Date(start*1000).toISOString()+'&end='+new Date(end*1000).toISOString();var r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('Coinbase HTTP '+r.status);var a=await r.json();return a.map(function(v){return{time:+v[0],low:+v[1],high:+v[2],open:+v[3],close:+v[4],volume:+v[5]}})}
+async function fetchDays(days){var now=Math.floor(Date.now()/1000/900)*900,end=now,start=end-days*86400,step=220*900,all=[],k=0,total=Math.ceil((end-start)/step);for(var s=start;s<end;s+=step){var e=Math.min(end,s+step);statusEl.textContent='Downloading 15m history '+(++k)+'/'+total+'…';barEl.style.width=(k/total*22)+'%';var x=await fetchChunk(s,e);all=all.concat(x);await sleep(100)}var map=new Map();for(var i=0;i<all.length;i++)map.set(all[i].time,all[i]);return Array.from(map.values()).sort(function(a,b){return a.time-b.time})}
+function buildEvents(base){var f15=featureSeries(base),f1=featureSeries(aggregate(base,60)),f4=featureSeries(aggregate(base,240)),i1=0,i4=0,ev=[],bull=0,skip=0,high=0;for(var i=0;i<f15.length;i++){var a=f15[i],signalTime=a.time+900;while(i1+1<f1.length&&f1[i1+1].time+3600<=signalTime)i1++;while(i4+1<f4.length&&f4[i4+1].time+14400<=signalTime)i4++;var h1=f1[i1],h4=f4[i4];if(!h1||!h4)continue;var vals=[a.e20,a.rsi,a.atr,h1.e20,h1.e50,h1.adx,h1.atr,h4.e20,h4.e50,h4.adx];if(vals.some(function(v){return v==null||!Number.isFinite(v)}))continue;var atrPct=h1.atr/h1.close*100,bullReg=h1.close>h1.e20&&h1.e20>h1.e50&&h4.close>h4.e20&&h4.e20>h4.e50;if(atrPct>2.4){high++;ev.push({time:signalTime,eligible:false,why:'HIGH',price:a.close});continue}if(!bullReg){skip++;ev.push({time:signalTime,eligible:false,why:'SKIP',price:a.close});continue}bull++;var pull=Math.abs(a.close-a.e20)/Math.max(a.atr,1e-9),ext=Math.max(0,(h1.close-h1.e20)/h1.e20*100);ev.push({time:signalTime,eligible:true,price:a.close,atr15:a.atr,rsi:a.rsi,adx1:h1.adx,adx4:h4.adx,pull:pull,ext:ext})}return{events:ev,counts:{bull:bull,skip:skip,high:high,total:bull+skip+high}}}
+function metrics(trades){var bal=10000,peak=10000,dd=0,w=0,gp=0,gl=0,rs=0;for(var i=0;i<trades.length;i++){var t=trades[i];bal+=t.pnl;peak=Math.max(peak,bal);dd=Math.max(dd,(peak-bal)/peak*100);if(t.pnl>0){w++;gp+=t.pnl}else gl+=Math.abs(t.pnl);rs+=t.r}return{trades:trades.length,win:trades.length?w/trades.length*100:0,ret:(bal/10000-1)*100,pf:gl?gp/gl:(gp?99:0),dd:dd,exp:trades.length?rs/trades.length:0,bal:bal}}
+function combos(){var out=[],rsis=[[46,60],[48,62],[50,64]],plans=[{name:'A',t1:1.5,t2:3.0},{name:'B',t1:2.0,t2:3.5}];[18,22,26].forEach(function(adx){[.30,.45,.60].forEach(function(pull){rsis.forEach(function(rb){[.7,1.0].forEach(function(ext){[1.4,1.7,2.0].forEach(function(stop){plans.forEach(function(plan){[1,2].forEach(function(confirm){out.push({adx:adx,pull:pull,rlo:rb[0],rhi:rb[1],ext:ext,stop:stop,plan:plan,confirm:confirm})})})})})})})});return out}
+function ptxt(p){return'ADX≥'+p.adx+' • Pullback≤'+p.pull.toFixed(2)+' ATR • RSI '+p.rlo+'–'+p.rhi+' • 1H ext≤'+p.ext.toFixed(1)+'% • Stop '+p.stop+'×ATR • Plan '+p.plan.name+' ('+p.plan.t1+'R/'+p.plan.t2+'R) • Confirm '+p.confirm}
+function simulate(base,events,p,startT,endT){var em=new Map();for(var i=0;i<events.length;i++){var e=events[i];if(e.time>=startT&&e.time<endT)em.set(e.time,e)}var bal=10000,pos=null,trades=[],streak=0,fee=.001,riskPct=.005,maxNotional=2;for(i=0;i<base.length;i++){var c=base[i];if(c.time<startT||c.time>=endT)continue;if(pos){var exit=null,why='';if(c.low<=pos.stop){exit=pos.stop;why=pos.be?'BE/STOP':'STOP'}else{if(!pos.be&&c.high>=pos.t1){pos.be=true;pos.stop=pos.entry}if(c.high>=pos.t2){exit=pos.t2;why='T2'}}if(exit!=null){var gross=(exit-pos.entry)*pos.qty,fees=(pos.entry+exit)*pos.qty*fee,pnl=gross-fees,r=pnl/pos.riskCash;bal+=pnl;trades.push({pnl:pnl,r:r,why:why,time:c.time});pos=null}}
+var ev=em.get(c.time);if(!pos&&ev&&ev.eligible&&ev.adx1>=p.adx&&ev.adx4>=p.adx&&ev.pull<=p.pull&&ev.rsi>=p.rlo&&ev.rsi<=p.rhi&&ev.ext<=p.ext){streak++;if(streak>=p.confirm){var entry=c.open,dist=Math.max(ev.atr15*p.stop,entry*.003),riskCash=bal*riskPct,qty=Math.min(riskCash/dist,(bal*maxNotional)/entry);if(qty>0){pos={entry:entry,stop:entry-dist,t1:entry+p.plan.t1*dist,t2:entry+p.plan.t2*dist,qty:qty,riskCash:riskCash,be:false};streak=0}}}else if(ev){streak=0}}
+if(pos){var last=null;for(i=base.length-1;i>=0;i--){if(base[i].time>=startT&&base[i].time<endT){last=base[i];break}}if(last){var ex=last.close,gr=(ex-pos.entry)*pos.qty,fe=(pos.entry+ex)*pos.qty*fee,pn=gr-fe;trades.push({pnl:pn,r:pn/pos.riskCash,why:'END',time:last.time})}}
+var m=metrics(trades);m.tradesList=trades;return m}
+function score(m){if(m.trades<12)return-1e9;var pf=Math.min(m.pf,3);return m.ret*1.25+(pf-1)*5-m.dd*.9+m.exp*4+Math.min(2,m.trades/30)}
+async function optimize(base,events,startT,endT,pb,ps){var cc=combos(),arr=[];for(var i=0;i<cc.length;i++){var m=simulate(base,events,cc[i],startT,endT);arr.push({p:cc[i],m:m,s:score(m)});if(i%30===0){barEl.style.width=(pb+ps*i/cc.length)+'%';statusEl.textContent='Optimizing '+(i+1)+'/'+cc.length+' long-only parameter sets…';await sleep(0)}}arr.sort(function(a,b){return b.s-a.s});return arr}
+function cls(x){return x>0?'green':x<0?'red':''}function fmt(x,d){d=d==null?2:d;return Number.isFinite(x)?x.toFixed(d):'—'}
+function renderMonths(trades){var map={};for(var i=0;i<trades.length;i++){var d=new Date(trades[i].time*1000),k=d.getUTCFullYear()+'-'+String(d.getUTCMonth()+1).padStart(2,'0');if(!map[k])map[k]=[];map[k].push(trades[i])}var keys=Object.keys(map).sort(),html='';for(i=0;i<keys.length;i++){var m=metrics(map[keys[i]]);html+='<div class="month"><div class="row"><b>'+keys[i]+'</b><b class="'+cls(m.ret)+'">'+fmt(m.ret)+'%</b></div><div class="row"><span>Trades / PF / Win</span><b>'+m.trades+' / '+fmt(m.pf)+' / '+fmt(m.win,1)+'%</b></div></div>'} $('months').innerHTML=html||'<div class="notice">No OOS trades to group by month.</div>'; $('monthCard').style.display='block'}
+async function walkForward(base,events,startT,endT){$('wfCard').style.display='block';$('folds').innerHTML='';var span=endT-startT,tests=[[.35,.46],[.46,.57],[.57,.68],[.68,.79],[.79,.90],[.90,1]],rows=[];for(var i=0;i<tests.length;i++){var a=tests[i][0],b=tests[i][1],trainEnd=startT+span*a,testEnd=startT+span*b;statusEl.textContent='Walk-forward '+(i+1)+'/6: re-optimizing…';var opt=await optimize(base,events,startT,trainEnd,70+i*4,3),best=opt[0],test=simulate(base,events,best.p,trainEnd,testEnd);rows.push({best:best,test:test});$('folds').innerHTML+='<div class="fold"><b>Fold '+(i+1)+'</b><div class="small">'+ptxt(best.p)+'</div><div class="row"><span>Test Return</span><b class="'+cls(test.ret)+'">'+fmt(test.ret)+'%</b></div><div class="row"><span>PF / Trades</span><b>'+fmt(test.pf)+' / '+test.trades+'</b></div><div class="row"><span>Win / DD</span><b>'+fmt(test.win,1)+'% / '+fmt(test.dd)+'%</b></div></div>';await sleep(0)}return rows}
+$('run').onclick=async function(){try{$('run').disabled=true;['regimeCard','bestCard','oosCard','wfCard','monthCard','topCard'].forEach(function(id){$(id).style.display='none'});barEl.style.width='1%';var days=+$('days').value,base=await fetchDays(days);statusEl.textContent='Building 15m / 1H / 4H features from '+base.length.toLocaleString()+' candles…';barEl.style.width='24%';await sleep(20);var built=buildEvents(base),events=built.events,c=built.counts;if(events.length<500)throw new Error('Not enough feature rows.');var total=Math.max(1,c.total);$('bullPct').textContent=fmt(c.bull/total*100,1)+'%';$('skipPct').textContent=fmt(c.skip/total*100,1)+'%';$('highPct').textContent=fmt(c.high/total*100,1)+'%';$('featureCount').textContent=events.length.toLocaleString();$('regimeCard').style.display='block';var startT=base[0].time,endT=base[base.length-1].time+900,split=startT+(endT-startT)*.70;statusEl.textContent='Selecting model on training window only…';var opt=await optimize(base,events,startT,split,28,35),best=opt[0],oos=simulate(base,events,best.p,split,endT);$('bestCard').style.display='block';$('params').textContent=ptxt(best.p);$('trainRet').textContent=fmt(best.m.ret)+'%';$('trainRet').className='v '+cls(best.m.ret);$('trainPf').textContent=fmt(best.m.pf);$('trainTrades').textContent=best.m.trades;$('trainDd').textContent=fmt(best.m.dd)+'%';$('oosCard').style.display='block';$('oosRet').textContent=fmt(oos.ret)+'%';$('oosRet').className='v '+cls(oos.ret);$('oosPf').textContent=fmt(oos.pf);$('oosDd').textContent=fmt(oos.dd)+'%';$('oosTrades').textContent=oos.trades;$('oosWin').textContent=fmt(oos.win,1)+'%';$('oosExp').textContent=fmt(oos.exp)+'R';$('oosExp').className='v '+cls(oos.exp);var ok=oos.trades>=15&&oos.ret>0&&oos.pf>=1.2&&oos.exp>0&&oos.dd<=10;$('verdict').innerHTML=ok?'<b class="green">Promising OOS result.</b> It still must pass the six walk-forward windows before any promotion.':'<b class="yellow">OOS not strong enough yet.</b> Keep paper-only.';renderMonths(oos.tradesList);$('topCard').style.display='block';$('topRows').innerHTML=opt.slice(0,10).map(function(x,i){var oo=simulate(base,events,x.p,split,endT);return'<div class="tr"><div>'+(i+1)+'</div><div><span class="pill">'+ptxt(x.p)+'</span></div><div class="'+cls(x.m.ret)+'">'+fmt(x.m.ret)+'%</div><div class="'+cls(oo.ret)+'">'+fmt(oo.ret)+'%</div><div>'+fmt(oo.pf)+'</div></div>'}).join('');barEl.style.width='68%';var wf=await walkForward(base,events,startT,endT),quality=wf.filter(function(x){return x.test.trades>=5&&x.test.ret>0&&x.test.pf>=1.1}).length,avg=wf.reduce(function(a,x){return a+x.test.ret},0)/wf.length;barEl.style.width='100%';statusEl.textContent='Done. '+combos().length+' long-only parameter sets per optimization. Walk-forward quality folds '+quality+'/6; average test return '+fmt(avg)+'%.';}catch(e){statusEl.textContent='Error: '+e.message;barEl.style.width='0%'}finally{$('run').disabled=false}}
+</script>
+</body>
+</html>
