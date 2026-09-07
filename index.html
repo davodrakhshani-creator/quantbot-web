@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QuantBot Web</title>
+<style>
+:root{color-scheme:dark}body{margin:0;background:#0b0d14;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:520px;margin:auto;padding:24px 18px 40px}.top{display:flex;justify-content:space-between;align-items:center;margin-top:12px}h1{font-size:28px;margin:0}.live{color:#40e38c;font-weight:800}.card{background:#151925;border:1px solid #252b3b;border-radius:20px;padding:20px;margin-top:18px}.label{color:#8f98ad;font-size:13px}.price{font-size:40px;font-weight:800;margin-top:8px}.signal{font-size:34px;font-weight:800;margin-top:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.small{background:#10141e;padding:16px;border-radius:16px}.value{font-size:22px;font-weight:700;margin-top:5px}.green{color:#40e38c}.red{color:#ff5d73}.yellow{color:#ffd166}.footer{text-align:center;color:#6f788c;margin-top:24px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><h1>QuantBot</h1><div class="live">● LIVE</div></div>
+<div class="card"><div class="label">BTCUSDT LIVE PRICE</div><div id="price" class="price">Connecting...</div></div>
+<div class="card"><div class="label">CURRENT SIGNAL</div><div id="signal" class="signal yellow">WAIT</div><div class="grid"><div class="small"><div class="label">Bull Score</div><div id="bull" class="value green">0</div></div><div class="small"><div class="label">Bear Score</div><div id="bear" class="value red">0</div></div><div class="small"><div class="label">Short MA</div><div id="shortma" class="value">-</div></div><div class="small"><div class="label">Long MA</div><div id="longma" class="value">-</div></div></div></div>
+<div class="card"><div class="label">MODE</div><div class="value">PAPER / SIGNAL ONLY</div></div>
+<div class="footer">QuantBot Web v0.1 — no real-money trading</div>
+</div>
+<script>
+const prices=[],$=id=>document.getElementById(id),priceEl=$('price'),signalEl=$('signal'),bullEl=$('bull'),bearEl=$('bear'),shortEl=$('shortma'),longEl=$('longma');
+const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
+function analyze(){if(prices.length<30){signalEl.textContent='WAIT';return}const s=avg(prices.slice(-10)),l=avg(prices.slice(-30));shortEl.textContent=s.toFixed(2);longEl.textContent=l.toFixed(2);let bull=50,bear=50,d=((s-l)/l)*100;if(d>0){let x=Math.min(40,d*100);bull+=x;bear-=x}else if(d<0){let x=Math.min(40,Math.abs(d)*100);bear+=x;bull-=x}bull=Math.max(0,Math.min(100,bull));bear=Math.max(0,Math.min(100,bear));bullEl.textContent=bull.toFixed(0);bearEl.textContent=bear.toFixed(0);signalEl.className='signal';if(bull>=65){signalEl.textContent='LONG';signalEl.classList.add('green')}else if(bear>=65){signalEl.textContent='SHORT';signalEl.classList.add('red')}else{signalEl.textContent='NO TRADE';signalEl.classList.add('yellow')}}
+function connect(){const ws=new WebSocket('wss://fstream.binance.com/ws/btcusdt@ticker');ws.onmessage=e=>{const d=JSON.parse(e.data),p=Number(d.c);priceEl.textContent='$'+p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});prices.push(p);if(prices.length>300)prices.shift();analyze()};ws.onerror=()=>priceEl.textContent='Connection error';ws.onclose=()=>{priceEl.textContent='Reconnecting...';setTimeout(connect,3000)}}connect();
+</script>
+</body>
+</html>
