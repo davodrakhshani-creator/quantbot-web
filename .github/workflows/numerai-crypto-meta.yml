@@ -1,0 +1,43 @@
+name: Refresh Numerai Crypto Meta Model
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+  push:
+    paths:
+      - '.github/workflows/numerai-crypto-meta.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install NumerAPI
+        run: pip install --quiet numerapi
+      - name: Download public Numerai Crypto Meta Model
+        run: |
+          python - <<'PY'
+          from numerapi import CryptoAPI
+          api = CryptoAPI()
+          api.download_dataset('crypto/v2.0/meta_model.csv', 'numerai_crypto_meta.csv')
+          with open('numerai_crypto_meta.csv', 'r', encoding='utf-8') as f:
+              print('\n'.join(f.read().splitlines()[:5]))
+          PY
+      - name: Commit refreshed data
+        run: |
+          git config user.name 'quantbot-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add numerai_crypto_meta.csv
+          if git diff --cached --quiet; then
+            echo 'No change in meta model.'
+          else
+            git commit -m 'Refresh Numerai Crypto meta model'
+            git push
+          fi
