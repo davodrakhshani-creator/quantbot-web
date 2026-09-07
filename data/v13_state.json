@@ -1,0 +1,10 @@
+{
+  "version": "1.3-bg",
+  "candidate": {"direction": "NONE", "count": 0},
+  "open_observation": null,
+  "closed_results": [],
+  "snapshots": [],
+  "last_update": null,
+  "metrics": {"closed": 0, "win_rate": null, "avg_gross_bps": null, "avg_net_bps": null, "profit_factor": null},
+  "research_gate": "COLLECTING"
+}
