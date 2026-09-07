@@ -1,0 +1,44 @@
+name: QuantBot v1.3 Background Research
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'background_v13.py'
+      - '.github/workflows/quantbot-background.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quantbot-v13-background
+  cancel-in-progress: false
+
+jobs:
+  sample-and-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run background research step
+        run: python background_v13.py
+      - name: Persist state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v13_state.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "Update QuantBot v1.3 background state"
+          git pull --rebase origin main
+          git push origin HEAD:main
