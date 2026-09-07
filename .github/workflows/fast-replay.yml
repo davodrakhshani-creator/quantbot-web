@@ -1,0 +1,42 @@
+name: QuantBot v1.3 Fast Proxy Replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'fast_replay.py'
+      - '.github/workflows/fast-replay.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quantbot-fast-replay
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run 60-day rapid proxy replay
+        run: python fast_replay.py
+      - name: Persist replay result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/fast_replay.json
+          if git diff --cached --quiet; then
+            echo "No replay state change"
+            exit 0
+          fi
+          git commit -m "Update QuantBot fast replay result"
+          git pull --rebase origin main
+          git push origin HEAD:main
