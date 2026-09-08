@@ -1,0 +1,104 @@
+{
+  "version": "quantbot-v18-side-session",
+  "purpose": "ASYMMETRY_SCREEN_NO_LIVE",
+  "signal": "E1_break_accept_h6",
+  "roundtrip_cost_bps": 11.0,
+  "fit_buckets": {
+    "ALL": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "net11_mean_bps": 1.4535330616957096,
+      "median_net11_bps": -6.1296841590486775,
+      "win11_pct": 41.935483870967744
+    },
+    "LONG": {
+      "events": 32,
+      "gross_mean_bps": 10.579973891937899,
+      "net11_mean_bps": -0.4200261080621024,
+      "median_net11_bps": -9.525771052767519,
+      "win11_pct": 31.25
+    },
+    "SHORT": {
+      "events": 30,
+      "gross_mean_bps": 14.451996176104043,
+      "net11_mean_bps": 3.4519961761040423,
+      "median_net11_bps": 1.3796059956127191,
+      "win11_pct": 53.333333333333336
+    },
+    "UTC00_08": {
+      "events": 27,
+      "gross_mean_bps": 6.034876669353559,
+      "net11_mean_bps": -4.96512333064644,
+      "median_net11_bps": -12.151070184171044,
+      "win11_pct": 37.03703703703704
+    },
+    "LONG_UTC00_08": {
+      "events": 14,
+      "gross_mean_bps": -3.437726356808374,
+      "net11_mean_bps": -14.437726356808373,
+      "median_net11_bps": -25.41148478772636,
+      "win11_pct": 21.428571428571427
+    },
+    "SHORT_UTC00_08": {
+      "events": 13,
+      "gross_mean_bps": 16.23614146675872,
+      "net11_mean_bps": 5.2361414667587205,
+      "median_net11_bps": 0.6680707165883746,
+      "win11_pct": 53.84615384615385
+    },
+    "UTC08_16": {
+      "events": 5,
+      "gross_mean_bps": -4.595928394821147,
+      "net11_mean_bps": -15.595928394821147,
+      "median_net11_bps": -14.428909252143342,
+      "win11_pct": 0.0
+    },
+    "LONG_UTC08_16": {
+      "events": 5,
+      "gross_mean_bps": -4.595928394821147,
+      "net11_mean_bps": -15.595928394821147,
+      "median_net11_bps": -14.428909252143342,
+      "win11_pct": 0.0
+    },
+    "SHORT_UTC08_16": {
+      "events": 0,
+      "gross_mean_bps": 0,
+      "net11_mean_bps": 0,
+      "win11_pct": 0
+    },
+    "UTC16_24": {
+      "events": 30,
+      "gross_mean_bps": 21.071900724223124,
+      "net11_mean_bps": 10.071900724223122,
+      "median_net11_bps": 1.7857432468392318,
+      "win11_pct": 53.333333333333336
+    },
+    "LONG_UTC16_24": {
+      "events": 13,
+      "gross_mean_bps": 31.512844270110442,
+      "net11_mean_bps": 20.512844270110442,
+      "median_net11_bps": 1.4803452190414,
+      "win11_pct": 53.84615384615385
+    },
+    "SHORT_UTC16_24": {
+      "events": 17,
+      "gross_mean_bps": 13.087649777368114,
+      "net11_mean_bps": 2.0876497773681137,
+      "median_net11_bps": 2.0911412746370637,
+      "win11_pct": 52.94117647058824
+    }
+  },
+  "selected_fit_only": "UTC16_24",
+  "validation": {
+    "events": 11,
+    "gross_mean_bps": -18.417674717249916,
+    "net11_mean_bps": -29.41767471724991,
+    "median_net11_bps": -25.09876571454638,
+    "win11_pct": 0.0
+  },
+  "holdout": null,
+  "holdout_gate_pass": false,
+  "live_orders": false,
+  "warning": "Exploratory side/session screen; any survivor still requires larger forward L2 paper sample.",
+  "interpretation": "V18_VALIDATION_OPENED"
+}
