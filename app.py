@@ -9,6 +9,8 @@ CORE = DATA / "v4_core_state.json"
 PAPER = DATA / "v4_paper_t2.json"
 CONSENSUS = DATA / "v4_consensus.json"
 COINBASE = DATA / "v5_coinbase_validation.json"
+PRECISION = DATA / "v5_precision_state.json"
+FAST = DATA / "v5_fastlane_state.json"
 
 
 def _read(path: Path) -> dict:
@@ -19,7 +21,7 @@ def _read(path: Path) -> dict:
 
 
 def snapshot() -> dict:
-    core, paper, consensus, coinbase = map(_read, (CORE, PAPER, CONSENSUS, COINBASE))
+    core, paper, consensus, coinbase, precision, fast = map(_read, (CORE, PAPER, CONSENSUS, COINBASE, PRECISION, FAST))
     required = (core, paper, consensus)
     errors = [x["_error"] for x in required if "_error" in x]
     health = core.get("health", {}) if not errors else {"ok": False, "errors": errors}
@@ -29,6 +31,8 @@ def snapshot() -> dict:
         "paper": paper,
         "consensus": consensus,
         "coinbase": coinbase,
+        "precision": precision,
+        "fast": fast,
         "errors": errors,
     }
 
@@ -46,24 +50,30 @@ def api_state():
 
 PAGE = r'''<!doctype html>
 <html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>QuantBot v4 Control Center</title>
+<title>QuantBot Control Center</title>
 <style>
 :root{color-scheme:dark;--bg:#07090d;--card:#111722;--line:#243043;--mut:#91a0b5;--good:#4fe19a;--bad:#ff6d82;--warn:#ffd26a;--blue:#79a9ff;--vio:#a98bff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#152038 0,#090d14 36%,var(--bg) 68%);color:#f4f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif}.wrap{max-width:1080px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.brand{font-size:28px;font-weight:900;letter-spacing:-.6px}.sub,.mut{color:var(--mut)}.pill{border:1px solid var(--line);background:#0e141f;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800}.card{background:linear-gradient(180deg,#121a27,#0f151f);border:1px solid var(--line);border-radius:20px;padding:16px;margin:12px 0;box-shadow:0 14px 40px #0004}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:12px}.big{font-size:36px;font-weight:950;letter-spacing:-1px}.cash{color:var(--warn)}.on{color:var(--good)}.off{color:var(--bad)}.blue{color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:#0b111a;border:1px solid #1f2a3b;border-radius:15px;padding:12px}.metric span{display:block;color:var(--mut);font-size:12px}.metric b{display:block;font-size:20px;margin-top:5px}.row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #202a38}.row:last-child{border-bottom:0}.bar{height:9px;border-radius:99px;background:#242e3e;overflow:hidden}.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--good));width:0}.weights{display:flex;gap:8px;flex-wrap:wrap}.chip{background:#0d141e;border:1px solid #2a3950;border-radius:12px;padding:9px 11px}.tests{display:grid;grid-template-columns:1fr 1fr;gap:8px}.test{padding:10px;border-radius:12px;background:#0c131d;border:1px solid #202c3e}.test b{float:left;color:var(--good)}.danger{border-color:#4b2830;background:#1b1015}.footer{font-size:12px;color:var(--mut);padding:12px 2px 28px}.tiny{font-size:12px}.err{white-space:pre-wrap;color:var(--bad)}.tag{display:inline-block;padding:4px 8px;border:1px solid #33415a;border-radius:999px;font-size:11px;color:#b7c8e4;margin:2px}.lead{font-size:14px;line-height:1.8;color:#cbd5e4}.ltr{direction:ltr;text-align:left}@media(max-width:760px){.hero,.grid,.grid3,.tests{grid-template-columns:1fr}.top{align-items:center}.big{font-size:30px}}
 </style></head><body><div class="wrap">
-<div class="top"><div><div class="brand">QuantBot v4 · Control Center</div><div class="sub">T2_upup · Regime-aware multi-horizon momentum · Paper execution</div></div><div class="pill">LIVE LOCKED 🔒</div></div>
+<div class="top"><div><div class="brand">QuantBot · Control Center</div><div class="sub">Core T2 + Precision v5 + Fast-Lane v5 · Paper execution</div></div><div class="pill">LIVE LOCKED 🔒</div></div>
 
 <div class="hero">
  <div class="card"><div class="mut tiny">تصمیم رسمی موتور</div><div id="action" class="big">در حال بارگذاری…</div><div id="reason" class="lead"></div><div id="signalDate" class="mut tiny"></div><div class="weights" id="weights" style="margin-top:12px"></div></div>
  <div class="card"><div class="mut tiny">سلامت سیستم</div><div id="health" class="big">—</div><div id="status" class="mut"></div><div style="margin-top:10px"><span class="tag">No API keys</span><span class="tag">No live orders</span><span class="tag">Next-open audited</span></div></div>
 </div>
 
+<div class="card"><b>سه موتور تحقیقاتی</b><div class="grid3" style="margin-top:12px">
+ <div class="metric"><span>Core</span><b>T2_upup</b><small class="mut">موتور فریز‌شده Forward</small></div>
+ <div class="metric"><span>Precision v5</span><b id="precName">—</b><small id="precSub" class="mut"></small></div>
+ <div class="metric"><span>Fast-Lane v5</span><b id="fastName">—</b><small id="fastSub" class="mut"></small></div>
+</div><div class="row"><span>Precision upgrade vs T2</span><b id="precGate">—</b></div><div class="row"><span>Fast-Lane research gate</span><b id="fastGate">—</b></div></div>
+
 <div class="card"><b>گیت رژیم BTC</b><div class="grid" style="margin-top:12px">
  <div class="metric"><span>BTC Close</span><b id="btcClose">—</b></div>
  <div class="metric"><span>SMA200</span><b id="btcSma">—</b></div>
  <div class="metric"><span>Momentum 60d</span><b id="m60">—</b></div>
  <div class="metric"><span>Momentum 120d</span><b id="m120">—</b></div>
-</div><div class="row"><span>شرط ورود: BTC>SMA200 + M60>0 + M120>0</span><b id="gate">—</b></div></div>
+</div><div class="row"><span>شرط ورود Core: BTC>SMA200 + M60>0 + M120>0</span><b id="gate">—</b></div></div>
 
 <div class="card"><b>شواهد مستقل از صرافی</b><div class="grid3" style="margin-top:12px">
  <div class="metric"><span>Binance / current universe</span><b id="binNet">—</b><small id="binSub" class="mut"></small></div>
@@ -90,8 +100,8 @@ PAGE = r'''<!doctype html>
 </div><div style="margin-top:13px"><div class="mut tiny">پیشرفت حداقل 180 روز Forward</div><div class="bar"><i id="progress"></i></div></div></div>
 
 <div class="card"><b>Research / Red-Team consensus</b><div class="tests" id="tests" style="margin-top:12px"></div></div>
-<div class="card danger"><b>قفل پول واقعی</b><div class="row"><span>ارسال سفارش به صرافی</span><b class="off">غیرفعال</b></div><div class="lead">این نسخه برای شروع کار حرفه‌ای در حالت Paper آماده است. فعال‌سازی سرمایه واقعی فقط بعد از Forward Gate و بررسی جداگانه‌ی execution، slippage، venue و operational risk انجام می‌شود.</div></div>
-<div id="errors" class="err"></div><div class="footer">Refresh خودکار هر 30 ثانیه · داده فقط از کندل‌های کامل UTC · استراتژی weekly long/cash · هیچ سفارش واقعی از این سرویس ارسال نمی‌شود.</div>
+<div class="card danger"><b>قفل پول واقعی</b><div class="row"><span>ارسال سفارش به صرافی</span><b class="off">غیرفعال</b></div><div class="lead">Precision و Fast-Lane فعلاً فقط لایه‌های تحقیق/Paper هستند. هیچ‌کدام بدون Forward evidence و بررسی جداگانه‌ی execution، slippage و operational risk وارد پول واقعی نمی‌شوند.</div></div>
+<div id="errors" class="err"></div><div class="footer">Refresh خودکار هر 30 ثانیه · داده فقط از کندل‌های کامل UTC · هیچ سفارش واقعی از این سرویس ارسال نمی‌شود.</div>
 </div>
 <script>
 const pc=(x,d=2)=>Number.isFinite(Number(x))?Number(x).toFixed(d)+'%':'—';
@@ -99,13 +109,15 @@ const num=(x,d=2)=>Number.isFinite(Number(x))?Number(x).toFixed(d):'—';
 const money=x=>Number.isFinite(Number(x))?Number(x).toLocaleString(undefined,{maximumFractionDigits:0}):'—';
 async function load(){
  try{
-  const r=await fetch('/api/state',{cache:'no-store'}),s=await r.json(),c=s.core||{},p=s.paper||{},q=s.consensus||{},cb=s.coinbase||{};
+  const r=await fetch('/api/state',{cache:'no-store'}),s=await r.json(),c=s.core||{},p=s.paper||{},q=s.consensus||{},cb=s.coinbase||{},pr=s.precision||{},fa=s.fast||{};
   const w=c.target_weights||{},gross=Number(c.gross_target||0),has=Object.keys(w).length>0&&gross>1e-9,g=c.regime||{};
   action.textContent=has?'ACTIVE / REBALANCE':'CASH';action.className='big '+(has?'on':'cash');
-  reason.textContent=has?'Regime gate باز است؛ موتور فقط وزن‌های هدف Paper را نگه می‌دارد.':'Regime gate بسته است؛ موتور عمداً بیرون بازار می‌ماند تا هر سه شرط روند BTC هم‌زمان تأیید شوند.';
+  reason.textContent=has?'Regime gate باز است؛ موتور فقط وزن‌های هدف Paper را نگه می‌دارد.':'Regime gate بسته است؛ موتور عمداً بیرون بازار می‌ماند تا شروط روند تأیید شوند.';
   weights.innerHTML=has?Object.entries(w).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="chip ltr"><b>${k.replace('USDT','')}</b> ${(100*v).toFixed(2)}%</div>`).join(''):'<div class="chip">Exposure = 0%</div>';
   signalDate.textContent='Signal: '+(c.signal_date||'—')+' · Gross '+(gross*100).toFixed(2)+'%';
   health.textContent=s.ok?'PASS':'FAIL';health.className='big '+(s.ok?'on':'off');status.textContent=c.consensus_status||'';
+  precName.textContent=pr.selected||'—';precSub.textContent=pr.research_status||'';precGate.textContent=(pr.upgrade_vs_T2||{}).precision_upgrade?'PASS':'NO UPGRADE';precGate.className=(pr.upgrade_vs_T2||{}).precision_upgrade?'on':'cash';
+  fastName.textContent=fa.selected||'—';fastSub.textContent=fa.research_status||'';fastGate.textContent=fa.research_status==='FAST_PAPER_CANDIDATE'?'PASS':'FAIL';fastGate.className=fa.research_status==='FAST_PAPER_CANDIDATE'?'on':'off';
   btcClose.textContent=money(g.btc_close);btcSma.textContent=money(g.btc_sma200);m60.textContent=pc(g.btc_mom60_pct);m60.className=Number(g.btc_mom60_pct)>0?'on':'off';m120.textContent=pc(g.btc_mom120_pct);m120.className=Number(g.btc_mom120_pct)>0?'on':'off';gate.textContent=g.upup_gate?'OPEN':'CLOSED';gate.className=g.upup_gate?'on':'off';
   const km=q.key_prelock_metrics||{},b=km.current_liquid||{},d=km.dynamic_liquidity_universe_52_pool||{},cp=cb.prelock||{};
   binNet.textContent=pc(b.net_pct);binSub.textContent=`Sharpe ${num(b.sharpe)} · PF ${num(b.profit_factor)} · DD ${pc(b.max_drawdown_pct)}`;
