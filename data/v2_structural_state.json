@@ -1,0 +1,228 @@
+{
+  "version": "quantbot-v2-structural-alpha",
+  "stage_completed": 20,
+  "status": "CONTINUE_NO_PROMOTION",
+  "updated": "2026-09-08T03:27:00Z",
+  "dataset": {
+    "source": "lth-elm/Backtrading-Python-Binance public Binance spot daily CSV",
+    "assets": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "start": "2017-08-17",
+    "end": "2020-12-25",
+    "aligned_rows": 1227,
+    "split": "60% development / 20% validation context / final 20% untouched chronological OOS",
+    "final_oos_start": "2020-04-24",
+    "cost_model": "13 bps per unit of position turnover (26 bps round trip for one full leg)"
+  },
+  "stages": [
+    {
+      "stage": 11,
+      "hypothesis": "Funding/carry/basis market-neutral audit",
+      "status": "DATA_LIMITED",
+      "reason": "Public BTC/ETH funding histories were located, but a timestamp-aligned spot-perpetual basis plus borrow/execution series was not available in the connected research data; no promotable return test was fabricated."
+    },
+    {
+      "stage": 12,
+      "hypothesis": "BTC daily multi-horizon time-series momentum",
+      "oos": {
+        "net_pct": 109.43,
+        "ann_pct": 199.685,
+        "sharpe": 2.18,
+        "max_dd_pct": 32.803,
+        "pf": 1.394,
+        "avg_daily_bps": 34.637,
+        "turnover_units": 37,
+        "cost_pct": 4.81,
+        "position_change_days": 19
+      },
+      "wf": {
+        "positive_folds": 2,
+        "total_folds": 3,
+        "avg_return_pct": 22.746
+      },
+      "pass": false
+    },
+    {
+      "stage": 13,
+      "hypothesis": "Equal-notional BTC+ETH multi-horizon time-series momentum",
+      "oos": {
+        "net_pct": 125.091,
+        "ann_pct": 233.553,
+        "sharpe": 2.26,
+        "max_dd_pct": 24.579,
+        "pf": 1.382,
+        "avg_daily_bps": 38.255,
+        "turnover_units": 31,
+        "cost_pct": 4.03,
+        "position_change_days": 28
+      },
+      "wf": {
+        "positive_folds": 1,
+        "total_folds": 3,
+        "avg_return_pct": 18.457
+      },
+      "pass": false
+    },
+    {
+      "stage": 14,
+      "hypothesis": "Volatility-scaled BTC+ETH time-series momentum (15% target)",
+      "oos": {
+        "n_days": 246,
+        "net_pct": 65.345,
+        "ann_pct": 110.987,
+        "sharpe": 2.479,
+        "max_dd_pct": 16.256,
+        "positive_day_pct": 54.472,
+        "pf": 1.456,
+        "avg_daily_bps": 21.869,
+        "turnover_units": 25.451,
+        "cost_pct": 3.309,
+        "position_change_days": 246
+      },
+      "walk_forward": [
+        {
+          "net_pct": 15.191,
+          "max_dd_pct": 20.154,
+          "pf": 1.194
+        },
+        {
+          "net_pct": -16.763,
+          "max_dd_pct": 21.442,
+          "pf": 0.834
+        },
+        {
+          "net_pct": 64.893,
+          "max_dd_pct": 14.503,
+          "pf": 1.592
+        }
+      ],
+      "wf_positive": 2,
+      "wf_avg_pct": 21.107,
+      "pass": false,
+      "reason": "Best candidate in this block, but dataset ends in 2020 and only covers BTC/ETH; one walk-forward fold is materially negative."
+    },
+    {
+      "stage": 15,
+      "hypothesis": "Long/cash 100d-SMA + 60d-momentum confirmation",
+      "oos": {
+        "net_pct": 119.906,
+        "ann_pct": 222.21,
+        "sharpe": 2.314,
+        "max_dd_pct": 26.563,
+        "pf": 1.413,
+        "avg_daily_bps": 36.684,
+        "cost_pct": 1.82
+      },
+      "wf": {
+        "positive_folds": 1,
+        "total_folds": 3,
+        "avg_return_pct": 26.281
+      },
+      "pass": false
+    },
+    {
+      "stage": 16,
+      "hypothesis": "Cross-sectional 60d momentum long winner / short loser BTC vs ETH",
+      "oos": {
+        "net_pct": 33.662,
+        "ann_pct": 53.848,
+        "sharpe": 1.869,
+        "max_dd_pct": 11.984,
+        "pf": 1.347,
+        "avg_daily_bps": 12.634,
+        "cost_pct": 2.47,
+        "position_change_days": 19
+      },
+      "wf": {
+        "positive_folds": 2,
+        "total_folds": 3,
+        "avg_return_pct": 12.974
+      },
+      "pass": false,
+      "reason": "Good drawdown and 2/3 folds, but only two assets and one historical regime set."
+    },
+    {
+      "stage": 17,
+      "hypothesis": "BTC/ETH 30d log-ratio z-score mean reversion",
+      "oos": {
+        "net_pct": -9.651,
+        "ann_pct": -13.988,
+        "sharpe": -0.9,
+        "max_dd_pct": 14.824,
+        "pf": 0.799,
+        "avg_daily_bps": -3.8,
+        "cost_pct": 4.29
+      },
+      "wf": {
+        "positive_folds": 0,
+        "total_folds": 3,
+        "avg_return_pct": -18.094
+      },
+      "pass": false
+    },
+    {
+      "stage": 18,
+      "hypothesis": "Regime-aware 60d trend with high-volatility exclusion",
+      "oos": {
+        "net_pct": 88.055,
+        "ann_pct": 155.415,
+        "sharpe": 1.876,
+        "max_dd_pct": 27.149,
+        "pf": 1.319,
+        "avg_daily_bps": 30.586,
+        "cost_pct": 2.6
+      },
+      "wf": {
+        "positive_folds": 2,
+        "total_folds": 3,
+        "avg_return_pct": 25.331
+      },
+      "pass": false
+    },
+    {
+      "stage": 19,
+      "hypothesis": "Hybrid long/cash trend + low-weight BTC/ETH relative-value sleeve",
+      "oos": {
+        "net_pct": 73.332,
+        "ann_pct": 126.296,
+        "sharpe": 2.219,
+        "max_dd_pct": 18.344,
+        "pf": 1.396,
+        "avg_daily_bps": 24.634,
+        "cost_pct": 2.327
+      },
+      "wf": {
+        "positive_folds": 1,
+        "total_folds": 3,
+        "avg_return_pct": 11.647
+      },
+      "pass": false
+    },
+    {
+      "stage": 20,
+      "hypothesis": "Final chronological OOS + walk-forward comparison",
+      "selected_stage": 14,
+      "pass": false,
+      "reason": "Stage 14 leads on combined OOS quality and drawdown, but cannot be called robust until extended through post-2020 regimes and tested on more liquid assets; market-neutral carry remains unverified."
+    }
+  ],
+  "best_candidate": {
+    "stage": 14,
+    "name": "Volatility-scaled BTC+ETH multi-horizon time-series momentum",
+    "oos_net_pct": 65.345,
+    "oos_sharpe": 2.479,
+    "oos_pf": 1.456,
+    "oos_max_dd_pct": 16.256,
+    "wf_positive_folds": "2/3",
+    "wf_avg_return_pct": 21.107
+  },
+  "research_gate": "DO_NOT_PROMOTE",
+  "next_priority": [
+    "Extend Stage 14 unchanged through 2021-2026 before any further tuning.",
+    "Add at least 5-10 liquid assets for true diversified time-series momentum and cross-sectional tests.",
+    "Ingest timestamp-clean funding plus spot/perpetual basis and borrow/execution history; then test delta-neutral carry.",
+    "Stress costs at 13/26/40 bps per round trip and cap leverage/volatility ex ante."
+  ]
+}
