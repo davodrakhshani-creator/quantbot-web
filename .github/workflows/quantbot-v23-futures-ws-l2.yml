@@ -1,0 +1,44 @@
+name: QuantBot v23 Futures WS L2 Paper
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v23_futures_ws_l2.py'
+      - '.github/workflows/quantbot-v23-futures-ws-l2.yml'
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quantbot-v23-futures-ws-l2
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install 'websockets>=15,<16'
+      - name: Compile
+        run: python -m py_compile research_v23_futures_ws_l2.py
+      - name: Run v23 futures websocket L2 paper
+        run: python research_v23_futures_ws_l2.py
+      - name: Persist state
+        run: |
+          git config user.name 'quantbot-research-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/v23_futures_ws_l2_state.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Update QuantBot v23 futures WS L2 state'
+          git pull --rebase origin main
+          git push origin HEAD:main
