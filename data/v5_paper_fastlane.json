@@ -1,0 +1,57 @@
+{
+  "version": "quantbot-v5-forward-paper-fastlane",
+  "updated": "2026-09-08T12:38:18.118732+00:00",
+  "paper_start": "2026-09-08 00:00:00+00:00",
+  "rule_frozen": "F0_weekly_14_28",
+  "rule_description": "Shorter-horizon 14d/28d momentum blend, BTC positive 20d/40d and above SMA100; top3; inverse-vol; 10% target; weekly rebalance.",
+  "frozen_before_first_forward_completed_bar": true,
+  "live_orders": false,
+  "data_end": "2026-09-07 00:00:00+00:00",
+  "asset_errors": {},
+  "current_signal": {
+    "signal_date": "2026-09-07 00:00:00+00:00",
+    "weights": {
+      "SOLUSDT": 0.04496422782612497,
+      "UNIUSDT": 0.03205784861415061,
+      "AAVEUSDT": 0.025905984416463787
+    },
+    "gross_exposure": 0.10292806085673936
+  },
+  "forward_metrics_13bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_metrics_40bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_metrics_75bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_active_days": 0,
+  "promotion_gate_pre_registered": {
+    "criteria": "n_days>=90; active_days>=30; net>0; PF>=1.15; maxDD<=10%; 40bps>0; 75bps>0",
+    "passed": false
+  },
+  "research_status": "PAPER_ONLY_NO_LIVE_MONEY",
+  "live_money_authorized": false
+}
