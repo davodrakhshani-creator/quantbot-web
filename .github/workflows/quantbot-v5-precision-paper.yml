@@ -1,0 +1,37 @@
+name: QuantBot v5 Precision Forward Paper
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 0 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'paper_v5_precision.py'
+      - '.github/workflows/quantbot-v5-precision-paper.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet pandas numpy requests
+      - run: python paper_v5_precision.py
+      - name: Persist state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v5_paper_precision.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update QuantBot v5 precision paper state"
+          git pull --rebase origin main
+          git push origin HEAD:main
