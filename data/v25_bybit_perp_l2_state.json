@@ -1,0 +1,225 @@
+{
+  "version": "quantbot-v25-bybit-perp-l2",
+  "purpose": "FORWARD_ONLY_TRUE_PERPETUAL_L2_TAPE_ALPHA_AND_PAPER_NO_LIVE",
+  "venue": "BYBIT_USDT_PERPETUAL",
+  "symbol": "BTCUSDT",
+  "live_orders": false,
+  "runs": 1,
+  "ws_success_runs": 1,
+  "observations": 202,
+  "orderbook_messages": 6571,
+  "trade_messages": 1299,
+  "trade_events": 4021,
+  "raw_events": [],
+  "maker_candidates": 0,
+  "maker_fills": 0,
+  "paper_trades": [],
+  "rejections": {},
+  "created_at": "2026-09-08T20:01:02.775951+00:00",
+  "ws_access_ok": true,
+  "subscription_ok": true,
+  "summary": {
+    "raw_alpha": {
+      "base": {
+        "1": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "3": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "5": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "10": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "30": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "60": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        }
+      },
+      "strong": {
+        "1": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "3": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "5": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "10": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "30": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "60": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        }
+      },
+      "elite": {
+        "1": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "3": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "5": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "10": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "30": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        },
+        "60": {
+          "n": 0,
+          "mean_bps": null,
+          "median_bps": null,
+          "p10": null,
+          "p90": null,
+          "positive_pct": null,
+          "gt4bps_pct": null,
+          "gt8bps_pct": null
+        }
+      }
+    },
+    "paper": {
+      "closed": 0,
+      "avg_net_bps": null,
+      "net_usd_100": 0.0,
+      "win_pct": null,
+      "pf": null,
+      "maker_fill_rate_pct": null
+    },
+    "fees_bps": {
+      "maker": 2.0,
+      "taker": 5.5,
+      "slippage": 0.5
+    }
+  },
+  "updated_at": "2026-09-08T20:04:32.999091+00:00"
+}
