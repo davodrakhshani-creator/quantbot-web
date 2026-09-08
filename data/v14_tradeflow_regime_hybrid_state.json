@@ -1,0 +1,293 @@
+{
+  "version": "quantbot-v14-tradeflow-regime-hybrid",
+  "purpose": "TRADE_LEVEL_REGIME_HYBRID_NO_LIVE",
+  "symbol": "BTCUSDT",
+  "source": "Binance Vision USD-M aggTrades -> trade-flow 5m entries / 15m regime",
+  "selection_end": "2026-04-24 23:59:59+00:00",
+  "holdout_start": "2026-04-25 00:00:00+00:00",
+  "selected": null,
+  "candidates": {
+    "H0_balanced": {
+      "spec": {
+        "name": "H0_balanced",
+        "flow_thr": 0.08,
+        "persist_thr": 0.35,
+        "accel_thr": 0.5,
+        "body_thr": 0.24,
+        "stop_atr": 0.95,
+        "take_atr": 1.55,
+        "max_hold": 10,
+        "cci_gate": 85
+      },
+      "train": {
+        "7.0": {
+          "trades": 1709,
+          "net_pct": -94.83905659906674,
+          "pf": 0.41543757883555665,
+          "win_pct": 37.03920421299005,
+          "max_dd_pct": 94.83905659906674,
+          "avg_trade_bps": -8.640059154721772,
+          "longs": 905,
+          "shorts": 804
+        },
+        "12.0": {
+          "trades": 1709,
+          "net_pct": -99.38097222668362,
+          "pf": 0.2130858358732859,
+          "win_pct": 31.772966647162082,
+          "max_dd_pct": 99.38097222668362,
+          "avg_trade_bps": -14.83684085267601,
+          "longs": 905,
+          "shorts": 804
+        },
+        "20.0": {
+          "trades": 1709,
+          "net_pct": -99.97925986634895,
+          "pf": 0.06493538435922083,
+          "win_pct": 19.60210649502633,
+          "max_dd_pct": 99.97925986634895,
+          "avg_trade_bps": -24.751691569402794,
+          "longs": 905,
+          "shorts": 804
+        }
+      },
+      "score": -1000000000.0
+    },
+    "H1_strict": {
+      "spec": {
+        "name": "H1_strict",
+        "flow_thr": 0.12,
+        "persist_thr": 0.45,
+        "accel_thr": 0.6,
+        "body_thr": 0.28,
+        "stop_atr": 0.9,
+        "take_atr": 1.7,
+        "max_hold": 10,
+        "cci_gate": 105
+      },
+      "train": {
+        "7.0": {
+          "trades": 1003,
+          "net_pct": -84.2669009869525,
+          "pf": 0.3992332843439769,
+          "win_pct": 34.297108673978066,
+          "max_dd_pct": 84.2669009869525,
+          "avg_trade_bps": -9.054830581690828,
+          "longs": 548,
+          "shorts": 455
+        },
+        "12.0": {
+          "trades": 1003,
+          "net_pct": -95.88912513678778,
+          "pf": 0.19931144210025423,
+          "win_pct": 28.8135593220339,
+          "max_dd_pct": 95.88912513678778,
+          "avg_trade_bps": -15.73669688585875,
+          "longs": 548,
+          "shorts": 455
+        },
+        "20.0": {
+          "trades": 1003,
+          "net_pct": -99.52083724673686,
+          "pf": 0.057943632878870055,
+          "win_pct": 16.849451645064807,
+          "max_dd_pct": 99.52083724673686,
+          "avg_trade_bps": -26.427682972527432,
+          "longs": 548,
+          "shorts": 455
+        }
+      },
+      "score": -1000000000.0
+    },
+    "H2_trend_heavy": {
+      "spec": {
+        "name": "H2_trend_heavy",
+        "flow_thr": 0.1,
+        "persist_thr": 0.4,
+        "accel_thr": 0.55,
+        "body_thr": 0.24,
+        "stop_atr": 1.0,
+        "take_atr": 1.9,
+        "max_hold": 12,
+        "cci_gate": 125
+      },
+      "train": {
+        "7.0": {
+          "trades": 1191,
+          "net_pct": -86.71353757738558,
+          "pf": 0.4615530468073014,
+          "win_pct": 34.34089000839631,
+          "max_dd_pct": 86.71353757738558,
+          "avg_trade_bps": -8.164323942148465,
+          "longs": 634,
+          "shorts": 557
+        },
+        "12.0": {
+          "trades": 1191,
+          "net_pct": -97.00843556170925,
+          "pf": 0.2574201813786997,
+          "win_pct": 31.150293870696892,
+          "max_dd_pct": 97.00843556170925,
+          "avg_trade_bps": -14.415797450629537,
+          "longs": 634,
+          "shorts": 557
+        },
+        "20.0": {
+          "trades": 1191,
+          "net_pct": -99.72522011311202,
+          "pf": 0.09347802087453143,
+          "win_pct": 21.8303946263644,
+          "max_dd_pct": 99.72522011311202,
+          "avg_trade_bps": -24.418155064199254,
+          "longs": 634,
+          "shorts": 557
+        }
+      },
+      "score": -1000000000.0
+    },
+    "H3_reversal_heavy": {
+      "spec": {
+        "name": "H3_reversal_heavy",
+        "flow_thr": 0.14,
+        "persist_thr": 0.5,
+        "accel_thr": 0.65,
+        "body_thr": 0.32,
+        "stop_atr": 0.85,
+        "take_atr": 1.45,
+        "max_hold": 8,
+        "cci_gate": 75
+      },
+      "train": {
+        "7.0": {
+          "trades": 801,
+          "net_pct": -79.6927293012489,
+          "pf": 0.3106932219683439,
+          "win_pct": 32.958801498127336,
+          "max_dd_pct": 79.6927293012489,
+          "avg_trade_bps": -10.196465170014026,
+          "longs": 433,
+          "shorts": 368
+        },
+        "12.0": {
+          "trades": 801,
+          "net_pct": -93.30182403888406,
+          "pf": 0.13134124337054984,
+          "win_pct": 25.21847690387016,
+          "max_dd_pct": 93.30182403888406,
+          "avg_trade_bps": -17.11044787333651,
+          "longs": 433,
+          "shorts": 368
+        },
+        "20.0": {
+          "trades": 801,
+          "net_pct": -98.8662130694195,
+          "pf": 0.028543445163099757,
+          "win_pct": 10.611735330836455,
+          "max_dd_pct": 98.8662130694195,
+          "avg_trade_bps": -28.172820198652488,
+          "longs": 433,
+          "shorts": 368
+        }
+      },
+      "score": -1000000000.0
+    },
+    "H4_fast": {
+      "spec": {
+        "name": "H4_fast",
+        "flow_thr": 0.08,
+        "persist_thr": 0.4,
+        "accel_thr": 0.58,
+        "body_thr": 0.26,
+        "stop_atr": 0.75,
+        "take_atr": 1.25,
+        "max_hold": 6,
+        "cci_gate": 95
+      },
+      "train": {
+        "7.0": {
+          "trades": 1164,
+          "net_pct": -89.86780421551308,
+          "pf": 0.30656515184924504,
+          "win_pct": 34.02061855670103,
+          "max_dd_pct": 89.86780421551308,
+          "avg_trade_bps": -9.868498979744464,
+          "longs": 631,
+          "shorts": 533
+        },
+        "12.0": {
+          "trades": 1164,
+          "net_pct": -98.01016978830673,
+          "pf": 0.1216676927822585,
+          "win_pct": 24.140893470790378,
+          "max_dd_pct": 98.01016978830673,
+          "avg_trade_bps": -16.850701060828648,
+          "longs": 631,
+          "shorts": 533
+        },
+        "20.0": {
+          "trades": 1164,
+          "net_pct": -99.85319463818944,
+          "pf": 0.02252078000837121,
+          "win_pct": 9.621993127147768,
+          "max_dd_pct": 99.85319463818944,
+          "avg_trade_bps": -28.022224390563345,
+          "longs": 631,
+          "shorts": 533
+        }
+      },
+      "score": -1000000000.0
+    },
+    "H5_defensive": {
+      "spec": {
+        "name": "H5_defensive",
+        "flow_thr": 0.16,
+        "persist_thr": 0.55,
+        "accel_thr": 0.7,
+        "body_thr": 0.35,
+        "stop_atr": 1.1,
+        "take_atr": 1.85,
+        "max_hold": 12,
+        "cci_gate": 115
+      },
+      "train": {
+        "7.0": {
+          "trades": 445,
+          "net_pct": -56.96750172188959,
+          "pf": 0.35565633961970666,
+          "win_pct": 33.93258426966292,
+          "max_dd_pct": 56.96750172188959,
+          "avg_trade_bps": -9.708350667886716,
+          "longs": 246,
+          "shorts": 199
+        },
+        "12.0": {
+          "trades": 445,
+          "net_pct": -76.06065683527544,
+          "pf": 0.17206788461527378,
+          "win_pct": 27.640449438202246,
+          "max_dd_pct": 76.06065683527544,
+          "avg_trade_bps": -16.28865068932062,
+          "longs": 246,
+          "shorts": 199
+        },
+        "20.0": {
+          "trades": 445,
+          "net_pct": -90.64048787456305,
+          "pf": 0.04931300674739891,
+          "win_pct": 15.730337078651685,
+          "max_dd_pct": 90.64048787456305,
+          "avg_trade_bps": -26.817130723614866,
+          "longs": 246,
+          "shorts": 199
+        }
+      },
+      "score": -1000000000.0
+    }
+  },
+  "holdout": null,
+  "day100": null,
+  "side_diagnostic": null,
+  "holdout_gate_pass": false,
+  "live_orders": false,
+  "interpretation": "NO_V14_EDGE_YET"
+}
