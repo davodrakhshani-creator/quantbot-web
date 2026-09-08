@@ -18,6 +18,7 @@ SLIPPAGE_BPS = 0.5
 QUEUE_MULT = 1.50
 FILL_TIMEOUT_SEC = 5
 MAX_HOLD_SEC = 90
+NEW_ENTRY_CUTOFF_SEC = RUN_SECONDS - MAX_HOLD_SEC - FILL_TIMEOUT_SEC - 10
 TARGET_BPS = {'jun': 10.0, 'hansan': 14.0}
 HARD_STOP_BPS = 8.0
 IMMEDIATE_CHECK_SEC = 10
@@ -235,7 +236,8 @@ async def main():
                         if l2_support(hist, latest, -1): signal=('hansan',-1)
                         else: rejects['hansan_l2'] += 1
 
-                if signal and candidate is None and op is None:
+                elapsed = now - started
+                if signal and candidate is None and op is None and elapsed <= NEW_ENTRY_CUTOFF_SEC:
                     eng, side = signal
                     if now-last_signal[eng] >= 45:
                         last_signal[eng]=now; st['signals'][eng]=int(st['signals'].get(eng,0))+1
@@ -244,6 +246,8 @@ async def main():
                         candidate={'engine':eng,'side':side,'entry_px':entry_px,'queue_ahead_qty':queue,
                                    'through_qty':0.0,'created_ts':now,'created_ms':now_ms,'signal_ts':utcnow()}
                         st['maker_candidates']=int(st.get('maker_candidates',0))+1
+                elif signal and elapsed > NEW_ENTRY_CUTOFF_SEC:
+                    rejects['end_run_cutoff'] += 1
 
                 if candidate and now-candidate['created_ts'] > FILL_TIMEOUT_SEC:
                     rejects['maker_miss'] += 1; candidate=None
@@ -269,6 +273,7 @@ async def main():
         st['rejections'] = dict(rejects)
         st['stream_counts'] = dict(stream_counts)
         st['event_type_counts'] = dict(event_counts)
+        st['new_entry_cutoff_sec'] = NEW_ENTRY_CUTOFF_SEC
         summarize(st); save_state(st)
         print(json.dumps(st, indent=2))
 
