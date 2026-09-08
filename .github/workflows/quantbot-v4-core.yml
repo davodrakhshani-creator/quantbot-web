@@ -1,0 +1,44 @@
+name: QuantBot v4 Core CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'quantbot_v4_core.py'
+      - 'test_quantbot_v4_core.py'
+      - 'data/v4_consensus.json'
+      - '.github/workflows/quantbot-v4-core.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --quiet pandas numpy requests pytest
+      - name: Unit tests
+        run: pytest -q test_quantbot_v4_core.py
+      - name: Run guarded paper core
+        run: python quantbot_v4_core.py
+      - name: Persist paper core state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v4_core_state.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "Update QuantBot v4 paper core state"
+          git pull --rebase origin main
+          git push origin HEAD:main
