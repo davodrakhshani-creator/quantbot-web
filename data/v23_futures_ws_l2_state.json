@@ -3,10 +3,10 @@
   "purpose": "FORWARD_ONLY_FUTURES_L2_EXECUTION_EDGE_PAPER_NO_LIVE",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 1,
-  "ws_success_runs": 1,
-  "observations": 205,
-  "depth_events": 1981,
+  "runs": 2,
+  "ws_success_runs": 2,
+  "observations": 411,
+  "depth_events": 3990,
   "aggtrade_events": 0,
   "signals": {
     "jun": 0,
@@ -26,5 +26,13 @@
     "pf": null,
     "maker_fill_rate_pct": null
   },
-  "updated_at": "2026-09-08T19:46:00.140261+00:00"
+  "updated_at": "2026-09-08T19:52:24.670972+00:00",
+  "stream_counts": {
+    "btcusdt@depth20@100ms": 2009,
+    "btcusdt@bookticker": 108996
+  },
+  "event_type_counts": {
+    "depthupdate": 2009,
+    "bookticker": 108996
+  }
 }
