@@ -1,0 +1,301 @@
+{
+  "version": "quantbot-v17-maker-feasibility",
+  "purpose": "EXECUTION_FEASIBILITY_NO_LIVE",
+  "signal": "E1_break_accept_h6",
+  "thresholds_fit_only": {
+    "flow80": 0.3277429186696699,
+    "flow90": 0.4145178278318202,
+    "persist75": 0.3333333333333333,
+    "burst80": 0.9820385355945782,
+    "impact60": 1.0209066200761674,
+    "impact25": 0.5159889129127867,
+    "adverse75": 0.26666666666666666,
+    "accel75": 0.4837747681078886
+  },
+  "scenario_note": "M=maker hypothesis, T=taker hypothesis, A=explicit adverse-selection penalty; all costs are round-trip components and both sides are included.",
+  "fit": {
+    "T7x2": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "roundtrip_cost_bps": 14.0,
+      "mean_net_bps": -1.54646693830429,
+      "median_net_bps": -9.129684159048677,
+      "win_pct": 37.096774193548384,
+      "break_even_roundtrip_bps": 12.453533061695715,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 21.7,
+          "expected_bps_per_opportunity": -0.5412634284065014
+        },
+        "0.55": {
+          "expected_filled_events": 34.1,
+          "expected_bps_per_opportunity": -0.8505568160673596
+        },
+        "0.75": {
+          "expected_filled_events": 46.5,
+          "expected_bps_per_opportunity": -1.1598502037282175
+        }
+      }
+    },
+    "M2_T5_A2": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "roundtrip_cost_bps": 9.0,
+      "mean_net_bps": 3.4535330616957096,
+      "median_net_bps": -4.1296841590486775,
+      "win_pct": 45.16129032258064,
+      "break_even_roundtrip_bps": 12.453533061695715,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 21.7,
+          "expected_bps_per_opportunity": 1.2087365715934983
+        },
+        "0.55": {
+          "expected_filled_events": 34.1,
+          "expected_bps_per_opportunity": 1.8994431839326404
+        },
+        "0.75": {
+          "expected_filled_events": 46.5,
+          "expected_bps_per_opportunity": 2.590149796271782
+        }
+      }
+    },
+    "M2_T5_A4": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "roundtrip_cost_bps": 11.0,
+      "mean_net_bps": 1.4535330616957096,
+      "median_net_bps": -6.1296841590486775,
+      "win_pct": 41.935483870967744,
+      "break_even_roundtrip_bps": 12.453533061695715,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 21.7,
+          "expected_bps_per_opportunity": 0.5087365715934984
+        },
+        "0.55": {
+          "expected_filled_events": 34.1,
+          "expected_bps_per_opportunity": 0.7994431839326404
+        },
+        "0.75": {
+          "expected_filled_events": 46.5,
+          "expected_bps_per_opportunity": 1.090149796271782
+        }
+      }
+    },
+    "M2_T5_A6": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "roundtrip_cost_bps": 13.0,
+      "mean_net_bps": -0.5464669383042897,
+      "median_net_bps": -8.129684159048677,
+      "win_pct": 38.70967741935484,
+      "break_even_roundtrip_bps": 12.453533061695715,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 21.7,
+          "expected_bps_per_opportunity": -0.1912634284065014
+        },
+        "0.55": {
+          "expected_filled_events": 34.1,
+          "expected_bps_per_opportunity": -0.30055681606735934
+        },
+        "0.75": {
+          "expected_filled_events": 46.5,
+          "expected_bps_per_opportunity": -0.4098502037282173
+        }
+      }
+    },
+    "M2_M2_A4": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "roundtrip_cost_bps": 8.0,
+      "mean_net_bps": 4.453533061695709,
+      "median_net_bps": -3.1296841590486775,
+      "win_pct": 46.774193548387096,
+      "break_even_roundtrip_bps": 12.453533061695715,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 21.7,
+          "expected_bps_per_opportunity": 1.5587365715934982
+        },
+        "0.55": {
+          "expected_filled_events": 34.1,
+          "expected_bps_per_opportunity": 2.4494431839326403
+        },
+        "0.75": {
+          "expected_filled_events": 46.5,
+          "expected_bps_per_opportunity": 3.340149796271782
+        }
+      }
+    },
+    "M2_M2_A6": {
+      "events": 62,
+      "gross_mean_bps": 12.453533061695715,
+      "roundtrip_cost_bps": 10.0,
+      "mean_net_bps": 2.4535330616957096,
+      "median_net_bps": -5.1296841590486775,
+      "win_pct": 45.16129032258064,
+      "break_even_roundtrip_bps": 12.453533061695715,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 21.7,
+          "expected_bps_per_opportunity": 0.8587365715934984
+        },
+        "0.55": {
+          "expected_filled_events": 34.1,
+          "expected_bps_per_opportunity": 1.3494431839326404
+        },
+        "0.75": {
+          "expected_filled_events": 46.5,
+          "expected_bps_per_opportunity": 1.840149796271782
+        }
+      }
+    }
+  },
+  "fit_gate": true,
+  "validation": {
+    "T7x2": {
+      "events": 25,
+      "gross_mean_bps": -9.377832480543224,
+      "roundtrip_cost_bps": 14.0,
+      "mean_net_bps": -23.377832480543226,
+      "median_net_bps": -26.992435870762264,
+      "win_pct": 8.0,
+      "break_even_roundtrip_bps": -9.377832480543224,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 8.75,
+          "expected_bps_per_opportunity": -8.182241368190128
+        },
+        "0.55": {
+          "expected_filled_events": 13.750000000000002,
+          "expected_bps_per_opportunity": -12.857807864298776
+        },
+        "0.75": {
+          "expected_filled_events": 18.75,
+          "expected_bps_per_opportunity": -17.53337436040742
+        }
+      }
+    },
+    "M2_T5_A2": {
+      "events": 25,
+      "gross_mean_bps": -9.377832480543224,
+      "roundtrip_cost_bps": 9.0,
+      "mean_net_bps": -18.377832480543226,
+      "median_net_bps": -21.992435870762264,
+      "win_pct": 8.0,
+      "break_even_roundtrip_bps": -9.377832480543224,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 8.75,
+          "expected_bps_per_opportunity": -6.4322413681901285
+        },
+        "0.55": {
+          "expected_filled_events": 13.750000000000002,
+          "expected_bps_per_opportunity": -10.107807864298776
+        },
+        "0.75": {
+          "expected_filled_events": 18.75,
+          "expected_bps_per_opportunity": -13.78337436040742
+        }
+      }
+    },
+    "M2_T5_A4": {
+      "events": 25,
+      "gross_mean_bps": -9.377832480543224,
+      "roundtrip_cost_bps": 11.0,
+      "mean_net_bps": -20.377832480543226,
+      "median_net_bps": -23.992435870762264,
+      "win_pct": 8.0,
+      "break_even_roundtrip_bps": -9.377832480543224,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 8.75,
+          "expected_bps_per_opportunity": -7.132241368190129
+        },
+        "0.55": {
+          "expected_filled_events": 13.750000000000002,
+          "expected_bps_per_opportunity": -11.207807864298776
+        },
+        "0.75": {
+          "expected_filled_events": 18.75,
+          "expected_bps_per_opportunity": -15.28337436040742
+        }
+      }
+    },
+    "M2_T5_A6": {
+      "events": 25,
+      "gross_mean_bps": -9.377832480543224,
+      "roundtrip_cost_bps": 13.0,
+      "mean_net_bps": -22.377832480543226,
+      "median_net_bps": -25.992435870762264,
+      "win_pct": 8.0,
+      "break_even_roundtrip_bps": -9.377832480543224,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 8.75,
+          "expected_bps_per_opportunity": -7.832241368190129
+        },
+        "0.55": {
+          "expected_filled_events": 13.750000000000002,
+          "expected_bps_per_opportunity": -12.307807864298775
+        },
+        "0.75": {
+          "expected_filled_events": 18.75,
+          "expected_bps_per_opportunity": -16.78337436040742
+        }
+      }
+    },
+    "M2_M2_A4": {
+      "events": 25,
+      "gross_mean_bps": -9.377832480543224,
+      "roundtrip_cost_bps": 8.0,
+      "mean_net_bps": -17.377832480543226,
+      "median_net_bps": -20.992435870762264,
+      "win_pct": 16.0,
+      "break_even_roundtrip_bps": -9.377832480543224,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 8.75,
+          "expected_bps_per_opportunity": -6.082241368190129
+        },
+        "0.55": {
+          "expected_filled_events": 13.750000000000002,
+          "expected_bps_per_opportunity": -9.557807864298775
+        },
+        "0.75": {
+          "expected_filled_events": 18.75,
+          "expected_bps_per_opportunity": -13.03337436040742
+        }
+      }
+    },
+    "M2_M2_A6": {
+      "events": 25,
+      "gross_mean_bps": -9.377832480543224,
+      "roundtrip_cost_bps": 10.0,
+      "mean_net_bps": -19.377832480543226,
+      "median_net_bps": -22.992435870762264,
+      "win_pct": 8.0,
+      "break_even_roundtrip_bps": -9.377832480543224,
+      "fill_scenarios": {
+        "0.35": {
+          "expected_filled_events": 8.75,
+          "expected_bps_per_opportunity": -6.782241368190129
+        },
+        "0.55": {
+          "expected_filled_events": 13.750000000000002,
+          "expected_bps_per_opportunity": -10.657807864298775
+        },
+        "0.75": {
+          "expected_filled_events": 18.75,
+          "expected_bps_per_opportunity": -14.53337436040742
+        }
+      }
+    }
+  },
+  "holdout": null,
+  "holdout_gate_pass": false,
+  "live_orders": false,
+  "interpretation": "V17_VALIDATION_OPENED"
+}
