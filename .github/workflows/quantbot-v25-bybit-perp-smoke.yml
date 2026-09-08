@@ -1,0 +1,39 @@
+name: QuantBot v25 Bybit Perp Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/quantbot-v25-bybit-perp-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'websockets>=15,<16'
+      - name: Count Bybit BTCUSDT perpetual L2 and trades
+        run: |
+          python - <<'PY'
+          import asyncio, json, websockets
+          URL='wss://stream.bybit.com/v5/public/linear'
+          async def main():
+              counts={'orderbook':0,'trade_msgs':0,'trades':0}
+              async with websockets.connect(URL,open_timeout=10,ping_interval=20,ping_timeout=20,max_size=2**22) as ws:
+                  await ws.send(json.dumps({'op':'subscribe','args':['orderbook.50.BTCUSDT','publicTrade.BTCUSDT']}))
+                  end=asyncio.get_running_loop().time()+10
+                  while asyncio.get_running_loop().time()<end:
+                      try: obj=json.loads(await asyncio.wait_for(ws.recv(),timeout=2))
+                      except asyncio.TimeoutError: continue
+                      topic=str(obj.get('topic',''))
+                      if topic.startswith('orderbook.50.BTCUSDT'): counts['orderbook']+=1
+                      elif topic=='publicTrade.BTCUSDT':
+                          counts['trade_msgs']+=1; counts['trades']+=len(obj.get('data',[]))
+              print(json.dumps(counts))
+              if counts['orderbook']<=0 or counts['trades']<=0: raise SystemExit('FAIL '+json.dumps(counts))
+              print('PASS '+json.dumps(counts))
+          asyncio.run(main())
+          PY
