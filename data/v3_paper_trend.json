@@ -1,0 +1,67 @@
+{
+  "version": "quantbot-v3-forward-paper-trend",
+  "updated": "2026-09-08T11:09:08.836666+00:00",
+  "paper_start": "2026-09-08 00:00:00+00:00",
+  "rule_frozen": "E_blend_top3_btc200_gate",
+  "execution_rule": "signal at completed UTC close t; target position applies to next daily bar",
+  "live_orders": false,
+  "data_end": "2026-09-07 00:00:00+00:00",
+  "universe_frozen": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "ADAUSDT",
+    "SOLUSDT",
+    "DOGEUSDT",
+    "TRXUSDT",
+    "LTCUSDT",
+    "LINKUSDT",
+    "BCHUSDT",
+    "ETCUSDT",
+    "XLMUSDT",
+    "DOTUSDT",
+    "AVAXUSDT",
+    "UNIUSDT",
+    "ATOMUSDT",
+    "NEARUSDT",
+    "FILUSDT",
+    "AAVEUSDT"
+  ],
+  "asset_errors": {},
+  "current_signal": {
+    "signal_date": "2026-09-07 00:00:00+00:00",
+    "effective_next_bar": true,
+    "weights": {
+      "LINKUSDT": 0.05027641594807373,
+      "UNIUSDT": 0.03664140449644924,
+      "NEARUSDT": 0.04354195214497813
+    },
+    "gross_exposure": 0.1304597725895011,
+    "btc_close": 79112.01,
+    "btc_sma200": 69849.2147,
+    "btc_market_gate": true
+  },
+  "forward_metrics_13bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_metrics_40bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "research_status": "PAPER_ONLY_NO_LIVE_MONEY",
+  "promotion_guardrail": "Do not promote to live money from this tracker until a separately defined forward gate has enough active observations and passes cost stress."
+}
