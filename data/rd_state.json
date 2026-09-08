@@ -1,16 +1,343 @@
 {
-  "version":"rd-10stage",
-  "stage_completed":5,
-  "status":"continue",
-  "updated":"2026-09-08T02:00:00+03:30",
-  "dataset":{"source":"public GitHub BTCUSDT/ETHUSDT hourly OHLCV","start":"2017-08-22","end":"2026-01-06","aligned_rows":73285,"evaluation_horizon_hours":2,"cost_assumption_bps":26},
-  "best_stage_so_far":3,
-  "stages":[
-    {"stage":1,"hypothesis":"regime hybrid: directional continuation in strong moves, reversion in bounded states, high-volatility exclusion","evaluation":{"n":3551,"net_pct":-99.994,"hit_pct":28.5,"quality_ratio":0.34,"avg_bps":-26.95,"max_drop_pct":99.994},"wf_positive":0,"wf_avg_pct":-94.926,"pass":false},
-    {"stage":2,"hypothesis":"cross-confirmed positive-drift trend only: BTC trend plus ETH and volume confirmation","evaluation":{"n":448,"net_pct":-66.235,"hit_pct":33.7,"quality_ratio":0.49,"avg_bps":-23.76,"max_drop_pct":66.27},"wf_positive":0,"wf_avg_pct":-23.042,"pass":false},
-    {"stage":3,"hypothesis":"BTC-ETH relative-value divergence with local z-score exhaustion","evaluation":{"n":219,"net_pct":-45.837,"hit_pct":39.7,"quality_ratio":0.42,"avg_bps":-27.51,"max_drop_pct":46.978},"wf_positive":0,"wf_avg_pct":-16.494,"pass":false},
-    {"stage":4,"hypothesis":"supervised directional probability with abstention threshold selected on validation only","evaluation":{"n":559,"net_pct":-63.686,"hit_pct":44.9,"quality_ratio":0.62,"avg_bps":-17.52,"max_drop_pct":64.015},"wf_positive":0,"wf_avg_pct":-43.802,"pass":false},
-    {"stage":5,"hypothesis":"two-stage direction plus meta-label profitability gate, retrained inside walk-forward folds","evaluation":{"n":674,"net_pct":-78.988,"hit_pct":43.2,"quality_ratio":0.54,"avg_bps":-22.53,"max_drop_pct":78.988},"wf_positive":0,"wf_avg_pct":-46.418,"pass":false}
+  "version": "rd-10stage-final",
+  "stage_completed": 10,
+  "status": "NO_ROBUST_EDGE",
+  "updated": "2026-09-08T00:53:55.591Z",
+  "dataset": {
+    "source": "Public GitHub Binance BTCUSDT/ETHUSDT 1h archive (lth-elm/Backtrading-Python-Binance)",
+    "start": "2017-08-17",
+    "end": "2020-12-31",
+    "aligned_rows": 29283,
+    "evaluation_horizon_hours": 2,
+    "cost_assumption_bps": 26
+  },
+  "best_stage_so_far": 9,
+  "stages": [
+    {
+      "stage": 1,
+      "hypothesis": "regime hybrid: directional continuation in strong moves, reversion in bounded states, high-volatility exclusion",
+      "evaluation": {
+        "n": 3551,
+        "net_pct": -99.994,
+        "hit_pct": 28.5,
+        "quality_ratio": 0.34,
+        "avg_bps": -26.95,
+        "max_drop_pct": 99.994
+      },
+      "wf_positive": 0,
+      "wf_avg_pct": -94.926,
+      "pass": false
+    },
+    {
+      "stage": 2,
+      "hypothesis": "cross-confirmed positive-drift trend only: BTC trend plus ETH and volume confirmation",
+      "evaluation": {
+        "n": 448,
+        "net_pct": -66.235,
+        "hit_pct": 33.7,
+        "quality_ratio": 0.49,
+        "avg_bps": -23.76,
+        "max_drop_pct": 66.27
+      },
+      "wf_positive": 0,
+      "wf_avg_pct": -23.042,
+      "pass": false
+    },
+    {
+      "stage": 3,
+      "hypothesis": "BTC-ETH relative-value divergence with local z-score exhaustion",
+      "evaluation": {
+        "n": 219,
+        "net_pct": -45.837,
+        "hit_pct": 39.7,
+        "quality_ratio": 0.42,
+        "avg_bps": -27.51,
+        "max_drop_pct": 46.978
+      },
+      "wf_positive": 0,
+      "wf_avg_pct": -16.494,
+      "pass": false
+    },
+    {
+      "stage": 4,
+      "hypothesis": "supervised directional probability with abstention threshold selected on validation only",
+      "evaluation": {
+        "n": 559,
+        "net_pct": -63.686,
+        "hit_pct": 44.9,
+        "quality_ratio": 0.62,
+        "avg_bps": -17.52,
+        "max_drop_pct": 64.015
+      },
+      "wf_positive": 0,
+      "wf_avg_pct": -43.802,
+      "pass": false
+    },
+    {
+      "stage": 5,
+      "hypothesis": "two-stage direction plus meta-label profitability gate, retrained inside walk-forward folds",
+      "evaluation": {
+        "n": 674,
+        "net_pct": -78.988,
+        "hit_pct": 43.2,
+        "quality_ratio": 0.54,
+        "avg_bps": -22.53,
+        "max_drop_pct": 78.988
+      },
+      "wf_positive": 0,
+      "wf_avg_pct": -46.418,
+      "pass": false
+    },
+    {
+      "stage": 6,
+      "hypothesis": "cost-aware expected-return Ridge regression with validation-selected abstention/no-trade zone",
+      "threshold_bps": 26,
+      "validation": {
+        "n": 6,
+        "net_pct": -1.072,
+        "hit_pct": 50,
+        "quality_ratio": 0.86,
+        "avg_bps": -15.01,
+        "max_drop_pct": 5.765
+      },
+      "evaluation": {
+        "n": 17,
+        "net_pct": 32.185,
+        "hit_pct": 70.6,
+        "quality_ratio": 2.3,
+        "avg_bps": 194.38,
+        "max_drop_pct": 14.205
+      },
+      "walk_forward": [
+        {
+          "n": 3,
+          "net_pct": -2.843,
+          "hit_pct": 33.3,
+          "quality_ratio": 0.14,
+          "avg_bps": -95.04,
+          "max_drop_pct": 2.843
+        },
+        {
+          "n": 3,
+          "net_pct": 1.823,
+          "hit_pct": 66.7,
+          "quality_ratio": 1.65,
+          "avg_bps": 65.02,
+          "max_drop_pct": 3.007
+        },
+        {
+          "n": 14,
+          "net_pct": 31.976,
+          "hit_pct": 71.4,
+          "quality_ratio": 2.37,
+          "avg_bps": 234.78,
+          "max_drop_pct": 14.205
+        }
+      ],
+      "wf_positive": 2,
+      "wf_avg_pct": 10.319,
+      "pass": false,
+      "fail_reasons": [
+        "OOS trade count below 50",
+        "walk-forward folds too sparse",
+        "max drawdown above 8%"
+      ]
+    },
+    {
+      "stage": 7,
+      "hypothesis": "causal volatility/trend regime gate with trend continuation vs range reversion",
+      "threshold_bps": 150,
+      "validation": {
+        "n": 1019,
+        "net_pct": -88.75,
+        "hit_pct": 32.7,
+        "quality_ratio": 0.59,
+        "avg_bps": -20.61,
+        "max_drop_pct": 91.454
+      },
+      "evaluation": {
+        "n": 1946,
+        "net_pct": -98.502,
+        "hit_pct": 33.3,
+        "quality_ratio": 0.56,
+        "avg_bps": -20.91,
+        "max_drop_pct": 98.531
+      },
+      "walk_forward": [
+        {
+          "n": 703,
+          "net_pct": -78.83,
+          "hit_pct": 33.6,
+          "quality_ratio": 0.59,
+          "avg_bps": -21.2,
+          "max_drop_pct": 84.532
+        },
+        {
+          "n": 656,
+          "net_pct": -78.037,
+          "hit_pct": 31.3,
+          "quality_ratio": 0.48,
+          "avg_bps": -22.6,
+          "max_drop_pct": 81.298
+        },
+        {
+          "n": 655,
+          "net_pct": -72.396,
+          "hit_pct": 34.8,
+          "quality_ratio": 0.64,
+          "avg_bps": -18.65,
+          "max_drop_pct": 73.698
+        }
+      ],
+      "wf_positive": 0,
+      "wf_avg_pct": -76.421,
+      "pass": false
+    },
+    {
+      "stage": 8,
+      "hypothesis": "cross-market BTC/ETH relative-value plus timestamp-clean taker-flow confirmation; no unverifiable derivatives series used",
+      "threshold_bps": 150,
+      "validation": {
+        "n": 376,
+        "net_pct": -13.419,
+        "hit_pct": 39.4,
+        "quality_ratio": 0.94,
+        "avg_bps": -2.71,
+        "max_drop_pct": 35.265
+      },
+      "evaluation": {
+        "n": 808,
+        "net_pct": -75.405,
+        "hit_pct": 31.4,
+        "quality_ratio": 0.66,
+        "avg_bps": -16.31,
+        "max_drop_pct": 76.601
+      },
+      "walk_forward": [
+        {
+          "n": 312,
+          "net_pct": -13.537,
+          "hit_pct": 39.4,
+          "quality_ratio": 0.93,
+          "avg_bps": -3.45,
+          "max_drop_pct": 35.265
+        },
+        {
+          "n": 217,
+          "net_pct": -29.807,
+          "hit_pct": 33.6,
+          "quality_ratio": 0.6,
+          "avg_bps": -15.86,
+          "max_drop_pct": 36.6
+        },
+        {
+          "n": 234,
+          "net_pct": 6.539,
+          "hit_pct": 35.9,
+          "quality_ratio": 1.09,
+          "avg_bps": 5.13,
+          "max_drop_pct": 29.053
+        }
+      ],
+      "wf_positive": 1,
+      "wf_avg_pct": -12.268,
+      "pass": false
+    },
+    {
+      "stage": 9,
+      "hypothesis": "ensemble of expected-return and BTC/ETH relative-value signals with separate lagged taker/momentum entry confirmation",
+      "threshold_bps": 110,
+      "validation": {
+        "n": 37,
+        "net_pct": 0.363,
+        "hit_pct": 48.6,
+        "quality_ratio": 1.04,
+        "avg_bps": 1.73,
+        "max_drop_pct": 3.38
+      },
+      "evaluation": {
+        "n": 123,
+        "net_pct": 3.112,
+        "hit_pct": 39,
+        "quality_ratio": 1.1,
+        "avg_bps": 5.6,
+        "max_drop_pct": 28.078
+      },
+      "walk_forward": [
+        {
+          "n": 92,
+          "net_pct": -13.354,
+          "hit_pct": 39.1,
+          "quality_ratio": 0.72,
+          "avg_bps": -14.79,
+          "max_drop_pct": 22.368
+        },
+        {
+          "n": 24,
+          "net_pct": -3.591,
+          "hit_pct": 41.7,
+          "quality_ratio": 0.67,
+          "avg_bps": -14.75,
+          "max_drop_pct": 7.805
+        },
+        {
+          "n": 73,
+          "net_pct": 62.064,
+          "hit_pct": 42.5,
+          "quality_ratio": 2.54,
+          "avg_bps": 71.5,
+          "max_drop_pct": 6.417
+        }
+      ],
+      "wf_positive": 1,
+      "wf_avg_pct": 15.04,
+      "pass": false,
+      "fail_reasons": [
+        "profit factor below 1.25",
+        "only 1 of 3 walk-forward folds positive",
+        "max drawdown above 8%"
+      ]
+    },
+    {
+      "stage": 10,
+      "hypothesis": "final purged chronological comparison and untouched OOS gate",
+      "selected_stage": 9,
+      "selection_reason": "Stage 6 looked stronger numerically but was rejected for only 17 OOS trades and sparse folds; Stage 9 had the best usable sample with positive OOS and positive average walk-forward return, but still failed robustness gates.",
+      "evaluation": {
+        "n": 123,
+        "net_pct": 3.112,
+        "hit_pct": 39,
+        "quality_ratio": 1.1,
+        "avg_bps": 5.6,
+        "max_drop_pct": 28.078
+      },
+      "wf_positive": 1,
+      "wf_avg_pct": 15.04,
+      "pass": false
+    }
   ],
-  "notes":["No live execution or account credentials used.","Purged chronological holdout boundaries were used.","All five candidates failed the robustness gate.","Next stages must use materially different architectures rather than threshold tuning."]
+  "final_selection": {
+    "stage": 10,
+    "hypothesis": "final purged chronological comparison and untouched OOS gate",
+    "selected_stage": 9,
+    "selection_reason": "Stage 6 looked stronger numerically but was rejected for only 17 OOS trades and sparse folds; Stage 9 had the best usable sample with positive OOS and positive average walk-forward return, but still failed robustness gates.",
+    "evaluation": {
+      "n": 123,
+      "net_pct": 3.112,
+      "hit_pct": 39,
+      "quality_ratio": 1.1,
+      "avg_bps": 5.6,
+      "max_drop_pct": 28.078
+    },
+    "wf_positive": 1,
+    "wf_avg_pct": 15.04,
+    "pass": false
+  },
+  "robust_candidate": null,
+  "notes": [
+    "No live execution or account credentials used.",
+    "All stages 6-10 used chronological validation/OOS logic; 26 bps round-trip friction was deducted per trade.",
+    "Stage 8 used only timestamp-clean public spot cross-market/taker-flow features; derivatives features were not fabricated because a clean aligned historical derivatives series was not available in the selected archive.",
+    "No candidate passed the required combination of sample size, OOS PF/average-net/drawdown, and walk-forward stability."
+  ]
 }
