@@ -1,0 +1,40 @@
+name: QuantBot v3 Frozen Candidate Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research_v3_audit.py'
+      - '.github/workflows/quantbot-v3-audit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --quiet pandas numpy requests
+      - name: Run frozen candidate audit
+        run: python research_v3_audit.py
+      - name: Persist audit state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v3_audit_state.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "Record QuantBot v3 frozen candidate audit"
+          git pull --rebase origin main
+          git push origin HEAD:main
