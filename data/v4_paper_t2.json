@@ -1,0 +1,48 @@
+{
+  "version": "quantbot-v4-forward-paper-t2",
+  "updated": "2026-09-08T11:24:37.258607+00:00",
+  "paper_start": "2026-09-08 00:00:00+00:00",
+  "rule_frozen": "T2_upup",
+  "rule_description": "multi-horizon top3 positive momentum; BTC>200d SMA AND BTC 60d return>0 AND BTC 120d return>0; inverse-vol; 12% target; weekly rebalance; <=1x gross.",
+  "frozen_before_first_forward_completed_bar": true,
+  "live_orders": false,
+  "data_end": "2026-09-07 00:00:00+00:00",
+  "asset_errors": {},
+  "current_signal": {
+    "signal_date": "2026-09-07 00:00:00+00:00",
+    "weights": {},
+    "gross_exposure": 0.0,
+    "btc_close": 79112.01,
+    "btc_sma200": 69849.2147,
+    "btc_mom60_pct": 25.11783963308556,
+    "btc_mom120_pct": -3.7684677801636868,
+    "btc_upup_gate": false
+  },
+  "forward_metrics_13bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_metrics_40bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_active_days": 0,
+  "promotion_gate_pre_registered": {
+    "criteria": "n_days>=180; active_days>=20; net>0; PF>=1.10; maxDD<=10%; 40bps stress net>0",
+    "passed": false
+  },
+  "research_status": "PAPER_ONLY_NO_LIVE_MONEY",
+  "guardrail": "No automatic live-money authorization even after gate; separate execution/venue/slippage/operational review required."
+}
