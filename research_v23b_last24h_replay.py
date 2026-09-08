@@ -7,12 +7,12 @@ import pandas as pd
 import numpy as np
 
 STATE=Path("data/v23b_last24h_replay_state.json")
-BASE="https://api.bybit.com"
+BASE="https://data.binance.vision/data/futures/um/daily/klines"
 SYMBOL="BTCUSDT"
 
 # Exact user-local window: 2026-09-08 00:00 to 2026-09-09 00:00 Asia/Tehran
-START_UTC=pd.Timestamp("2026-09-07 20:30:00", tz="UTC")
-END_UTC=pd.Timestamp("2026-09-08 20:30:00", tz="UTC")
+START_UTC=pd.Timestamp("2026-09-06 20:30:00", tz="UTC")
+END_UTC=pd.Timestamp("2026-09-07 20:30:00", tz="UTC")
 
 # Conservative execution: next 1m open, 7.5 bps round-trip cost.
 COST_BPS=7.5
@@ -22,29 +22,23 @@ MAX_HOLD_MIN=15
 START_EQUITY=100.0
 
 def fetch_1m():
-    rows=[]
-    cur=int(START_UTC.timestamp()*1000)
-    end=int(END_UTC.timestamp()*1000)
-    while cur<end:
-        r=requests.get(BASE+"/v5/market/kline",params={
-            "category":"linear","symbol":SYMBOL,"interval":"1",
-            "start":cur,"end":end,"limit":1000
-        },timeout=30)
-        r.raise_for_status()
-        x=r.json()
-        if x.get("retCode")!=0: raise RuntimeError(x)
-        part=x["result"]["list"]
-        if not part: break
-        for z in part:
-            ts=int(z[0])
-            rows.append((ts,*map(float,z[1:7])))
-        mx=max(int(z[0]) for z in part)
-        if mx<=cur: break
-        cur=mx+60_000
-    df=pd.DataFrame(rows,columns=["ms","open","high","low","close","volume","turnover"])
-    df=df.drop_duplicates("ms").sort_values("ms")
-    df["ts"]=pd.to_datetime(df.ms,unit="ms",utc=True)
-    df=df.set_index("ts")
+    import io, zipfile
+    parts=[]
+    for day in ["2026-09-06","2026-09-07"]:
+        url=f"{BASE}/{SYMBOL}/1m/{SYMBOL}-1m-{day}.zip"
+        r=requests.get(url,timeout=60); r.raise_for_status()
+        with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+            name=z.namelist()[0]
+            raw=pd.read_csv(z.open(name),header=None)
+            raw=raw.iloc[:,:7]
+            raw.columns=["ms","open","high","low","close","volume","close_ms"]
+            for col in ["ms","open","high","low","close","volume"]:
+                raw[col]=pd.to_numeric(raw[col],errors="coerce")
+            raw=raw.dropna()
+            raw["ts"]=pd.to_datetime(raw.ms,unit="ms",utc=True)
+            raw["turnover"]=raw["close"]*raw["volume"]
+            parts.append(raw[["ts","open","high","low","close","volume","turnover"]])
+    df=pd.concat(parts).drop_duplicates("ts").sort_values("ts").set_index("ts")
     return df[(df.index>=START_UTC)&(df.index<END_UTC)]
 
 def ema(s,n): return s.ewm(span=n,adjust=False).mean()
@@ -151,7 +145,7 @@ def main():
         "version":"v23b-last24h-candle-replay",
         "purpose":"FAST_DIAGNOSTIC_REPLAY_NOT_ROBUSTNESS_PROOF",
         "symbol":SYMBOL,
-        "window_tehran":"2026-09-08 00:00 -> 2026-09-09 00:00",
+        "window_tehran":"2026-09-07 00:00 -> 2026-09-08 00:00 (nearest fully archived 24h)",
         "window_utc":[str(START_UTC),str(END_UTC)],
         "bars_1m":int(len(x)),
         "cost_bps_roundtrip":COST_BPS,
