@@ -1,0 +1,238 @@
+{
+  "version": "v23b-last24h-candle-replay",
+  "purpose": "FAST_DIAGNOSTIC_REPLAY_NOT_ROBUSTNESS_PROOF",
+  "symbol": "BTCUSDT",
+  "window_tehran": "2026-09-07 00:00 -> 2026-09-08 00:00 (nearest fully archived 24h)",
+  "window_utc": [
+    "2026-09-06 20:30:00+00:00",
+    "2026-09-07 20:30:00+00:00"
+  ],
+  "bars_1m": 1440,
+  "cost_bps_roundtrip": 7.5,
+  "start_equity_usd": 100.0,
+  "overall": {
+    "trades": 21,
+    "wins": 6,
+    "losses": 15,
+    "win_pct": 28.57142857142857,
+    "gross_mean_bps": 0.7361136063037714,
+    "net_mean_bps": -6.76388639369623,
+    "pf": 0.21542008536418097,
+    "net_pct": -1.420416142676208,
+    "ending_equity": 98.5795838573238
+  },
+  "jun": {
+    "trades": 5,
+    "wins": 1,
+    "losses": 4,
+    "win_pct": 20.0,
+    "gross_mean_bps": -2.4785542868154695,
+    "net_mean_bps": -9.97855428681547,
+    "pf": 0.11526299975518038,
+    "net_pct": -0.4989277143407735,
+    "ending_equity": 99.50107228565923
+  },
+  "hansan": {
+    "trades": 16,
+    "wins": 5,
+    "losses": 11,
+    "win_pct": 31.25,
+    "gross_mean_bps": 1.740697322903534,
+    "net_mean_bps": -5.759302677096466,
+    "pf": 0.2607324645877429,
+    "net_pct": -0.9214884283354345,
+    "ending_equity": 99.07851157166456
+  },
+  "trades": [
+    {
+      "signal_ts": "2026-09-06 21:08:00+00:00",
+      "engine": "hansan",
+      "side": "LONG",
+      "entry": 79953.4,
+      "gross_bps": -1.0381046959839768,
+      "net_bps": -8.538104695983977,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-06 21:16:00+00:00",
+      "engine": "hansan",
+      "side": "LONG",
+      "entry": 79996.9,
+      "gross_bps": -5.400209258108468,
+      "net_bps": -12.900209258108468,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-06 22:02:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79778.0,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-06 22:18:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79634.1,
+      "gross_bps": -2.787750473729478,
+      "net_bps": -10.287750473729478,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-06 22:58:00+00:00",
+      "engine": "hansan",
+      "side": "LONG",
+      "entry": 80024.2,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-06 23:38:00+00:00",
+      "engine": "hansan",
+      "side": "LONG",
+      "entry": 80388.1,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-06 23:46:00+00:00",
+      "engine": "hansan",
+      "side": "LONG",
+      "entry": 80488.1,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-07 01:19:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79886.5,
+      "gross_bps": 0.463157104141354,
+      "net_bps": -7.036842895858646,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-07 02:42:00+00:00",
+      "engine": "jun",
+      "side": "SHORT",
+      "entry": 80290.3,
+      "gross_bps": 14.0,
+      "net_bps": 6.5,
+      "reason": "target"
+    },
+    {
+      "signal_ts": "2026-09-07 03:02:00+00:00",
+      "engine": "jun",
+      "side": "LONG",
+      "entry": 79921.8,
+      "gross_bps": -5.392771434077348,
+      "net_bps": -12.892771434077348,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-07 03:35:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79672.6,
+      "gross_bps": 14.0,
+      "net_bps": 6.5,
+      "reason": "target"
+    },
+    {
+      "signal_ts": "2026-09-07 07:33:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79299.9,
+      "gross_bps": 14.0,
+      "net_bps": 6.5,
+      "reason": "target"
+    },
+    {
+      "signal_ts": "2026-09-07 07:38:00+00:00",
+      "engine": "jun",
+      "side": "LONG",
+      "entry": 79224.2,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-07 13:33:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79443.8,
+      "gross_bps": 14.0,
+      "net_bps": 6.5,
+      "reason": "target"
+    },
+    {
+      "signal_ts": "2026-09-07 13:38:00+00:00",
+      "engine": "jun",
+      "side": "LONG",
+      "entry": 79385.0,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-07 14:05:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79265.1,
+      "gross_bps": 14.0,
+      "net_bps": 6.5,
+      "reason": "target"
+    },
+    {
+      "signal_ts": "2026-09-07 14:10:00+00:00",
+      "engine": "jun",
+      "side": "LONG",
+      "entry": 79169.6,
+      "gross_bps": -7.0,
+      "net_bps": -14.5,
+      "reason": "stop"
+    },
+    {
+      "signal_ts": "2026-09-07 14:21:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79038.7,
+      "gross_bps": -4.099257705403314,
+      "net_bps": -11.599257705403314,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-07 14:29:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79016.0,
+      "gross_bps": 0.5062265870203753,
+      "net_bps": -6.993773412979625,
+      "reason": "immediate_invalid"
+    },
+    {
+      "signal_ts": "2026-09-07 15:36:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 78785.4,
+      "gross_bps": 14.0,
+      "net_bps": 6.5,
+      "reason": "target"
+    },
+    {
+      "signal_ts": "2026-09-07 20:07:00+00:00",
+      "engine": "hansan",
+      "side": "SHORT",
+      "entry": 79201.1,
+      "gross_bps": -1.7929043914799436,
+      "net_bps": -9.292904391479944,
+      "reason": "immediate_invalid"
+    }
+  ],
+  "warning": "One 24h diagnostic replay on candle proxies. Not equivalent to true L2 forward paper and not evidence for live-money robustness."
+}
