@@ -1,0 +1,27 @@
+{
+  "version": "quantbot-v4-paper-core",
+  "updated": "2026-09-08T11:38:30.396283+00:00",
+  "official_rule": "T2_upup",
+  "mode": "PAPER_ONLY",
+  "live_order_capability": false,
+  "signal_date": "2026-09-07 00:00:00+00:00",
+  "effective_execution": "next bar / next-open convention",
+  "target_weights": {},
+  "gross_target": 0.0,
+  "paper_rebalance_from_cash": [],
+  "regime": {
+    "btc_close": 79112.01,
+    "btc_sma200": 69849.2147,
+    "btc_mom60_pct": 25.11783963308556,
+    "btc_mom120_pct": -3.7684677801636868,
+    "upup_gate": false
+  },
+  "health": {
+    "ok": true,
+    "stale_days": 1,
+    "errors": []
+  },
+  "consensus_status": "STRONG_PAPER_CANDIDATE_FORWARD_PROOF_REQUIRED",
+  "forward_gate": "n_days>=180; active_days>=20; net>0; PF>=1.10; maxDD<=10%; 40bps stress net>0",
+  "guardrail": "No API keys, authenticated exchange client, or live-order function exists in this core."
+}
