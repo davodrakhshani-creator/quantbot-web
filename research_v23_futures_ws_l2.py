@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import asyncio, json, math, time
+import asyncio, json, time
 from collections import deque, Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -49,6 +49,8 @@ def load_state():
         'maker_fills': 0,
         'paper_trades': [],
         'rejections': {},
+        'stream_counts': {},
+        'event_type_counts': {},
         'created_at': utcnow(),
     }
 
@@ -60,8 +62,12 @@ def save_state(st):
 
 
 def book_metrics(d):
-    bids = [(float(p), float(q)) for p, q in d.get('b', d.get('bids', []))[:10]]
-    asks = [(float(p), float(q)) for p, q in d.get('a', d.get('asks', []))[:10]]
+    bids_raw = d.get('bids') if isinstance(d.get('bids'), list) else d.get('b')
+    asks_raw = d.get('asks') if isinstance(d.get('asks'), list) else d.get('a')
+    if not isinstance(bids_raw, list) or not isinstance(asks_raw, list):
+        return None
+    bids = [(float(p), float(q)) for p, q in bids_raw[:10]]
+    asks = [(float(p), float(q)) for p, q in asks_raw[:10]]
     if not bids or not asks:
         return None
     bb, bq = bids[0]; ba, aq = asks[0]
@@ -147,6 +153,7 @@ def summarize(st):
 async def main():
     st = load_state(); st['runs'] = int(st.get('runs',0)) + 1
     tape = deque(); hist = deque(maxlen=600); rejects = Counter(st.get('rejections', {}))
+    stream_counts = Counter(st.get('stream_counts', {})); event_counts = Counter(st.get('event_type_counts', {}))
     latest = None; candidate = None; op = None
     jun_arm_long = jun_arm_short = 0.0
     last_signal = {'jun': 0.0, 'hansan': 0.0}
@@ -162,20 +169,24 @@ async def main():
                     msg = await asyncio.wait_for(ws.recv(), timeout=timeout)
                 except asyncio.TimeoutError:
                     continue
-                obj = json.loads(msg); stream = obj.get('stream',''); d = obj.get('data', obj)
+                obj = json.loads(msg); stream = str(obj.get('stream','')); d = obj.get('data', obj)
+                stream_key = stream.lower(); etype = str(d.get('e','')).lower() if isinstance(d, dict) else ''
+                stream_counts[stream_key or '(raw)'] += 1
+                event_counts[etype or '(none)'] += 1
                 now = time.time(); now_ms = int(time.time()*1000)
 
-                if '@depth' in stream:
+                if '@depth' in stream_key or etype == 'depthupdate':
                     m = book_metrics(d)
                     if m:
                         latest = m; st['depth_events'] = int(st.get('depth_events',0)) + 1
-                elif '@aggTrade' in stream:
+                    else:
+                        rejects['depth_parse'] += 1
+                elif '@aggtrade' in stream_key or etype == 'aggtrade':
                     try:
-                        tr = {'T': int(d['T']), 'p': float(d['p']), 'q': float(d['q']), 'm': bool(d['m'])}
+                        tr = {'T': int(d.get('T', d.get('E'))), 'p': float(d['p']), 'q': float(d['q']), 'm': bool(d['m'])}
                         tr['notional'] = tr['p']*tr['q']; tape.append(tr)
                         st['aggtrade_events'] = int(st.get('aggtrade_events',0)) + 1
                         prune_tape(tape, tr['T'])
-                        # Conservative maker fill: queue ahead must be traded through.
                         if candidate and tr['T'] >= candidate['created_ms']:
                             hit = ((candidate['side']==1 and tr['m'] and tr['p'] <= candidate['entry_px']) or
                                    (candidate['side']==-1 and (not tr['m']) and tr['p'] >= candidate['entry_px']))
@@ -187,8 +198,9 @@ async def main():
                                           'signal_ts': candidate['signal_ts']}
                                     st['maker_fills'] = int(st.get('maker_fills',0)) + 1
                                     candidate = None
-                    except Exception:
-                        pass
+                    except Exception as e:
+                        rejects['aggtrade_parse'] += 1
+                        st['last_aggtrade_parse_error'] = repr(e)
 
                 if latest is None or now - last_flush < 1.0:
                     continue
@@ -196,11 +208,10 @@ async def main():
                 t2 = tape_window(tape, now_ms, 2); t5 = tape_window(tape, now_ms, 5); t15 = tape_window(tape, now_ms, 15)
                 row = {**latest, 'wall_ts': now, 'flow2': t2['flow'], 'flow5': t5['flow'], 'speed2': t2['speed'], 'speed15': t15['speed']}
                 hist.append(row)
-                p3 = hist_price(hist,3); p10 = hist_price(hist,10); p60 = hist_price(hist,60)
+                p3 = hist_price(hist,3); p10 = hist_price(hist,10)
                 r3 = rel_bps(latest['mid'], p3) if p3 else 0.0
                 r10 = rel_bps(latest['mid'], p10) if p10 else 0.0
 
-                # Jun state machine: arm on distortion, enter only on first observed snapback.
                 if t5['flow'] < -0.30 and r10 < -2.5: jun_arm_long = now + 8
                 if t5['flow'] > 0.30 and r10 > 2.5: jun_arm_short = now + 8
                 signal = None
@@ -213,7 +224,6 @@ async def main():
                     else: rejects['jun_l2'] += 1
                     jun_arm_short = 0
 
-                # Hansan state machine: first break of rolling one-minute range with tape acceleration.
                 if signal is None and len(hist) >= 65:
                     prev = list(hist)[:-1][-60:]
                     hi60 = max(x['mid'] for x in prev); lo60 = min(x['mid'] for x in prev)
@@ -257,6 +267,8 @@ async def main():
     finally:
         st['ws_access_ok'] = ws_ok
         st['rejections'] = dict(rejects)
+        st['stream_counts'] = dict(stream_counts)
+        st['event_type_counts'] = dict(event_counts)
         summarize(st); save_state(st)
         print(json.dumps(st, indent=2))
 
