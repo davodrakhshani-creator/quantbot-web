@@ -1,0 +1,181 @@
+{
+  "version": "quantbot-v24-sep05-profit-lock",
+  "purpose": "ONE_DAY_DIAGNOSTIC_NO_LIVE",
+  "day": "2026-09-05",
+  "symbol": "BTCUSDT",
+  "starting_account_usd": 100.0,
+  "rules": "Japanese public-method event entries; fewer/wider catastrophic stops; profit exits only after gross profit materially exceeds fee; force-close at horizon/day end retained for risk realism",
+  "configs": {
+    "P0_mm_2xfee_stop12": {
+      "params": {
+        "name": "P0_mm_2xfee_stop12",
+        "cost": 4.0,
+        "arm": 8.0,
+        "trail": 3.0,
+        "stop": 12.0,
+        "maxhold": 900
+      },
+      "metrics": {
+        "trades": 65,
+        "net_usd_100": -2.150286708079294,
+        "gross_mean_bps": 0.691866602954933,
+        "net_mean_bps": -3.3081333970450673,
+        "pf": 0.2851362215881144,
+        "win_pct": 33.84615384615385,
+        "stops": 5,
+        "profit_locks": 16,
+        "forced": 44,
+        "armed_pct": 32.30769230769231,
+        "median_mfe_bps": 5.165983943971053,
+        "best_trade_net_bps": 7.335890080782507,
+        "worst_trade_net_bps": -16.0
+      }
+    },
+    "P1_mm_2xfee_stop16": {
+      "params": {
+        "name": "P1_mm_2xfee_stop16",
+        "cost": 4.0,
+        "arm": 10.0,
+        "trail": 4.0,
+        "stop": 16.0,
+        "maxhold": 1800
+      },
+      "metrics": {
+        "trades": 43,
+        "net_usd_100": -1.2111452228629747,
+        "gross_mean_bps": 1.1833832026442446,
+        "net_mean_bps": -2.816616797355755,
+        "pf": 0.46674348249424086,
+        "win_pct": 46.51162790697674,
+        "stops": 5,
+        "profit_locks": 13,
+        "forced": 25,
+        "armed_pct": 39.53488372093023,
+        "median_mfe_bps": 8.774781854403724,
+        "best_trade_net_bps": 12.010867376232696,
+        "worst_trade_net_bps": -20.0
+      }
+    },
+    "P2_mm_3xfee_stop20": {
+      "params": {
+        "name": "P2_mm_3xfee_stop20",
+        "cost": 4.0,
+        "arm": 12.0,
+        "trail": 5.0,
+        "stop": 20.0,
+        "maxhold": 1800
+      },
+      "metrics": {
+        "trades": 39,
+        "net_usd_100": -0.987515848493841,
+        "gross_mean_bps": 1.4679080807850227,
+        "net_mean_bps": -2.532091919214977,
+        "pf": 0.4998950919148388,
+        "win_pct": 48.717948717948715,
+        "stops": 2,
+        "profit_locks": 11,
+        "forced": 26,
+        "armed_pct": 35.8974358974359,
+        "median_mfe_bps": 8.774781854403724,
+        "best_trade_net_bps": 10.91844416562138,
+        "worst_trade_net_bps": -24.0
+      }
+    },
+    "P3_mt_2xfee_stop16": {
+      "params": {
+        "name": "P3_mt_2xfee_stop16",
+        "cost": 7.5,
+        "arm": 15.0,
+        "trail": 5.0,
+        "stop": 16.0,
+        "maxhold": 1800
+      },
+      "metrics": {
+        "trades": 39,
+        "net_usd_100": -2.5787745757538807,
+        "gross_mean_bps": 0.8877574980669706,
+        "net_mean_bps": -6.612242501933027,
+        "pf": 0.15267797848190848,
+        "win_pct": 25.64102564102564,
+        "stops": 3,
+        "profit_locks": 5,
+        "forced": 31,
+        "armed_pct": 17.94871794871795,
+        "median_mfe_bps": 8.774781854403724,
+        "best_trade_net_bps": 8.392903587217955,
+        "worst_trade_net_bps": -23.5
+      }
+    },
+    "P4_mt_2p5xfee_stop20": {
+      "params": {
+        "name": "P4_mt_2p5xfee_stop20",
+        "cost": 7.5,
+        "arm": 19.0,
+        "trail": 6.0,
+        "stop": 20.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 28,
+        "net_usd_100": -1.7508765240099455,
+        "gross_mean_bps": 1.2468695571073372,
+        "net_mean_bps": -6.253130442892663,
+        "pf": 0.2653932496141714,
+        "win_pct": 28.57142857142857,
+        "stops": 2,
+        "profit_locks": 3,
+        "forced": 23,
+        "armed_pct": 14.285714285714285,
+        "median_mfe_bps": 9.603561493171098,
+        "best_trade_net_bps": 14.80582365573941,
+        "worst_trade_net_bps": -27.5
+      }
+    },
+    "P5_mt_3xfee_stop24": {
+      "params": {
+        "name": "P5_mt_3xfee_stop24",
+        "cost": 7.5,
+        "arm": 23.0,
+        "trail": 7.0,
+        "stop": 24.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 23,
+        "net_usd_100": -1.8549264498523883,
+        "gross_mean_bps": -0.5648976080538627,
+        "net_mean_bps": -8.064897608053862,
+        "pf": 0.22730286886345666,
+        "win_pct": 26.08695652173913,
+        "stops": 2,
+        "profit_locks": 2,
+        "forced": 19,
+        "armed_pct": 8.695652173913043,
+        "median_mfe_bps": 9.660804020099611,
+        "best_trade_net_bps": 12.529975808115719,
+        "worst_trade_net_bps": -31.5
+      }
+    }
+  },
+  "live_orders": false,
+  "best_one_day_only": {
+    "name": "P2_mm_3xfee_stop20",
+    "metrics": {
+      "trades": 39,
+      "net_usd_100": -0.987515848493841,
+      "gross_mean_bps": 1.4679080807850227,
+      "net_mean_bps": -2.532091919214977,
+      "pf": 0.4998950919148388,
+      "win_pct": 48.717948717948715,
+      "stops": 2,
+      "profit_locks": 11,
+      "forced": 26,
+      "armed_pct": 35.8974358974359,
+      "median_mfe_bps": 8.774781854403724,
+      "best_trade_net_bps": 10.91844416562138,
+      "worst_trade_net_bps": -24.0
+    },
+    "ending_equity_usd": 99.01248415150616
+  },
+  "warning": "Sep 5 is a single diagnostic day and cannot establish robustness; any positive result must be frozen and checked on other untouched days."
+}
