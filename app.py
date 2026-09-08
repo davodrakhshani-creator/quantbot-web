@@ -11,6 +11,8 @@ CONSENSUS = DATA / "v4_consensus.json"
 COINBASE = DATA / "v5_coinbase_validation.json"
 PRECISION = DATA / "v5_precision_state.json"
 FAST = DATA / "v5_fastlane_state.json"
+PRECISION_PAPER = DATA / "v5_paper_precision.json"
+FAST_PAPER = DATA / "v5_paper_fastlane.json"
 
 
 def _read(path: Path) -> dict:
@@ -21,7 +23,9 @@ def _read(path: Path) -> dict:
 
 
 def snapshot() -> dict:
-    core, paper, consensus, coinbase, precision, fast = map(_read, (CORE, PAPER, CONSENSUS, COINBASE, PRECISION, FAST))
+    core, paper, consensus, coinbase, precision, fast, precision_paper, fast_paper = map(
+        _read, (CORE, PAPER, CONSENSUS, COINBASE, PRECISION, FAST, PRECISION_PAPER, FAST_PAPER)
+    )
     required = (core, paper, consensus)
     errors = [x["_error"] for x in required if "_error" in x]
     health = core.get("health", {}) if not errors else {"ok": False, "errors": errors}
@@ -33,6 +37,8 @@ def snapshot() -> dict:
         "coinbase": coinbase,
         "precision": precision,
         "fast": fast,
+        "precision_paper": precision_paper,
+        "fast_paper": fast_paper,
         "errors": errors,
     }
 
@@ -68,6 +74,12 @@ PAGE = r'''<!doctype html>
  <div class="metric"><span>Fast-Lane v5</span><b id="fastName">—</b><small id="fastSub" class="mut"></small></div>
 </div><div class="row"><span>Precision upgrade vs T2</span><b id="precGate">—</b></div><div class="row"><span>Fast-Lane research gate</span><b id="fastGate">—</b></div></div>
 
+<div class="card"><b>سیگنال‌های Forward امروز</b><div class="grid3" style="margin-top:12px">
+ <div class="metric"><span>Core T2</span><b id="coreSig">—</b><small id="coreW" class="mut"></small></div>
+ <div class="metric"><span>Precision P4</span><b id="precSig">—</b><small id="precW" class="mut"></small></div>
+ <div class="metric"><span>Fast F0</span><b id="fastSig">—</b><small id="fastW" class="mut"></small></div>
+</div><div class="lead">Fast-Lane یک Scout سریع‌تر است، نه مجوز خرید واقعی. اگر Core/Precision مخالف باشند، فعلاً فقط در Paper ثبت می‌شود.</div></div>
+
 <div class="card"><b>گیت رژیم BTC</b><div class="grid" style="margin-top:12px">
  <div class="metric"><span>BTC Close</span><b id="btcClose">—</b></div>
  <div class="metric"><span>SMA200</span><b id="btcSma">—</b></div>
@@ -89,8 +101,8 @@ PAGE = r'''<!doctype html>
 </div></div>
 
 <div class="card"><b>Forward Proof · از 8 سپتامبر 2026</b><div class="grid" style="margin-top:12px">
- <div class="metric"><span>روزهای کامل</span><b id="fdays">—</b></div>
- <div class="metric"><span>روزهای فعال</span><b id="active">—</b></div>
+ <div class="metric"><span>روزهای کامل Core</span><b id="fdays">—</b></div>
+ <div class="metric"><span>روزهای فعال Core</span><b id="active">—</b></div>
  <div class="metric"><span>Net @13bps</span><b id="fnet">—</b></div>
  <div class="metric"><span>Profit Factor</span><b id="fpf">—</b></div>
  <div class="metric"><span>Max DD</span><b id="fdd">—</b></div>
@@ -107,9 +119,11 @@ PAGE = r'''<!doctype html>
 const pc=(x,d=2)=>Number.isFinite(Number(x))?Number(x).toFixed(d)+'%':'—';
 const num=(x,d=2)=>Number.isFinite(Number(x))?Number(x).toFixed(d):'—';
 const money=x=>Number.isFinite(Number(x))?Number(x).toLocaleString(undefined,{maximumFractionDigits:0}):'—';
+const sig=(obj)=>{const s=(obj||{}).current_signal||{},w=s.weights||{},gross=Number(s.gross_exposure||0);return {active:Object.keys(w).length>0&&gross>1e-9,w,gross}};
+const wt=(x)=>Object.entries(x.w).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${k.replace('USDT','')} ${(100*v).toFixed(2)}%`).join(' · ')||'Exposure 0%';
 async function load(){
  try{
-  const r=await fetch('/api/state',{cache:'no-store'}),s=await r.json(),c=s.core||{},p=s.paper||{},q=s.consensus||{},cb=s.coinbase||{},pr=s.precision||{},fa=s.fast||{};
+  const r=await fetch('/api/state',{cache:'no-store'}),s=await r.json(),c=s.core||{},p=s.paper||{},q=s.consensus||{},cb=s.coinbase||{},pr=s.precision||{},fa=s.fast||{},pp=s.precision_paper||{},fp=s.fast_paper||{};
   const w=c.target_weights||{},gross=Number(c.gross_target||0),has=Object.keys(w).length>0&&gross>1e-9,g=c.regime||{};
   action.textContent=has?'ACTIVE / REBALANCE':'CASH';action.className='big '+(has?'on':'cash');
   reason.textContent=has?'Regime gate باز است؛ موتور فقط وزن‌های هدف Paper را نگه می‌دارد.':'Regime gate بسته است؛ موتور عمداً بیرون بازار می‌ماند تا شروط روند تأیید شوند.';
@@ -118,6 +132,7 @@ async function load(){
   health.textContent=s.ok?'PASS':'FAIL';health.className='big '+(s.ok?'on':'off');status.textContent=c.consensus_status||'';
   precName.textContent=pr.selected||'—';precSub.textContent=pr.research_status||'';precGate.textContent=(pr.upgrade_vs_T2||{}).precision_upgrade?'PASS':'NO UPGRADE';precGate.className=(pr.upgrade_vs_T2||{}).precision_upgrade?'on':'cash';
   fastName.textContent=fa.selected||'—';fastSub.textContent=fa.research_status||'';fastGate.textContent=fa.research_status==='FAST_PAPER_CANDIDATE'?'PASS':'FAIL';fastGate.className=fa.research_status==='FAST_PAPER_CANDIDATE'?'on':'off';
+  const ps=sig(pp),fsig=sig(fp);coreSig.textContent=has?'ACTIVE':'CASH';coreSig.className=has?'on':'cash';coreW.textContent=has?wt({w,gross}):'Exposure 0%';precSig.textContent=ps.active?'ACTIVE':'CASH';precSig.className=ps.active?'on':'cash';precW.textContent=wt(ps);fastSig.textContent=fsig.active?'SCOUT ACTIVE':'CASH';fastSig.className=fsig.active?'blue':'cash';fastW.textContent=wt(fsig);
   btcClose.textContent=money(g.btc_close);btcSma.textContent=money(g.btc_sma200);m60.textContent=pc(g.btc_mom60_pct);m60.className=Number(g.btc_mom60_pct)>0?'on':'off';m120.textContent=pc(g.btc_mom120_pct);m120.className=Number(g.btc_mom120_pct)>0?'on':'off';gate.textContent=g.upup_gate?'OPEN':'CLOSED';gate.className=g.upup_gate?'on':'off';
   const km=q.key_prelock_metrics||{},b=km.current_liquid||{},d=km.dynamic_liquidity_universe_52_pool||{},cp=cb.prelock||{};
   binNet.textContent=pc(b.net_pct);binSub.textContent=`Sharpe ${num(b.sharpe)} · PF ${num(b.profit_factor)} · DD ${pc(b.max_drawdown_pct)}`;
@@ -125,8 +140,8 @@ async function load(){
   dynNet.textContent=pc(d.net_pct);dynSub.textContent=`Sharpe ${num(d.sharpe)} · PF ${num(d.profit_factor)} · DD ${pc(d.max_drawdown_pct)}`;
   cbGate.textContent=cb.independent_venue_gate?'PASS':'FAIL';cbGate.className=cb.independent_venue_gate?'on':'off';
   b40.textContent=pc(b.stress40_net_pct);b75.textContent=pc(b.stress75_net_pct);c40.textContent=pc((cb.stress40||{}).net_pct);c75.textContent=pc((cb.stress75||{}).net_pct);
-  const f=p.forward_metrics_13bps||{},fs=p.forward_metrics_40bps||{},days=Number(f.n_days||0),act=Number(p.forward_active_days||0),fg=(p.promotion_gate_pre_registered||{}).passed;
-  fdays.textContent=days+' / 180';active.textContent=act+' / 20';fnet.textContent=pc(f.net_pct);fpf.textContent=num(f.pf);fdd.textContent=pc(f.max_dd_pct);stress.textContent=pc(fs.net_pct);fgate.textContent=fg?'PASS':'PENDING';fgate.className=fg?'on':'cash';progress.style.width=Math.min(100,days/180*100)+'%';
+  const f=p.forward_metrics_13bps||{},f40=p.forward_metrics_40bps||{},days=Number(f.n_days||0),act=Number(p.forward_active_days||0),fg=(p.promotion_gate_pre_registered||{}).passed;
+  fdays.textContent=days+' / 180';active.textContent=act+' / 20';fnet.textContent=pc(f.net_pct);fpf.textContent=num(f.pf);fdd.textContent=pc(f.max_dd_pct);stress.textContent=pc(f40.net_pct);fgate.textContent=fg?'PASS':'PENDING';fgate.className=fg?'on':'cash';progress.style.width=Math.min(100,days/180*100)+'%';
   const why=q.why_selected||{};tests.innerHTML=Object.entries(why).map(([k,v])=>`<div class="test">${k.replaceAll('_',' ')}<b>${String(v).startsWith('REJECTED')?'FILTERED':'PASS'}</b><div class="mut tiny">${v}</div></div>`).join('');
   errors.textContent=(s.errors||[]).join('\n');
  }catch(e){errors.textContent='Dashboard error: '+e}
