@@ -1,0 +1,178 @@
+{
+  "version": "quantbot-v2-deep-rd-21-30",
+  "stage_completed": 30,
+  "status": "CONTINUE_NO_PROMOTION",
+  "updated": "2026-09-08T04:30:00Z",
+  "dataset": {
+    "source": "jkuhen/cryptopro public CryptoDataDownload Binance daily CSVs",
+    "assets": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT"
+    ],
+    "start": "2020-08-11",
+    "end": "2026-04-24",
+    "aligned_rows": 2075,
+    "final_oos_start": "2025-02-26",
+    "execution": "signal at close t; position applies next daily bar",
+    "base_cost": "13 bps per unit turnover (~26 bps open+close)"
+  },
+  "results_summary": [
+    {
+      "stage": 21,
+      "name": "Frozen Stage-14 BTC+ETH vol-scaled 20/60/120 trend",
+      "oos_net_pct": 0.888,
+      "oos_sharpe": 0.18,
+      "oos_pf": 1.028,
+      "oos_max_dd_pct": 28.18,
+      "wf_positive": "2/4",
+      "pass": false
+    },
+    {
+      "stage": 22,
+      "name": "BTC+ETH+SOL vol-scaled 20/60/120 trend",
+      "oos_net_pct": 14.209,
+      "oos_sharpe": 0.487,
+      "oos_pf": 1.077,
+      "oos_max_dd_pct": 28.589,
+      "wf_positive": "2/4",
+      "pass": false
+    },
+    {
+      "stage": 23,
+      "name": "BTC+ETH+SOL 60/120/240 slow trend",
+      "oos_net_pct": -3.459,
+      "oos_sharpe": 0.125,
+      "oos_pf": 1.019,
+      "oos_max_dd_pct": 27.577,
+      "wf_positive": "2/4",
+      "pass": false
+    },
+    {
+      "stage": 24,
+      "name": "BTC+ETH+SOL long/cash 20/60/120 trend",
+      "oos_net_pct": 9.068,
+      "oos_ann_pct": 7.939,
+      "oos_sharpe": 0.425,
+      "oos_pf": 1.094,
+      "oos_max_dd_pct": 27.83,
+      "oos_avg_daily_bps": 3.002,
+      "oos_turnover_units": 26.449,
+      "oos_cost_pct": 3.438,
+      "wf_net_pct": [
+        1.981,
+        147.751,
+        -6.736,
+        9.068
+      ],
+      "wf_positive": "3/4",
+      "wf_avg_pct": 38.016,
+      "pass": false
+    },
+    {
+      "stage": 25,
+      "name": "Donchian 100/50 breakout",
+      "oos_net_pct": -3.129,
+      "oos_sharpe": 0.132,
+      "oos_pf": 1.021,
+      "oos_max_dd_pct": 26.148,
+      "wf_positive": "1/4",
+      "pass": false
+    },
+    {
+      "stage": 26,
+      "name": "90d cross-sectional winner/loser",
+      "oos_net_pct": 3.785,
+      "oos_sharpe": 0.389,
+      "oos_pf": 1.059,
+      "oos_max_dd_pct": 11.204,
+      "wf_positive": "2/4",
+      "pass": false
+    },
+    {
+      "stage": 27,
+      "name": "12% risk-parity/vol-targeted trend",
+      "oos_net_pct": 3.973,
+      "oos_sharpe": 0.271,
+      "oos_pf": 1.042,
+      "oos_max_dd_pct": 17.412,
+      "wf_positive": "2/4",
+      "pass": false
+    },
+    {
+      "stage": 28,
+      "name": "Regime-filtered trend",
+      "oos_net_pct": 11.979,
+      "oos_sharpe": 0.447,
+      "oos_pf": 1.07,
+      "oos_max_dd_pct": 28.589,
+      "wf_positive": "3/4",
+      "pass": false
+    },
+    {
+      "stage": 29,
+      "name": "Trend/slow-trend/breakout ensemble",
+      "oos_net_pct": 5.697,
+      "oos_sharpe": 0.319,
+      "oos_pf": 1.051,
+      "oos_max_dd_pct": 24.735,
+      "wf_positive": "2/4",
+      "pass": false
+    },
+    {
+      "stage": 30,
+      "name": "Final frozen comparison + cost stress",
+      "selected_stage": 24,
+      "cost_stress": [
+        {
+          "roundtrip_bps": 13,
+          "net_pct": 10.959,
+          "sharpe": 0.484,
+          "max_dd_pct": 27.1,
+          "pf": 1.108
+        },
+        {
+          "roundtrip_bps": 26,
+          "net_pct": 9.068,
+          "sharpe": 0.425,
+          "max_dd_pct": 27.83,
+          "pf": 1.094
+        },
+        {
+          "roundtrip_bps": 40,
+          "net_pct": 7.067,
+          "sharpe": 0.362,
+          "max_dd_pct": 28.608,
+          "pf": 1.08
+        }
+      ],
+      "pass": false
+    }
+  ],
+  "key_conclusions": [
+    "The prior Stage-14 result did not persist on 2021-2026-era data and should be treated as regime-dependent.",
+    "Stage 24 had the best walk-forward sign stability (3/4 positive) but PF ~1.09 and drawdown ~27.8% fail robustness gates.",
+    "No stage 21-30 qualifies for live promotion."
+  ],
+  "external_research": {
+    "public_sources": [
+      "Schmeling, Schrimpf, Todorov (2026) Crypto Carry, Management Science",
+      "Public Binance BTCUSDT funding-history gist (2020-2026) located",
+      "CryptoHFTData public funding+mark/index dataset page (history displayed from 2025-06-28)",
+      "Bui & Nguyen (2026) public AdaptiveTrend research description"
+    ],
+    "constraint": "No clean multi-year aligned funding+basis+borrow/execution series was ingested in this run, so delta-neutral carry was not fabricated."
+  },
+  "best_candidate": {
+    "stage": 24,
+    "name": "3-asset long/cash multi-horizon trend"
+  },
+  "robust_candidate": false,
+  "research_gate": "DO_NOT_PROMOTE",
+  "next_priority": [
+    "Ingest multi-year timestamp-clean funding + mark/index + spot data and test delta-neutral carry.",
+    "Expand the frozen long/cash trend rule to 10-20 liquid assets for external validation.",
+    "Test public asymmetric long/short adaptive-trend principles without tuning on final OOS.",
+    "Keep realistic cost stress and strict chronological OOS gates."
+  ]
+}
