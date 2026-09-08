@@ -1,9 +1,10 @@
 {
   "version": "quantbot-v4-paper-core",
-  "updated": "2026-09-08T11:38:30.396283+00:00",
+  "updated": "2026-09-08T11:39:36.855993+00:00",
   "official_rule": "T2_upup",
   "mode": "PAPER_ONLY",
   "live_order_capability": false,
+  "signal_source": "data/v4_paper_t2.json",
   "signal_date": "2026-09-07 00:00:00+00:00",
   "effective_execution": "next bar / next-open convention",
   "target_weights": {},
