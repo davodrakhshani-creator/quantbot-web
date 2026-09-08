@@ -1,23 +1,25 @@
 import app as web
 
 
-def test_api_state_has_authoritative_v4_shape():
+def test_api_state_has_authoritative_shape_and_research_lanes():
     c = web.app.test_client()
     r = c.get('/api/state')
     assert r.status_code == 200
     s = r.get_json()
-    assert {'core','paper','consensus','ok','errors'} <= set(s)
+    assert {'core','paper','consensus','precision','fast','ok','errors'} <= set(s)
     assert s['core'].get('official_rule') == 'T2_upup'
     assert s['core'].get('mode') == 'PAPER_ONLY'
     assert s['core'].get('live_order_capability') is False
 
 
-def test_dashboard_is_v4_not_legacy_intraday_engine():
+def test_dashboard_is_quantbot_not_legacy_intraday_engine():
     c = web.app.test_client()
     body = c.get('/').get_data(as_text=True)
-    assert 'QuantBot v4' in body
+    assert 'QuantBot' in body
     assert 'T2_upup' in body
-    assert 'PAPER ONLY' in body
+    assert 'LIVE LOCKED' in body
+    assert 'Precision v5' in body
+    assert 'Fast-Lane v5' in body
     assert 'EMA/RSI' not in body
     assert '/api/toggle' not in body
 
