@@ -1,0 +1,41 @@
+name: QuantBot v4 Red Team
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research_v4_redteam.py'
+      - '.github/workflows/quantbot-v4-redteam.yml'
+      - 'research_v4_tournament.py'
+
+permissions:
+  contents: write
+
+jobs:
+  redteam:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --quiet pandas numpy requests
+      - name: Run red-team checks
+        run: python research_v4_redteam.py
+      - name: Persist red-team state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v4_redteam_state.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "Record QuantBot v4 red-team results"
+          git pull --rebase origin main
+          git push origin HEAD:main
