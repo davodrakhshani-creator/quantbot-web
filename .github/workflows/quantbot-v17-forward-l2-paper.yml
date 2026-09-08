@@ -1,9 +1,7 @@
-name: QuantBot v17 Forward L2 Paper
+name: QuantBot v17 Forward L2 Paper [ARCHIVED]
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
 
 permissions:
   contents: write
@@ -11,9 +9,6 @@ permissions:
 jobs:
   paper:
     runs-on: ubuntu-latest
-    concurrency:
-      group: quantbot-v17-forward-l2-paper
-      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,14 +18,5 @@ jobs:
         run: pip install requests
       - name: Compile
         run: python -m py_compile research_v17_forward_l2_paper.py
-      - name: Run forward L2 paper collector
+      - name: Run archived forward L2 collector
         run: python research_v17_forward_l2_paper.py
-      - name: Persist state
-        run: |
-          git config user.name "quantbot-research-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/v17_forward_l2_paper_state.json
-          git diff --cached --quiet && exit 0
-          git commit -m "Update QuantBot v17 forward L2 paper state"
-          git pull --rebase origin main
-          git push origin HEAD:main
