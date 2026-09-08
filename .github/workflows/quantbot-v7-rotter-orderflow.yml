@@ -1,0 +1,37 @@
+name: QuantBot v7 Rotter Orderflow
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v7_rotter_btc_orderflow.py'
+      - '.github/workflows/quantbot-v7-rotter-orderflow.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install numpy pandas requests
+      - name: Compile
+        run: python -m py_compile research_v7_rotter_btc_orderflow.py
+      - name: Run Rotter-inspired BTC orderflow research
+        run: python research_v7_rotter_btc_orderflow.py
+      - name: Persist state
+        run: |
+          git config user.name "quantbot-research"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v7_rotter_btc_orderflow_state.json
+          if git diff --cached --quiet; then
+            echo "No state changes"
+          else
+            git commit -m "Update QuantBot v7 Rotter orderflow state"
+            git push
+          fi
