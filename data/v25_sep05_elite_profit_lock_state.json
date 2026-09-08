@@ -1,0 +1,451 @@
+{
+  "version": "quantbot-v25-sep05-elite-profit-lock",
+  "purpose": "ONE_DAY_ENTRY_QUALITY_DIAGNOSTIC_NO_LIVE",
+  "day": "2026-09-05",
+  "starting_account_usd": 100.0,
+  "results": {
+    "strict__MM_arm12_stop20": {
+      "tier": "strict",
+      "exit": {
+        "name": "MM_arm12_stop20",
+        "cost": 4.0,
+        "arm": 12.0,
+        "trail": 5.0,
+        "stop": 20.0,
+        "maxhold": 1800
+      },
+      "metrics": {
+        "trades": 24,
+        "net_usd_100": -1.0109213686792353,
+        "gross_mean_bps": -0.2121723694968133,
+        "net_mean_bps": -4.212172369496813,
+        "pf": 0.32067064783171734,
+        "win_pct": 33.33333333333333,
+        "stops": 1,
+        "profit_locks": 6,
+        "forced": 17,
+        "armed_pct": 25.0,
+        "median_mfe_bps": 6.480875177748979,
+        "best_net_bps": 12.569251970177667,
+        "worst_net_bps": -24.0,
+        "jun_trades": 6,
+        "hansan_trades": 18
+      }
+    },
+    "strict__MM_arm16_stop24": {
+      "tier": "strict",
+      "exit": {
+        "name": "MM_arm16_stop24",
+        "cost": 4.0,
+        "arm": 16.0,
+        "trail": 6.0,
+        "stop": 24.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 19,
+        "net_usd_100": -0.8146844999502747,
+        "gross_mean_bps": -0.2878131576330258,
+        "net_mean_bps": -4.287813157633025,
+        "pf": 0.27290250797364257,
+        "win_pct": 26.31578947368421,
+        "stops": 0,
+        "profit_locks": 4,
+        "forced": 15,
+        "armed_pct": 21.052631578947366,
+        "median_mfe_bps": 6.901311249136732,
+        "best_net_bps": 10.09324299652237,
+        "worst_net_bps": -17.451037221640092,
+        "jun_trades": 4,
+        "hansan_trades": 15
+      }
+    },
+    "strict__MM_arm20_stop28": {
+      "tier": "strict",
+      "exit": {
+        "name": "MM_arm20_stop28",
+        "cost": 4.0,
+        "arm": 20.0,
+        "trail": 7.0,
+        "stop": 28.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 17,
+        "net_usd_100": -0.6835083566269466,
+        "gross_mean_bps": -0.020637391923216133,
+        "net_mean_bps": -4.0206373919232155,
+        "pf": 0.385707544028525,
+        "win_pct": 35.294117647058826,
+        "stops": 0,
+        "profit_locks": 2,
+        "forced": 15,
+        "armed_pct": 11.76470588235294,
+        "median_mfe_bps": 6.360612877041039,
+        "best_net_bps": 18.555070500276386,
+        "worst_net_bps": -20.175901300607975,
+        "jun_trades": 3,
+        "hansan_trades": 14
+      }
+    },
+    "strict__MT_arm20_stop24": {
+      "tier": "strict",
+      "exit": {
+        "name": "MT_arm20_stop24",
+        "cost": 7.5,
+        "arm": 20.0,
+        "trail": 6.0,
+        "stop": 24.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 20,
+        "net_usd_100": -1.6411275882532803,
+        "gross_mean_bps": -0.7056379412664004,
+        "net_mean_bps": -8.205637941266401,
+        "pf": 0.13897288937231872,
+        "win_pct": 15.0,
+        "stops": 1,
+        "profit_locks": 2,
+        "forced": 17,
+        "armed_pct": 10.0,
+        "median_mfe_bps": 6.458503716912922,
+        "best_net_bps": 11.988239336649116,
+        "worst_net_bps": -31.5,
+        "jun_trades": 4,
+        "hansan_trades": 16
+      }
+    },
+    "strict__MT_arm24_stop30": {
+      "tier": "strict",
+      "exit": {
+        "name": "MT_arm24_stop30",
+        "cost": 7.5,
+        "arm": 24.0,
+        "trail": 8.0,
+        "stop": 30.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 17,
+        "net_usd_100": -1.253498164973839,
+        "gross_mean_bps": 0.1264813825068289,
+        "net_mean_bps": -7.37351861749317,
+        "pf": 0.18245312690779344,
+        "win_pct": 23.52941176470588,
+        "stops": 0,
+        "profit_locks": 2,
+        "forced": 15,
+        "armed_pct": 11.76470588235294,
+        "median_mfe_bps": 6.360612877041039,
+        "best_net_bps": 15.055070500276386,
+        "worst_net_bps": -23.675901300607975,
+        "jun_trades": 3,
+        "hansan_trades": 14
+      }
+    },
+    "elite__MM_arm12_stop20": {
+      "tier": "elite",
+      "exit": {
+        "name": "MM_arm12_stop20",
+        "cost": 4.0,
+        "arm": 12.0,
+        "trail": 5.0,
+        "stop": 20.0,
+        "maxhold": 1800
+      },
+      "metrics": {
+        "trades": 23,
+        "net_usd_100": -1.818331227071902,
+        "gross_mean_bps": -3.9057879437908776,
+        "net_mean_bps": -7.9057879437908785,
+        "pf": 0.1504617398965639,
+        "win_pct": 21.73913043478261,
+        "stops": 3,
+        "profit_locks": 3,
+        "forced": 17,
+        "armed_pct": 13.043478260869565,
+        "median_mfe_bps": 4.195416507466465,
+        "best_net_bps": 12.569251970177667,
+        "worst_net_bps": -24.0,
+        "jun_trades": 2,
+        "hansan_trades": 21
+      }
+    },
+    "elite__MM_arm16_stop24": {
+      "tier": "elite",
+      "exit": {
+        "name": "MM_arm16_stop24",
+        "cost": 4.0,
+        "arm": 16.0,
+        "trail": 6.0,
+        "stop": 24.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 18,
+        "net_usd_100": -0.9408402284906594,
+        "gross_mean_bps": -1.2268901582814422,
+        "net_mean_bps": -5.226890158281441,
+        "pf": 0.22696402712738514,
+        "win_pct": 27.77777777777778,
+        "stops": 0,
+        "profit_locks": 4,
+        "forced": 14,
+        "armed_pct": 22.22222222222222,
+        "median_mfe_bps": 7.0860710898768,
+        "best_net_bps": 10.09324299652237,
+        "worst_net_bps": -17.451037221640092,
+        "jun_trades": 2,
+        "hansan_trades": 16
+      }
+    },
+    "elite__MM_arm20_stop28": {
+      "tier": "elite",
+      "exit": {
+        "name": "MM_arm20_stop28",
+        "cost": 4.0,
+        "arm": 20.0,
+        "trail": 7.0,
+        "stop": 28.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 16,
+        "net_usd_100": -0.8219860673656915,
+        "gross_mean_bps": -1.1374129210355712,
+        "net_mean_bps": -5.137412921035572,
+        "pf": 0.3344549982641056,
+        "win_pct": 31.25,
+        "stops": 0,
+        "profit_locks": 1,
+        "forced": 15,
+        "armed_pct": 6.25,
+        "median_mfe_bps": 5.982380074212035,
+        "best_net_bps": 29.264590688921736,
+        "worst_net_bps": -20.175901300607975,
+        "jun_trades": 1,
+        "hansan_trades": 15
+      }
+    },
+    "elite__MT_arm20_stop24": {
+      "tier": "elite",
+      "exit": {
+        "name": "MT_arm20_stop24",
+        "cost": 7.5,
+        "arm": 20.0,
+        "trail": 6.0,
+        "stop": 24.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 19,
+        "net_usd_100": -1.732283316793665,
+        "gross_mean_bps": -1.6172806147034988,
+        "net_mean_bps": -9.1172806147035,
+        "pf": 0.1326298176971068,
+        "win_pct": 15.789473684210526,
+        "stops": 1,
+        "profit_locks": 2,
+        "forced": 16,
+        "armed_pct": 10.526315789473683,
+        "median_mfe_bps": 6.901311249136732,
+        "best_net_bps": 11.988239336649116,
+        "worst_net_bps": -31.5,
+        "jun_trades": 2,
+        "hansan_trades": 17
+      }
+    },
+    "elite__MT_arm24_stop30": {
+      "tier": "elite",
+      "exit": {
+        "name": "MT_arm24_stop30",
+        "cost": 7.5,
+        "arm": 24.0,
+        "trail": 8.0,
+        "stop": 30.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 16,
+        "net_usd_100": -1.400403750346012,
+        "gross_mean_bps": -1.2525234396625753,
+        "net_mean_bps": -8.752523439662575,
+        "pf": 0.16196869287184282,
+        "win_pct": 12.5,
+        "stops": 0,
+        "profit_locks": 1,
+        "forced": 15,
+        "armed_pct": 6.25,
+        "median_mfe_bps": 5.982380074212035,
+        "best_net_bps": 23.92282239088967,
+        "worst_net_bps": -23.675901300607975,
+        "jun_trades": 1,
+        "hansan_trades": 15
+      }
+    },
+    "ultra__MM_arm12_stop20": {
+      "tier": "ultra",
+      "exit": {
+        "name": "MM_arm12_stop20",
+        "cost": 4.0,
+        "arm": 12.0,
+        "trail": 5.0,
+        "stop": 20.0,
+        "maxhold": 1800
+      },
+      "metrics": {
+        "trades": 20,
+        "net_usd_100": -1.5731534585646683,
+        "gross_mean_bps": -3.865767292823338,
+        "net_mean_bps": -7.865767292823341,
+        "pf": 0.1424188129918286,
+        "win_pct": 20.0,
+        "stops": 3,
+        "profit_locks": 2,
+        "forced": 15,
+        "armed_pct": 10.0,
+        "median_mfe_bps": 4.7520823861990635,
+        "best_net_bps": 12.569251970177667,
+        "worst_net_bps": -24.0,
+        "jun_trades": 2,
+        "hansan_trades": 18
+      }
+    },
+    "ultra__MM_arm16_stop24": {
+      "tier": "ultra",
+      "exit": {
+        "name": "MM_arm16_stop24",
+        "cost": 4.0,
+        "arm": 16.0,
+        "trail": 6.0,
+        "stop": 24.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 17,
+        "net_usd_100": -1.174615993802554,
+        "gross_mean_bps": -2.9095058458973755,
+        "net_mean_bps": -6.909505845897376,
+        "pf": 0.16108568562665748,
+        "win_pct": 29.411764705882355,
+        "stops": 1,
+        "profit_locks": 3,
+        "forced": 13,
+        "armed_pct": 17.647058823529413,
+        "median_mfe_bps": 6.015696184689112,
+        "best_net_bps": 10.09324299652237,
+        "worst_net_bps": -28.0,
+        "jun_trades": 2,
+        "hansan_trades": 15
+      }
+    },
+    "ultra__MM_arm20_stop28": {
+      "tier": "ultra",
+      "exit": {
+        "name": "MM_arm20_stop28",
+        "cost": 4.0,
+        "arm": 20.0,
+        "trail": 7.0,
+        "stop": 28.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 13,
+        "net_usd_100": -0.9526101056131404,
+        "gross_mean_bps": -3.3277700431780035,
+        "net_mean_bps": -7.327770043178003,
+        "pf": 0.26273533251927317,
+        "win_pct": 30.76923076923077,
+        "stops": 0,
+        "profit_locks": 1,
+        "forced": 12,
+        "armed_pct": 7.6923076923076925,
+        "median_mfe_bps": 5.949063963734957,
+        "best_net_bps": 29.264590688921736,
+        "worst_net_bps": -21.048136505609655,
+        "jun_trades": 1,
+        "hansan_trades": 12
+      }
+    },
+    "ultra__MT_arm20_stop24": {
+      "tier": "ultra",
+      "exit": {
+        "name": "MT_arm20_stop24",
+        "cost": 7.5,
+        "arm": 20.0,
+        "trail": 6.0,
+        "stop": 24.0,
+        "maxhold": 2700
+      },
+      "metrics": {
+        "trades": 18,
+        "net_usd_100": -1.9695450178152347,
+        "gross_mean_bps": -3.441916765640192,
+        "net_mean_bps": -10.941916765640194,
+        "pf": 0.08621058061137284,
+        "win_pct": 11.11111111111111,
+        "stops": 2,
+        "profit_locks": 2,
+        "forced": 14,
+        "armed_pct": 11.11111111111111,
+        "median_mfe_bps": 5.662222224810387,
+        "best_net_bps": 11.988239336649116,
+        "worst_net_bps": -31.5,
+        "jun_trades": 2,
+        "hansan_trades": 16
+      }
+    },
+    "ultra__MT_arm24_stop30": {
+      "tier": "ultra",
+      "exit": {
+        "name": "MT_arm24_stop30",
+        "cost": 7.5,
+        "arm": 24.0,
+        "trail": 8.0,
+        "stop": 30.0,
+        "maxhold": 3600
+      },
+      "metrics": {
+        "trades": 13,
+        "net_usd_100": -1.4260277885934611,
+        "gross_mean_bps": -3.4694445276420085,
+        "net_mean_bps": -10.969444527642008,
+        "pf": 0.14365852584397018,
+        "win_pct": 7.6923076923076925,
+        "stops": 0,
+        "profit_locks": 1,
+        "forced": 12,
+        "armed_pct": 7.6923076923076925,
+        "median_mfe_bps": 5.949063963734957,
+        "best_net_bps": 23.92282239088967,
+        "worst_net_bps": -24.548136505609655,
+        "jun_trades": 1,
+        "hansan_trades": 12
+      }
+    }
+  },
+  "live_orders": false,
+  "best_one_day_only": {
+    "name": "strict__MM_arm20_stop28",
+    "metrics": {
+      "trades": 17,
+      "net_usd_100": -0.6835083566269466,
+      "gross_mean_bps": -0.020637391923216133,
+      "net_mean_bps": -4.0206373919232155,
+      "pf": 0.385707544028525,
+      "win_pct": 35.294117647058826,
+      "stops": 0,
+      "profit_locks": 2,
+      "forced": 15,
+      "armed_pct": 11.76470588235294,
+      "median_mfe_bps": 6.360612877041039,
+      "best_net_bps": 18.555070500276386,
+      "worst_net_bps": -20.175901300607975,
+      "jun_trades": 3,
+      "hansan_trades": 14
+    },
+    "ending_equity_usd": 99.31649164337306
+  },
+  "warning": "Single-day diagnostic only; selecting on Sep 5 overfits that day. Any survivor must be frozen before Sep 6 and other unseen-day checks."
+}
