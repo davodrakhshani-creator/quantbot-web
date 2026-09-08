@@ -1,0 +1,31 @@
+{
+  "version": "quantbot-v23-bybit-l2-final-paper",
+  "purpose": "FORWARD_L2_PAPER_NO_LIVE",
+  "venue": "BYBIT_USDT_PERPETUAL",
+  "symbol": "BTCUSDT",
+  "live_orders": false,
+  "runs": 1,
+  "observations": 358,
+  "signals": {
+    "jun": 0,
+    "hansan": 0
+  },
+  "paper_fills": 0,
+  "paper_trades": [],
+  "created_at": "2026-09-08T21:26:54.986965+00:00",
+  "assumptions": {
+    "maker_bps": 2.0,
+    "taker_bps": 5.5,
+    "slippage_bps": 0.5,
+    "queue_mult": 1.35,
+    "notional_usd": 100.0
+  },
+  "summary": {
+    "closed": 0,
+    "net_usd_100": 0.0,
+    "avg_net_bps": null,
+    "win_pct": null,
+    "pf": null
+  },
+  "updated_at": "2026-09-08T21:29:55.369142+00:00"
+}
