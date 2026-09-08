@@ -1,0 +1,44 @@
+name: QuantBot v23 Raw Streams Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/quantbot-v23-raw-stream-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'websockets>=15,<16'
+      - name: Count independent raw Futures streams
+        run: |
+          python - <<'PY'
+          import asyncio, websockets
+          URLS={
+            'depth':'wss://fstream.binance.com/ws/btcusdt@depth20@100ms',
+            'aggtrade':'wss://fstream.binance.com/ws/btcusdt@aggTrade',
+          }
+          async def count(name,url):
+              n=0
+              async with websockets.connect(url,open_timeout=10,ping_interval=20,ping_timeout=20) as ws:
+                  end=asyncio.get_running_loop().time()+10
+                  while asyncio.get_running_loop().time()<end:
+                      try:
+                          await asyncio.wait_for(ws.recv(),timeout=2)
+                          n+=1
+                      except asyncio.TimeoutError:
+                          pass
+              print(f'{name}_messages={n}')
+              return n
+          async def main():
+              depth,agg=await asyncio.gather(*(count(k,v) for k,v in URLS.items()))
+              if depth<=0 or agg<=0:
+                  raise SystemExit(f'FAIL depth={depth} aggtrade={agg}')
+              print(f'PASS depth={depth} aggtrade={agg}')
+          asyncio.run(main())
+          PY
