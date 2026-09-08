@@ -1,0 +1,35 @@
+name: QuantBot v18 Side Session Screen
+
+on:
+  push:
+    paths:
+      - 'research_v18_side_session_screen.py'
+      - '.github/workflows/quantbot-v18-side-session-screen.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install numpy pandas requests
+      - name: Compile
+        run: python -m py_compile research_v15_microstructure_edge_screen.py research_v18_side_session_screen.py
+      - name: Run v18 asymmetry screen
+        run: python research_v18_side_session_screen.py
+      - name: Persist state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/v18_side_session_screen_state.json
+          git diff --cached --quiet || git commit -m 'Update QuantBot v18 side session state'
+          git pull --rebase origin main
+          git push
