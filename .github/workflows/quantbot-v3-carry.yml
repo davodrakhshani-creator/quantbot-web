@@ -7,6 +7,7 @@ on:
     paths:
       - 'research_v3_carry.py'
       - 'research_v3_carry_family.py'
+      - 'research_v3_carry_fast_holdout.py'
       - '.github/workflows/quantbot-v3-carry.yml'
 
 permissions:
@@ -15,7 +16,7 @@ permissions:
 jobs:
   carry:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,8 +26,8 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: python -m pip install --quiet pandas numpy requests
-      - name: Audit all frozen carry candidates on holdout
-        run: python research_v3_carry_family.py
+      - name: Fast audit of all frozen carry candidates on holdout
+        run: python research_v3_carry_fast_holdout.py
       - name: Persist carry family state
         run: |
           git config user.name "quantbot-research-bot"
@@ -36,6 +37,6 @@ jobs:
             echo "No state change"
             exit 0
           fi
-          git commit -m "Record QuantBot v3 carry family holdout audit"
+          git commit -m "Record fast QuantBot v3 carry holdout audit"
           git pull --rebase origin main
           git push origin HEAD:main
