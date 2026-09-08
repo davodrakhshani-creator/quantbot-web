@@ -1,13 +1,7 @@
-name: QuantBot v18B Japan Hybrid Spot Proxy
+name: QuantBot v18B Japan Hybrid Spot Proxy [ARCHIVED]
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'research_v18b_japan_spot_proxy.py'
-      - '.github/workflows/quantbot-v18b-japan-spot-proxy.yml'
-  schedule:
-    - cron: '*/5 * * * *'
 
 permissions:
   contents: write
@@ -15,9 +9,6 @@ permissions:
 jobs:
   paper:
     runs-on: ubuntu-latest
-    concurrency:
-      group: quantbot-v18b-japan-spot-proxy
-      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,14 +18,5 @@ jobs:
         run: pip install requests
       - name: Compile
         run: python -m py_compile research_v18b_japan_spot_proxy.py
-      - name: Run v18B Japan hybrid spot proxy
+      - name: Run archived spot proxy
         run: python research_v18b_japan_spot_proxy.py
-      - name: Persist state
-        run: |
-          git config user.name "quantbot-research-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/v18b_japan_spot_proxy_state.json
-          git diff --cached --quiet && exit 0
-          git commit -m "Update QuantBot v18B Japan proxy state"
-          git pull --rebase origin main
-          git push origin HEAD:main
