@@ -1,0 +1,41 @@
+name: QuantBot v4 Web CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'app.py'
+      - 'test_app_v4.py'
+      - 'requirements.txt'
+      - 'data/v4_core_state.json'
+      - 'data/v4_paper_t2.json'
+      - 'data/v4_consensus.json'
+      - '.github/workflows/quantbot-v4-app.yml'
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: python -m pip install --quiet -r requirements.txt pytest
+      - name: Compile
+        run: python -m py_compile app.py
+      - name: Unit tests
+        run: pytest -q test_app_v4.py
+      - name: Gunicorn smoke test
+        run: |
+          gunicorn app:app --bind 127.0.0.1:8081 --workers 1 >/tmp/qb-gunicorn.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8081/health; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/qb-gunicorn.log
+          exit 1
