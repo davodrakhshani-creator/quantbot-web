@@ -1,6 +1,6 @@
 {
   "version": "quantbot-v3-forward-paper-trend",
-  "updated": "2026-09-08T11:09:08.836666+00:00",
+  "updated": "2026-09-08T11:12:32.512160+00:00",
   "paper_start": "2026-09-08 00:00:00+00:00",
   "rule_frozen": "E_blend_top3_btc200_gate",
   "execution_rule": "signal at completed UTC close t; target position applies to next daily bar",
@@ -62,6 +62,15 @@
     "avg_daily_bps": 0,
     "positive_day_pct": 0
   },
+  "forward_exposure": {
+    "active_days": 0,
+    "active_day_pct": 0.0
+  },
+  "promotion_gate_pre_registered": {
+    "registered_before_first_forward_completed_bar": true,
+    "criteria": "n_days>=180; active_days>=20; net>0; PF>=1.10; maxDD<=10%; 40bps-stress net>0",
+    "passed": false
+  },
   "research_status": "PAPER_ONLY_NO_LIVE_MONEY",
-  "promotion_guardrail": "Do not promote to live money from this tracker until a separately defined forward gate has enough active observations and passes cost stress."
+  "promotion_guardrail": "Even if the pre-registered paper gate passes, no live-money order is authorized automatically; require separate manual review of execution, venue, slippage, operational and risk controls."
 }
