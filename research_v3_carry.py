@@ -49,7 +49,7 @@ def perp_klines_api(sym):
         time.sleep(.05)
     if not rows: raise RuntimeError('empty futures klines')
     d=pd.DataFrame(rows); idx=pd.to_datetime(d[0].astype('int64'),unit='ms',utc=True).dt.floor('D')
-    return pd.Series(pd.to_numeric(d[4]),index=idx,name=sym).loc[lambda s:~s.index.duplicated(keep='last')].sort_index()
+    return pd.Series(pd.to_numeric(d[4]).to_numpy(),index=pd.DatetimeIndex(idx),name=sym).loc[lambda s:~s.index.duplicated(keep='last')].sort_index()
 
 def funding_api(sym):
     start=int(pd.Timestamp(START,tz='UTC').timestamp()*1000); end=int(datetime.now(timezone.utc).timestamp()*1000)
@@ -94,7 +94,7 @@ def perp_klines_archive(sym):
             d=pd.read_csv(io.BytesIO(raw),header=None)
             if len(d) and not str(d.iloc[0,0]).isdigit(): d=d.iloc[1:]
             idx=pd.to_datetime(pd.to_numeric(d.iloc[:,0]),unit='ms',utc=True).dt.floor('D')
-            pieces.append(pd.Series(pd.to_numeric(d.iloc[:,4]),index=idx))
+            pieces.append(pd.Series(pd.to_numeric(d.iloc[:,4]).to_numpy(),index=pd.DatetimeIndex(idx)))
         except Exception: continue
     if not pieces: raise RuntimeError('no archive futures klines')
     s=pd.concat(pieces).sort_index(); s=s[~s.index.duplicated(keep='last')]; s.name=sym; return s
