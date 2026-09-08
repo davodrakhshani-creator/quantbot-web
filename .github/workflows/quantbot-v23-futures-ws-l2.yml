@@ -1,20 +1,10 @@
-name: QuantBot v23 Futures WS L2 Paper
+name: QuantBot v23 Futures WS L2 Paper [ARCHIVED BINANCE]
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'research_v23_futures_ws_l2.py'
-      - '.github/workflows/quantbot-v23-futures-ws-l2.yml'
-  schedule:
-    - cron: '*/10 * * * *'
 
 permissions:
   contents: write
-
-concurrency:
-  group: quantbot-v23-futures-ws-l2
-  cancel-in-progress: true
 
 jobs:
   paper:
@@ -22,48 +12,10 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install
         run: pip install 'websockets>=15,<16'
-      - name: Compile
+      - name: Compile only
         run: python -m py_compile research_v23_futures_ws_l2.py
-      - name: Smoke raw Futures streams
-        run: |
-          python - <<'PY'
-          import asyncio, websockets
-          URLS={
-            'depth':'wss://fstream.binance.com/ws/btcusdt@depth20@100ms',
-            'aggtrade':'wss://fstream.binance.com/ws/btcusdt@aggTrade',
-          }
-          async def count(name,url):
-              n=0
-              async with websockets.connect(url,open_timeout=10,ping_interval=20,ping_timeout=20) as ws:
-                  end=asyncio.get_running_loop().time()+8
-                  while asyncio.get_running_loop().time()<end:
-                      try:
-                          await asyncio.wait_for(ws.recv(),timeout=2)
-                          n+=1
-                      except asyncio.TimeoutError:
-                          pass
-              print(name,n)
-              return n
-          async def main():
-              d,a=await asyncio.gather(count('depth',URLS['depth']),count('aggtrade',URLS['aggtrade']))
-              if d<=0 or a<=0: raise SystemExit(f'raw stream smoke failed: depth={d} aggtrade={a}')
-          asyncio.run(main())
-          PY
-      - name: Run v23 futures websocket L2 paper
-        run: python research_v23_futures_ws_l2.py
-      - name: Persist state
-        run: |
-          git config user.name 'quantbot-research-bot'
-          git config user.email 'actions@users.noreply.github.com'
-          git add data/v23_futures_ws_l2_state.json
-          git diff --cached --quiet && exit 0
-          git commit -m 'Update QuantBot v23 futures WS L2 state'
-          git pull --rebase origin main
-          git push origin HEAD:main
