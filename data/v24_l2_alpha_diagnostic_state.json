@@ -1,0 +1,207 @@
+{
+  "version": "quantbot-v24-forward-l2-alpha-diagnostic",
+  "purpose": "FORWARD_ONLY_NO_LOOKAHEAD_L2_RAW_EDGE_DIAGNOSTIC_NO_LIVE",
+  "symbol": "BTCUSDT",
+  "live_orders": false,
+  "runs": 1,
+  "ws_success_runs": 1,
+  "observations": 203,
+  "depth_events": 2024,
+  "aggtrade_events": 0,
+  "events": [],
+  "stream_counts": {
+    "btcusdt@depth20@100ms": 2024
+  },
+  "rejections": {},
+  "created_at": "2026-09-08T19:50:03.141699+00:00",
+  "ws_access_ok": true,
+  "summary": {
+    "base": {
+      "1": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "3": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "5": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "10": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "30": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "60": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      }
+    },
+    "strong": {
+      "1": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "3": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "5": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "10": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "30": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "60": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      }
+    },
+    "elite": {
+      "1": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "3": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "5": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "10": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "30": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      },
+      "60": {
+        "n": 0,
+        "mean_bps": null,
+        "median_bps": null,
+        "p10": null,
+        "p90": null,
+        "positive_pct": null,
+        "gt4bps_pct": null,
+        "gt7_5bps_pct": null
+      }
+    }
+  },
+  "updated_at": "2026-09-08T19:53:40.675876+00:00"
+}
