@@ -1,0 +1,38 @@
+name: QuantBot v20 Japan Event Clone
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v20_japan_event_clone.py'
+      - '.github/workflows/quantbot-v20-japan-event-clone.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install requests pandas numpy
+      - name: Compile
+        run: python -m py_compile research_v20_japan_event_clone.py
+      - name: Run v20 event clone
+        run: python research_v20_japan_event_clone.py
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -f data/v20_japan_event_clone_state.json ]; then
+            git add data/v20_japan_event_clone_state.json
+            git diff --cached --quiet && exit 0
+            git commit -m "Update QuantBot v20 Japan event clone state"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
