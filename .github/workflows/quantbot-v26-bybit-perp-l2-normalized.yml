@@ -1,0 +1,44 @@
+name: QuantBot v26 Bybit Perp L2 Normalized
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v26_bybit_perp_l2_normalized.py'
+      - '.github/workflows/quantbot-v26-bybit-perp-l2-normalized.yml'
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quantbot-v26-bybit-perp-l2-normalized
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install 'websockets>=15,<16' numpy
+      - name: Compile
+        run: python -m py_compile research_v26_bybit_perp_l2_normalized.py
+      - name: Run v26 normalized Bybit perpetual L2
+        run: python research_v26_bybit_perp_l2_normalized.py
+      - name: Persist state
+        run: |
+          git config user.name 'quantbot-research-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/v26_bybit_perp_l2_normalized_state.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Update QuantBot v26 normalized Bybit perp L2 state'
+          git pull --rebase origin main
+          git push origin HEAD:main
