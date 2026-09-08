@@ -3,8 +3,8 @@
   "purpose": "EDGE_DISCOVERY_PROXY_NOT_FUTURES_AUTHORIZATION",
   "venue": "BINANCE_SPOT_MARKET_DATA_ONLY",
   "live_orders": false,
-  "runs": 2,
-  "observations": 110,
+  "runs": 3,
+  "observations": 158,
   "signals": {
     "jun": 0,
     "hansan": 0
@@ -18,7 +18,7 @@
     "avg_net_bps": null,
     "win_pct": null,
     "pf": null,
-    "observations": 110,
+    "observations": 158,
     "signals": {
       "jun": 0,
       "hansan": 0
@@ -26,5 +26,5 @@
     "fills": 0,
     "proxy_only": true
   },
-  "updated_at": "2026-09-08T19:22:37.830295+00:00"
+  "updated_at": "2026-09-08T19:32:19.010908+00:00"
 }
