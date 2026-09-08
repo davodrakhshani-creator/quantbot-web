@@ -1,0 +1,35 @@
+name: QuantBot v24 Sep05 Profit Lock
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v24_sep05_profit_lock.py'
+      - '.github/workflows/quantbot-v24-sep05-profit-lock.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install numpy pandas requests
+      - name: Compile
+        run: python -m py_compile research_v24_sep05_profit_lock.py
+      - name: Run Sep 5 profit-lock diagnostic
+        run: python research_v24_sep05_profit_lock.py
+      - name: Persist state
+        run: |
+          git config user.name 'quantbot-research-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/v24_sep05_profit_lock_state.json
+          git diff --cached --quiet || git commit -m 'Update QuantBot v24 Sep05 profit-lock state'
+          git pull --rebase origin main || true
+          git push
