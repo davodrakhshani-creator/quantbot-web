@@ -1,8 +1,12 @@
 """Authoritative QuantBot v4 paper-execution core.
 
+Architecture:
+1) paper_v4_t2.py is the read-only public-data signal generator.
+2) this core consumes that frozen signal state, validates it, and emits a paper
+   rebalance plan.
+
 This module intentionally contains NO authenticated exchange client and NO live-order
-function. It turns the frozen T2 research rule into a validated target portfolio and
-an auditable paper rebalance plan. Live execution is structurally impossible here.
+function. Live execution is structurally impossible here.
 """
 from __future__ import annotations
 
@@ -15,10 +19,10 @@ from typing import Mapping
 import pandas as pd
 
 import research_v3_independent as v3
-import research_v4_tournament as v4
 
 RULE = "T2_upup"
 CONSENSUS = Path("data/v4_consensus.json")
+SIGNAL_STATE = Path("data/v4_paper_t2.json")
 OUT = Path("data/v4_core_state.json")
 MAX_GROSS = 1.0
 STALE_AFTER_DAYS = 2
@@ -60,48 +64,56 @@ def rebalance_plan(current: Mapping[str, float], target: Mapping[str, float], mi
     return out
 
 
-def load_consensus() -> dict:
-    if not CONSENSUS.exists():
-        raise RuntimeError("missing v4 consensus")
-    c = json.loads(CONSENSUS.read_text(encoding="utf-8"))
+def load_json(path: Path, label: str) -> dict:
+    if not path.exists():
+        raise RuntimeError(f"missing {label}: {path}")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def validate_consensus(c: dict) -> None:
     if c.get("official_research_core") != RULE:
         raise RuntimeError("consensus/core rule mismatch")
     if c.get("live_money_authorized") is not False:
         raise RuntimeError("paper core refuses a consensus that authorizes live money")
-    return c
+    if not c.get("governance", {}).get("do_not_place_live_orders", False):
+        raise RuntimeError("consensus live-order guardrail missing")
 
 
-def completed_prices() -> tuple[pd.DataFrame, dict]:
-    px, errors = v3.load_prices()
-    cutoff = pd.Timestamp(datetime.now(timezone.utc).date(), tz="UTC")
-    px = px.loc[px.index < cutoff]
-    if px.empty:
-        raise RuntimeError("no completed UTC daily bars")
-    return px, errors
+def validate_signal_envelope(s: dict) -> list[str]:
+    errors: list[str] = []
+    if s.get("rule_frozen") != RULE:
+        errors.append("signal/core rule mismatch")
+    if s.get("live_orders") is not False:
+        errors.append("signal state unexpectedly permits live orders")
+    if s.get("frozen_before_first_forward_completed_bar") is not True:
+        errors.append("forward freeze provenance missing")
+    if s.get("asset_errors"):
+        errors.append(f"asset data errors: {s['asset_errors']}")
+    return errors
 
 
 def main() -> None:
-    consensus = load_consensus()
-    px, data_errors = completed_prices()
-    pos = v4.build(px)[RULE]
-    last = px.index.max()
-    row = pos.loc[last].fillna(0.0)
-    target = {k: float(v) for k, v in row.items() if abs(float(v)) > 1e-12}
+    consensus = load_json(CONSENSUS, "v4 consensus")
+    signal = load_json(SIGNAL_STATE, "v4 T2 signal state")
+    validate_consensus(consensus)
+
+    health_errors = validate_signal_envelope(signal)
+    sig = signal.get("current_signal", {})
+    target = {str(k): float(v) for k, v in (sig.get("weights") or {}).items() if abs(float(v)) > 1e-12}
     validation = validate_target(target, set(v3.UNIVERSE))
+    health_errors.extend(validation.errors)
 
+    signal_date = pd.Timestamp(sig.get("signal_date"))
+    if signal_date.tzinfo is None:
+        signal_date = signal_date.tz_localize("UTC")
+    else:
+        signal_date = signal_date.tz_convert("UTC")
     today = pd.Timestamp(datetime.now(timezone.utc).date(), tz="UTC")
-    stale_days = int((today - last.normalize()).days)
-    health_errors = list(validation.errors)
+    stale_days = int((today - signal_date.normalize()).days)
     if stale_days > STALE_AFTER_DAYS:
-        health_errors.append(f"market data stale by {stale_days} days")
-    if data_errors:
-        health_errors.append(f"asset data errors: {data_errors}")
+        health_errors.append(f"signal stale by {stale_days} days")
 
-    btc = px["BTCUSDT"]
-    sma200 = btc.rolling(200).mean()
-    mom60 = btc / btc.shift(60) - 1
-    mom120 = btc / btc.shift(120) - 1
-    regime = bool(btc.loc[last] > sma200.loc[last] and mom60.loc[last] > 0 and mom120.loc[last] > 0)
+    regime = bool(sig.get("btc_upup_gate", False))
     if not regime and target:
         health_errors.append("non-cash target while T2 BTC UP-UP gate is false")
 
@@ -111,16 +123,17 @@ def main() -> None:
         "official_rule": RULE,
         "mode": "PAPER_ONLY",
         "live_order_capability": False,
-        "signal_date": str(last),
+        "signal_source": str(SIGNAL_STATE),
+        "signal_date": str(signal_date),
         "effective_execution": "next bar / next-open convention",
         "target_weights": target,
         "gross_target": validation.gross,
         "paper_rebalance_from_cash": rebalance_plan({}, target),
         "regime": {
-            "btc_close": float(btc.loc[last]),
-            "btc_sma200": float(sma200.loc[last]),
-            "btc_mom60_pct": float(mom60.loc[last] * 100),
-            "btc_mom120_pct": float(mom120.loc[last] * 100),
+            "btc_close": sig.get("btc_close"),
+            "btc_sma200": sig.get("btc_sma200"),
+            "btc_mom60_pct": sig.get("btc_mom60_pct"),
+            "btc_mom120_pct": sig.get("btc_mom120_pct"),
             "upup_gate": regime,
         },
         "health": {
