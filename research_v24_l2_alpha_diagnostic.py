@@ -12,6 +12,7 @@ WS = ('wss://fstream.binance.com/stream?streams='
       'btcusdt@depth20@100ms/btcusdt@aggTrade')
 RUN_SECONDS = 210
 HORIZONS = (1, 3, 5, 10, 30, 60)
+NEW_EVENT_CUTOFF_SEC = RUN_SECONDS - max(HORIZONS) - 5
 TIERS = {
     'base':   {'imb': 0.10, 'micro': 0.02, 'flow2': 0.08, 'flow5': 0.04, 'persist': 2},
     'strong': {'imb': 0.20, 'micro': 0.04, 'flow2': 0.15, 'flow5': 0.08, 'persist': 3},
@@ -62,12 +63,10 @@ def tape_window(tape,now_ms,sec):
     buy=sum(x['notional'] for x in rows if not x['m']); sell=sum(x['notional'] for x in rows if x['m']); tot=buy+sell
     return {'flow':(buy-sell)/tot if tot else 0.0,'count':len(rows),'notional':tot}
 
-def percentile(a,p):
-    return float(np.percentile(a,p)) if a else None
+def percentile(a,p): return float(np.percentile(a,p)) if a else None
 
 def summarize(st):
-    out={}
-    events=st.get('events',[])
+    out={}; events=st.get('events',[])
     for tier in TIERS:
         out[tier]={}
         for h in HORIZONS:
@@ -124,32 +123,34 @@ async def main():
                 t2=tape_window(tape,now_ms,2); t5=tape_window(tape,now_ms,5)
                 hist.append({**latest,'wall_ts':now})
 
-                # Resolve old events only with information available now.
                 still=[]
                 for ev in pending:
                     age=now-ev['wall_ts']; side=ev['side']; ret=side*(latest['mid']/ev['entry_mid']-1)*1e4
                     ev['mfe_bps']=max(ev.get('mfe_bps',ret),ret); ev['mae_bps']=min(ev.get('mae_bps',ret),ret)
                     for h in HORIZONS:
                         if age>=h and str(h) not in ev['resolved']: ev['resolved'][str(h)]=ret
-                    if age>=max(HORIZONS):
-                        st['events'].append({k:v for k,v in ev.items() if k!='wall_ts'})
+                    if age>=max(HORIZONS): st['events'].append({k:v for k,v in ev.items() if k!='wall_ts'})
                     else: still.append(ev)
                 pending=still
 
-                for tier,cfg in TIERS.items():
-                    side=side_for(hist,latest,t2,t5,cfg)
-                    if side and now-last_event[(tier,side)]>=COOLDOWN_SEC:
-                        last_event[(tier,side)]=now
-                        pending.append({'tier':tier,'side':side,'signal_ts':utcnow(),'wall_ts':now,
-                                        'entry_mid':latest['mid'],'spread_bps':latest['spread_bps'],
-                                        'imb10':latest['imb10'],'microedge_bps':latest['microedge_bps'],
-                                        'flow2':t2['flow'],'flow5':t5['flow'],'resolved':{},
-                                        'mfe_bps':0.0,'mae_bps':0.0})
-        # Only completed horizons are persisted; unresolved events are intentionally dropped at process end.
+                elapsed=now-start
+                if elapsed<=NEW_EVENT_CUTOFF_SEC:
+                    for tier,cfg in TIERS.items():
+                        side=side_for(hist,latest,t2,t5,cfg)
+                        if side and now-last_event[(tier,side)]>=COOLDOWN_SEC:
+                            last_event[(tier,side)]=now
+                            pending.append({'tier':tier,'side':side,'signal_ts':utcnow(),'wall_ts':now,
+                                            'entry_mid':latest['mid'],'spread_bps':latest['spread_bps'],
+                                            'imb10':latest['imb10'],'microedge_bps':latest['microedge_bps'],
+                                            'flow2':t2['flow'],'flow5':t5['flow'],'resolved':{},
+                                            'mfe_bps':0.0,'mae_bps':0.0})
+                else:
+                    rejects['end_run_cutoff_observations']+=1
     except Exception as e:
         st['last_error']=repr(e)
     finally:
         st['ws_access_ok']=ws_ok; st['stream_counts']=dict(streams); st['rejections']=dict(rejects)
+        st['new_event_cutoff_sec']=NEW_EVENT_CUTOFF_SEC
         st['events']=st.get('events',[])[-5000:]; summarize(st); save_state(st); print(json.dumps(st,indent=2))
 
 if __name__=='__main__': asyncio.run(main())
