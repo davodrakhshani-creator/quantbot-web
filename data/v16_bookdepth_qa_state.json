@@ -1,0 +1,161 @@
+{
+  "version": "quantbot-v16-bookdepth-qa",
+  "purpose": "DATA_QUALITY_ONLY_NO_LIVE",
+  "symbol": "BTCUSDT",
+  "sample_dates": [
+    "2025-01-15",
+    "2025-03-15",
+    "2025-05-19",
+    "2025-07-15",
+    "2025-09-15",
+    "2025-11-15",
+    "2026-01-15",
+    "2026-03-15",
+    "2026-05-15",
+    "2026-07-15",
+    "2026-08-15"
+  ],
+  "days_available": 11,
+  "per_day": [
+    {
+      "day": "2025-01-15",
+      "available": true,
+      "rows": 28800,
+      "timestamps": 2880,
+      "levels_median": 10.0,
+      "sign_ok_pct": 99.99652777777777,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.2902856296796994,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2025-03-15",
+      "available": true,
+      "rows": 28790,
+      "timestamps": 2879,
+      "levels_median": 10.0,
+      "sign_ok_pct": 100.0,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.3444209221103065,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2025-05-19",
+      "available": true,
+      "rows": 28250,
+      "timestamps": 2825,
+      "levels_median": 10.0,
+      "sign_ok_pct": 76.56637168141593,
+      "within_band_pct": 53.13274336283186,
+      "bad10_pct": 46.86725663716814,
+      "median_abs_rel_pct": 2.0102647159195906,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2025-07-15",
+      "available": true,
+      "rows": 28410,
+      "timestamps": 2841,
+      "levels_median": 10.0,
+      "sign_ok_pct": 100.0,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.281516082728773,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2025-09-15",
+      "available": true,
+      "rows": 27480,
+      "timestamps": 2748,
+      "levels_median": 10.0,
+      "sign_ok_pct": 100.0,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.0876899162504172,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2025-11-15",
+      "available": true,
+      "rows": 27350,
+      "timestamps": 2735,
+      "levels_median": 10.0,
+      "sign_ok_pct": 100.0,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.3089173808702836,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2026-01-15",
+      "available": true,
+      "rows": 32528,
+      "timestamps": 2851,
+      "levels_median": 12.0,
+      "sign_ok_pct": 99.726389572061,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.1926166391743376,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2026-03-15",
+      "available": true,
+      "rows": 31620,
+      "timestamps": 2635,
+      "levels_median": 12.0,
+      "sign_ok_pct": 99.72169512966477,
+      "within_band_pct": 99.99683744465528,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.0904492341043126,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2026-05-15",
+      "available": true,
+      "rows": 31332,
+      "timestamps": 2611,
+      "levels_median": 12.0,
+      "sign_ok_pct": 99.83403549087195,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.1345380219544454,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2026-07-15",
+      "available": true,
+      "rows": 34560,
+      "timestamps": 2880,
+      "levels_median": 12.0,
+      "sign_ok_pct": 99.74537037037037,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.1724196818431676,
+      "median_cadence_sec": 30.0
+    },
+    {
+      "day": "2026-08-15",
+      "available": true,
+      "rows": 34560,
+      "timestamps": 2880,
+      "levels_median": 12.0,
+      "sign_ok_pct": 100.0,
+      "within_band_pct": 100.0,
+      "bad10_pct": 0.0,
+      "median_abs_rel_pct": 1.176608051082767,
+      "median_cadence_sec": 30.0
+    }
+  ],
+  "aggregate": {
+    "mean_sign_ok_pct": 97.78094454746925,
+    "mean_within_band_pct": 95.73905280068065,
+    "mean_bad10_pct": 4.260659694288012
+  },
+  "historical_bookdepth_usable": false,
+  "next": "REJECT_BOOKDEPTH_BACKTEST_AND_USE_FORWARD_L2",
+  "live_orders": false
+}
