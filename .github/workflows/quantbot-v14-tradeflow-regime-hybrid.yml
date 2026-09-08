@@ -1,0 +1,35 @@
+name: QuantBot v14 BTC TradeFlow Regime Hybrid
+
+on:
+  push:
+    paths:
+      - 'research_v14_tradeflow_regime_hybrid.py'
+      - '.github/workflows/quantbot-v14-tradeflow-regime-hybrid.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install numpy pandas requests
+      - name: Compile
+        run: python -m py_compile research_v11_microburst.py research_v13_aggtrade_absorption.py research_v14_tradeflow_regime_hybrid.py
+      - name: Run v14 trade-flow regime hybrid research
+        run: python research_v14_tradeflow_regime_hybrid.py
+      - name: Persist state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/v14_tradeflow_regime_hybrid_state.json
+          git diff --cached --quiet || git commit -m 'Update QuantBot v14 trade-flow regime hybrid state'
+          git pull --rebase origin main
+          git push
