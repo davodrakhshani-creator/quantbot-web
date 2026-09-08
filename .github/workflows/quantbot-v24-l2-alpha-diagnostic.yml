@@ -1,20 +1,10 @@
-name: QuantBot v24 L2 Alpha Diagnostic
+name: QuantBot v24 L2 Alpha Diagnostic [ARCHIVED BINANCE]
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'research_v24_l2_alpha_diagnostic.py'
-      - '.github/workflows/quantbot-v24-l2-alpha-diagnostic.yml'
-  schedule:
-    - cron: '5,25,45 * * * *'
 
 permissions:
   contents: write
-
-concurrency:
-  group: quantbot-v24-l2-alpha-diagnostic
-  cancel-in-progress: true
 
 jobs:
   research:
@@ -22,23 +12,10 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install
         run: pip install 'websockets>=15,<16' numpy
-      - name: Compile
+      - name: Compile only
         run: python -m py_compile research_v24_l2_alpha_diagnostic.py
-      - name: Run v24 forward L2 diagnostic
-        run: python research_v24_l2_alpha_diagnostic.py
-      - name: Persist state
-        run: |
-          git config user.name 'quantbot-research-bot'
-          git config user.email 'actions@users.noreply.github.com'
-          git add data/v24_l2_alpha_diagnostic_state.json
-          git diff --cached --quiet && exit 0
-          git commit -m 'Update QuantBot v24 L2 alpha state'
-          git pull --rebase origin main
-          git push origin HEAD:main
