@@ -2,7 +2,7 @@
   "version": "quantbot-v17-forward-l2-maker-paper",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 2,
+  "runs": 3,
   "observations": 0,
   "signals": 0,
   "paper_trades": [],
@@ -17,5 +17,5 @@
     "win_pct": null,
     "pf": null
   },
-  "updated_at": "2026-09-08T19:20:58.819699+00:00"
+  "updated_at": "2026-09-08T19:36:44.593433+00:00"
 }
