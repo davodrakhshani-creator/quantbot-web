@@ -1,0 +1,34 @@
+name: QuantBot v23B Last24h Replay
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "research_v23b_last24h_replay.py"
+      - ".github/workflows/quantbot-v23b-last24h-replay.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pandas numpy requests
+      - name: Compile
+        run: python -m py_compile research_v23b_last24h_replay.py
+      - name: Run replay
+        run: python research_v23b_last24h_replay.py
+      - name: Persist state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v23b_last24h_replay_state.json
+          git diff --cached --quiet || git commit -m "Update v23B last24h replay state"
+          git push
