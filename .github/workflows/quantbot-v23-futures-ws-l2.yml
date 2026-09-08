@@ -31,6 +31,31 @@ jobs:
         run: pip install 'websockets>=15,<16'
       - name: Compile
         run: python -m py_compile research_v23_futures_ws_l2.py
+      - name: Smoke raw Futures streams
+        run: |
+          python - <<'PY'
+          import asyncio, websockets
+          URLS={
+            'depth':'wss://fstream.binance.com/ws/btcusdt@depth20@100ms',
+            'aggtrade':'wss://fstream.binance.com/ws/btcusdt@aggTrade',
+          }
+          async def count(name,url):
+              n=0
+              async with websockets.connect(url,open_timeout=10,ping_interval=20,ping_timeout=20) as ws:
+                  end=asyncio.get_running_loop().time()+8
+                  while asyncio.get_running_loop().time()<end:
+                      try:
+                          await asyncio.wait_for(ws.recv(),timeout=2)
+                          n+=1
+                      except asyncio.TimeoutError:
+                          pass
+              print(name,n)
+              return n
+          async def main():
+              d,a=await asyncio.gather(count('depth',URLS['depth']),count('aggtrade',URLS['aggtrade']))
+              if d<=0 or a<=0: raise SystemExit(f'raw stream smoke failed: depth={d} aggtrade={a}')
+          asyncio.run(main())
+          PY
       - name: Run v23 futures websocket L2 paper
         run: python research_v23_futures_ws_l2.py
       - name: Persist state
