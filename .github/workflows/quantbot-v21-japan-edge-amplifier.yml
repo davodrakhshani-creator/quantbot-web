@@ -1,0 +1,38 @@
+name: QuantBot v21 Japan Edge Amplifier
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v21_japan_edge_amplifier.py'
+      - '.github/workflows/quantbot-v21-japan-edge-amplifier.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install requests pandas numpy
+      - name: Compile
+        run: python -m py_compile research_v21_japan_edge_amplifier.py
+      - name: Run v21 edge amplifier
+        run: python research_v21_japan_edge_amplifier.py
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -f data/v21_japan_edge_amplifier_state.json ]; then
+            git add data/v21_japan_edge_amplifier_state.json
+            git diff --cached --quiet && exit 0
+            git commit -m "Update QuantBot v21 Japan edge amplifier state"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
