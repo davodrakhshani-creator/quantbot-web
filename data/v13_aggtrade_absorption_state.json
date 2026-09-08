@@ -1,0 +1,293 @@
+{
+  "version": "quantbot-v13-aggtrade-absorption",
+  "purpose": "TRADE_LEVEL_SCREEN_NO_LIVE",
+  "symbol": "BTCUSDT",
+  "source": "Binance Vision USD-M aggTrades -> 1m trade-flow -> 5m entry / 15m regime",
+  "selection_end": "2026-04-24 23:59:59+00:00",
+  "holdout_start": "2026-04-25 00:00:00+00:00",
+  "selected": null,
+  "candidates": {
+    "G0_trade_absorb": {
+      "spec": {
+        "name": "G0_trade_absorb",
+        "flow_thr": 0.1,
+        "persist_thr": 0.4,
+        "accel_thr": 0.55,
+        "body_thr": 0.28,
+        "stop_atr": 0.85,
+        "take_atr": 1.35,
+        "max_hold": 8,
+        "cci_gate": 120
+      },
+      "train": {
+        "7.0": {
+          "trades": 744,
+          "net_pct": -74.77327547299679,
+          "pf": 0.3859266796534922,
+          "win_pct": 37.5,
+          "max_dd_pct": 74.77327547299679,
+          "avg_trade_bps": -8.67215189642867,
+          "longs": 393,
+          "shorts": 351
+        },
+        "12.0": {
+          "trades": 744,
+          "net_pct": -91.12124378484313,
+          "pf": 0.16810763851737726,
+          "win_pct": 28.360215053763444,
+          "max_dd_pct": 91.12124378484313,
+          "avg_trade_bps": -15.68071167936332,
+          "longs": 393,
+          "shorts": 351
+        },
+        "20.0": {
+          "trades": 744,
+          "net_pct": -98.33251690062383,
+          "pf": 0.03676141755163291,
+          "win_pct": 13.172043010752688,
+          "max_dd_pct": 98.33251690062383,
+          "avg_trade_bps": -26.894407332058766,
+          "longs": 393,
+          "shorts": 351
+        }
+      },
+      "score": -1000000000.0
+    },
+    "G1_strict": {
+      "spec": {
+        "name": "G1_strict",
+        "flow_thr": 0.14,
+        "persist_thr": 0.5,
+        "accel_thr": 0.65,
+        "body_thr": 0.32,
+        "stop_atr": 0.8,
+        "take_atr": 1.5,
+        "max_hold": 8,
+        "cci_gate": 110
+      },
+      "train": {
+        "7.0": {
+          "trades": 418,
+          "net_pct": -56.55057616807244,
+          "pf": 0.3263631130935072,
+          "win_pct": 31.100478468899524,
+          "max_dd_pct": 56.55057616807244,
+          "avg_trade_bps": -9.79989841636626,
+          "longs": 223,
+          "shorts": 195
+        },
+        "12.0": {
+          "trades": 418,
+          "net_pct": -76.26942401971466,
+          "pf": 0.13984612433075128,
+          "win_pct": 22.727272727272727,
+          "max_dd_pct": 76.26942401971466,
+          "avg_trade_bps": -17.0247923583122,
+          "longs": 223,
+          "shorts": 195
+        },
+        "20.0": {
+          "trades": 418,
+          "net_pct": -90.99202972850328,
+          "pf": 0.03275937315692402,
+          "win_pct": 10.526315789473683,
+          "max_dd_pct": 90.99202972850328,
+          "avg_trade_bps": -28.584622665425723,
+          "longs": 223,
+          "shorts": 195
+        }
+      },
+      "score": -1000000000.0
+    },
+    "G2_extreme": {
+      "spec": {
+        "name": "G2_extreme",
+        "flow_thr": 0.18,
+        "persist_thr": 0.6,
+        "accel_thr": 0.72,
+        "body_thr": 0.38,
+        "stop_atr": 0.8,
+        "take_atr": 1.7,
+        "max_hold": 10,
+        "cci_gate": 100
+      },
+      "train": {
+        "7.0": {
+          "trades": 233,
+          "net_pct": -38.949224417773046,
+          "pf": 0.27839887193786567,
+          "win_pct": 28.32618025751073,
+          "max_dd_pct": 38.949224417773046,
+          "avg_trade_bps": -10.844718197658118,
+          "longs": 125,
+          "shorts": 108
+        },
+        "12.0": {
+          "trades": 233,
+          "net_pct": -56.700364976641936,
+          "pf": 0.11688457214194792,
+          "win_pct": 21.030042918454935,
+          "max_dd_pct": 56.700364976641936,
+          "avg_trade_bps": -18.206639115667308,
+          "longs": 125,
+          "shorts": 108
+        },
+        "20.0": {
+          "trades": 233,
+          "net_pct": -75.02399053455659,
+          "pf": 0.03281468491833965,
+          "win_pct": 8.15450643776824,
+          "max_dd_pct": 75.02399053455659,
+          "avg_trade_bps": -29.985712584482016,
+          "longs": 125,
+          "shorts": 108
+        }
+      },
+      "score": -1000000000.0
+    },
+    "G3_wide": {
+      "spec": {
+        "name": "G3_wide",
+        "flow_thr": 0.12,
+        "persist_thr": 0.45,
+        "accel_thr": 0.6,
+        "body_thr": 0.28,
+        "stop_atr": 0.95,
+        "take_atr": 1.6,
+        "max_hold": 12,
+        "cci_gate": 140
+      },
+      "train": {
+        "7.0": {
+          "trades": 607,
+          "net_pct": -67.35493613949706,
+          "pf": 0.4045769506418544,
+          "win_pct": 36.40856672158155,
+          "max_dd_pct": 67.35493613949706,
+          "avg_trade_bps": -8.801842445952634,
+          "longs": 320,
+          "shorts": 287
+        },
+        "12.0": {
+          "trades": 607,
+          "net_pct": -85.82951768728459,
+          "pf": 0.1919286070014632,
+          "win_pct": 29.654036243822073,
+          "max_dd_pct": 85.82951768728459,
+          "avg_trade_bps": -15.667092260096899,
+          "longs": 320,
+          "shorts": 287
+        },
+        "20.0": {
+          "trades": 607,
+          "net_pct": -96.27643891123464,
+          "pf": 0.052135972137532606,
+          "win_pct": 15.815485996705107,
+          "max_dd_pct": 96.27643891123464,
+          "avg_trade_bps": -26.65149196272772,
+          "longs": 320,
+          "shorts": 287
+        }
+      },
+      "score": -1000000000.0
+    },
+    "G4_fast": {
+      "spec": {
+        "name": "G4_fast",
+        "flow_thr": 0.1,
+        "persist_thr": 0.45,
+        "accel_thr": 0.62,
+        "body_thr": 0.32,
+        "stop_atr": 0.75,
+        "take_atr": 1.2,
+        "max_hold": 6,
+        "cci_gate": 120
+      },
+      "train": {
+        "7.0": {
+          "trades": 532,
+          "net_pct": -64.87667686234457,
+          "pf": 0.2924232842150579,
+          "win_pct": 34.02255639097744,
+          "max_dd_pct": 64.87667686234457,
+          "avg_trade_bps": -9.483150601018265,
+          "longs": 282,
+          "shorts": 250
+        },
+        "12.0": {
+          "trades": 532,
+          "net_pct": -83.78988358347621,
+          "pf": 0.10417552398913724,
+          "win_pct": 21.616541353383457,
+          "max_dd_pct": 83.78988358347621,
+          "avg_trade_bps": -16.740468957823353,
+          "longs": 282,
+          "shorts": 250
+        },
+        "20.0": {
+          "trades": 532,
+          "net_pct": -95.30129766474236,
+          "pf": 0.016684325313742823,
+          "win_pct": 7.330827067669173,
+          "max_dd_pct": 95.30129766474236,
+          "avg_trade_bps": -28.3521783287115,
+          "longs": 282,
+          "shorts": 250
+        }
+      },
+      "score": -1000000000.0
+    },
+    "G5_defensive": {
+      "spec": {
+        "name": "G5_defensive",
+        "flow_thr": 0.16,
+        "persist_thr": 0.55,
+        "accel_thr": 0.7,
+        "body_thr": 0.4,
+        "stop_atr": 0.9,
+        "take_atr": 1.8,
+        "max_hold": 10,
+        "cci_gate": 90
+      },
+      "train": {
+        "7.0": {
+          "trades": 260,
+          "net_pct": -40.503366560991694,
+          "pf": 0.33949619594238306,
+          "win_pct": 32.30769230769231,
+          "max_dd_pct": 40.503366560991694,
+          "avg_trade_bps": -9.829956384269122,
+          "longs": 140,
+          "shorts": 120
+        },
+        "12.0": {
+          "trades": 260,
+          "net_pct": -59.15477322334728,
+          "pf": 0.153417575581997,
+          "win_pct": 23.846153846153847,
+          "max_dd_pct": 59.15477322334728,
+          "avg_trade_bps": -17.053153725052322,
+          "longs": 140,
+          "shorts": 120
+        },
+        "20.0": {
+          "trades": 260,
+          "net_pct": -77.63696092938468,
+          "pf": 0.04519493566194893,
+          "win_pct": 10.0,
+          "max_dd_pct": 77.63696092938468,
+          "avg_trade_bps": -28.61026947030545,
+          "longs": 140,
+          "shorts": 120
+        }
+      },
+      "score": -1000000000.0
+    }
+  },
+  "holdout": null,
+  "day100": null,
+  "side_diagnostic": null,
+  "holdout_gate_pass": false,
+  "live_orders": false,
+  "interpretation": "NO_V13_EDGE_YET"
+}
