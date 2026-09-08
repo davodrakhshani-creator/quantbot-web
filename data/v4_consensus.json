@@ -1,0 +1,87 @@
+{
+  "version": "quantbot-v4-consensus-1",
+  "as_of_utc": "2026-09-08",
+  "official_research_core": "T2_upup",
+  "rule": "Weekly top-3 positive multi-horizon momentum (20/60/120/180 blend), inverse-volatility weighted to 12% annual target; active only when BTC is above SMA200 AND BTC 60-day return > 0 AND BTC 120-day return > 0; gross <= 1x; otherwise cash.",
+  "execution_convention": "Signal after fully completed UTC daily close; target applies next bar. Next-open audit passed.",
+  "status": "STRONG_PAPER_CANDIDATE_FORWARD_PROOF_REQUIRED",
+  "live_money_authorized": false,
+  "why_selected": {
+    "v4_tournament": "PASS_BOTH_STATIC_UNIVERSES",
+    "dynamic_point_in_time_liquidity_universe": "PASS",
+    "redteam_integrity": "PASS",
+    "parameter_neighborhood": "PASS_8_OF_10_BOTH_UNIVERSES",
+    "leave_one_asset_out": "PASS_CURRENT_19_OF_19_POST40; SNAPSHOT_14_OF_15_POST40",
+    "multiple_testing_block_bootstrap": "PASS_BOTH_UNIVERSES",
+    "next_open_execution": "PASS_BOTH_UNIVERSES",
+    "walkforward_ml_lane": "REJECTED_NO_ROBUST_EDGE",
+    "structural_carry_lane": "REJECTED_HOLDOUT_GATES",
+    "cross_venue_funding_lane": "REJECTED"
+  },
+  "key_prelock_metrics": {
+    "current_liquid": {
+      "n_days": 1940,
+      "net_pct": 74.6889,
+      "annualized_pct": 11.0739,
+      "sharpe": 1.4673,
+      "profit_factor": 1.4105,
+      "max_drawdown_pct": 7.0964,
+      "avg_daily_edge_bps": 2.949,
+      "active_day_pct": 43.14,
+      "stress40_net_pct": 69.3038,
+      "stress75_net_pct": 62.5662,
+      "delay2_total_net_pct": 67.1753,
+      "rolling_180_meaningful_positive_fraction": 0.75
+    },
+    "historical_2021_snapshot": {
+      "n_days": 1940,
+      "net_pct": 34.7452,
+      "annualized_pct": 5.7752,
+      "sharpe": 0.8533,
+      "profit_factor": 1.2031,
+      "max_drawdown_pct": 7.5609,
+      "avg_daily_edge_bps": 1.602,
+      "active_day_pct": 43.14,
+      "stress40_net_pct": 29.5244,
+      "stress75_net_pct": 23.0525,
+      "delay2_total_net_pct": 35.1812,
+      "rolling_180_meaningful_positive_fraction": 0.645833
+    },
+    "dynamic_liquidity_universe_52_pool": {
+      "n_days": 1940,
+      "net_pct": 34.8626,
+      "annualized_pct": 5.7926,
+      "sharpe": 0.8806,
+      "profit_factor": 1.2170,
+      "max_drawdown_pct": 7.7425,
+      "avg_daily_edge_bps": 1.6021,
+      "active_day_pct": 43.14,
+      "stress40_net_pct": 30.4773,
+      "stress75_net_pct": 25.0018,
+      "delay2_total_net_pct": 38.4188,
+      "rolling_180_meaningful_positive_fraction": 0.666667
+    }
+  },
+  "statistical_screen": {
+    "current_reality_check_p": 0.012395,
+    "historical_snapshot_reality_check_p": 0.081567,
+    "current_bootstrap_net_positive_fraction": 0.9976,
+    "historical_snapshot_bootstrap_net_positive_fraction": 0.9688,
+    "current_bootstrap_net_p05_pct": 19.2002,
+    "historical_snapshot_bootstrap_net_p05_pct": 2.987
+  },
+  "fresh_forward": {
+    "start_utc": "2026-09-08",
+    "rule_frozen_before_first_completed_forward_bar": true,
+    "tracker": "data/v4_paper_t2.json",
+    "promotion_gate": "n_days>=180; active_days>=20; net>0; PF>=1.10; maxDD<=10%; 40bps stress net>0",
+    "current_live_authorization": false,
+    "note": "Fresh forward observations are the remaining evidence required before any live-money review. Passing the paper gate triggers manual operational review only."
+  },
+  "governance": {
+    "do_not_retune_T2_using_forward_data": true,
+    "do_not_call_reused_2026_postlock_pristine": true,
+    "do_not_merge_rejected_ML_or_carry_into_core": true,
+    "do_not_place_live_orders": true
+  }
+}
