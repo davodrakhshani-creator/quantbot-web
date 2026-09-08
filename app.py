@@ -1,246 +1,121 @@
-import os, time, threading, math
-from datetime import datetime, timezone
-import requests
+import json
+import os
+from pathlib import Path
 from flask import Flask, jsonify, Response
 
 app = Flask(__name__)
 
-SYMBOL = "BTCUSDT"
-INTERVALS = ["1", "5", "15", "60", "240"]
-WEIGHTS = {"1":0.05,"5":0.15,"15":0.20,"60":0.25,"240":0.35}
-API = "https://api.bybit.com/v5/market/kline"
-TICKER_API = "https://api.bybit.com/v5/market/tickers"
-
-state = {
-    "running": True,
-    "price": None,
-    "signal": "NO_TRADE",
-    "bull": 0.0,
-    "bear": 0.0,
-    "skeptic": 100.0,
-    "agreement": 0.0,
-    "equity": 10000.0,
-    "day_start_equity": 10000.0,
-    "position": None,
-    "trades": [],
-    "wins": 0,
-    "losses": 0,
-    "last_update": None,
-    "last_error": None,
-    "tf": {},
-    "funding": None,
-    "oi": None,
-}
-lock = threading.Lock()
+DATA = Path("data")
+CORE = DATA / "v4_core_state.json"
+PAPER = DATA / "v4_paper_t2.json"
+CONSENSUS = DATA / "v4_consensus.json"
 
 
-def ema(values, span):
-    if not values:
-        return 0.0
-    a = 2.0/(span+1.0)
-    e = values[0]
-    for v in values[1:]:
-        e = a*v + (1-a)*e
-    return e
+def _read(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return {"_error": f"{path}: {exc}"}
 
 
-def rsi(values, n=14):
-    if len(values) < n+1:
-        return 50.0
-    gains = losses = 0.0
-    for i in range(-n, 0):
-        d = values[i]-values[i-1]
-        if d >= 0: gains += d
-        else: losses += -d
-    ag = gains/n
-    al = losses/n
-    if al == 0: return 100.0
-    rs = ag/al
-    return 100 - 100/(1+rs)
+def snapshot() -> dict:
+    core = _read(CORE)
+    paper = _read(PAPER)
+    consensus = _read(CONSENSUS)
+    errors = [x["_error"] for x in (core, paper, consensus) if "_error" in x]
+    health = core.get("health", {}) if not errors else {"ok": False, "errors": errors}
+    return {
+        "ok": bool(health.get("ok", False)) and not errors,
+        "core": core,
+        "paper": paper,
+        "consensus": consensus,
+        "errors": errors,
+    }
 
 
-def atr(rows, n=14):
-    if len(rows) < n+1: return 0.0
-    trs=[]
-    for i in range(len(rows)-n, len(rows)):
-        h,l,cprev = rows[i][1], rows[i][2], rows[i-1][3]
-        trs.append(max(h-l, abs(h-cprev), abs(l-cprev)))
-    return sum(trs)/len(trs)
-
-
-def fetch_klines(interval):
-    r = requests.get(API, params={"category":"linear","symbol":SYMBOL,"interval":interval,"limit":260}, timeout=12)
-    r.raise_for_status()
-    js = r.json()
-    if js.get("retCode") != 0:
-        raise RuntimeError(str(js))
-    raw = js["result"]["list"]
-    rows=[]
-    for x in reversed(raw):
-        rows.append((int(x[0]), float(x[2]), float(x[3]), float(x[4]), float(x[5])))
-    return rows[:-1] if len(rows)>1 else rows
-
-
-def fetch_ticker():
-    r = requests.get(TICKER_API, params={"category":"linear","symbol":SYMBOL}, timeout=12)
-    r.raise_for_status()
-    js=r.json()
-    d=js["result"]["list"][0]
-    return float(d["markPrice"]), float(d.get("fundingRate") or 0), float(d.get("openInterest") or 0)
-
-
-def analyze_tf(interval, rows):
-    closes=[x[3] for x in rows]
-    if len(closes)<220: return None
-    e20,e50,e200=ema(closes[-220:],20),ema(closes[-220:],50),ema(closes[-220:],200)
-    rv=rsi(closes,14)
-    av=atr(rows,14)
-    px=closes[-1]
-    m3=(closes[-1]/closes[-4]-1)*100 if len(closes)>=4 else 0
-    m12=(closes[-1]/closes[-13]-1)*100 if len(closes)>=13 else 0
-    bull=bear=0.0
-    if e20>e50>e200: bull+=40
-    elif e20<e50<e200: bear+=40
-    else:
-        if e20>e50: bull+=18
-        elif e20<e50: bear+=18
-    if px>e20: bull+=10
-    else: bear+=10
-    if px>e50: bull+=10
-    else: bear+=10
-    if 52<=rv<=72: bull+=20
-    elif 28<=rv<=48: bear+=20
-    elif rv>72: bear+=6
-    elif rv<28: bull+=6
-    if m3>0 and m12>0: bull+=20
-    elif m3<0 and m12<0: bear+=20
-    direction = "BULL" if bull>bear else "BEAR" if bear>bull else "FLAT"
-    return {"bull":min(100,bull),"bear":min(100,bear),"rsi":round(rv,1),"atr":av,"close":px,"dir":direction}
-
-
-def decision():
-    tf={}
-    for iv in INTERVALS:
-        a=analyze_tf(iv, fetch_klines(iv))
-        if a: tf[iv]=a
-    if len(tf)<5:
-        return "NO_TRADE",0,0,100,0,tf,None,None,None
-    bull=sum(tf[i]["bull"]*WEIGHTS[i] for i in INTERVALS)
-    bear=sum(tf[i]["bear"]*WEIGHTS[i] for i in INTERVALS)
-    side="LONG" if bull>bear else "SHORT"
-    score=max(bull,bear); opp=min(bull,bear)
-    aligned=sum(WEIGHTS[i] for i in INTERVALS if (side=="LONG" and tf[i]["bull"]>tf[i]["bear"]) or (side=="SHORT" and tf[i]["bear"]>tf[i]["bull"]))
-    skeptic=0.0
-    if score-opp<15: skeptic+=35
-    if aligned<0.70: skeptic+=35
-    px=tf["5"]["close"]
-    av=tf["5"]["atr"]
-    if av<=0: skeptic+=50
-    action = side if score>=70 and (score-opp)>=15 and aligned>=0.70 and skeptic<=35 else "NO_TRADE"
-    if action=="NO_TRADE": return action,score,opp,skeptic,aligned,tf,None,None,None
-    dist=1.5*av
-    if side=="LONG": sl,tp=px-dist,px+2*dist
-    else: sl,tp=px+dist,px-2*dist
-    return action,score,opp,skeptic,aligned,tf,px,sl,tp
-
-
-def check_exit(price):
-    p=state["position"]
-    if not p: return
-    reason=None
-    if p["side"]=="LONG":
-        if price<=p["sl"]: reason="STOP"
-        elif price>=p["tp"]: reason="TAKE_PROFIT"
-        pnl=(price-p["entry"])*p["qty"]
-    else:
-        if price>=p["sl"]: reason="STOP"
-        elif price<=p["tp"]: reason="TAKE_PROFIT"
-        pnl=(p["entry"]-price)*p["qty"]
-    if not reason: return
-    fee=(p["entry"]*p["qty"]+price*p["qty"])*0.0006
-    net=pnl-fee
-    state["equity"]+=net
-    if net>=0: state["wins"]+=1
-    else: state["losses"]+=1
-    state["trades"].insert(0,{"side":p["side"],"entry":round(p["entry"],2),"exit":round(price,2),"pnl":round(net,2),"reason":reason,"time":datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")})
-    state["trades"]=state["trades"][:30]
-    state["position"]=None
-
-
-def maybe_open(action, entry, sl, tp):
-    if action not in ("LONG","SHORT") or state["position"] is not None: return
-    risk_cash=state["equity"]*0.0025
-    stop_dist=abs(entry-sl)
-    if stop_dist<=0: return
-    qty=min(risk_cash/stop_dist, state["equity"]/entry)
-    if qty<=0: return
-    state["position"]={"side":action,"entry":entry,"sl":sl,"tp":tp,"qty":qty,"opened":time.time()}
-
-
-def worker():
-    while True:
-        try:
-            with lock:
-                running=state["running"]
-            price,funding,oi=fetch_ticker()
-            with lock:
-                state["price"]=price; state["funding"]=funding; state["oi"]=oi
-                check_exit(price)
-            if running:
-                action,score,opp,skeptic,agreement,tf,entry,sl,tp=decision()
-                with lock:
-                    state["signal"]=action
-                    state["bull"]=round(score if action=="LONG" else opp if action=="SHORT" else max([v["bull"] for v in tf.values()] or [0]),1)
-                    state["bear"]=round(opp if action=="LONG" else score if action=="SHORT" else max([v["bear"] for v in tf.values()] or [0]),1)
-                    state["skeptic"]=round(skeptic,1)
-                    state["agreement"]=round(agreement*100,1)
-                    state["tf"]=tf
-                    state["last_update"]=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-                    state["last_error"]=None
-                    maybe_open(action,entry,sl,tp)
-        except Exception as e:
-            with lock:
-                state["last_error"]=str(e)
-                state["last_update"]=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-        time.sleep(60)
-
-threading.Thread(target=worker, daemon=True).start()
-
-@app.get('/health')
+@app.get("/health")
 def health():
-    return jsonify({"ok":True})
+    s = snapshot()
+    return jsonify({"ok": s["ok"], "mode": "PAPER_ONLY", "rule": "T2_upup"}), (200 if s["ok"] else 503)
 
-@app.get('/api/state')
+
+@app.get("/api/state")
 def api_state():
-    with lock:
-        s=dict(state)
-    return jsonify(s)
+    return jsonify(snapshot())
 
-@app.post('/api/toggle')
-def toggle():
-    with lock:
-        state["running"] = not state["running"]
-        v=state["running"]
-    return jsonify({"running":v})
 
-PAGE='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>QuantBot Paper</title><style>
-:root{color-scheme:dark}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;background:#0b0d12;color:#f4f7fb}.wrap{max-width:760px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;align-items:center}.muted{color:#8f98a8}.price{font-size:38px;font-weight:800;margin:10px 0}.card{background:#151922;border:1px solid #262c38;border-radius:18px;padding:16px;margin:12px 0}.signal{font-size:34px;font-weight:900}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#10141b;border-radius:14px;padding:13px}.metric b{font-size:22px;display:block;margin-top:4px}.btn{border:0;border-radius:14px;padding:13px 16px;font-weight:700;background:#fff;color:#111}.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #242a34}.row:last-child{border:0}.good{color:#4de08a}.bad{color:#ff6b7a}.warn{color:#ffd166}table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:8px 4px;text-align:left;border-bottom:1px solid #242a34}</style></head><body><div class="wrap">
-<div class="top"><div><b>QuantBot</b><div class="muted">Paper Trading • BTCUSDT</div></div><button id="toggle" class="btn">Pause</button></div>
-<div id="price" class="price">—</div>
-<div class="card"><div class="muted">FINAL SIGNAL</div><div id="signal" class="signal">NO_TRADE</div><div id="updated" class="muted"></div></div>
-<div class="grid"><div class="metric">Bull<b id="bull">—</b></div><div class="metric">Bear<b id="bear">—</b></div><div class="metric">Skeptic<b id="skeptic">—</b></div><div class="metric">Agreement<b id="agree">—</b></div></div>
-<div class="card"><div class="row"><span>Paper equity</span><b id="equity">—</b></div><div class="row"><span>Funding</span><b id="funding">—</b></div><div class="row"><span>Open interest</span><b id="oi">—</b></div><div class="row"><span>Position</span><b id="pos">—</b></div></div>
-<div class="card"><b>Timeframes</b><div id="tf"></div></div>
-<div class="card"><b>Recent trades</b><div style="overflow:auto"><table><thead><tr><th>Side</th><th>Entry</th><th>Exit</th><th>PnL</th></tr></thead><tbody id="trades"></tbody></table></div></div>
-<div id="err" class="muted"></div></div><script>
-async function load(){try{const r=await fetch('/api/state');const s=await r.json();price.textContent=s.price?('$'+Number(s.price).toLocaleString()):'—';signal.textContent=s.signal;signal.className='signal '+(s.signal==='LONG'?'good':s.signal==='SHORT'?'bad':'warn');bull.textContent=s.bull;bear.textContent=s.bear;skeptic.textContent=s.skeptic;agree.textContent=s.agreement+'%';equity.textContent='$'+Number(s.equity).toFixed(2);funding.textContent=s.funding==null?'—':(Number(s.funding)*100).toFixed(4)+'%';oi.textContent=s.oi==null?'—':Number(s.oi).toLocaleString();updated.textContent=s.last_update||'';toggle.textContent=s.running?'Pause':'Start';pos.textContent=s.position?(s.position.side+' @ '+Number(s.position.entry).toFixed(0)):'None';let h='';for(const k of ['1','5','15','60','240']){const v=s.tf[k];if(v)h+=`<div class="row"><span>${k==='60'?'1H':k==='240'?'4H':k+'m'}</span><b class="${v.dir==='BULL'?'good':v.dir==='BEAR'?'bad':'warn'}">${v.dir} • RSI ${v.rsi}</b></div>`}tf.innerHTML=h;trades.innerHTML=(s.trades||[]).map(t=>`<tr><td>${t.side}</td><td>${t.entry}</td><td>${t.exit}</td><td class="${t.pnl>=0?'good':'bad'}">${t.pnl}</td></tr>`).join('');err.textContent=s.last_error?('Data error: '+s.last_error):''}catch(e){err.textContent='Connection error: '+e}}
-toggle.addEventListener('click',async()=>{await fetch('/api/toggle',{method:'POST'});load()});load();setInterval(load,5000);
+PAGE = r'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QuantBot v4</title>
+<style>
+:root{color-scheme:dark;--bg:#090b10;--card:#131722;--line:#262d3a;--mut:#929daf;--good:#54e398;--bad:#ff6f7f;--warn:#ffd36a;--blue:#79a9ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f4f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:920px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.brand{font-size:24px;font-weight:850}.sub,.mut{color:var(--mut)}.pill{border:1px solid var(--line);background:#0e121a;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:750}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:12px}.big{font-size:34px;font-weight:900;letter-spacing:-1px}.cash{color:var(--warn)}.on{color:var(--good)}.off{color:var(--bad)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:#0e121a;border:1px solid #1c2330;border-radius:14px;padding:12px}.metric span{display:block;color:var(--mut);font-size:12px}.metric b{display:block;font-size:20px;margin-top:5px}.row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #222938}.row:last-child{border-bottom:0}.bar{height:9px;border-radius:99px;background:#242b38;overflow:hidden}.bar>i{display:block;height:100%;background:linear-gradient(90deg,#78a9ff,#54e398);width:0}.weights{display:flex;gap:8px;flex-wrap:wrap}.chip{background:#0d1219;border:1px solid #263043;border-radius:12px;padding:9px 11px}.tests{display:grid;grid-template-columns:1fr 1fr;gap:8px}.test{padding:10px;border-radius:12px;background:#0e121a;border:1px solid #202838}.test b{float:right;color:var(--good)}.danger{border-color:#4b2830;background:#1b1015}.footer{font-size:12px;color:var(--mut);padding:12px 2px 28px}.tiny{font-size:12px}.err{white-space:pre-wrap;color:var(--bad)}@media(max-width:700px){.hero,.grid,.tests{grid-template-columns:1fr}.top{align-items:center}.big{font-size:30px}}
+</style></head><body><div class="wrap">
+<div class="top"><div><div class="brand">QuantBot v4</div><div class="sub">Audited regime-aware momentum • frozen T2_upup</div></div><div class="pill">PAPER ONLY</div></div>
+
+<div class="hero">
+ <div class="card"><div class="mut tiny">OFFICIAL ACTION</div><div id="action" class="big">Loading…</div><div id="signalDate" class="mut"></div><div class="weights" id="weights" style="margin-top:12px"></div></div>
+ <div class="card"><div class="mut tiny">ENGINE HEALTH</div><div id="health" class="big">—</div><div id="status" class="mut"></div></div>
+</div>
+
+<div class="card"><b>BTC regime gate</b><div class="grid" style="margin-top:12px">
+ <div class="metric"><span>BTC close / SMA200</span><b id="btc">—</b></div>
+ <div class="metric"><span>60-day momentum</span><b id="m60">—</b></div>
+ <div class="metric"><span>120-day momentum</span><b id="m120">—</b></div>
+</div><div class="row"><span>UP-UP + MA200 gate</span><b id="gate">—</b></div></div>
+
+<div class="card"><b>Fresh forward proof</b><div class="grid" style="margin-top:12px">
+ <div class="metric"><span>Completed forward days</span><b id="fdays">—</b></div>
+ <div class="metric"><span>Active days</span><b id="active">—</b></div>
+ <div class="metric"><span>Net @13bps</span><b id="fnet">—</b></div>
+ <div class="metric"><span>Profit factor</span><b id="fpf">—</b></div>
+ <div class="metric"><span>Max drawdown</span><b id="fdd">—</b></div>
+ <div class="metric"><span>Net @40bps</span><b id="stress">—</b></div>
+</div><div style="margin-top:13px"><div class="mut tiny">180-day evidence gate progress</div><div class="bar"><i id="progress"></i></div></div><div id="forwardStatus" class="mut tiny" style="margin-top:9px"></div></div>
+
+<div class="card"><b>Research evidence before fresh forward</b><div class="grid" style="margin-top:12px">
+ <div class="metric"><span>Current liquid universe</span><b id="e1">—</b><small id="e1s" class="mut"></small></div>
+ <div class="metric"><span>2021 historical snapshot</span><b id="e2">—</b><small id="e2s" class="mut"></small></div>
+ <div class="metric"><span>Dynamic 52-asset pool</span><b id="e3">—</b><small id="e3s" class="mut"></small></div>
+</div></div>
+
+<div class="card"><b>Independent gates</b><div class="tests" id="tests" style="margin-top:12px"></div></div>
+<div class="card danger"><b>Live-money guardrail</b><div class="row"><span>Authenticated exchange/order capability</span><b class="off">DISABLED</b></div><div class="mut tiny">Passing the forward paper gate does not automatically enable live trading. The frozen rule must first pass the pre-registered forward criteria and a separate execution/venue/slippage review.</div></div>
+<div id="errors" class="err"></div><div class="footer">Data are based on fully completed UTC daily bars. The strategy is weekly long/cash; intraday price noise is intentionally not used as a trading signal.</div>
+</div>
+<script>
+const pc=(x,d=2)=>Number.isFinite(Number(x))?Number(x).toFixed(d)+'%':'—';
+const num=(x,d=2)=>Number.isFinite(Number(x))?Number(x).toFixed(d):'—';
+function metricText(m){return `${pc(m.net_pct)} • Sharpe ${num(m.sharpe)} • DD ${pc(m.max_dd_pct)}`}
+async function load(){
+ try{
+  const r=await fetch('/api/state',{cache:'no-store'}),s=await r.json(),c=s.core||{},p=s.paper||{},q=s.consensus||{};
+  const w=c.target_weights||{}, gross=Number(c.gross_target||0), has=Object.keys(w).length>0&&gross>1e-9;
+  action.textContent=has?'REBALANCE / HOLD':'CASH'; action.className='big '+(has?'on':'cash');
+  weights.innerHTML=has?Object.entries(w).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="chip"><b>${k.replace('USDT','')}</b> ${(100*v).toFixed(2)}%</div>`).join(''):'<div class="chip">No market exposure</div>';
+  signalDate.textContent='Signal: '+(c.signal_date||'—')+' • Gross '+(gross*100).toFixed(2)+'%';
+  health.textContent=s.ok?'PASS':'FAIL'; health.className='big '+(s.ok?'on':'off'); status.textContent=c.consensus_status||'';
+  const g=c.regime||{}; btc.textContent=(g.btc_close?Number(g.btc_close).toLocaleString():'—')+' / '+(g.btc_sma200?Number(g.btc_sma200).toLocaleString(undefined,{maximumFractionDigits:0}):'—');
+  m60.textContent=pc(g.btc_mom60_pct);m60.className=Number(g.btc_mom60_pct)>0?'on':'off';m120.textContent=pc(g.btc_mom120_pct);m120.className=Number(g.btc_mom120_pct)>0?'on':'off';
+  gate.textContent=g.upup_gate?'OPEN':'CLOSED';gate.className=g.upup_gate?'on':'off';
+  const f=p.forward_metrics_13bps||{},fs=p.forward_metrics_40bps||{},days=Number(f.n_days||0),act=Number(p.forward_active_days||0);
+  fdays.textContent=days+' / 180';active.textContent=act+' / 20';fnet.textContent=pc(f.net_pct);fpf.textContent=num(f.pf);fdd.textContent=pc(f.max_dd_pct);stress.textContent=pc(fs.net_pct);
+  progress.style.width=Math.min(100,days/180*100)+'%'; forwardStatus.textContent=(p.promotion_gate_pre_registered||{}).passed?'Paper gate passed; manual operational review required.':'Forward gate not yet complete; rule remains frozen.';
+  const km=q.key_prelock_metrics||{},a=km.current_liquid||{},b=km.historical_2021_snapshot||{},d=km.dynamic_liquidity_universe_52_pool||{};
+  e1.textContent=pc(a.net_pct);e1s.textContent=`Sharpe ${num(a.sharpe)} • DD ${pc(a.max_drawdown_pct)}`;e2.textContent=pc(b.net_pct);e2s.textContent=`Sharpe ${num(b.sharpe)} • DD ${pc(b.max_drawdown_pct)}`;e3.textContent=pc(d.net_pct);e3s.textContent=`Sharpe ${num(d.sharpe)} • DD ${pc(d.max_drawdown_pct)}`;
+  const why=q.why_selected||{};tests.innerHTML=Object.entries(why).map(([k,v])=>`<div class="test">${k.replaceAll('_',' ')}<b>${String(v).startsWith('REJECTED')?'FILTERED':'PASS'}</b><div class="mut tiny">${v}</div></div>`).join('');
+  errors.textContent=(s.errors||[]).join('\n');
+ }catch(e){errors.textContent='Dashboard error: '+e}
+}
+load();setInterval(load,30000);
 </script></body></html>'''
 
-@app.get('/')
-def home():
-    return Response(PAGE, mimetype='text/html')
 
-if __name__ == '__main__':
-    port=int(os.environ.get('PORT','8080'))
-    app.run(host='0.0.0.0', port=port)
+@app.get("/")
+def home():
+    return Response(PAGE, mimetype="text/html")
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "8080"))
+    app.run(host="0.0.0.0", port=port)
