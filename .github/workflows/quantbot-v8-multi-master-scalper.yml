@@ -1,0 +1,34 @@
+name: QuantBot v8 Multi-Master BTC Scalper
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research_v8_multi_master_scalper.py'
+      - '.github/workflows/quantbot-v8-multi-master-scalper.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install numpy pandas requests
+      - name: Compile
+        run: python -m py_compile research_v8_multi_master_scalper.py
+      - name: Run multi-master BTC scalper research
+        run: python research_v8_multi_master_scalper.py
+      - name: Persist state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/v8_multi_master_scalper_state.json
+          git diff --cached --quiet || git commit -m 'Update QuantBot v8 multi-master scalper state'
+          git push
