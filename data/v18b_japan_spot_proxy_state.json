@@ -1,0 +1,30 @@
+{
+  "version": "v18B-japan-hybrid-spot-L2-proxy",
+  "purpose": "EDGE_DISCOVERY_PROXY_NOT_FUTURES_AUTHORIZATION",
+  "venue": "BINANCE_SPOT_MARKET_DATA_ONLY",
+  "live_orders": false,
+  "runs": 1,
+  "observations": 60,
+  "signals": {
+    "jun": 0,
+    "hansan": 0
+  },
+  "fills": 0,
+  "paper_trades": [],
+  "created_at": "2026-09-08T19:08:38.389161+00:00",
+  "summary": {
+    "closed": 0,
+    "net_usd_100": 0,
+    "avg_net_bps": null,
+    "win_pct": null,
+    "pf": null,
+    "observations": 60,
+    "signals": {
+      "jun": 0,
+      "hansan": 0
+    },
+    "fills": 0,
+    "proxy_only": true
+  },
+  "updated_at": "2026-09-08T19:10:41.108007+00:00"
+}
