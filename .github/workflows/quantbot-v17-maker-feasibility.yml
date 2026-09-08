@@ -1,0 +1,35 @@
+name: QuantBot v17 Maker Feasibility
+
+on:
+  push:
+    paths:
+      - 'research_v17_maker_feasibility.py'
+      - '.github/workflows/quantbot-v17-maker-feasibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install numpy pandas requests
+      - name: Compile
+        run: python -m py_compile research_v15_microstructure_edge_screen.py research_v17_maker_feasibility.py
+      - name: Run v17 maker feasibility
+        run: python research_v17_maker_feasibility.py
+      - name: Persist state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/v17_maker_feasibility_state.json
+          git diff --cached --quiet || git commit -m 'Update QuantBot v17 maker feasibility state'
+          git pull --rebase origin main
+          git push
