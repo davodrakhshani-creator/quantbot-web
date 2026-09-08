@@ -1,0 +1,58 @@
+{
+  "stage": 5,
+  "status": "IN_PROGRESS",
+  "robust_candidate": false,
+  "baseline": {
+    "source": "data/fast_replay.json",
+    "oos_return_pct": -2.256,
+    "oos_win_rate_pct": 36.4,
+    "oos_pf": 0.19,
+    "oos_avg_net_bps": -20.66,
+    "walk_forward_positive": 0,
+    "walk_forward_avg_return_pct": -0.977
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "hypothesis": "Make prediction-to-trade conversion explicitly cost-aware rather than optimizing direction alone.",
+      "result": "DESIGN_ACCEPTED_NOT_YET_VALIDATED",
+      "changes": "Next candidate must forecast return magnitude and trade only when expected edge exceeds realistic round-trip friction plus safety margin. Current 26 bps assumption retained for conservative testing."
+    },
+    {
+      "stage": 2,
+      "hypothesis": "Regime gating can suppress trades during volatility/liquidity states where the signal is unstable.",
+      "result": "DESIGN_ACCEPTED_NOT_YET_VALIDATED",
+      "changes": "Add causal volatility/trend regime features; train/evaluate gates without using future regime labels. Require per-regime OOS reporting."
+    },
+    {
+      "stage": 3,
+      "hypothesis": "Separate direction forecasting from entry/execution timing.",
+      "result": "DESIGN_ACCEPTED_NOT_YET_VALIDATED",
+      "changes": "Slow model produces expected-return/direction; fast model only decides enter/wait/veto. Avoid treating candle micro-proxy as historical Level-2 truth."
+    },
+    {
+      "stage": 4,
+      "hypothesis": "Cross-market and derivatives context may add orthogonal information.",
+      "result": "RESEARCH_SUPPORTED_PENDING_DATA_PIPELINE",
+      "changes": "Candidate feature set: ETH/BTC relative momentum, perpetual funding, basis, open-interest change and liquidations when public historical data is legally available; features must be timestamp-aligned and lagged."
+    },
+    {
+      "stage": 5,
+      "hypothesis": "Robust validation is more important than threshold search.",
+      "result": "PROTOCOL_HARDENED",
+      "changes": "Require purged/embargoed walk-forward or nested walk-forward, untouched final OOS, realistic fees/slippage, minimum trade count, PF/average-net/DD gates, and stability across folds/regimes. No promotion from the current proxy replay."
+    }
+  ],
+  "external_research_synthesis": {
+    "performed": true,
+    "key_points": [
+      "2026 BTC ML walk-forward research reports naive sign strategies collapse after costs; cost-aware execution filtering sharply reduces turnover and can restore selected strategies.",
+      "2026 Journal of Financial Markets research supports order flow as relevant to cryptocurrency returns, reinforcing collection of genuine historical microstructure rather than candle proxies.",
+      "Backtest-overfitting research supports explicit rejection of agents/candidates that do not survive unseen periods."
+    ],
+    "next_architecture": "Hourly expected-return model (tree/regularized ensemble) + cost-aware no-trade zone + causal regime gate + separate genuine microstructure execution gate; derivatives/cross-market features added only after timestamp-clean historical pipeline exists."
+  },
+  "research_gate": "DO_NOT_PROMOTE",
+  "next_stage": 6,
+  "next_work": "Implement and test the cost-aware expected-return architecture on a longer historical sample with nested walk-forward; then add regime and derivatives features by ablation."
+}
