@@ -1,0 +1,70 @@
+{
+  "version": "quantbot-v4-statistical-audit",
+  "updated": "2026-09-08T11:30:59.592208+00:00",
+  "method": "30-day moving-block bootstrap, 2500 draws; White-style reality-check max mean across 10 tournament candidates using centered returns; T2 bootstrap uncertainty.",
+  "scope": "prelock 2021-01-01..2026-04-24 only; post-selection statistical audit, not fresh OOS.",
+  "results": {
+    "current": {
+      "n_days": 1940,
+      "candidate_count": 10,
+      "raw_best_by_daily_mean": "T2_upup",
+      "observed_best_daily_mean_bps": 2.949150375083265,
+      "reality_check_pvalue": 0.012395041983206718,
+      "T2": {
+        "observed_net_pct": 74.68889467660355,
+        "observed_ann_arithmetic_pct": 10.771771744991625,
+        "bootstrap_net_pct": {
+          "p05": 19.210118643819353,
+          "p50": 68.27573241010863,
+          "p95": 146.22138461705916
+        },
+        "bootstrap_ann_arithmetic_pct": {
+          "p05": 3.549135729772799,
+          "p50": 10.070711737353715,
+          "p95": 17.290993011442122
+        },
+        "bootstrap_sharpe": {
+          "p05": 0.540239612999288,
+          "p50": 1.4032598328512838,
+          "p95": 2.217370711202412
+        },
+        "bootstrap_net_positive_fraction": 0.9976
+      },
+      "gate": true
+    },
+    "historical_snapshot": {
+      "n_days": 1940,
+      "candidate_count": 10,
+      "raw_best_by_daily_mean": "T2_upup",
+      "observed_best_daily_mean_bps": 1.6015780604118837,
+      "reality_check_pvalue": 0.08156737305077968,
+      "T2": {
+        "observed_net_pct": 34.74520822421792,
+        "observed_ann_arithmetic_pct": 5.849763865654405,
+        "bootstrap_net_pct": {
+          "p05": 2.9879597447664135,
+          "p50": 32.17731860395011,
+          "p95": 74.18441670056451
+        },
+        "bootstrap_ann_arithmetic_pct": {
+          "p05": 0.7763239769264646,
+          "p50": 5.478767667802916,
+          "p95": 10.706363535777903
+        },
+        "bootstrap_sharpe": {
+          "p05": 0.11654924110081084,
+          "p50": 0.8030184846706709,
+          "p95": 1.5056402915704419
+        },
+        "bootstrap_net_positive_fraction": 0.9688
+      },
+      "gate": true
+    }
+  },
+  "statistics_support_t2": true,
+  "interpretation": "T2_SURVIVES_BLOCK_BOOTSTRAP_AND_MULTIPLE_TESTING_SCREEN",
+  "limitations": [
+    "Reality-check approximation uses a fixed 30-day moving block and daily net-return series.",
+    "Strategies are highly correlated; the test is conservative/approximate, not a guarantee of future alpha."
+  ]
+}
