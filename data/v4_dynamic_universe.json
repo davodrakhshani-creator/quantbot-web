@@ -1,0 +1,632 @@
+{
+  "version": "quantbot-v4-dynamic-liquidity-universe",
+  "updated": "2026-09-08T11:33:47.983130+00:00",
+  "rule": "Frozen T2 signal; each week practical universe is top15 by trailing 30d median USDT quote volume among assets with observed data; top3 positive momentum selected.",
+  "pool_size_requested": 52,
+  "assets_loaded": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "ADAUSDT",
+    "SOLUSDT",
+    "DOGEUSDT",
+    "TRXUSDT",
+    "LTCUSDT",
+    "LINKUSDT",
+    "BCHUSDT",
+    "ETCUSDT",
+    "XLMUSDT",
+    "DOTUSDT",
+    "AVAXUSDT",
+    "UNIUSDT",
+    "ATOMUSDT",
+    "NEARUSDT",
+    "FILUSDT",
+    "AAVEUSDT",
+    "EOSUSDT",
+    "XMRUSDT",
+    "THETAUSDT",
+    "XEMUSDT",
+    "VETUSDT",
+    "DASHUSDT",
+    "ZECUSDT",
+    "NEOUSDT",
+    "IOTAUSDT",
+    "QTUMUSDT",
+    "ALGOUSDT",
+    "MATICUSDT",
+    "FTMUSDT",
+    "RUNEUSDT",
+    "KAVAUSDT",
+    "COMPUSDT",
+    "SNXUSDT",
+    "MKRUSDT",
+    "ICPUSDT",
+    "SANDUSDT",
+    "MANAUSDT",
+    "AXSUSDT",
+    "FTTUSDT",
+    "LUNAUSDT",
+    "SHIBUSDT",
+    "CRVUSDT",
+    "GRTUSDT",
+    "EGLDUSDT",
+    "ENJUSDT",
+    "BATUSDT",
+    "ZILUSDT",
+    "WAVESUSDT"
+  ],
+  "metadata": {
+    "BTCUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ETHUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "BNBUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "XRPUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ADAUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "SOLUSDT": {
+      "rows": 2220,
+      "first": "2020-08-11 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "DOGEUSDT": {
+      "rows": 2623,
+      "first": "2019-07-05 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "TRXUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "LTCUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "LINKUSDT": {
+      "rows": 2793,
+      "first": "2019-01-16 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "BCHUSDT": {
+      "rows": 2477,
+      "first": "2019-11-28 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ETCUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "XLMUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "DOTUSDT": {
+      "rows": 2213,
+      "first": "2020-08-18 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "AVAXUSDT": {
+      "rows": 2178,
+      "first": "2020-09-22 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "UNIUSDT": {
+      "rows": 2183,
+      "first": "2020-09-17 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ATOMUSDT": {
+      "rows": 2690,
+      "first": "2019-04-29 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "NEARUSDT": {
+      "rows": 2156,
+      "first": "2020-10-14 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "FILUSDT": {
+      "rows": 2155,
+      "first": "2020-10-15 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "AAVEUSDT": {
+      "rows": 2155,
+      "first": "2020-10-15 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "EOSUSDT": {
+      "rows": 2338,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2025-05-26 00:00:00+00:00"
+    },
+    "XMRUSDT": {
+      "rows": 1804,
+      "first": "2019-03-15 00:00:00+00:00",
+      "last": "2024-02-20 00:00:00+00:00"
+    },
+    "THETAUSDT": {
+      "rows": 2709,
+      "first": "2019-04-10 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "XEMUSDT": {
+      "rows": 1302,
+      "first": "2020-11-24 00:00:00+00:00",
+      "last": "2024-06-17 00:00:00+00:00"
+    },
+    "VETUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "DASHUSDT": {
+      "rows": 2722,
+      "first": "2019-03-28 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ZECUSDT": {
+      "rows": 2729,
+      "first": "2019-03-21 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "NEOUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "IOTAUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "QTUMUSDT": {
+      "rows": 2808,
+      "first": "2019-01-01 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ALGOUSDT": {
+      "rows": 2636,
+      "first": "2019-06-22 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "MATICUSDT": {
+      "rows": 1965,
+      "first": "2019-04-26 00:00:00+00:00",
+      "last": "2024-09-10 00:00:00+00:00"
+    },
+    "FTMUSDT": {
+      "rows": 2044,
+      "first": "2019-06-11 00:00:00+00:00",
+      "last": "2025-01-13 00:00:00+00:00"
+    },
+    "RUNEUSDT": {
+      "rows": 2196,
+      "first": "2020-09-04 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "KAVAUSDT": {
+      "rows": 2511,
+      "first": "2019-10-25 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "COMPUSDT": {
+      "rows": 2267,
+      "first": "2020-06-25 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "SNXUSDT": {
+      "rows": 2253,
+      "first": "2020-07-09 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "MKRUSDT": {
+      "rows": 1881,
+      "first": "2020-07-23 00:00:00+00:00",
+      "last": "2025-09-15 00:00:00+00:00"
+    },
+    "ICPUSDT": {
+      "rows": 1947,
+      "first": "2021-05-11 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "SANDUSDT": {
+      "rows": 2217,
+      "first": "2020-08-14 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "MANAUSDT": {
+      "rows": 2225,
+      "first": "2020-08-06 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "AXSUSDT": {
+      "rows": 2135,
+      "first": "2020-11-04 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "FTTUSDT": {
+      "rows": 2145,
+      "first": "2019-12-20 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "LUNAUSDT": {
+      "rows": 2193,
+      "first": "2020-08-21 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "SHIBUSDT": {
+      "rows": 1948,
+      "first": "2021-05-10 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "CRVUSDT": {
+      "rows": 2216,
+      "first": "2020-08-15 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "GRTUSDT": {
+      "rows": 2092,
+      "first": "2020-12-17 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "EGLDUSDT": {
+      "rows": 2197,
+      "first": "2020-09-03 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ENJUSDT": {
+      "rows": 2701,
+      "first": "2019-04-18 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "BATUSDT": {
+      "rows": 2746,
+      "first": "2019-03-04 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "ZILUSDT": {
+      "rows": 2759,
+      "first": "2019-02-19 00:00:00+00:00",
+      "last": "2026-09-08 00:00:00+00:00"
+    },
+    "WAVESUSDT": {
+      "rows": 1978,
+      "first": "2019-01-18 00:00:00+00:00",
+      "last": "2024-06-17 00:00:00+00:00"
+    }
+  },
+  "prelock": {
+    "0.0013": {
+      "n_days": 1940,
+      "net_pct": 34.86263202145614,
+      "ann_pct": 5.792556610826227,
+      "sharpe": 0.8805904978919492,
+      "max_dd_pct": 7.742509198582514,
+      "pf": 1.2170445006882034,
+      "avg_daily_bps": 1.6020841421153786,
+      "positive_day_pct": 22.164948453608247,
+      "turnover_units": 12.23805909381927,
+      "cost_pct": 1.590947682196505,
+      "active_days": 837,
+      "active_day_pct": 43.144329896907216,
+      "avg_gross_exposure": 0.05237064535838558,
+      "median_active_gross": 0.11122113018857219,
+      "active_day_win_pct": 51.37395459976105,
+      "nonzero_active_win_pct": 51.37395459976105,
+      "nonzero_active_days": 837
+    },
+    "0.004": {
+      "n_days": 1940,
+      "net_pct": 30.47729296879926,
+      "ann_pct": 5.136165130904735,
+      "sharpe": 0.7863294407099424,
+      "max_dd_pct": 8.135394878188318,
+      "pf": 1.191230741750781,
+      "avg_daily_bps": 1.431760639263255,
+      "positive_day_pct": 22.11340206185567,
+      "turnover_units": 12.23805909381927,
+      "cost_pct": 4.8952236375277085,
+      "active_days": 837,
+      "active_day_pct": 43.144329896907216,
+      "avg_gross_exposure": 0.05237064535838558,
+      "median_active_gross": 0.11122113018857219,
+      "active_day_win_pct": 51.25448028673835,
+      "nonzero_active_win_pct": 51.25448028673835,
+      "nonzero_active_days": 837
+    },
+    "0.0075": {
+      "n_days": 1940,
+      "net_pct": 25.001760640513183,
+      "ann_pct": 4.29097065581896,
+      "sharpe": 0.6638552409228113,
+      "max_dd_pct": 9.141814806204508,
+      "pf": 1.1587130244972883,
+      "avg_daily_bps": 1.210970913343835,
+      "positive_day_pct": 22.010309278350515,
+      "turnover_units": 12.23805909381927,
+      "cost_pct": 9.178544320364452,
+      "active_days": 837,
+      "active_day_pct": 43.144329896907216,
+      "avg_gross_exposure": 0.05237064535838558,
+      "median_active_gross": 0.11122113018857219,
+      "active_day_win_pct": 51.01553166069295,
+      "nonzero_active_win_pct": 51.01553166069295,
+      "nonzero_active_days": 837
+    }
+  },
+  "prelock_delay2_total": {
+    "n_days": 1940,
+    "net_pct": 38.418784383186775,
+    "ann_pct": 6.312232868866263,
+    "sharpe": 0.9448950479864449,
+    "max_dd_pct": 7.535760320970364,
+    "pf": 1.236005347704682,
+    "avg_daily_bps": 1.7375569852689512,
+    "positive_day_pct": 22.422680412371136,
+    "turnover_units": 12.23805909381927,
+    "cost_pct": 1.590947682196505,
+    "active_days": 838,
+    "active_day_pct": 43.1958762886598,
+    "avg_gross_exposure": 0.05242570116739205,
+    "median_active_gross": 0.11122113018857219,
+    "active_day_win_pct": 51.90930787589498,
+    "nonzero_active_win_pct": 51.90930787589498,
+    "nonzero_active_days": 838
+  },
+  "folds": [
+    {
+      "n_days": 365,
+      "net_pct": 17.13185866486322,
+      "ann_pct": 17.14454570386179,
+      "sharpe": 2.55320721457944,
+      "max_dd_pct": 2.049460457253749,
+      "pf": 1.7458772841765091,
+      "avg_daily_bps": 4.386604906207808,
+      "positive_day_pct": 30.958904109589042,
+      "turnover_units": 1.533593575122182,
+      "cost_pct": 0.19936716476588365,
+      "active_days": 200,
+      "active_day_pct": 54.794520547945204,
+      "avg_gross_exposure": 0.03573381526521372,
+      "median_active_gross": 0.06376484471818043,
+      "active_day_win_pct": 56.49999999999999,
+      "nonzero_active_win_pct": 56.49999999999999,
+      "nonzero_active_days": 200,
+      "year": 2021
+    },
+    {
+      "n_days": 365,
+      "net_pct": 0.0,
+      "ann_pct": 0.0,
+      "sharpe": 0.0,
+      "max_dd_pct": 0.0,
+      "pf": 0.0,
+      "avg_daily_bps": 0.0,
+      "positive_day_pct": 0.0,
+      "turnover_units": 0.0,
+      "cost_pct": 0.0,
+      "active_days": 0,
+      "active_day_pct": 0.0,
+      "avg_gross_exposure": 0.0,
+      "median_active_gross": 0.0,
+      "active_day_win_pct": 0.0,
+      "nonzero_active_win_pct": 0.0,
+      "nonzero_active_days": 0,
+      "year": 2022
+    },
+    {
+      "n_days": 365,
+      "net_pct": 10.010107876929997,
+      "ann_pct": 10.017296599128024,
+      "sharpe": 1.2030274480215915,
+      "max_dd_pct": 6.881925473489503,
+      "pf": 1.2277573750412494,
+      "avg_daily_bps": 2.70612697615776,
+      "positive_day_pct": 34.52054794520548,
+      "turnover_units": 3.5043654167419276,
+      "cost_pct": 0.45556750417645053,
+      "active_days": 251,
+      "active_day_pct": 68.76712328767123,
+      "avg_gross_exposure": 0.09559560630268914,
+      "median_active_gross": 0.12512622642851443,
+      "active_day_win_pct": 50.199203187250994,
+      "nonzero_active_win_pct": 50.199203187250994,
+      "nonzero_active_days": 251,
+      "year": 2023
+    },
+    {
+      "n_days": 366,
+      "net_pct": 6.857301687735307,
+      "ann_pct": 6.842779687930545,
+      "sharpe": 0.8561405263993015,
+      "max_dd_pct": 7.742509198582459,
+      "pf": 1.1690221235329812,
+      "avg_daily_bps": 1.901938145050805,
+      "positive_day_pct": 28.688524590163933,
+      "turnover_units": 3.3592086026070227,
+      "cost_pct": 0.43669711833891295,
+      "active_days": 212,
+      "active_day_pct": 57.92349726775956,
+      "avg_gross_exposure": 0.06840567743555825,
+      "median_active_gross": 0.10574054967282966,
+      "active_day_win_pct": 49.528301886792455,
+      "nonzero_active_win_pct": 49.528301886792455,
+      "nonzero_active_days": 212,
+      "year": 2024
+    },
+    {
+      "n_days": 365,
+      "net_pct": -2.0555566072016696,
+      "ann_pct": -2.0569499423456206,
+      "sharpe": -0.225369390433608,
+      "max_dd_pct": 7.610753120652747,
+      "pf": 0.9524169095354849,
+      "avg_daily_bps": -0.484693869721076,
+      "positive_day_pct": 23.56164383561644,
+      "turnover_units": 3.8408914993481367,
+      "cost_pct": 0.4993158949152578,
+      "active_days": 174,
+      "active_day_pct": 47.671232876712324,
+      "avg_gross_exposure": 0.07843105529197028,
+      "median_active_gross": 0.14840042105368362,
+      "active_day_win_pct": 49.42528735632184,
+      "nonzero_active_win_pct": 49.42528735632184,
+      "nonzero_active_days": 174,
+      "year": 2025
+    }
+  ],
+  "rolling180": {
+    "window_days": 180,
+    "step_days": 30,
+    "count": 59,
+    "positive_fraction_all": 0.559322033898305,
+    "meaningful_count": 48,
+    "positive_fraction_meaningful": 0.6666666666666666,
+    "median_net_pct_meaningful": 1.3911709888765333,
+    "worst_net_pct": -5.455459962524911,
+    "best_net_pct": 19.89454694911259
+  },
+  "reused_postlock_diagnostic": {
+    "0.0013": {
+      "n_days": 136,
+      "net_pct": 2.3243672306630714,
+      "ann_pct": 6.365405592039064,
+      "sharpe": 1.895047460333503,
+      "max_dd_pct": 0.6227342333039676,
+      "pf": 2.159605995763266,
+      "avg_daily_bps": 1.704293045858436,
+      "positive_day_pct": 6.61764705882353,
+      "turnover_units": 0.22644161772389632,
+      "cost_pct": 0.02943741030410652,
+      "active_days": 14,
+      "active_day_pct": 10.294117647058822,
+      "avg_gross_exposure": 0.012231061623102267,
+      "median_active_gross": 0.1188160271958506,
+      "active_day_win_pct": 64.28571428571429,
+      "nonzero_active_win_pct": 64.28571428571429,
+      "nonzero_active_days": 14
+    },
+    "0.004": {
+      "n_days": 136,
+      "net_pct": 2.261771865668716,
+      "ann_pct": 6.190746627400823,
+      "sharpe": 1.842233330171032,
+      "max_dd_pct": 0.6227342333039898,
+      "pf": 2.110446558218274,
+      "avg_daily_bps": 1.6593377246926626,
+      "positive_day_pct": 6.61764705882353,
+      "turnover_units": 0.22644161772389632,
+      "cost_pct": 0.09057664708955852,
+      "active_days": 14,
+      "active_day_pct": 10.294117647058822,
+      "avg_gross_exposure": 0.012231061623102267,
+      "median_active_gross": 0.1188160271958506,
+      "active_day_win_pct": 64.28571428571429,
+      "nonzero_active_win_pct": 64.28571428571429,
+      "nonzero_active_days": 14
+    },
+    "0.0075": {
+      "n_days": 136,
+      "net_pct": 2.1806579499537238,
+      "ann_pct": 5.964683537186799,
+      "sharpe": 1.7727970355142948,
+      "max_dd_pct": 0.6558600645839019,
+      "pf": 2.049078182757565,
+      "avg_daily_bps": 1.60106230836666,
+      "positive_day_pct": 6.61764705882353,
+      "turnover_units": 0.22644161772389632,
+      "cost_pct": 0.16983121329292222,
+      "active_days": 14,
+      "active_day_pct": 10.294117647058822,
+      "avg_gross_exposure": 0.012231061623102267,
+      "median_active_gross": 0.1188160271958506,
+      "active_day_win_pct": 64.28571428571429,
+      "nonzero_active_win_pct": 64.28571428571429,
+      "nonzero_active_days": 14
+    }
+  },
+  "top_liquidity_membership_frequency_prelock": {
+    "BTCUSDT": 362,
+    "BNBUSDT": 362,
+    "ETHUSDT": 362,
+    "XRPUSDT": 362,
+    "ADAUSDT": 360,
+    "LINKUSDT": 303,
+    "TRXUSDT": 265,
+    "DOGEUSDT": 260,
+    "SOLUSDT": 260,
+    "LTCUSDT": 258,
+    "AVAXUSDT": 224,
+    "MATICUSDT": 185,
+    "SHIBUSDT": 166,
+    "NEARUSDT": 153,
+    "DOTUSDT": 140,
+    "EOSUSDT": 114,
+    "ETCUSDT": 111,
+    "FTMUSDT": 110,
+    "VETUSDT": 99,
+    "BCHUSDT": 97,
+    "XLMUSDT": 87,
+    "ATOMUSDT": 79,
+    "FILUSDT": 79,
+    "RUNEUSDT": 79,
+    "ZECUSDT": 77,
+    "AAVEUSDT": 60,
+    "UNIUSDT": 56,
+    "NEOUSDT": 48,
+    "LUNAUSDT": 47,
+    "SANDUSDT": 33,
+    "CRVUSDT": 30,
+    "DASHUSDT": 27,
+    "XMRUSDT": 26,
+    "QTUMUSDT": 22,
+    "THETAUSDT": 22,
+    "ZILUSDT": 17,
+    "AXSUSDT": 15,
+    "MANAUSDT": 13,
+    "ICPUSDT": 11,
+    "IOTAUSDT": 10,
+    "WAVESUSDT": 10,
+    "COMPUSDT": 5,
+    "MKRUSDT": 5,
+    "ENJUSDT": 4,
+    "FTTUSDT": 4,
+    "BATUSDT": 3,
+    "ALGOUSDT": 3,
+    "KAVAUSDT": 1,
+    "SNXUSDT": 1,
+    "GRTUSDT": 1
+  },
+  "dynamic_universe_gate": true,
+  "interpretation": "T2_SURVIVES_DYNAMIC_POINT_IN_TIME_LIQUIDITY_UNIVERSE",
+  "live_money_authorized": false,
+  "limitations": [
+    "Broad pool is intentionally much wider and includes failed/delisted names but is not an exhaustive list of every Binance asset ever listed.",
+    "Liquidity uses reported USDT quote volume and does not model order-book depth.",
+    "Postlock remains reused diagnostic evidence."
+  ]
+}
