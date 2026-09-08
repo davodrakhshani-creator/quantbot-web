@@ -1,0 +1,42 @@
+name: QuantBot v4 T2 Forward Paper
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 0 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'paper_v4_t2.py'
+      - '.github/workflows/quantbot-v4-paper.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --quiet pandas numpy requests
+      - name: Run frozen v4 T2 paper tracker
+        run: python paper_v4_t2.py
+      - name: Persist v4 paper state
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/v4_paper_t2.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "Update QuantBot v4 T2 forward paper state"
+          git pull --rebase origin main
+          git push origin HEAD:main
