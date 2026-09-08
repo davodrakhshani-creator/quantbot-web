@@ -1,0 +1,53 @@
+{
+  "version": "quantbot-v5-forward-paper-precision",
+  "updated": "2026-09-08T12:37:09.628650+00:00",
+  "paper_start": "2026-09-08 00:00:00+00:00",
+  "rule_frozen": "P4_asset_dual",
+  "rule_description": "Frozen T2 market regime plus selected-asset dual confirmation: each chosen asset must have positive 60d and 120d momentum; top3 positive blend; inverse-vol; 12% target; weekly rebalance.",
+  "frozen_before_first_forward_completed_bar": true,
+  "live_orders": false,
+  "data_end": "2026-09-07 00:00:00+00:00",
+  "asset_errors": {},
+  "current_signal": {
+    "signal_date": "2026-09-07 00:00:00+00:00",
+    "weights": {},
+    "gross_exposure": 0.0
+  },
+  "forward_metrics_13bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_metrics_40bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_metrics_75bps": {
+    "n_days": 0,
+    "net_pct": 0,
+    "ann_pct": 0,
+    "sharpe": 0,
+    "max_dd_pct": 0,
+    "pf": 0,
+    "avg_daily_bps": 0,
+    "positive_day_pct": 0
+  },
+  "forward_active_days": 0,
+  "promotion_gate_pre_registered": {
+    "criteria": "n_days>=180; active_days>=20; net>0; PF>=1.12; maxDD<=10%; 40bps>0; 75bps>0",
+    "passed": false
+  },
+  "research_status": "PAPER_ONLY_NO_LIVE_MONEY",
+  "live_money_authorized": false
+}
