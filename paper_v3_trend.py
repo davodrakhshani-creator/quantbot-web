@@ -4,6 +4,11 @@ No credentials, no exchange orders, no live-money execution. The rule is frozen 
 E_blend_top3_btc200_gate. Forward evidence starts 2026-09-08 UTC; only fully
 completed daily bars are used. The signal at close t is applied to the next bar,
 matching the research engine convention.
+
+The forward promotion gate is pre-registered before any 2026-09-08+ completed bar
+is observed: >=180 calendar observations, >=20 active observations, base net > 0,
+PF >= 1.10, max drawdown <= 10%, and 40-bps stress net > 0. Passing this gate only
+permits manual review; it never sends live orders automatically.
 """
 from __future__ import annotations
 
@@ -39,6 +44,21 @@ def main():
     base = v3.slice_metrics(px, pos, str(PAPER_START.date()), None, v3.BASE_COST)
     stress = v3.slice_metrics(px, pos, str(PAPER_START.date()), None, v3.STRESS_COST)
 
+    held = pos.shift(1).fillna(0.0)
+    fmask = held.index >= PAPER_START
+    fex = held.loc[fmask].abs().sum(axis=1)
+    active_days = int((fex > 1e-12).sum())
+    active_day_pct = float((fex > 1e-12).mean() * 100) if len(fex) else 0.0
+
+    gate = bool(
+        base.get("n_days", 0) >= 180
+        and active_days >= 20
+        and base.get("net_pct", 0) > 0
+        and base.get("pf", 0) >= 1.10
+        and base.get("max_dd_pct", 999) <= 10.0
+        and stress.get("net_pct", 0) > 0
+    )
+
     btc = px["BTCUSDT"]
     sma200 = btc.rolling(200).mean()
     gross = float(sum(abs(x) for x in weights.values()))
@@ -64,8 +84,17 @@ def main():
         },
         "forward_metrics_13bps": base,
         "forward_metrics_40bps": stress,
-        "research_status": "PAPER_ONLY_NO_LIVE_MONEY",
-        "promotion_guardrail": "Do not promote to live money from this tracker until a separately defined forward gate has enough active observations and passes cost stress.",
+        "forward_exposure": {
+            "active_days": active_days,
+            "active_day_pct": active_day_pct,
+        },
+        "promotion_gate_pre_registered": {
+            "registered_before_first_forward_completed_bar": True,
+            "criteria": "n_days>=180; active_days>=20; net>0; PF>=1.10; maxDD<=10%; 40bps-stress net>0",
+            "passed": gate,
+        },
+        "research_status": "PAPER_GATE_PASSED_MANUAL_REVIEW_ONLY" if gate else "PAPER_ONLY_NO_LIVE_MONEY",
+        "promotion_guardrail": "Even if the pre-registered paper gate passes, no live-money order is authorized automatically; require separate manual review of execution, venue, slippage, operational and risk controls.",
     }
     OUT.write_text(json.dumps(state, indent=2), encoding="utf-8")
     print(json.dumps(state, indent=2))
