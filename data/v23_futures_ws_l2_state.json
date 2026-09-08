@@ -1,0 +1,30 @@
+{
+  "version": "quantbot-v23-futures-ws-l2",
+  "purpose": "FORWARD_ONLY_FUTURES_L2_EXECUTION_EDGE_PAPER_NO_LIVE",
+  "symbol": "BTCUSDT",
+  "live_orders": false,
+  "runs": 1,
+  "ws_success_runs": 1,
+  "observations": 205,
+  "depth_events": 1981,
+  "aggtrade_events": 0,
+  "signals": {
+    "jun": 0,
+    "hansan": 0
+  },
+  "maker_candidates": 0,
+  "maker_fills": 0,
+  "paper_trades": [],
+  "rejections": {},
+  "created_at": "2026-09-08T19:42:23.666496+00:00",
+  "ws_access_ok": true,
+  "summary": {
+    "closed": 0,
+    "net_usd_100": 0.0,
+    "avg_net_bps": null,
+    "win_pct": null,
+    "pf": null,
+    "maker_fill_rate_pct": null
+  },
+  "updated_at": "2026-09-08T19:46:00.140261+00:00"
+}
