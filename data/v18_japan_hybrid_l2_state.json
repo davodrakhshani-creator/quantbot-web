@@ -1,0 +1,57 @@
+{
+  "version": "quantbot-v18-japan-hybrid-l2",
+  "purpose": "PUBLIC_METHOD_INSPIRED_FORWARD_PAPER_NO_LIVE",
+  "symbol": "BTCUSDT",
+  "live_orders": false,
+  "runs": 1,
+  "observations": 129,
+  "signals": {
+    "jun": 0,
+    "hansan": 0
+  },
+  "paper_trades": [],
+  "created_at": "2026-09-08T19:44:19.640381+00:00",
+  "method_map": {
+    "jun": "distortion/exhaustion -> immediate snapback; invalidate fast",
+    "hansan": "level break -> acceleration/continuation; invalidate fast",
+    "testa": "order-book/tape/liquidity quality filter + expected-value accounting"
+  },
+  "summary": {
+    "all": {
+      "closed": 0,
+      "net_usd_100": 0.0,
+      "avg_net_bps": null,
+      "win_pct": null,
+      "pf": null
+    },
+    "jun": {
+      "closed": 0,
+      "net_usd_100": 0.0,
+      "avg_net_bps": null,
+      "win_pct": null,
+      "pf": null
+    },
+    "hansan": {
+      "closed": 0,
+      "net_usd_100": 0.0,
+      "avg_net_bps": null,
+      "win_pct": null,
+      "pf": null
+    },
+    "assumptions": {
+      "maker_fee_bps": 2.0,
+      "taker_fee_bps": 5.0,
+      "taker_slippage_bps": 0.5,
+      "queue_multiplier": 1.25,
+      "notional_usd": 100.0
+    }
+  },
+  "daily": {},
+  "last_context": {
+    "trend15": -1,
+    "level_hi_5m": 78495.6,
+    "level_lo_5m": 78300.0,
+    "last5_close": 78375.4
+  },
+  "updated_at": "2026-09-08T19:47:53.411246+00:00"
+}
