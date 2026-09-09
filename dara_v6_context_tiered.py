@@ -15,10 +15,8 @@ def context_gate(i,m1,f15,f60,side):
     room=((x['prev240h']-x['c'])/x['c']) if side=='LONG' else ((x['c']-x['prev240l'])/x['c'])
     dist=((a15['c']-a15['ema21'])/max(a15['atr'],1e-9)) if side=='LONG' else ((a15['ema21']-a15['c'])/max(a15['atr'],1e-9))
     dir_rsi=a60['rsi'] if side=='LONG' else 100-a60['rsi'];vol=x['v']/x['medv'];body=abs(x['body'])
-    # Tier A: classic pullback inside prior 4h structure, near value, with meaningful room and non-exhausted 1h state.
     if dirpos<0.98 and abs(vwd)<=0.0015 and room>=0.0050 and 25<=dir_rsi<=75:
         return 'VALUE_PULLBACK'
-    # Tier B: price discovery/expansion beyond prior 4h extreme requires exceptional participation and controlled extension.
     if dirpos>=0.98 and vol>=3.0 and body>=0.00025 and 0.70<=dist<=1.60:
         return 'VOLUME_EXPANSION'
     return None
@@ -47,8 +45,7 @@ def simulate(m1,ei,side,stop,equity):
 
 def run(start,end,outpath):
     start_ms=int(start.astimezone(timezone.utc).timestamp()*1000);end_ms=int(end.astimezone(timezone.utc).timestamp()*1000)
-    # load two warmup days + all target UTC dates
-    d0=(start.astimezone(timezone.utc)-timedelta(days=2)).date();d1=(end.astimezone(timezone.utc)+timedelta(days=1)).date();raw=[];d=d0
+    d0=(start.astimezone(timezone.utc)-timedelta(days=2)).date();d1=end.astimezone(timezone.utc).date();raw=[];d=d0
     while d<=d1:
         raw+=b.get_daily(datetime(d.year,d.month,d.day,tzinfo=timezone.utc));d+=timedelta(days=1)
     raw=sorted({x['t']:x for x in raw}.values(),key=lambda x:x['t']);m1=v3.enrich_m1(raw);f5={x['t']:x for x in b.features(b.aggregate(raw,5),5)};f15={x['t']:x for x in b.features(b.aggregate(raw,15),15)};f60={x['t']:x for x in b.features(b.aggregate(raw,60),60)}
