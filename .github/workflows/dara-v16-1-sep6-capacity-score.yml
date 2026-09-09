@@ -1,0 +1,24 @@
+name: DARA v16.1 Sep6 Capacity Score
+on:
+  push:
+    paths:
+      - 'dara_v16_1_sep6_capacity_score_discovery.py'
+      - '.github/workflows/dara-v16-1-sep6-capacity-score.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python dara_v16_1_sep6_capacity_score_discovery.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v16_1_sep6_capacity_score_discovery.json
+          git diff --cached --quiet || git commit -m "Persist DARA v16.1 Sep6 result"
+          git push
