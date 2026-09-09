@@ -1,0 +1,103 @@
+{
+  "version": "DARA-v12-Opportunity-Ladder-Blind-Aug30",
+  "period_tehran": [
+    "2026-08-30T00:00:00+03:30",
+    "2026-08-31T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "rules": [
+    "1m trigger/order-flow proxy, 5m location/capacity, 15m regime/capacity only",
+    "Opportunity ladder: full sweep reversal > near-sweep exhaustion > low-volume failed pullback",
+    "Max 6 trades/day, 20m cooldown, 60m same-side lock after loss",
+    "0.25% full-stop risk incl modeled friction, max 3x notional, -1% daily stop",
+    "0.11% modeled all-in round-trip friction",
+    "No normal profitable exit before 3.5x friction move = +0.385% gross price move",
+    "50% first take-profit then 50% runner; losing thesis may exit early only when non-positive"
+  ],
+  "methodology_notes": [
+    "Aug30 was not inspected to tune v12; rules were fixed from Sep development plus public microstructure research before this run.",
+    "Historical full L2 unavailable; 1m taker-buy volume/delta is an aggressor-flow proxy.",
+    "This is one-day blind evidence only, not proof of a durable edge."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 99.838193,
+    "net_pnl": -0.161807,
+    "return_pct": -0.162,
+    "trades": 1,
+    "wins": 0,
+    "losses": 1,
+    "win_rate": 0.0,
+    "gross_pnl": -0.065083,
+    "modeled_costs": 0.096724,
+    "pf_net": 0.0,
+    "max_dd_pct": 0.162
+  },
+  "by_setup": {
+    "FULL_SWEEP_REVERSAL": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    },
+    "NEAR_SWEEP_EXHAUSTION": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "gross_pnl": -0.065083,
+      "net_pnl": -0.161807,
+      "pf_net": 0.0
+    },
+    "FAILED_PULLBACK": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "reject_counts": {
+    "near_capacity": 1235,
+    "near_core": 173,
+    "pb_capacity": 1,
+    "full_exhaustion": 2,
+    "pb_high_volume": 3
+  },
+  "trades": [
+    {
+      "setup": "NEAR_SWEEP_EXHAUSTION",
+      "side": "SHORT",
+      "entry_time": "2026-08-30T20:14:00+03:30",
+      "exit_time": "2026-08-30T20:24:00+03:30",
+      "entry": 79113.4,
+      "exit": 79172.0,
+      "score": 4,
+      "tp_pct": 0.451,
+      "profit_floor_pct": 0.385,
+      "structural_stop_pct": 0.174,
+      "mfe_pct": 0.017,
+      "reason": "VELOCITY_FAIL",
+      "diagnostics": {
+        "tier": "NEAR_SWEEP",
+        "distance_to_high_pct": 0.024611516675249148,
+        "event_delta": -0.040161132812500076,
+        "delta3": 0.17746074911623158,
+        "flip_delta": -0.24586688651051875,
+        "close_pos": 0.002816901408409713,
+        "volr": 1.8021030401689473,
+        "regime5": "UP",
+        "regime15": "UP",
+        "tp_pct": 0.451000197457351
+      },
+      "notional": 87.930903,
+      "gross_pnl": -0.065083,
+      "cost": 0.096724,
+      "net_pnl": -0.161807,
+      "equity_before": 100.0,
+      "equity_after": 99.838193
+    }
+  ]
+}
