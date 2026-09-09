@@ -1,0 +1,42 @@
+name: Seven Trader Styles Sep1-8 TP3Fee
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'seven_trader_styles_sep1_8_tp3fee.py'
+      - '.github/workflows/seven-trader-styles-sep1-8-tp3fee.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seven-trader-styles-sep1-8-tp3fee
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Sep1-8 seven-style TP3Fee test
+        run: python seven_trader_styles_sep1_8_tp3fee.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/seven_trader_styles_sep1_8_tp3fee.json
+          if git diff --cached --quiet; then
+            echo "No result change"
+            exit 0
+          fi
+          git commit -m "Add Sep1-8 seven-style TP3Fee results"
+          git pull --rebase origin main
+          git push origin HEAD:main
