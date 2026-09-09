@@ -1,0 +1,171 @@
+{
+  "version": "DARA-v10.2-ImpactAbsorption",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-02T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "change_from_v10_1": "Persistent delta is no longer sufficient. Continuation requires measurable 3m price impact; high aggressive flow with weak price impact is classified as absorption and continuation is blocked. Sweep reversals require absorption plus next-minute delta flip.",
+  "timeframes": [
+    "1m flow/impact trigger",
+    "5m value/capacity",
+    "15m regime/capacity"
+  ],
+  "risk_cost_exit": [
+    "0.25% max stop loss incl 0.11% friction",
+    "max 3x notional",
+    "TP +0.55% on 40%, 60% runner",
+    "max 4 trades/day"
+  ],
+  "methodology_notes": [
+    "Sep1 is development data and v10.2 was designed after inspecting v10.1 Sep1 losses; this is not out-of-sample proof.",
+    "Historical full L2 unavailable; 1m taker-buy volume is aggressor-flow proxy.",
+    "No maker-fee advantage credited."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 99.546336,
+    "net_pnl": -0.453664,
+    "return_pct": -0.454,
+    "trades": 4,
+    "wins": 1,
+    "losses": 3,
+    "win_rate": 25.0,
+    "gross_pnl": -0.137693,
+    "modeled_costs": 0.315972,
+    "pf_net": 0.39,
+    "max_dd_pct": 0.747
+  },
+  "by_setup": {
+    "VALUE_INFORMED": {
+      "trades": 4,
+      "wins": 1,
+      "losses": 3,
+      "gross_pnl": -0.137693,
+      "net_pnl": -0.453664,
+      "pf_net": 0.39
+    },
+    "SWEEP_ABSORPTION": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "trades": [
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "LONG",
+      "entry_time": "2026-09-01T08:34:00+03:30",
+      "exit_time": "2026-09-01T11:07:00+03:30",
+      "entry": 78822.9,
+      "exit": 78632.43,
+      "score": 6,
+      "diagnostics": {
+        "avg_delta": 0.4499052160326331,
+        "persistence": 3,
+        "progress": 0.0011250345139892648,
+        "efficiency": 1.0,
+        "impact_ratio": 0.0025006034024456884,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.106,
+        "atr15_pct": 0.231
+      },
+      "structural_stop_pct": 0.242,
+      "reason": "STOP",
+      "notional": 71.095976,
+      "gross_pnl": -0.171794,
+      "cost": 0.078206,
+      "net_pnl": -0.25,
+      "equity_before": 100.0,
+      "equity_after": 99.75
+    },
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T13:48:00+03:30",
+      "exit_time": "2026-09-01T13:54:00+03:30",
+      "entry": 77786.2,
+      "exit": 77978.18,
+      "score": 6,
+      "diagnostics": {
+        "avg_delta": 0.19161307945687778,
+        "persistence": 2,
+        "progress": 0.0011289296377962055,
+        "efficiency": 1.0,
+        "impact_ratio": 0.005891714913178823,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.13,
+        "atr15_pct": 0.265
+      },
+      "structural_stop_pct": 0.247,
+      "reason": "STOP",
+      "notional": 69.891477,
+      "gross_pnl": -0.17207,
+      "cost": 0.076881,
+      "net_pnl": -0.24895,
+      "equity_before": 99.75,
+      "equity_after": 99.50105
+    },
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T16:02:00+03:30",
+      "exit_time": "2026-09-01T16:18:00+03:30",
+      "entry": 77844.1,
+      "exit": 78040.8,
+      "score": 7,
+      "diagnostics": {
+        "avg_delta": 0.32796121743614604,
+        "persistence": 3,
+        "progress": 0.0014282213004160882,
+        "efficiency": 1.0,
+        "impact_ratio": 0.004354848148147768,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.145,
+        "atr15_pct": 0.24
+      },
+      "structural_stop_pct": 0.253,
+      "reason": "STOP",
+      "notional": 68.585566,
+      "gross_pnl": -0.172872,
+      "cost": 0.075444,
+      "net_pnl": -0.248316,
+      "equity_before": 99.50105,
+      "equity_after": 99.252734
+    },
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T19:38:00+03:30",
+      "exit_time": "2026-09-01T20:09:00+03:30",
+      "entry": 77811.0,
+      "exit": 77465.0,
+      "score": 6,
+      "diagnostics": {
+        "avg_delta": 0.3954844535344908,
+        "persistence": 2,
+        "progress": 0.0014582719573533742,
+        "efficiency": 1.0,
+        "impact_ratio": 0.0036873053904410836,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.172,
+        "atr15_pct": 0.394
+      },
+      "structural_stop_pct": 0.209,
+      "reason": "TP055+RUNNER",
+      "notional": 77.674083,
+      "gross_pnl": 0.379043,
+      "cost": 0.085441,
+      "net_pnl": 0.293602,
+      "equity_before": 99.252734,
+      "equity_after": 99.546336
+    }
+  ]
+}
