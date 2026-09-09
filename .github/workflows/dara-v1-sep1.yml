@@ -1,0 +1,42 @@
+name: DARA v1 Sep1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dara_v1_sep1.py'
+      - '.github/workflows/dara-v1-sep1.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dara-v1-sep1
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen DARA Sep1 backtest
+        run: python dara_v1_sep1.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dara_v1_sep1.json
+          if git diff --cached --quiet; then
+            echo "No result change"
+            exit 0
+          fi
+          git commit -m "Add DARA v1 Sep1 result"
+          git pull --rebase origin main
+          git push origin HEAD:main
