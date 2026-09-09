@@ -1,0 +1,26 @@
+name: Analyze DARA Aug20 Failures
+on:
+  push:
+    paths:
+      - 'analyze_dara_aug20_failures.py'
+      - '.github/workflows/analyze-dara-aug20-failures.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run analysis
+        run: python analyze_dara_aug20_failures.py
+      - name: Persist analysis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_aug20_failure_analysis.json
+          git diff --cached --quiet || git commit -m "Persist Aug20 failure analysis"
+          git push
