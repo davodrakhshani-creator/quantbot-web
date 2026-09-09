@@ -1,0 +1,186 @@
+{
+  "version": "DARA-v11.2-Smart-Frequency-Aug30-Frozen",
+  "period_tehran": [
+    "2026-08-30T00:00:00+03:30",
+    "2026-08-31T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "architecture": [
+    "Primary: liquidity sweep + failed aggressive pressure + reclaim + opposite-side control confirmation",
+    "Secondary: trend impulse + counter-flow pullback that fails + control flip; no late breakout chasing",
+    "Persistent same-direction flow alone is never an entry reason"
+  ],
+  "preserved_strengths": [
+    "0.25% risk budget per full stop including modeled friction",
+    "0.11% all-in modeled roundtrip friction",
+    "max 3x notional",
+    "adaptive TP never below +0.33% gross",
+    "velocity thesis-fail exit",
+    "40% first take-profit plus 60% runner",
+    "max 4 trades/day and -1% daily stop"
+  ],
+  "methodology_notes": [
+    "Fresh one-day Tehran Aug 30, 2026 test; parameters frozen before seeing Aug30 result.",
+    "Historical full L2 unavailable; Binance USD-M 1m taker-buy delta is an aggressor-flow proxy.",
+    "Risk 0.25%, modeled roundtrip friction 0.11%, max exposure 3x unchanged.",
+    "Frequency raised intelligently: max 6 trades/day, 18m cooldown, 45m same-side loss lock; exhaustion and pullback filters softened conditionally.",
+    "Profitable target floor remains 0.33% gross = 3x modeled roundtrip fee; adaptive targets may rise up to 0.55% = 5x fee. Normal profitable exits are not intentionally taken below the target floor."
+  ],
+  "daily": [
+    {
+      "day": "2026-08-30",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-08-31",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-09-01",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-09-02",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-09-03",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-09-04",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-09-05",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    },
+    {
+      "day": "2026-09-06",
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0.0,
+      "modeled_costs": 0.0,
+      "pf_net": null,
+      "max_dd_pct": 0.0
+    }
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 100.0,
+    "net_pnl": 0.0,
+    "return_pct": 0.0,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "gross_pnl": 0,
+    "modeled_costs": 0,
+    "pf_net": null,
+    "max_dd_pct": 0.0
+  },
+  "by_setup": {
+    "LIQUIDITY_REVERSAL": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    },
+    "FAILED_PULLBACK": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "reject_counts": {},
+  "trades": [],
+  "requested_profit_rule": "Normal profit target >= 3x full modeled roundtrip fee (0.33%); adaptive target can reach 4x fee (0.44%) and up to 5x fee (0.55%). Stops/thesis-fail exits may close earlier when losing."
+}
