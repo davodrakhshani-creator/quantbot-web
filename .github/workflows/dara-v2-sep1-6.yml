@@ -1,0 +1,42 @@
+name: DARA v2 Sep1-6 Development
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dara_v2_sep1_6.py'
+      - '.github/workflows/dara-v2-sep1-6.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dara-v2-sep1-6
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen DARA v2 Sep1-6 development test
+        run: python dara_v2_sep1_6.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dara_v2_sep1_6.json
+          if git diff --cached --quiet; then
+            echo "No result change"
+            exit 0
+          fi
+          git commit -m "Add DARA v2 Sep1-6 result"
+          git pull --rebase origin main
+          git push origin HEAD:main
