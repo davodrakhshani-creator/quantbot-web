@@ -1,0 +1,49 @@
+{
+  "version": "DARA-v1.2-FROZEN-Sep2-OutOfSampleRelativeToV1.2",
+  "period_tehran": [
+    "2026-09-02T00:00:00+03:30",
+    "2026-09-03T00:00:00+03:30"
+  ],
+  "symbol": "BTCUSDT USD-M perpetual",
+  "rules_note": "Exact DARA v1.2 logic from Sep1 retained: 0.14% Noise/Cost Guard; BreakAccept native timing; Sweep one-minute follow-through; TP1 0.33% with 50/50 runner; one add after +1R; risk 0.25%; max exposure 3x; max 5 trades; daily stop -1%.",
+  "methodology_notes": [
+    "No strategy threshold changed for Sep2 after DARA v1.2 was fixed on Sep1.",
+    "Sep2 had been seen by older unrelated strategy versions, but not used to tune DARA v1.2.",
+    "Historical full L2 is unavailable; Binance 1m taker-buy volume remains the order-flow proxy."
+  ],
+  "summary": {
+    "start_equity": 100.0,
+    "final_equity": 99.75,
+    "net_pnl": -0.25,
+    "return_pct": -0.25,
+    "trades": 1,
+    "wins": 0,
+    "losses": 1,
+    "win_rate": 0.0,
+    "gross_pnl": -0.146996,
+    "modeled_costs": 0.103004,
+    "pf_net": 0.0,
+    "max_dd_pct": 0.25,
+    "add_events": 0,
+    "noise_guard_rejections": 4
+  },
+  "trades": [
+    {
+      "setup": "BREAK_ACCEPT",
+      "side": "LONG",
+      "entry_time": "2026-09-02T03:07:00+03:30",
+      "exit_time": "2026-09-02T03:21:00+03:30",
+      "entry": 77548.2,
+      "exit": 77426.47,
+      "structural_stop_pct": 0.157,
+      "reason": "STOP",
+      "added": false,
+      "notional": 93.640088,
+      "gross_pnl": -0.146996,
+      "cost": 0.103004,
+      "net_pnl": -0.25,
+      "equity_before": 100.0,
+      "equity_after": 99.75
+    }
+  ]
+}
