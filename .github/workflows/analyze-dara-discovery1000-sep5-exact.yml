@@ -1,0 +1,24 @@
+name: Analyze DARA Discovery1000 Sep5 Exact
+on:
+  push:
+    paths:
+      - 'analyze_dara_discovery1000_sep5_exact.py'
+      - '.github/workflows/analyze-dara-discovery1000-sep5-exact.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python analyze_dara_discovery1000_sep5_exact.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_discovery1000_sep5_exact_analysis.json
+          git diff --cached --quiet || git commit -m "Persist Sep5 Discovery1000 analysis"
+          git push
