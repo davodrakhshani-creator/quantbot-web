@@ -1,0 +1,205 @@
+{
+  "version": "DARA-v12.1-PhaseAware-Aug30-Development",
+  "period_tehran": [
+    "2026-08-30T00:00:00+03:30",
+    "2026-08-31T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "changes": [
+    "Removed late generic VWAP reclaim as dominant engine after v12 failure",
+    "Added early Momentum Ignition near value, trend Pullback Reload after counter-flow failure, and Exhaustion Break after value loss",
+    "Liquidity reversal retained",
+    "Profit target floor >=0.33% gross (=3x full 0.11% fee); prefers 0.44% (=4x fee) when volatility capacity permits"
+  ],
+  "overall": {
+    "final_equity": 99.439858,
+    "net_pnl": -0.560142,
+    "return_pct": -0.56,
+    "candidate_counts": {
+      "PULLBACK_RELOAD": 9,
+      "MOMENTUM_IGNITION": 14,
+      "EXHAUSTION_BREAK": 3
+    },
+    "trades": 6,
+    "wins": 2,
+    "losses": 4,
+    "win_rate": 33.3,
+    "gross_pnl": -0.039258,
+    "modeled_costs": 0.520885,
+    "pf_net": 0.34,
+    "max_dd_pct": 0.847
+  },
+  "by_setup": {
+    "MOMENTUM_IGNITION": {
+      "trades": 4,
+      "wins": 0,
+      "net": -0.848702
+    },
+    "PULLBACK_RELOAD": {
+      "trades": 1,
+      "wins": 1,
+      "net": 0.203296
+    },
+    "EXHAUSTION_BREAK": {
+      "trades": 1,
+      "wins": 1,
+      "net": 0.085265
+    },
+    "LIQUIDITY_REVERSAL": {
+      "trades": 0,
+      "wins": 0,
+      "net": 0
+    }
+  },
+  "trades": [
+    {
+      "setup": "PULLBACK_RELOAD",
+      "side": "LONG",
+      "entry_time": "2026-08-30T16:50:00+03:30",
+      "exit_time": "2026-08-30T17:22:00+03:30",
+      "entry": 78636.6,
+      "exit": 78875.5,
+      "score": 12,
+      "tp_pct": 0.348,
+      "stop_pct": 0.15,
+      "reason": "TP+RUNNER",
+      "mfe_pct": 0.386,
+      "gross_pnl": 0.309031,
+      "cost": 0.105736,
+      "net_pnl": 0.203296,
+      "equity_after": 100.203296,
+      "diagnostics": {
+        "attack_delta": -0.6675224646983312,
+        "flip_delta": 0.5985728607654655,
+        "volr": 0.5661582121319617,
+        "vwap_dist_pct": -0.036599325052610876
+      }
+    },
+    {
+      "setup": "MOMENTUM_IGNITION",
+      "side": "LONG",
+      "entry_time": "2026-08-30T17:33:00+03:30",
+      "exit_time": "2026-08-30T17:36:00+03:30",
+      "entry": 78906.1,
+      "exit": 78744.89,
+      "score": 11,
+      "tp_pct": 0.369,
+      "stop_pct": 0.204,
+      "reason": "STOP",
+      "mfe_pct": 0.0,
+      "gross_pnl": -0.162836,
+      "cost": 0.087672,
+      "net_pnl": -0.250508,
+      "equity_after": 99.952787,
+      "diagnostics": {
+        "delta": 0.6680099351175993,
+        "hold_delta": 0.6610359044550902,
+        "volr": 2.3526442104635503,
+        "vwap_dist_pct": -0.008585952969131228,
+        "reg5": "UP",
+        "reg15": "UP"
+      }
+    },
+    {
+      "setup": "MOMENTUM_IGNITION",
+      "side": "LONG",
+      "entry_time": "2026-08-30T18:39:00+03:30",
+      "exit_time": "2026-08-30T18:44:00+03:30",
+      "entry": 78784.4,
+      "exit": 78615.54,
+      "score": 10,
+      "tp_pct": 0.333,
+      "stop_pct": 0.214,
+      "reason": "STOP",
+      "mfe_pct": 0.081,
+      "gross_pnl": -0.165132,
+      "cost": 0.08475,
+      "net_pnl": -0.249882,
+      "equity_after": 99.702905,
+      "diagnostics": {
+        "delta": 0.6728101843055293,
+        "hold_delta": 0.4966709769719647,
+        "volr": 0.5761199748228019,
+        "vwap_dist_pct": 0.02397880910465222,
+        "reg5": "RANGE",
+        "reg15": "UP"
+      }
+    },
+    {
+      "setup": "MOMENTUM_IGNITION",
+      "side": "LONG",
+      "entry_time": "2026-08-30T19:34:00+03:30",
+      "exit_time": "2026-08-30T19:41:00+03:30",
+      "entry": 78888.7,
+      "exit": 78740.29,
+      "score": 10,
+      "tp_pct": 0.355,
+      "stop_pct": 0.188,
+      "reason": "STOP",
+      "mfe_pct": 0.131,
+      "gross_pnl": -0.157288,
+      "cost": 0.091969,
+      "net_pnl": -0.249257,
+      "equity_after": 99.453648,
+      "diagnostics": {
+        "delta": 0.48987750935692415,
+        "hold_delta": 0.5768809429911045,
+        "volr": 2.3076998576826813,
+        "vwap_dist_pct": 0.05968267751974565,
+        "reg5": "UP",
+        "reg15": "UP"
+      }
+    },
+    {
+      "setup": "MOMENTUM_IGNITION",
+      "side": "LONG",
+      "entry_time": "2026-08-30T20:04:00+03:30",
+      "exit_time": "2026-08-30T20:17:00+03:30",
+      "entry": 79139.4,
+      "exit": 79116.0,
+      "score": 10,
+      "tp_pct": 0.427,
+      "stop_pct": 0.24,
+      "reason": "VELOCITY_FAIL",
+      "mfe_pct": 0.116,
+      "gross_pnl": -0.020985,
+      "cost": 0.07807,
+      "net_pnl": -0.099055,
+      "equity_after": 99.354593,
+      "diagnostics": {
+        "delta": 0.6787053264414227,
+        "hold_delta": 0.5915860501945122,
+        "volr": 0.9084395987525254,
+        "vwap_dist_pct": 0.0581471614997664,
+        "reg5": "UP",
+        "reg15": "UP"
+      }
+    },
+    {
+      "setup": "EXHAUSTION_BREAK",
+      "side": "SHORT",
+      "entry_time": "2026-08-30T20:48:00+03:30",
+      "exit_time": "2026-08-30T23:18:00+03:30",
+      "entry": 78963.9,
+      "exit": 78775.6,
+      "score": 11,
+      "tp_pct": 0.44,
+      "stop_pct": 0.266,
+      "reason": "TIME",
+      "mfe_pct": 0.363,
+      "gross_pnl": 0.157952,
+      "cost": 0.072688,
+      "net_pnl": 0.085265,
+      "equity_after": 99.439858,
+      "diagnostics": {
+        "d2": -0.724619357735472,
+        "vwap_dist_pct": -0.14151246711562315,
+        "recent_high_dist_pct": 0.2222435972075343
+      }
+    }
+  ],
+  "methodology_notes": [
+    "This is explicitly in-sample development: Aug30 market-state diagnostics were inspected before v12.1 design. It is not validation.",
+    "No timeframe above 15m; historical full L2 unavailable; 1m taker-buy delta is aggressor-flow proxy."
+  ]
+}
