@@ -1,0 +1,39 @@
+name: Hougaard Sep1-8 TP3Fee Add Preserved
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hougaard_sep1_8_tp3fee_add.py'
+      - '.github/workflows/hougaard-sep1-8-tp3fee-add.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hougaard-sep1-8-tp3fee-add
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run corrected Hougaard test
+        run: python hougaard_sep1_8_tp3fee_add.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/hougaard_sep1_8_tp3fee_add.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add corrected Hougaard Sep1-8 TP3Fee result"
+          git pull --rebase origin main
+          git push origin HEAD:main
