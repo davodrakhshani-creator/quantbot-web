@@ -1,0 +1,30 @@
+name: DARA v19 Pattern Fusion Sep7
+on:
+  push:
+    paths:
+      - 'dara_v19_pattern_fusion_sep7.py'
+      - 'dara_pattern_memory.py'
+      - 'data/dara_pattern_library_v1.json'
+      - '.github/workflows/dara-v19-pattern-fusion-sep7.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v19 Pattern Fusion Sep7
+        run: python dara_v19_pattern_fusion_sep7.py
+      - name: Persist result
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/dara_v19_pattern_fusion_sep7.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist DARA v19 pattern fusion Sep7 result'
+            git push
+          fi
