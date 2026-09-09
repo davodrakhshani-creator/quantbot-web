@@ -1,0 +1,36 @@
+{
+  "version": "DARA-v11.2-Smart-Frequency-Aug30-Fixed-Frozen",
+  "period_tehran": [
+    "2026-08-30T00:00:00+03:30",
+    "2026-08-31T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "rules": {
+    "risk_per_stop": 0.0025,
+    "modeled_roundtrip_cost": 0.0011,
+    "max_leverage": 3.0,
+    "max_trades": 6,
+    "cooldown_minutes": 18,
+    "loss_lock_minutes": 45,
+    "profit_floor": "0.33% gross = 3x full modeled 0.11% roundtrip fee; adaptive target up to 0.55%"
+  },
+  "overall": {
+    "final_equity": 100.0,
+    "net_pnl": 0.0,
+    "return_pct": 0.0,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "gross_pnl": 0,
+    "modeled_costs": 0,
+    "pf_net": null,
+    "max_dd_pct": 0.0
+  },
+  "trades": [],
+  "notes": [
+    "Corrected harness fetches Aug29-Aug31 raw Binance data; previous wrapper inherited Sep-only loader and produced a false zero-trade result.",
+    "No Aug30 result was inspected before these v11.2 thresholds were frozen.",
+    "Historical full L2 unavailable; 1m taker-buy delta is aggressor-flow proxy."
+  ]
+}
