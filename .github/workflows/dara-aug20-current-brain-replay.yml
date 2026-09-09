@@ -1,0 +1,28 @@
+name: DARA Aug20 Current Brain Replay
+on:
+  push:
+    paths:
+      - 'dara_aug20_current_brain_replay.py'
+      - '.github/workflows/dara-aug20-current-brain-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install astro dependency
+        run: pip install astronomy-engine
+      - name: Run Aug20 replay
+        run: python dara_aug20_current_brain_replay.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_aug20_current_brain_replay.json
+          git diff --cached --quiet || git commit -m "Persist Aug20 current-brain replay result"
+          git push
