@@ -1,0 +1,25 @@
+name: DARA Astro FullGrid Digest
+on:
+  push:
+    paths:
+      - 'dara_astro_fullgrid_digest.py'
+      - '.github/workflows/dara-astro-fullgrid-digest.yml'
+permissions:
+  contents: write
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build digest
+        run: python dara_astro_fullgrid_digest.py
+      - name: Persist digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_astro_fullgrid_digest.json
+          git diff --cached --quiet || git commit -m "Persist DARA full-grid astro digest"
+          git push
