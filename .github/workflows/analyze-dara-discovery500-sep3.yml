@@ -1,0 +1,23 @@
+name: Analyze DARA Discovery500 Sep3
+on:
+  push:
+    paths:
+      - 'analyze_dara_discovery500_sep3.py'
+      - '.github/workflows/analyze-dara-discovery500-sep3.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python analyze_dara_discovery500_sep3.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_discovery500_sep3_analysis.json
+          git diff --cached --quiet || git commit -m "Persist Discovery500 Sep3 analysis"
+          git push
