@@ -1,0 +1,6837 @@
+{
+  "version": "DARA-Pattern-Combo-Memory-v1",
+  "training_days": "Sep1-Sep6",
+  "training_trades": 1707,
+  "valid_positive_trades": 132,
+  "baseline_valid_rate": 0.0773,
+  "selection_rule": "n>=8, winner_days>=2, positive_net_days>=2, WR>=1.6x baseline, cumulative net>0",
+  "selected_combos": [
+    "PCTX|STOCH_RANGE_REV_SHORT|REG15:RANGE"
+  ],
+  "selected_stats": {
+    "PCTX|STOCH_RANGE_REV_SHORT|REG15:RANGE": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG15:RANGE",
+      "n": 15,
+      "wins": 2,
+      "wr": 0.1333,
+      "lift": 1.72,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.107031,
+      "net": 0.016067,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.060451
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.001188
+        },
+        "2026-09-05": {
+          "n": 12,
+          "wins": 1,
+          "wr": 0.083,
+          "net": -0.045572
+        }
+      },
+      "production_eligible": true
+    }
+  },
+  "all_combos": {
+    "PAIR|EMA_PULLBACK_SHORT|SHOOTING_STAR_REJECT": {
+      "key": "PAIR|EMA_PULLBACK_SHORT|SHOOTING_STAR_REJECT",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.012103,
+      "net": -0.058399,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04141
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.012636
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004353
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|REG5:DOWN": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|REG5:DOWN",
+      "n": 42,
+      "wins": 2,
+      "wr": 0.0476,
+      "lift": 0.62,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": -0.159217,
+      "net": -0.533526,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.239484
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.045183
+        },
+        "2026-09-03": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.152293
+        },
+        "2026-09-04": {
+          "n": 10,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.133006
+        },
+        "2026-09-05": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.069731
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|REG15:DOWN": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|REG15:DOWN",
+      "n": 36,
+      "wins": 3,
+      "wr": 0.0833,
+      "lift": 1.08,
+      "winner_days": 3,
+      "positive_net_days": 2,
+      "gross": -0.037175,
+      "net": -0.393784,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.168102
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.045183
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.083124
+        },
+        "2026-09-04": {
+          "n": 10,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.133006
+        },
+        "2026-09-05": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.07054
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|CAP:>=.44": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|CAP:>=.44",
+      "n": 29,
+      "wins": 2,
+      "wr": 0.069,
+      "lift": 0.89,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": -0.057514,
+      "net": -0.408218,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.168102
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.045183
+        },
+        "2026-09-03": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.152293
+        },
+        "2026-09-04": {
+          "n": 10,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.133006
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|SHOOTING_STAR_REJECT|REG5:DOWN": {
+      "key": "PCTX|SHOOTING_STAR_REJECT|REG5:DOWN",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.017771,
+      "net": -0.077753,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04141
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023707
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.012636
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|SHOOTING_STAR_REJECT|REG15:DOWN": {
+      "key": "PCTX|SHOOTING_STAR_REJECT|REG15:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.013284,
+      "net": -0.065117,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04141
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023707
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|SHOOTING_STAR_REJECT|CAP:>=.44": {
+      "key": "PCTX|SHOOTING_STAR_REJECT|CAP:>=.44",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.017771,
+      "net": -0.077753,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04141
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023707
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.012636
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_ENGULF|STOCH_RANGE_REV_SHORT": {
+      "key": "PAIR|BEAR_ENGULF|STOCH_RANGE_REV_SHORT",
+      "n": 25,
+      "wins": 2,
+      "wr": 0.08,
+      "lift": 1.03,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": 0.019856,
+      "net": -0.246455,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099814
+        },
+        "2026-09-02": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.036568
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.051896
+        },
+        "2026-09-05": {
+          "n": 14,
+          "wins": 1,
+          "wr": 0.071,
+          "net": -0.058177
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|REG5:DOWN": {
+      "key": "PCTX|BEAR_ENGULF|REG5:DOWN",
+      "n": 24,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.173929,
+      "net": -0.428995,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.199023
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.042967
+        },
+        "2026-09-03": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.104214
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.041241
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04155
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|REG15:DOWN": {
+      "key": "PCTX|BEAR_ENGULF|REG15:DOWN",
+      "n": 27,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.181235,
+      "net": -0.506447,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.199023
+        },
+        "2026-09-02": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.130254
+        },
+        "2026-09-03": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.086771
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.041241
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049158
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|CAP:>=.44": {
+      "key": "PCTX|BEAR_ENGULF|CAP:>=.44",
+      "n": 27,
+      "wins": 1,
+      "wr": 0.037,
+      "lift": 0.48,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.1306,
+      "net": -0.541501,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.199023
+        },
+        "2026-09-02": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.155056
+        },
+        "2026-09-03": {
+          "n": 13,
+          "wins": 1,
+          "wr": 0.077,
+          "net": -0.146181
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.041241
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|REG5:DOWN": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG5:DOWN",
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.109852,
+      "net": -0.284524,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.198871
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.034381
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.028242
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02303
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|REG15:DOWN": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG15:DOWN",
+      "n": 20,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.056625,
+      "net": -0.402672,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.166689
+        },
+        "2026-09-02": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.176696
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013134
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.046153
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|CAP:>=.44": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|CAP:>=.44",
+      "n": 17,
+      "wins": 1,
+      "wr": 0.0588,
+      "lift": 0.76,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.006489,
+      "net": -0.383863,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.166689
+        },
+        "2026-09-02": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.165278
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.051896
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|EMA_PULLBACK_LONG": {
+      "key": "PAIR|BULL_ENGULF|EMA_PULLBACK_LONG",
+      "n": 59,
+      "wins": 4,
+      "wr": 0.0678,
+      "lift": 0.88,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": -0.023045,
+      "net": -0.469731,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.009013
+        },
+        "2026-09-03": {
+          "n": 22,
+          "wins": 3,
+          "wr": 0.136,
+          "net": -0.204632
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.036301
+        },
+        "2026-09-05": {
+          "n": 27,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.133935
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008612
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|REG5:UP": {
+      "key": "PCTX|BULL_ENGULF|REG5:UP",
+      "n": 51,
+      "wins": 5,
+      "wr": 0.098,
+      "lift": 1.27,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": -0.03882,
+      "net": -0.473764,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.090812
+        },
+        "2026-09-03": {
+          "n": 24,
+          "wins": 4,
+          "wr": 0.167,
+          "net": -0.198476
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008486
+        },
+        "2026-09-05": {
+          "n": 18,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.09014
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008612
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|REG15:UP": {
+      "key": "PCTX|BULL_ENGULF|REG15:UP",
+      "n": 51,
+      "wins": 5,
+      "wr": 0.098,
+      "lift": 1.27,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.105111,
+      "net": -0.588542,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.249147
+        },
+        "2026-09-03": {
+          "n": 25,
+          "wins": 5,
+          "wr": 0.2,
+          "net": -0.17654
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016301
+        },
+        "2026-09-05": {
+          "n": 14,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.069316
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|CAP:>=.44": {
+      "key": "PCTX|BULL_ENGULF|CAP:>=.44",
+      "n": 47,
+      "wins": 6,
+      "wr": 0.1277,
+      "lift": 1.65,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": 0.04459,
+      "net": -0.49846,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 11,
+          "wins": 1,
+          "wr": 0.091,
+          "net": -0.118984
+        },
+        "2026-09-03": {
+          "n": 32,
+          "wins": 5,
+          "wr": 0.156,
+          "net": -0.265937
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.036301
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|REG5:UP": {
+      "key": "PCTX|EMA_PULLBACK_LONG|REG5:UP",
+      "n": 112,
+      "wins": 17,
+      "wr": 0.1518,
+      "lift": 1.96,
+      "winner_days": 4,
+      "positive_net_days": 0,
+      "gross": 0.030376,
+      "net": -0.778657,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.083869
+        },
+        "2026-09-03": {
+          "n": 58,
+          "wins": 12,
+          "wr": 0.207,
+          "net": -0.420971
+        },
+        "2026-09-04": {
+          "n": 6,
+          "wins": 2,
+          "wr": 0.333,
+          "net": -0.012538
+        },
+        "2026-09-05": {
+          "n": 39,
+          "wins": 2,
+          "wr": 0.051,
+          "net": -0.16716
+        },
+        "2026-09-06": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016881
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|REG15:UP": {
+      "key": "PCTX|EMA_PULLBACK_LONG|REG15:UP",
+      "n": 92,
+      "wins": 13,
+      "wr": 0.1413,
+      "lift": 1.83,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": -0.119512,
+      "net": -0.808319,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.162669
+        },
+        "2026-09-03": {
+          "n": 53,
+          "wins": 10,
+          "wr": 0.189,
+          "net": -0.416881
+        },
+        "2026-09-04": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.026709
+        },
+        "2026-09-05": {
+          "n": 25,
+          "wins": 2,
+          "wr": 0.08,
+          "net": -0.1003
+        },
+        "2026-09-06": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024522
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|CAP:>=.44": {
+      "key": "PCTX|EMA_PULLBACK_LONG|CAP:>=.44",
+      "n": 82,
+      "wins": 15,
+      "wr": 0.1829,
+      "lift": 2.37,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.015029,
+      "net": -0.700459,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077238
+        },
+        "2026-09-02": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.084784
+        },
+        "2026-09-03": {
+          "n": 63,
+          "wins": 12,
+          "wr": 0.19,
+          "net": -0.476701
+        },
+        "2026-09-04": {
+          "n": 9,
+          "wins": 2,
+          "wr": 0.222,
+          "net": -0.050821
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010915
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_LONG|MORNING_STAR": {
+      "key": "PAIR|MACD_REACCEL_LONG|MORNING_STAR",
+      "n": 5,
+      "wins": 1,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.038738,
+      "net": -0.106379,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.001903
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.00885
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|REG5:RANGE": {
+      "key": "PCTX|MACD_REACCEL_LONG|REG5:RANGE",
+      "n": 18,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.075326,
+      "net": -0.206482,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.032539
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007783
+        },
+        "2026-09-05": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.066728
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|REG15:UP": {
+      "key": "PCTX|MACD_REACCEL_LONG|REG15:UP",
+      "n": 31,
+      "wins": 4,
+      "wr": 0.129,
+      "lift": 1.67,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": -0.076097,
+      "net": -0.317538,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020169
+        },
+        "2026-09-03": {
+          "n": 17,
+          "wins": 3,
+          "wr": 0.176,
+          "net": -0.13026
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023516
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 1,
+          "wr": 0.111,
+          "net": -0.035892
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008269
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|CAP:>=.44": {
+      "key": "PCTX|MACD_REACCEL_LONG|CAP:>=.44",
+      "n": 26,
+      "wins": 6,
+      "wr": 0.2308,
+      "lift": 2.98,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": -0.01536,
+      "net": -0.248786,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020169
+        },
+        "2026-09-03": {
+          "n": 20,
+          "wins": 5,
+          "wr": 0.25,
+          "net": -0.114182
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.015003
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|REG5:RANGE": {
+      "key": "PCTX|MORNING_STAR|REG5:RANGE",
+      "n": 10,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.056748,
+      "net": -0.140685,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007453
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.0338
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|REG15:UP": {
+      "key": "PCTX|MORNING_STAR|REG15:UP",
+      "n": 17,
+      "wins": 1,
+      "wr": 0.0588,
+      "lift": 0.76,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.098471,
+      "net": -0.247412,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.033713
+        },
+        "2026-09-03": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.074943
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007453
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031871
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|CAP:>=.44": {
+      "key": "PCTX|MORNING_STAR|CAP:>=.44",
+      "n": 10,
+      "wins": 1,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.095118,
+      "net": -0.215541,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.033713
+        },
+        "2026-09-03": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.074943
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007453
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_ENGULF|EMA_PULLBACK_SHORT": {
+      "key": "PAIR|BEAR_ENGULF|EMA_PULLBACK_SHORT",
+      "n": 29,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.129937,
+      "net": -0.32846,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099209
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.032293
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.061498
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.041241
+        },
+        "2026-09-05": {
+          "n": 18,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.094219
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EVENING_STAR|STOCH_RANGE_REV_SHORT": {
+      "key": "PAIR|EVENING_STAR|STOCH_RANGE_REV_SHORT",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.067289,
+      "net": -0.149257,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099057
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031013
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.015108
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004079
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|REG5:DOWN": {
+      "key": "PCTX|EVENING_STAR|REG5:DOWN",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.05923,
+      "net": -0.127005,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099057
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.015108
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004591
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|REG15:DOWN": {
+      "key": "PCTX|EVENING_STAR|REG15:DOWN",
+      "n": 10,
+      "wins": 1,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.018726,
+      "net": -0.166991,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": -0.027675
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.108968
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013624
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|CAP:>=.44": {
+      "key": "PCTX|EVENING_STAR|CAP:>=.44",
+      "n": 7,
+      "wins": 1,
+      "wr": 0.1429,
+      "lift": 1.85,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.013495,
+      "net": -0.16,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": -0.027675
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.108968
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.015108
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_SHORT|MACD_REACCEL_SHORT": {
+      "key": "PAIR|EMA_PULLBACK_SHORT|MACD_REACCEL_SHORT",
+      "n": 19,
+      "wins": 2,
+      "wr": 0.1053,
+      "lift": 1.36,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.019126,
+      "net": -0.137792,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098865
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.077476
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.039791
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049199
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.043218
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_SHORT|VWAP_REJECT_SHORT": {
+      "key": "PAIR|EMA_PULLBACK_SHORT|VWAP_REJECT_SHORT",
+      "n": 23,
+      "wins": 2,
+      "wr": 0.087,
+      "lift": 1.12,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.120741,
+      "net": -0.061814,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": -0.027483
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.077476
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.018571
+        },
+        "2026-09-05": {
+          "n": 18,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.093236
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_SHORT|VWAP_REJECT_SHORT": {
+      "key": "PAIR|MACD_REACCEL_SHORT|VWAP_REJECT_SHORT",
+      "n": 13,
+      "wins": 1,
+      "wr": 0.0769,
+      "lift": 0.99,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.040459,
+      "net": -0.110585,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098865
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.039962
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.018535
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.033147
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|REG5:DOWN": {
+      "key": "PCTX|MACD_REACCEL_SHORT|REG5:DOWN",
+      "n": 13,
+      "wins": 2,
+      "wr": 0.1538,
+      "lift": 1.99,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.02152,
+      "net": -0.111996,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098865
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.077476
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.039791
+        },
+        "2026-09-04": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.060819
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005802
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|REG15:DOWN": {
+      "key": "PCTX|MACD_REACCEL_SHORT|REG15:DOWN",
+      "n": 20,
+      "wins": 2,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.030398,
+      "net": -0.165839,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098865
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.039962
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019123
+        },
+        "2026-09-04": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.060819
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.042799
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|CAP:>=.44": {
+      "key": "PCTX|MACD_REACCEL_SHORT|CAP:>=.44",
+      "n": 15,
+      "wins": 1,
+      "wr": 0.0667,
+      "lift": 0.86,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.001129,
+      "net": -0.204897,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098865
+        },
+        "2026-09-02": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": 0.003742
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.048955
+        },
+        "2026-09-04": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.060819
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|REG5:DOWN": {
+      "key": "PCTX|VWAP_REJECT_SHORT|REG5:DOWN",
+      "n": 14,
+      "wins": 1,
+      "wr": 0.0714,
+      "lift": 0.92,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.008966,
+      "net": -0.113453,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098865
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.077476
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.047395
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.044669
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|REG15:DOWN": {
+      "key": "PCTX|VWAP_REJECT_SHORT|REG15:DOWN",
+      "n": 25,
+      "wins": 2,
+      "wr": 0.08,
+      "lift": 1.03,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.177741,
+      "net": -0.161899,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.004699
+        },
+        "2026-09-02": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.062187
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.037299
+        },
+        "2026-09-05": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.067112
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|CAP:>=.44": {
+      "key": "PCTX|VWAP_REJECT_SHORT|CAP:>=.44",
+      "n": 15,
+      "wins": 3,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 3,
+      "positive_net_days": 1,
+      "gross": 0.212016,
+      "net": -0.099083,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.004699
+        },
+        "2026-09-02": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.062187
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.041595
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|STOCH_RANGE_REV_SHORT|VWAP_REJECT_SHORT": {
+      "key": "PAIR|STOCH_RANGE_REV_SHORT|VWAP_REJECT_SHORT",
+      "n": 17,
+      "wins": 1,
+      "wr": 0.0588,
+      "lift": 0.76,
+      "winner_days": 1,
+      "positive_net_days": 2,
+      "gross": 0.100513,
+      "net": -0.074069,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.032182
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.061708
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.016296
+        },
+        "2026-09-05": {
+          "n": 12,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.060839
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|REG5:RANGE": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG5:RANGE",
+      "n": 21,
+      "wins": 2,
+      "wr": 0.0952,
+      "lift": 1.23,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.101001,
+      "net": -0.088542,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.032182
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.068325
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.016296
+        },
+        "2026-09-05": {
+          "n": 16,
+          "wins": 1,
+          "wr": 0.062,
+          "net": -0.068695
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|REG5:RANGE": {
+      "key": "PCTX|VWAP_REJECT_SHORT|REG5:RANGE",
+      "n": 30,
+      "wins": 2,
+      "wr": 0.0667,
+      "lift": 0.86,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.220723,
+      "net": -0.007695,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.103564
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.012282
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.002675
+        },
+        "2026-09-05": {
+          "n": 24,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.120866
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_SHORT|EVENING_STAR": {
+      "key": "PAIR|EMA_PULLBACK_SHORT|EVENING_STAR",
+      "n": 5,
+      "wins": 1,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.104257,
+      "net": 0.048195,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.071382
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.014938
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EVENING_STAR|VWAP_REJECT_SHORT": {
+      "key": "PAIR|EVENING_STAR|VWAP_REJECT_SHORT",
+      "n": 7,
+      "wins": 1,
+      "wr": 0.1429,
+      "lift": 1.85,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.077922,
+      "net": -0.029901,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.071382
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077955
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.014853
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|REG5:RANGE": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|REG5:RANGE",
+      "n": 28,
+      "wins": 1,
+      "wr": 0.0357,
+      "lift": 0.46,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.07065,
+      "net": -0.079115,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.071382
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01435
+        },
+        "2026-09-05": {
+          "n": 26,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.136147
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|REG5:RANGE": {
+      "key": "PCTX|EVENING_STAR|REG5:RANGE",
+      "n": 9,
+      "wins": 1,
+      "wr": 0.1111,
+      "lift": 1.44,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.092388,
+      "net": 0.001763,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.071382
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031013
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.030131
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_ENGULF|EVENING_STAR": {
+      "key": "PAIR|BEAR_ENGULF|EVENING_STAR",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.03424,
+      "net": -0.088414,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049975
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023583
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.006607
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_ENGULF|VWAP_REJECT_SHORT": {
+      "key": "PAIR|BEAR_ENGULF|VWAP_REJECT_SHORT",
+      "n": 20,
+      "wins": 1,
+      "wr": 0.05,
+      "lift": 0.65,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007442,
+      "net": -0.131818,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.037693
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.021003
+        },
+        "2026-09-05": {
+          "n": 14,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.073122
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|REG5:UP": {
+      "key": "PCTX|BEAR_ENGULF|REG5:UP",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000647,
+      "net": -0.123891,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.074777
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049114
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|REG5:UP": {
+      "key": "PCTX|EVENING_STAR|REG5:UP",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.026193,
+      "net": -0.077955,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077955
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|REG5:UP": {
+      "key": "PCTX|VWAP_REJECT_SHORT|REG5:UP",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.053166,
+      "net": -0.151945,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.151945
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|REG5:UP": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG5:UP",
+      "n": 6,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.00917,
+      "net": -0.102522,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.062572
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.03995
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_ENGULF|MACD_REACCEL_SHORT": {
+      "key": "PAIR|BEAR_ENGULF|MACD_REACCEL_SHORT",
+      "n": 9,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.018715,
+      "net": -0.070444,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023938
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017639
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020618
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_SHORT|STOCH_RANGE_REV_SHORT": {
+      "key": "PAIR|MACD_REACCEL_SHORT|STOCH_RANGE_REV_SHORT",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.011277,
+      "net": -0.041792,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.037514
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004278
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|REG5:RANGE": {
+      "key": "PCTX|BEAR_ENGULF|REG5:RANGE",
+      "n": 30,
+      "wins": 2,
+      "wr": 0.0667,
+      "lift": 0.86,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": 0.012356,
+      "net": -0.16533,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.037312
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.015678
+        },
+        "2026-09-05": {
+          "n": 24,
+          "wins": 1,
+          "wr": 0.042,
+          "net": -0.11234
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|REG5:RANGE": {
+      "key": "PCTX|MACD_REACCEL_SHORT|REG5:RANGE",
+      "n": 14,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 1,
+      "gross": 0.023748,
+      "net": -0.057263,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.012282
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-05": {
+          "n": 12,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.06107
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_SHORT|RSI_BEAR_DIVERGENCE": {
+      "key": "PAIR|MACD_REACCEL_SHORT|RSI_BEAR_DIVERGENCE",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.027523,
+      "net": -0.060691,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010895
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|RSI_BEAR_DIVERGENCE|STOCH_RANGE_REV_SHORT": {
+      "key": "PAIR|RSI_BEAR_DIVERGENCE|STOCH_RANGE_REV_SHORT",
+      "n": 5,
+      "wins": 1,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.016421,
+      "net": -0.057737,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.007941
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|RSI_BEAR_DIVERGENCE|VWAP_REJECT_SHORT": {
+      "key": "PAIR|RSI_BEAR_DIVERGENCE|VWAP_REJECT_SHORT",
+      "n": 6,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.030605,
+      "net": -0.080046,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010496
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019754
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|REG5:UP": {
+      "key": "PCTX|MACD_REACCEL_SHORT|REG5:UP",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.037247,
+      "net": -0.09518,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.086016
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.009164
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|REG5:UP": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|REG5:UP",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.024776,
+      "net": -0.049796,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|REG15:DOWN": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|REG15:DOWN",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.054374,
+      "net": -0.108658,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        },
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019979
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017057
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.021826
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|CAP:>=.44": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|CAP:>=.44",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.052215,
+      "net": -0.106477,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.039624
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017057
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|SHOOTING_STAR_REJECT|STOCH_RANGE_REV_SHORT": {
+      "key": "PAIR|SHOOTING_STAR_REJECT|STOCH_RANGE_REV_SHORT",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005947,
+      "net": -0.023707,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023707
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|VWAP_RECLAIM_LONG": {
+      "key": "PAIR|BULL_ENGULF|VWAP_RECLAIM_LONG",
+      "n": 21,
+      "wins": 2,
+      "wr": 0.0952,
+      "lift": 1.23,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.140393,
+      "net": -0.032889,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.081137
+        },
+        "2026-09-03": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.061829
+        },
+        "2026-09-05": {
+          "n": 11,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.052197
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_LONG|VWAP_RECLAIM_LONG": {
+      "key": "PAIR|EMA_PULLBACK_LONG|VWAP_RECLAIM_LONG",
+      "n": 47,
+      "wins": 9,
+      "wr": 0.1915,
+      "lift": 2.48,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.122174,
+      "net": -0.197333,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.020679
+        },
+        "2026-09-03": {
+          "n": 18,
+          "wins": 7,
+          "wr": 0.389,
+          "net": -0.044154
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024379
+        },
+        "2026-09-05": {
+          "n": 23,
+          "wins": 1,
+          "wr": 0.043,
+          "net": -0.091868
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|REG15:RANGE": {
+      "key": "PCTX|BULL_ENGULF|REG15:RANGE",
+      "n": 37,
+      "wins": 1,
+      "wr": 0.027,
+      "lift": 0.35,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.110494,
+      "net": -0.127374,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.130163
+        },
+        "2026-09-03": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.115842
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        },
+        "2026-09-05": {
+          "n": 24,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.113083
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008612
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|REG15:RANGE": {
+      "key": "PCTX|EMA_PULLBACK_LONG|REG15:RANGE",
+      "n": 56,
+      "wins": 4,
+      "wr": 0.0714,
+      "lift": 0.92,
+      "winner_days": 3,
+      "positive_net_days": 1,
+      "gross": 0.08353,
+      "net": -0.234756,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.077885
+        },
+        "2026-09-03": {
+          "n": 12,
+          "wins": 2,
+          "wr": 0.167,
+          "net": -0.086265
+        },
+        "2026-09-04": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.032288
+        },
+        "2026-09-05": {
+          "n": 37,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.185476
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008612
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|REG5:UP": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|REG5:UP",
+      "n": 42,
+      "wins": 10,
+      "wr": 0.2381,
+      "lift": 3.08,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.154544,
+      "net": -0.151137,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.020679
+        },
+        "2026-09-03": {
+          "n": 21,
+          "wins": 8,
+          "wr": 0.381,
+          "net": -0.048957
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023516
+        },
+        "2026-09-05": {
+          "n": 16,
+          "wins": 1,
+          "wr": 0.062,
+          "net": -0.057985
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|REG15:RANGE": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|REG15:RANGE",
+      "n": 31,
+      "wins": 2,
+      "wr": 0.0645,
+      "lift": 0.83,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.167315,
+      "net": -0.018522,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.130163
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.020044
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.011191
+        },
+        "2026-09-05": {
+          "n": 24,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.11745
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|CAP:>=.44": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|CAP:>=.44",
+      "n": 37,
+      "wins": 10,
+      "wr": 0.2703,
+      "lift": 3.5,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": 0.197885,
+      "net": -0.159444,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.017878
+        },
+        "2026-09-03": {
+          "n": 28,
+          "wins": 9,
+          "wr": 0.321,
+          "net": -0.101734
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.034707
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005125
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|REG5:RANGE": {
+      "key": "PCTX|BULL_ENGULF|REG5:RANGE",
+      "n": 32,
+      "wins": 1,
+      "wr": 0.0312,
+      "lift": 0.4,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.011052,
+      "net": -0.225895,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.052761
+        },
+        "2026-09-03": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.05306
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.027815
+        },
+        "2026-09-05": {
+          "n": 20,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.092259
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|REG5:RANGE": {
+      "key": "PCTX|EMA_PULLBACK_LONG|REG5:RANGE",
+      "n": 33,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.055204,
+      "net": -0.23377,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.000915
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.061527
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.046459
+        },
+        "2026-09-05": {
+          "n": 22,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.108616
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|REG15:UP": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|REG15:UP",
+      "n": 47,
+      "wins": 9,
+      "wr": 0.1915,
+      "lift": 2.48,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": 0.000627,
+      "net": -0.34575,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.148041
+        },
+        "2026-09-03": {
+          "n": 25,
+          "wins": 8,
+          "wr": 0.32,
+          "net": -0.091835
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023516
+        },
+        "2026-09-05": {
+          "n": 16,
+          "wins": 1,
+          "wr": 0.062,
+          "net": -0.066105
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|MORNING_STAR": {
+      "key": "PAIR|BULL_ENGULF|MORNING_STAR",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.009491,
+      "net": -0.05218,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.033713
+        },
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.018467
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|REG5:UP": {
+      "key": "PCTX|MORNING_STAR|REG5:UP",
+      "n": 13,
+      "wins": 1,
+      "wr": 0.0769,
+      "lift": 0.99,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.039899,
+      "net": -0.125273,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.033713
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.066613
+        },
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024947
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|RSI_BULL_DIVERGENCE|STOCH_RANGE_REV_LONG": {
+      "key": "PAIR|RSI_BULL_DIVERGENCE|STOCH_RANGE_REV_LONG",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.031753,
+      "net": -0.065817,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01634
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|RSI_BULL_DIVERGENCE|VWAP_RECLAIM_LONG": {
+      "key": "PAIR|RSI_BULL_DIVERGENCE|VWAP_RECLAIM_LONG",
+      "n": 6,
+      "wins": 2,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.015154,
+      "net": -0.036248,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 2,
+          "wr": 1.0,
+          "net": 0.031645
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.018416
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|STOCH_RANGE_REV_LONG|VWAP_RECLAIM_LONG": {
+      "key": "PAIR|STOCH_RANGE_REV_LONG|VWAP_RECLAIM_LONG",
+      "n": 21,
+      "wins": 3,
+      "wr": 0.1429,
+      "lift": 1.85,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.018501,
+      "net": -0.108729,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 3,
+          "wr": 0.5,
+          "net": 0.009792
+        },
+        "2026-09-05": {
+          "n": 14,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.069044
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|REG5:RANGE": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|REG5:RANGE",
+      "n": 15,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.068489,
+      "net": -0.174786,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.06412
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.015598
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.045591
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|REG15:UP": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|REG15:UP",
+      "n": 11,
+      "wins": 1,
+      "wr": 0.0909,
+      "lift": 1.18,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.037492,
+      "net": -0.126084,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.049926
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007815
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.018866
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|CAP:>=.44": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|CAP:>=.44",
+      "n": 13,
+      "wins": 2,
+      "wr": 0.1538,
+      "lift": 1.99,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.022678,
+      "net": -0.133683,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-03": {
+          "n": 9,
+          "wins": 2,
+          "wr": 0.222,
+          "net": -0.059391
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024815
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|REG5:RANGE": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|REG5:RANGE",
+      "n": 22,
+      "wins": 1,
+      "wr": 0.0455,
+      "lift": 0.59,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.044487,
+      "net": -0.222015,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.142102
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.004856
+        },
+        "2026-09-05": {
+          "n": 15,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.075057
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|REG15:UP": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|REG15:UP",
+      "n": 32,
+      "wins": 4,
+      "wr": 0.125,
+      "lift": 1.62,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.046635,
+      "net": -0.338866,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.218792
+        },
+        "2026-09-03": {
+          "n": 14,
+          "wins": 4,
+          "wr": 0.286,
+          "net": -0.062384
+        },
+        "2026-09-05": {
+          "n": 12,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.05769
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|CAP:>=.44": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|CAP:>=.44",
+      "n": 22,
+      "wins": 4,
+      "wr": 0.1818,
+      "lift": 2.35,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.046344,
+      "net": -0.305982,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.218792
+        },
+        "2026-09-03": {
+          "n": 16,
+          "wins": 4,
+          "wr": 0.25,
+          "net": -0.08719
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|REG5:RANGE": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|REG5:RANGE",
+      "n": 29,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.071082,
+      "net": -0.230508,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049477
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.032824
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.011191
+        },
+        "2026-09-05": {
+          "n": 23,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.120763
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|STOCH_RANGE_REV_LONG": {
+      "key": "PAIR|BULL_ENGULF|STOCH_RANGE_REV_LONG",
+      "n": 20,
+      "wins": 2,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.013933,
+      "net": -0.200711,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.128536
+        },
+        "2026-09-03": {
+          "n": 8,
+          "wins": 2,
+          "wr": 0.25,
+          "net": -0.044291
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.027884
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|REG5:DOWN": {
+      "key": "PCTX|BULL_ENGULF|REG5:DOWN",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 1,
+      "gross": 0.055255,
+      "net": -0.016257,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.024589
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.040846
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|REG5:DOWN": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|REG5:DOWN",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.011604,
+      "net": -0.061868,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.027689
+        },
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.029372
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004807
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|REG15:RANGE": {
+      "key": "PCTX|BEAR_ENGULF|REG15:RANGE",
+      "n": 30,
+      "wins": 2,
+      "wr": 0.0667,
+      "lift": 0.86,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.071346,
+      "net": -0.117717,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.024231
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.042285
+        },
+        "2026-09-05": {
+          "n": 22,
+          "wins": 1,
+          "wr": 0.045,
+          "net": -0.099663
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|REG15:RANGE": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG15:RANGE",
+      "n": 15,
+      "wins": 2,
+      "wr": 0.1333,
+      "lift": 1.72,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.107031,
+      "net": 0.016067,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.060451
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.001188
+        },
+        "2026-09-05": {
+          "n": 12,
+          "wins": 1,
+          "wr": 0.083,
+          "net": -0.045572
+        }
+      },
+      "production_eligible": true
+    },
+    "PAIR|HAMMER_RECLAIM|STOCH_RANGE_REV_LONG": {
+      "key": "PAIR|HAMMER_RECLAIM|STOCH_RANGE_REV_LONG",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.002457,
+      "net": -0.032804,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.040779
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.007975
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|REG5:RANGE": {
+      "key": "PCTX|HAMMER_RECLAIM|REG5:RANGE",
+      "n": 6,
+      "wins": 1,
+      "wr": 0.1667,
+      "lift": 2.16,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.005992,
+      "net": -0.052405,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.040779
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.005168
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016794
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|REG15:UP": {
+      "key": "PCTX|HAMMER_RECLAIM|REG15:UP",
+      "n": 15,
+      "wins": 2,
+      "wr": 0.1333,
+      "lift": 1.72,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.001427,
+      "net": -0.107086,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.040779
+        },
+        "2026-09-03": {
+          "n": 9,
+          "wins": 2,
+          "wr": 0.222,
+          "net": -0.038002
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.028305
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|CAP:>=.44": {
+      "key": "PCTX|HAMMER_RECLAIM|CAP:>=.44",
+      "n": 12,
+      "wins": 2,
+      "wr": 0.1667,
+      "lift": 2.16,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.003595,
+      "net": -0.095699,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.040779
+        },
+        "2026-09-03": {
+          "n": 10,
+          "wins": 2,
+          "wr": 0.2,
+          "net": -0.04913
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.00579
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|REG15:UP": {
+      "key": "PCTX|BEAR_ENGULF|REG15:UP",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.052331,
+      "net": -0.094052,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049033
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.03995
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005069
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|REG15:UP": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|REG15:UP",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.050087,
+      "net": -0.088983,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049033
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.03995
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|REG5:UP": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|REG5:UP",
+      "n": 17,
+      "wins": 3,
+      "wr": 0.1765,
+      "lift": 2.28,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.006904,
+      "net": -0.128381,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049001
+        },
+        "2026-09-03": {
+          "n": 10,
+          "wins": 3,
+          "wr": 0.3,
+          "net": -0.052962
+        },
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026418
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|REG5:DOWN": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|REG5:DOWN",
+      "n": 7,
+      "wins": 1,
+      "wr": 0.1429,
+      "lift": 1.85,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.08448,
+      "net": 0.017373,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": 0.052278
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.030098
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004807
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|REG15:RANGE": {
+      "key": "PCTX|MACD_REACCEL_SHORT|REG15:RANGE",
+      "n": 10,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.022377,
+      "net": -0.0986,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.03622
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.038307
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024073
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_LONG|EMA_PULLBACK_LONG": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_LONG|EMA_PULLBACK_LONG",
+      "n": 13,
+      "wins": 3,
+      "wr": 0.2308,
+      "lift": 2.98,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.026402,
+      "net": -0.061909,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026233
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 2,
+          "wr": 0.333,
+          "net": -0.016701
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.010233
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.029208
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|REG5:UP": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|REG5:UP",
+      "n": 10,
+      "wins": 4,
+      "wr": 0.4,
+      "lift": 5.17,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.049206,
+      "net": -0.024726,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026233
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 3,
+          "wr": 0.5,
+          "net": 0.001622
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.010233
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010348
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|REG15:UP": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|REG15:UP",
+      "n": 10,
+      "wins": 3,
+      "wr": 0.3,
+      "lift": 3.88,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.019596,
+      "net": -0.054336,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026233
+        },
+        "2026-09-03": {
+          "n": 6,
+          "wins": 2,
+          "wr": 0.333,
+          "net": -0.027988
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.010233
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010348
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:>=.44": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:>=.44",
+      "n": 10,
+      "wins": 4,
+      "wr": 0.4,
+      "lift": 5.17,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.046136,
+      "net": -0.035782,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026233
+        },
+        "2026-09-03": {
+          "n": 8,
+          "wins": 3,
+          "wr": 0.375,
+          "net": -0.019782
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.010233
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|MACD_REACCEL_LONG": {
+      "key": "PAIR|BULL_ENGULF|MACD_REACCEL_LONG",
+      "n": 9,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.025318,
+      "net": -0.091161,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020169
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.048636
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022356
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_LONG|MACD_REACCEL_LONG": {
+      "key": "PAIR|EMA_PULLBACK_LONG|MACD_REACCEL_LONG",
+      "n": 29,
+      "wins": 5,
+      "wr": 0.1724,
+      "lift": 2.23,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.029051,
+      "net": -0.146737,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020169
+        },
+        "2026-09-03": {
+          "n": 11,
+          "wins": 3,
+          "wr": 0.273,
+          "net": -0.061248
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.005068
+        },
+        "2026-09-05": {
+          "n": 13,
+          "wins": 1,
+          "wr": 0.077,
+          "net": -0.051983
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008269
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|REG5:UP": {
+      "key": "PCTX|MACD_REACCEL_LONG|REG5:UP",
+      "n": 27,
+      "wins": 6,
+      "wr": 0.2222,
+      "lift": 2.87,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.041852,
+      "net": -0.132988,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020169
+        },
+        "2026-09-03": {
+          "n": 13,
+          "wins": 4,
+          "wr": 0.308,
+          "net": -0.06169
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.015396
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 1,
+          "wr": 0.125,
+          "net": -0.027464
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008269
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|REG5:DOWN": {
+      "key": "PCTX|HAMMER_RECLAIM|REG5:DOWN",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000173,
+      "net": -0.008321,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008321
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_LONG|VWAP_RECLAIM_LONG": {
+      "key": "PAIR|MACD_REACCEL_LONG|VWAP_RECLAIM_LONG",
+      "n": 19,
+      "wins": 2,
+      "wr": 0.1053,
+      "lift": 1.36,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.003663,
+      "net": -0.111035,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 8,
+          "wins": 2,
+          "wr": 0.25,
+          "net": -0.040648
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023516
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.046871
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|REG5:DOWN": {
+      "key": "PCTX|MACD_REACCEL_LONG|REG5:DOWN",
+      "n": 5,
+      "wins": 1,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007331,
+      "net": -0.030098,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.030098
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|REG15:RANGE": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|REG15:RANGE",
+      "n": 33,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.049148,
+      "net": -0.213788,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.083519
+        },
+        "2026-09-05": {
+          "n": 25,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.130269
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|SHOOTING_STAR_REJECT|REG15:RANGE": {
+      "key": "PCTX|SHOOTING_STAR_REJECT|REG15:RANGE",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.004766,
+      "net": -0.016989,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.012636
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004353
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|REG5:DOWN": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|REG5:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.006744,
+      "net": -0.01809,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.00809
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|REG15:RANGE": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|REG15:RANGE",
+      "n": 5,
+      "wins": 1,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.016989,
+      "net": -0.010654,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.008206
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01886
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|REG5:DOWN": {
+      "key": "PCTX|EMA_PULLBACK_LONG|REG5:DOWN",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.011154,
+      "net": -0.030648,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020648
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_LONG|HAMMER_RECLAIM": {
+      "key": "PAIR|EMA_PULLBACK_LONG|HAMMER_RECLAIM",
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.035025,
+      "net": -0.103132,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.081549
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.021583
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_LONG|RSI_BULL_DIVERGENCE": {
+      "key": "PAIR|EMA_PULLBACK_LONG|RSI_BULL_DIVERGENCE",
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.041132,
+      "net": -0.10951,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077722
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017032
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.014756
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|HAMMER_RECLAIM|RSI_BULL_DIVERGENCE": {
+      "key": "PAIR|HAMMER_RECLAIM|RSI_BULL_DIVERGENCE",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.006992,
+      "net": -0.02621,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01942
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.00679
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|REG15:RANGE": {
+      "key": "PCTX|HAMMER_RECLAIM|REG15:RANGE",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005012,
+      "net": -0.016164,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.011128
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005036
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|REG15:RANGE": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|REG15:RANGE",
+      "n": 10,
+      "wins": 1,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.002556,
+      "net": -0.057561,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.009465
+        },
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031096
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|REG15:RANGE": {
+      "key": "PCTX|VWAP_REJECT_SHORT|REG15:RANGE",
+      "n": 23,
+      "wins": 1,
+      "wr": 0.0435,
+      "lift": 0.56,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.001218,
+      "net": -0.111194,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.012771
+        },
+        "2026-09-05": {
+          "n": 19,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.098423
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|RSI_BULL_DIVERGENCE": {
+      "key": "PAIR|BULL_ENGULF|RSI_BULL_DIVERGENCE",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.010489,
+      "net": -0.031901,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013686
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007815
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.0104
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|REG15:RANGE": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|REG15:RANGE",
+      "n": 12,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.01636,
+      "net": -0.073398,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024806
+        },
+        "2026-09-05": {
+          "n": 10,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.048592
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EVENING_STAR|MACD_REACCEL_SHORT": {
+      "key": "PAIR|EVENING_STAR|MACD_REACCEL_SHORT",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.001378,
+      "net": -0.025822,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.009098
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|CAP:.33-.44": {
+      "key": "PCTX|BEAR_ENGULF|CAP:.33-.44",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.01342,
+      "net": -0.048516,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022825
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025691
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|CAP:.33-.44": {
+      "key": "PCTX|EVENING_STAR|CAP:.33-.44",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000327,
+      "net": -0.008475,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|CAP:.33-.44": {
+      "key": "PCTX|MACD_REACCEL_SHORT|CAP:.33-.44",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.021332,
+      "net": 0.001528,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005802
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|CAP:.33-.44": {
+      "key": "PCTX|VWAP_REJECT_SHORT|CAP:.33-.44",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005478,
+      "net": -0.029922,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008475
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.021447
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|CAP:.33-.44": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|CAP:.33-.44",
+      "n": 9,
+      "wins": 1,
+      "wr": 0.1111,
+      "lift": 1.44,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.008424,
+      "net": -0.034576,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01435
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.036031
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|REG15:RANGE": {
+      "key": "PCTX|MACD_REACCEL_LONG|REG15:RANGE",
+      "n": 19,
+      "wins": 3,
+      "wr": 0.1579,
+      "lift": 2.04,
+      "winner_days": 2,
+      "positive_net_days": 2,
+      "gross": 0.049954,
+      "net": -0.05203,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 4,
+          "wins": 2,
+          "wr": 0.5,
+          "net": 0.005933
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.000337
+        },
+        "2026-09-05": {
+          "n": 12,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.0583
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|CAP:.33-.44": {
+      "key": "PCTX|MACD_REACCEL_LONG|CAP:.33-.44",
+      "n": 9,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.01197,
+      "net": -0.056785,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010145
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008176
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.038464
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|CAP:.33-.44": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|CAP:.33-.44",
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.023374,
+      "net": -0.076038,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010145
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04964
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|CAP:.33-.44": {
+      "key": "PCTX|BULL_ENGULF|CAP:.33-.44",
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.02396,
+      "net": -0.076626,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026445
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.050181
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|CAP:.33-.44": {
+      "key": "PCTX|EMA_PULLBACK_LONG|CAP:.33-.44",
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.03556,
+      "net": -0.096344,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026445
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008176
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.04547
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_SHORT|RSI_BEAR_DIVERGENCE": {
+      "key": "PAIR|EMA_PULLBACK_SHORT|RSI_BEAR_DIVERGENCE",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.029959,
+      "net": -0.055149,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019979
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017057
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.018113
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|REG5:DOWN": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|REG5:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.024068,
+      "net": -0.037036,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019979
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017057
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_SHORT|EMA_PULLBACK_SHORT": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_SHORT|EMA_PULLBACK_SHORT",
+      "n": 8,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.031775,
+      "net": -0.074064,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031883
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019953
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022228
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG5:DOWN": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG5:DOWN",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.025843,
+      "net": -0.051836,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031883
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019953
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG15:DOWN": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG15:DOWN",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.025305,
+      "net": -0.04555,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016159
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019953
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.009438
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_SHORT|CAP:>=.44": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_SHORT|CAP:>=.44",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.025843,
+      "net": -0.051836,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031883
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019953
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|REG5:UP": {
+      "key": "PCTX|HAMMER_RECLAIM|REG5:UP",
+      "n": 10,
+      "wins": 1,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.00258,
+      "net": -0.062524,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.045977
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016547
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_LONG|MORNING_STAR": {
+      "key": "PAIR|EMA_PULLBACK_LONG|MORNING_STAR",
+      "n": 12,
+      "wins": 1,
+      "wr": 0.0833,
+      "lift": 1.08,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.016643,
+      "net": -0.076667,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.039986
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007453
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.029228
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|REG5:UP": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|REG5:UP",
+      "n": 5,
+      "wins": 1,
+      "wr": 0.2,
+      "lift": 2.59,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007976,
+      "net": -0.024208,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.01062
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.009217
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004371
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MORNING_STAR|STOCH_RANGE_REV_LONG": {
+      "key": "PAIR|MORNING_STAR|STOCH_RANGE_REV_LONG",
+      "n": 11,
+      "wins": 1,
+      "wr": 0.0909,
+      "lift": 1.18,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.010414,
+      "net": -0.047665,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.024724
+        },
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022941
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_LONG|STOCH_RANGE_REV_LONG": {
+      "key": "PAIR|MACD_REACCEL_LONG|STOCH_RANGE_REV_LONG",
+      "n": 6,
+      "wins": 1,
+      "wr": 0.1667,
+      "lift": 2.16,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007319,
+      "net": -0.026317,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.008735
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017582
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_LONG|BULL_ENGULF": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_LONG|BULL_ENGULF",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.012135,
+      "net": -0.024358,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004358
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MORNING_STAR|VWAP_RECLAIM_LONG": {
+      "key": "PAIR|MORNING_STAR|VWAP_RECLAIM_LONG",
+      "n": 8,
+      "wins": 1,
+      "wr": 0.125,
+      "lift": 1.62,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.015084,
+      "net": -0.022625,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.001903
+        },
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024528
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|REG5:DOWN": {
+      "key": "PCTX|MORNING_STAR|REG5:DOWN",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000181,
+      "net": -0.00833,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.00833
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|MACD_REACCEL_LONG|RSI_BULL_DIVERGENCE": {
+      "key": "PAIR|MACD_REACCEL_LONG|RSI_BULL_DIVERGENCE",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.019906,
+      "net": 0.003195,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015349
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007783
+        },
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004371
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|REG5:DOWN": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|REG5:DOWN",
+      "n": 1,
+      "wins": 1,
+      "wr": 1.0,
+      "lift": 12.93,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.020465,
+      "net": 0.015349,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015349
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|REG15:RANGE": {
+      "key": "PCTX|EVENING_STAR|REG15:RANGE",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.011761,
+      "net": -0.036206,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.015108
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.021098
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_ENGULF|RSI_BEAR_DIVERGENCE": {
+      "key": "PAIR|BEAR_ENGULF|RSI_BEAR_DIVERGENCE",
+      "n": 4,
+      "wins": 1,
+      "wr": 0.25,
+      "lift": 3.23,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007859,
+      "net": -0.012512,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.009149
+        },
+        "2026-09-05": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": -0.003363
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|REG5:RANGE": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|REG5:RANGE",
+      "n": 10,
+      "wins": 1,
+      "wr": 0.1,
+      "lift": 1.29,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.001842,
+      "net": -0.050708,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019645
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 1,
+          "wr": 0.125,
+          "net": -0.031063
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|REG15:RANGE": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|REG15:RANGE",
+      "n": 6,
+      "wins": 1,
+      "wr": 0.1667,
+      "lift": 2.16,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.003688,
+      "net": -0.028882,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019645
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.009237
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_LONG|STOCH_RANGE_REV_LONG": {
+      "key": "PAIR|EMA_PULLBACK_LONG|STOCH_RANGE_REV_LONG",
+      "n": 11,
+      "wins": 3,
+      "wr": 0.2727,
+      "lift": 3.53,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.055446,
+      "net": -0.005126,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 5,
+          "wins": 3,
+          "wr": 0.6,
+          "net": 0.018946
+        },
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024072
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_ENGULF|HAMMER_RECLAIM": {
+      "key": "PAIR|BULL_ENGULF|HAMMER_RECLAIM",
+      "n": 2,
+      "wins": 2,
+      "wr": 1.0,
+      "lift": 12.93,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.057037,
+      "net": 0.04074,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 2,
+          "wr": 1.0,
+          "net": 0.04074
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_LONG|RSI_BULL_DIVERGENCE": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_LONG|RSI_BULL_DIVERGENCE",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005166,
+      "net": -0.013314,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013314
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|REG5:RANGE": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|REG5:RANGE",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005877,
+      "net": -0.022174,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013314
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.00886
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_SHORT|MACD_REACCEL_SHORT": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_SHORT|MACD_REACCEL_SHORT",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.001012,
+      "net": -0.007655,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007655
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG15:RANGE": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG15:RANGE",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.00647,
+      "net": -0.028514,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.015724
+        },
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01279
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_LONG|MACD_REACCEL_LONG": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_LONG|MACD_REACCEL_LONG",
+      "n": 2,
+      "wins": 2,
+      "wr": 1.0,
+      "lift": 12.93,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": 0.031989,
+      "net": 0.021327,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 2,
+          "wr": 1.0,
+          "net": 0.021327
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BULL_FLAG_BREAK|DISPLACEMENT_CONT_LONG": {
+      "key": "PAIR|BULL_FLAG_BREAK|DISPLACEMENT_CONT_LONG",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_FLAG_BREAK|REG5:UP": {
+      "key": "PCTX|BULL_FLAG_BREAK|REG5:UP",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_FLAG_BREAK|REG15:UP": {
+      "key": "PCTX|BULL_FLAG_BREAK|REG15:UP",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_FLAG_BREAK|CAP:>=.44": {
+      "key": "PCTX|BULL_FLAG_BREAK|CAP:>=.44",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|DISPLACEMENT_CONT_LONG|REG5:UP": {
+      "key": "PCTX|DISPLACEMENT_CONT_LONG|REG5:UP",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|DISPLACEMENT_CONT_LONG|REG15:UP": {
+      "key": "PCTX|DISPLACEMENT_CONT_LONG|REG15:UP",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|DISPLACEMENT_CONT_LONG|CAP:>=.44": {
+      "key": "PCTX|DISPLACEMENT_CONT_LONG|CAP:>=.44",
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_FLAG_BREAK|DISPLACEMENT_CONT_SHORT": {
+      "key": "PAIR|BEAR_FLAG_BREAK|DISPLACEMENT_CONT_SHORT",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_FLAG_BREAK|MACD_REACCEL_SHORT": {
+      "key": "PAIR|BEAR_FLAG_BREAK|MACD_REACCEL_SHORT",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.006504,
+      "net": -0.01162,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01162
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|DISPLACEMENT_CONT_SHORT|MACD_REACCEL_SHORT": {
+      "key": "PAIR|DISPLACEMENT_CONT_SHORT|MACD_REACCEL_SHORT",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.006504,
+      "net": -0.01162,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01162
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_FLAG_BREAK|REG5:DOWN": {
+      "key": "PCTX|BEAR_FLAG_BREAK|REG5:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_FLAG_BREAK|REG15:DOWN": {
+      "key": "PCTX|BEAR_FLAG_BREAK|REG15:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_FLAG_BREAK|CAP:>=.44": {
+      "key": "PCTX|BEAR_FLAG_BREAK|CAP:>=.44",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|DISPLACEMENT_CONT_SHORT|REG5:DOWN": {
+      "key": "PCTX|DISPLACEMENT_CONT_SHORT|REG5:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|DISPLACEMENT_CONT_SHORT|REG15:DOWN": {
+      "key": "PCTX|DISPLACEMENT_CONT_SHORT|REG15:DOWN",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|DISPLACEMENT_CONT_SHORT|CAP:>=.44": {
+      "key": "PCTX|DISPLACEMENT_CONT_SHORT|CAP:>=.44",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BEAR_FLAG_BREAK|EMA_PULLBACK_SHORT": {
+      "key": "PAIR|BEAR_FLAG_BREAK|EMA_PULLBACK_SHORT",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.008688,
+      "net": -0.013805,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013805
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|DISPLACEMENT_CONT_SHORT|EMA_PULLBACK_SHORT": {
+      "key": "PAIR|DISPLACEMENT_CONT_SHORT|EMA_PULLBACK_SHORT",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.008688,
+      "net": -0.013805,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013805
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|CAP:.33-.44": {
+      "key": "PCTX|MORNING_STAR|CAP:.33-.44",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.004029,
+      "net": -0.016252,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016252
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|CAP:.33-.44": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|CAP:.33-.44",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.010223,
+      "net": -0.038743,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.038743
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|CAP:.33-.44": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|CAP:.33-.44",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.002147,
+      "net": -0.006221,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.006221
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|CAP:.33-.44": {
+      "key": "PCTX|HAMMER_RECLAIM|CAP:.33-.44",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.001856,
+      "net": -0.010004,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010004
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|CAP:.28-.33": {
+      "key": "PCTX|BULL_ENGULF|CAP:.28-.33",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.000717,
+      "net": -0.023088,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.014476
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008612
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|CAP:.28-.33": {
+      "key": "PCTX|EMA_PULLBACK_LONG|CAP:.28-.33",
+      "n": 8,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.003124,
+      "net": -0.04254,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025659
+        },
+        "2026-09-06": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016881
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|CAP:.28-.33": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|CAP:.28-.33",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.00179,
+      "net": -0.010432,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.010432
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|CAP:.28-.33": {
+      "key": "PCTX|BEAR_ENGULF|CAP:.28-.33",
+      "n": 6,
+      "wins": 1,
+      "wr": 0.1667,
+      "lift": 2.16,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007064,
+      "net": -0.01738,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.01738
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|CAP:.28-.33": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|CAP:.28-.33",
+      "n": 4,
+      "wins": 1,
+      "wr": 0.25,
+      "lift": 3.23,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.007954,
+      "net": -0.008342,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 1,
+          "wr": 0.25,
+          "net": -0.008342
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|CAP:.28-.33": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|CAP:.28-.33",
+      "n": 7,
+      "wins": 1,
+      "wr": 0.1429,
+      "lift": 1.85,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.005186,
+      "net": -0.023332,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 7,
+          "wins": 1,
+          "wr": 0.143,
+          "net": -0.023332
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|CAP:.28-.33": {
+      "key": "PCTX|MACD_REACCEL_SHORT|CAP:.28-.33",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.003997,
+      "net": -0.020293,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.020293
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|CAP:.28-.33": {
+      "key": "PCTX|VWAP_REJECT_SHORT|CAP:.28-.33",
+      "n": 9,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.011055,
+      "net": -0.047721,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.047721
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|EMA_PULLBACK_SHORT|STOCH_RANGE_REV_SHORT": {
+      "key": "PAIR|EMA_PULLBACK_SHORT|STOCH_RANGE_REV_SHORT",
+      "n": 5,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.003858,
+      "net": -0.024229,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024229
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|CAP:.33-.44": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|CAP:.33-.44",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.002872,
+      "net": -0.019169,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019169
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|SHOOTING_STAR_REJECT|REG5:RANGE": {
+      "key": "PCTX|SHOOTING_STAR_REJECT|REG5:RANGE",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000279,
+      "net": -0.004353,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004353
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|SHOOTING_STAR_REJECT|CAP:.33-.44": {
+      "key": "PCTX|SHOOTING_STAR_REJECT|CAP:.33-.44",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000279,
+      "net": -0.004353,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004353
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|REG15:RANGE": {
+      "key": "PCTX|MORNING_STAR|REG15:RANGE",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.001643,
+      "net": -0.026876,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026876
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|CAP:.28-.33": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|CAP:.28-.33",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.008218,
+      "net": -0.036736,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.036736
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BEAR_ENGULF|CAP:<.28": {
+      "key": "PCTX|BEAR_ENGULF|CAP:<.28",
+      "n": 21,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.025264,
+      "net": -0.110819,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 21,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.110819
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|CAP:<.28": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|CAP:<.28",
+      "n": 25,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.031259,
+      "net": -0.133111,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 25,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.133111
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG5:RANGE": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_SHORT|REG5:RANGE",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005932,
+      "net": -0.022228,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022228
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_SHORT|CAP:<.28": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_SHORT|CAP:<.28",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005932,
+      "net": -0.022228,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022228
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|CAP:<.28": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|CAP:<.28",
+      "n": 14,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.010339,
+      "net": -0.067376,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 14,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.067376
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_RECLAIM_LONG|CAP:<.28": {
+      "key": "PCTX|VWAP_RECLAIM_LONG|CAP:<.28",
+      "n": 27,
+      "wins": 1,
+      "wr": 0.037,
+      "lift": 0.48,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.008359,
+      "net": -0.118358,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 27,
+          "wins": 1,
+          "wr": 0.037,
+          "net": -0.118358
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_SHORT|CAP:<.28": {
+      "key": "PCTX|STOCH_RANGE_REV_SHORT|CAP:<.28",
+      "n": 10,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.008484,
+      "net": -0.049224,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 10,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049224
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|VWAP_REJECT_SHORT|CAP:<.28": {
+      "key": "PCTX|VWAP_REJECT_SHORT|CAP:<.28",
+      "n": 19,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.01896,
+      "net": -0.096367,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 19,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.096367
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BULL_ENGULF|CAP:<.28": {
+      "key": "PCTX|BULL_ENGULF|CAP:<.28",
+      "n": 25,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015964,
+      "net": -0.117742,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 25,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.117742
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_SHORT|CAP:<.28": {
+      "key": "PCTX|MACD_REACCEL_SHORT|CAP:<.28",
+      "n": 8,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.008185,
+      "net": -0.040777,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.040777
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_LONG|CAP:<.28": {
+      "key": "PCTX|EMA_PULLBACK_LONG|CAP:<.28",
+      "n": 47,
+      "wins": 2,
+      "wr": 0.0426,
+      "lift": 0.55,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.012327,
+      "net": -0.203732,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 47,
+          "wins": 2,
+          "wr": 0.043,
+          "net": -0.203732
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|CAP:<.28": {
+      "key": "PCTX|EVENING_STAR|CAP:<.28",
+      "n": 6,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005686,
+      "net": -0.030131,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.030131
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|CAP:<.28": {
+      "key": "PCTX|MACD_REACCEL_LONG|CAP:<.28",
+      "n": 14,
+      "wins": 1,
+      "wr": 0.0714,
+      "lift": 0.92,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.001308,
+      "net": -0.055728,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 14,
+          "wins": 1,
+          "wr": 0.071,
+          "net": -0.055728
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|CAP:.28-.33": {
+      "key": "PCTX|MORNING_STAR|CAP:.28-.33",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000828,
+      "net": -0.01305,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01305
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EVENING_STAR|CAP:.28-.33": {
+      "key": "PCTX|EVENING_STAR|CAP:.28-.33",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000517,
+      "net": -0.004591,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004591
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_SHORT|EVENING_STAR": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_SHORT|EVENING_STAR",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.00054,
+      "net": -0.004614,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004614
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MORNING_STAR|CAP:<.28": {
+      "key": "PCTX|MORNING_STAR|CAP:<.28",
+      "n": 8,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.003147,
+      "net": -0.029445,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.029445
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BEAR_DIVERGENCE|CAP:<.28": {
+      "key": "PCTX|RSI_BEAR_DIVERGENCE|CAP:<.28",
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.006425,
+      "net": -0.022721,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022721
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_LONG|MORNING_STAR": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_LONG|MORNING_STAR",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000497,
+      "net": -0.004571,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004571
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:<.28": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:<.28",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.001208,
+      "net": -0.013431,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013431
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|RSI_BULL_DIVERGENCE|CAP:<.28": {
+      "key": "PCTX|RSI_BULL_DIVERGENCE|CAP:<.28",
+      "n": 7,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015223,
+      "net": -0.043741,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.043741
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|CAP:<.28": {
+      "key": "PCTX|HAMMER_RECLAIM|CAP:<.28",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.004954,
+      "net": -0.013102,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.013102
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|BB_SQUEEZE_EXPAND_SHORT|RSI_BEAR_DIVERGENCE": {
+      "key": "PAIR|BB_SQUEEZE_EXPAND_SHORT|RSI_BEAR_DIVERGENCE",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.003144,
+      "net": -0.007218,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007218
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|STOCH_RANGE_REV_LONG|CAP:.28-.33": {
+      "key": "PCTX|STOCH_RANGE_REV_LONG|CAP:.28-.33",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": 0.003911,
+      "net": -0.000163,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.000163
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|HAMMER_RECLAIM|CAP:.28-.33": {
+      "key": "PCTX|HAMMER_RECLAIM|CAP:.28-.33",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.00037,
+      "net": -0.004445,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004445
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:.28-.33": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:.28-.33",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.002389,
+      "net": -0.005777,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005777
+        }
+      },
+      "production_eligible": false
+    },
+    "PAIR|HAMMER_RECLAIM|MACD_REACCEL_LONG": {
+      "key": "PAIR|HAMMER_RECLAIM|MACD_REACCEL_LONG",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000894,
+      "net": -0.004968,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.004968
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|EMA_PULLBACK_SHORT|REG15:UP": {
+      "key": "PCTX|EMA_PULLBACK_SHORT|REG15:UP",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.002244,
+      "net": -0.005069,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.005069
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:.33-.44": {
+      "key": "PCTX|BB_SQUEEZE_EXPAND_LONG|CAP:.33-.44",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.005954,
+      "net": -0.01,
+      "day_stats": {
+        "2026-09-05": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.01
+        }
+      },
+      "production_eligible": false
+    },
+    "PCTX|MACD_REACCEL_LONG|CAP:.28-.33": {
+      "key": "PCTX|MACD_REACCEL_LONG|CAP:.28-.33",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.000121,
+      "net": -0.008269,
+      "day_stats": {
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008269
+        }
+      },
+      "production_eligible": false
+    }
+  }
+}
