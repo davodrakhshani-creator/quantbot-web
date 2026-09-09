@@ -1,0 +1,1992 @@
+{
+  "version": "DARA-Astro-AB-Sep7-v1",
+  "astro_training": "BTC daily 2022-08/2026 only; Sep7 unseen by astro calibration",
+  "base_model": "DARA v18 Prototype Memory Sep7",
+  "warning": "Tiny one-day incremental A/B; diagnostic only, not proof. No thresholds were tuned on Sep7.",
+  "opportunities": {
+    "all": {
+      "n": 11,
+      "valid_positive": 3,
+      "wr": 27.3,
+      "gross": 0.051018,
+      "cost": 0.069435,
+      "net": -0.018419
+    },
+    "by_alignment": {
+      "ALIGNED": {
+        "n": 3,
+        "valid_positive": 0,
+        "wr": 0.0,
+        "gross": 0.01806,
+        "cost": 0.017267,
+        "net": 0.000791
+      },
+      "OPPOSED": {
+        "n": 5,
+        "valid_positive": 3,
+        "wr": 60.0,
+        "gross": 0.044807,
+        "cost": 0.032776,
+        "net": 0.012031
+      },
+      "NEUTRAL": {
+        "n": 3,
+        "valid_positive": 0,
+        "wr": 0.0,
+        "gross": -0.011849,
+        "cost": 0.019392,
+        "net": -0.031241
+      }
+    },
+    "higher_activity_vote": {
+      "n": 0,
+      "valid_positive": 0,
+      "wr": null,
+      "gross": 0,
+      "cost": 0,
+      "net": 0
+    },
+    "lower_activity_vote": {
+      "n": 11,
+      "valid_positive": 3,
+      "wr": 27.3,
+      "gross": 0.051018,
+      "cost": 0.069435,
+      "net": -0.018419
+    },
+    "rows": [
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T02:34:00+03:30",
+        "exit_time": "2026-09-07T02:36:00+03:30",
+        "entry": 80247.3,
+        "exit": 80100.3,
+        "score": 35.778,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.009,
+        "mae_pct": 0.186,
+        "gross_pnl": -0.00852,
+        "cost": 0.005116,
+        "net_pnl": -0.013636,
+        "diagnostics": {
+          "prototype_p": 0.2633176126816494,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "UP",
+          "volr": 18.257226819676138,
+          "delta": 0.5649505847109687,
+          "r3_signed_pct": 0.29270207003602167,
+          "r6_signed_pct": 0.353782433182781,
+          "delta3_signed": 0.4808513887147046,
+          "capacity_score_pct": 0.4462625112090583,
+          "vwap_signed_pct": 0.18071307260927316
+        },
+        "astro": {
+          "directional_vote": 0.0,
+          "activity_vote": -3.0,
+          "direction_label": "NEUTRAL",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "NEUTRAL"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T03:49:00+03:30",
+        "exit_time": "2026-09-07T03:59:00+03:30",
+        "entry": 80153.7,
+        "exit": 80163.6,
+        "score": 35.371,
+        "tp_pct": 0.44,
+        "reason": "THESIS_FAIL",
+        "mfe_pct": 0.166,
+        "mae_pct": 0.048,
+        "gross_pnl": -0.000688,
+        "cost": 0.006128,
+        "net_pnl": -0.006816,
+        "diagnostics": {
+          "prototype_p": 0.2573686009065481,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "UP",
+          "volr": 2.0579632034101767,
+          "delta": -0.3210799485738774,
+          "r3_signed_pct": 0.10456444360250616,
+          "r6_signed_pct": 0.16727281785572368,
+          "delta3_signed": 0.26586751431055705,
+          "capacity_score_pct": 0.6343791407180915,
+          "vwap_signed_pct": 0.15639608311756037
+        },
+        "astro": {
+          "directional_vote": 0.0,
+          "activity_vote": -3.0,
+          "direction_label": "NEUTRAL",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "NEUTRAL"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T05:39:00+03:30",
+        "exit_time": "2026-09-07T05:46:00+03:30",
+        "entry": 79813.7,
+        "exit": 79830.0,
+        "score": 38.469,
+        "tp_pct": 0.33,
+        "reason": "EARLY_WEAK_PROGRESS",
+        "mfe_pct": 0.073,
+        "mae_pct": 0.02,
+        "gross_pnl": -0.001512,
+        "cost": 0.008148,
+        "net_pnl": -0.009661,
+        "diagnostics": {
+          "prototype_p": 0.2584295093120296,
+          "prototype_winner_days": 4,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 2.8197942730052823,
+          "delta": -0.004219742083053962,
+          "r3_signed_pct": 0.03719776813391196,
+          "r6_signed_pct": 0.08762727862219322,
+          "delta3_signed": 0.1270487146595691,
+          "capacity_score_pct": 0.6265352069543407,
+          "vwap_signed_pct": 0.07073645881653379
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T05:51:00+03:30",
+        "exit_time": "2026-09-07T05:53:00+03:30",
+        "entry": 79938.1,
+        "exit": 79895.3,
+        "score": 31.772,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.0,
+        "mae_pct": 0.066,
+        "gross_pnl": -0.003424,
+        "cost": 0.007035,
+        "net_pnl": -0.01046,
+        "diagnostics": {
+          "prototype_p": 0.2520222939600137,
+          "prototype_winner_days": 2,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 2.3985198175036038,
+          "delta": 0.31677757537454926,
+          "r3_signed_pct": 0.11810560118632463,
+          "r6_signed_pct": 0.17293211412015008,
+          "delta3_signed": 0.36907580717359584,
+          "capacity_score_pct": 0.5697270873867639,
+          "vwap_signed_pct": 0.1311793829782637
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "ALIGNED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T06:27:00+03:30",
+        "exit_time": "2026-09-07T06:31:00+03:30",
+        "entry": 80047.0,
+        "exit": 79782.84,
+        "score": 35.368,
+        "tp_pct": 0.33,
+        "reason": "3FEE_FLOOR",
+        "mfe_pct": 0.356,
+        "mae_pct": 0.0,
+        "gross_pnl": 0.018733,
+        "cost": 0.006244,
+        "net_pnl": 0.012489,
+        "diagnostics": {
+          "prototype_p": 0.25723885472250624,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "RANGE",
+          "volr": 0.7036548329668028,
+          "delta": -0.19231456125729235,
+          "r3_signed_pct": 0.1030830055310461,
+          "r6_signed_pct": 0.1917686606617397,
+          "delta3_signed": 0.11305916294038815,
+          "capacity_score_pct": 0.6446047132821903,
+          "vwap_signed_pct": 0.19304333631063875
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T06:33:00+03:30",
+        "exit_time": "2026-09-07T07:03:00+03:30",
+        "entry": 79921.8,
+        "exit": 79658.06,
+        "score": 35.775,
+        "tp_pct": 0.44,
+        "reason": "3FEE_FLOOR",
+        "mfe_pct": 0.33,
+        "mae_pct": 0.04,
+        "gross_pnl": 0.022245,
+        "cost": 0.007415,
+        "net_pnl": 0.01483,
+        "diagnostics": {
+          "prototype_p": 0.2605627855342517,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "RANGE",
+          "reg15": "RANGE",
+          "volr": 2.5574196250916326,
+          "delta": 0.5201140011793225,
+          "r3_signed_pct": -0.09894430187280534,
+          "r6_signed_pct": 0.15628318362962412,
+          "delta3_signed": -0.1561288325292973,
+          "capacity_score_pct": 0.7184552862111535,
+          "vwap_signed_pct": 0.031615977599352973
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T11:05:00+03:30",
+        "exit_time": "2026-09-07T11:11:00+03:30",
+        "entry": 79286.7,
+        "exit": 79025.05,
+        "score": 37.442,
+        "tp_pct": 0.33,
+        "reason": "TP",
+        "mfe_pct": 0.441,
+        "mae_pct": 0.015,
+        "gross_pnl": 0.016899,
+        "cost": 0.005633,
+        "net_pnl": 0.011266,
+        "diagnostics": {
+          "prototype_p": 0.2502944312879218,
+          "prototype_winner_days": 4,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 4.369108915846571,
+          "delta": 0.03564667775941715,
+          "r3_signed_pct": 0.23002535563958482,
+          "r6_signed_pct": 0.13137509289465887,
+          "delta3_signed": 0.08252839783341032,
+          "capacity_score_pct": 0.4128014156902976,
+          "vwap_signed_pct": 0.11797818072774025
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T11:12:00+03:30",
+        "exit_time": "2026-09-07T11:14:00+03:30",
+        "entry": 79050.1,
+        "exit": 79238.9,
+        "score": 55.896,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.015,
+        "mae_pct": 0.245,
+        "gross_pnl": -0.011558,
+        "cost": 0.005336,
+        "net_pnl": -0.016893,
+        "diagnostics": {
+          "prototype_p": 0.4046999057764241,
+          "prototype_winner_days": 5,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 8.247562024093746,
+          "delta": -0.2337743135070841,
+          "r3_signed_pct": 0.21975608463069563,
+          "r6_signed_pct": 0.18901562882733813,
+          "delta3_signed": 0.22618874038801254,
+          "capacity_score_pct": 0.4257768491377653,
+          "vwap_signed_pct": 0.20369798950570228
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T11:15:00+03:30",
+        "exit_time": "2026-09-07T12:15:00+03:30",
+        "entry": 79238.9,
+        "exit": 79428.2,
+        "score": 34.697,
+        "tp_pct": 0.33,
+        "reason": "DIAG_TIMEOUT",
+        "mfe_pct": 0.327,
+        "mae_pct": 0.0,
+        "gross_pnl": 0.011112,
+        "cost": 0.005116,
+        "net_pnl": 0.005995,
+        "diagnostics": {
+          "prototype_p": 0.2517980934745369,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 0.5793002505496753,
+          "delta": 0.29424615214872835,
+          "r3_signed_pct": 0.2388358775004651,
+          "r6_signed_pct": 0.018554936496673058,
+          "delta3_signed": 0.3407804090194537,
+          "capacity_score_pct": 0.5171591857029769,
+          "vwap_signed_pct": 0.05480694107955486
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "ALIGNED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T11:18:00+03:30",
+        "exit_time": "2026-09-07T12:18:00+03:30",
+        "entry": 79280.3,
+        "exit": 79457.1,
+        "score": 35.155,
+        "tp_pct": 0.33,
+        "reason": "DIAG_TIMEOUT",
+        "mfe_pct": 0.275,
+        "mae_pct": 0.004,
+        "gross_pnl": 0.010372,
+        "cost": 0.005116,
+        "net_pnl": 0.005256,
+        "diagnostics": {
+          "prototype_p": 0.25637671418571295,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 0.5038699738675415,
+          "delta": 0.14884452091250036,
+          "r3_signed_pct": 0.05237326616094329,
+          "r6_signed_pct": 0.29133422981120205,
+          "delta3_signed": 0.10198463474017577,
+          "capacity_score_pct": 0.5171591857029769,
+          "vwap_signed_pct": 0.12039526711637993
+        },
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "ALIGNED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T21:05:00+03:30",
+        "exit_time": "2026-09-07T21:07:00+03:30",
+        "entry": 79061.8,
+        "exit": 79090.0,
+        "score": 33.558,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.03,
+        "mae_pct": 0.044,
+        "gross_pnl": -0.002641,
+        "cost": 0.008148,
+        "net_pnl": -0.010789,
+        "diagnostics": {
+          "prototype_p": 0.27128062160542127,
+          "prototype_winner_days": 2,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "RANGE",
+          "volr": 1.6304129534329108,
+          "delta": 0.3463695035733991,
+          "r3_signed_pct": 0.032622095779999416,
+          "r6_signed_pct": 0.058274910944311475,
+          "delta3_signed": -0.2831331852945973,
+          "capacity_score_pct": 0.4300815026118152,
+          "vwap_signed_pct": 0.03024112210054941
+        },
+        "astro": {
+          "directional_vote": 0.0,
+          "activity_vote": -4.0,
+          "direction_label": "NEUTRAL",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Venus:SQUARE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "NEUTRAL"
+      }
+    ]
+  },
+  "sequential": {
+    "all": {
+      "n": 9,
+      "valid_positive": 3,
+      "wr": 33.3,
+      "gross": 0.052188,
+      "cost": 0.058973,
+      "net": -0.006788
+    },
+    "by_alignment": {
+      "ALIGNED": {
+        "n": 2,
+        "valid_positive": 0,
+        "wr": 0.0,
+        "gross": 0.007688,
+        "cost": 0.012149,
+        "net": -0.004462
+      },
+      "OPPOSED": {
+        "n": 4,
+        "valid_positive": 3,
+        "wr": 75.0,
+        "gross": 0.056349,
+        "cost": 0.027433,
+        "net": 0.028915
+      },
+      "NEUTRAL": {
+        "n": 3,
+        "valid_positive": 0,
+        "wr": 0.0,
+        "gross": -0.011849,
+        "cost": 0.019391,
+        "net": -0.031241
+      }
+    },
+    "higher_activity_vote": {
+      "n": 0,
+      "valid_positive": 0,
+      "wr": null,
+      "gross": 0,
+      "cost": 0,
+      "net": 0
+    },
+    "lower_activity_vote": {
+      "n": 9,
+      "valid_positive": 3,
+      "wr": 33.3,
+      "gross": 0.052188,
+      "cost": 0.058973,
+      "net": -0.006788
+    },
+    "rows": [
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T02:34:00+03:30",
+        "exit_time": "2026-09-07T02:36:00+03:30",
+        "entry": 80247.3,
+        "exit": 80100.3,
+        "score": 35.778,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.009,
+        "mae_pct": 0.186,
+        "gross_pnl": -0.00852,
+        "cost": 0.005116,
+        "net_pnl": -0.013636,
+        "diagnostics": {
+          "prototype_p": 0.2633176126816494,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "UP",
+          "volr": 18.257226819676138,
+          "delta": 0.5649505847109687,
+          "r3_signed_pct": 0.29270207003602167,
+          "r6_signed_pct": 0.353782433182781,
+          "delta3_signed": 0.4808513887147046,
+          "capacity_score_pct": 0.4462625112090583,
+          "vwap_signed_pct": 0.18071307260927316
+        },
+        "equity_after": 99.986364,
+        "n": 1,
+        "astro": {
+          "directional_vote": 0.0,
+          "activity_vote": -3.0,
+          "direction_label": "NEUTRAL",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "NEUTRAL"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T03:49:00+03:30",
+        "exit_time": "2026-09-07T03:59:00+03:30",
+        "entry": 80153.7,
+        "exit": 80163.6,
+        "score": 35.371,
+        "tp_pct": 0.44,
+        "reason": "THESIS_FAIL",
+        "mfe_pct": 0.166,
+        "mae_pct": 0.048,
+        "gross_pnl": -0.000688,
+        "cost": 0.006127,
+        "net_pnl": -0.006815,
+        "diagnostics": {
+          "prototype_p": 0.2573686009065481,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "UP",
+          "volr": 2.0579632034101767,
+          "delta": -0.3210799485738774,
+          "r3_signed_pct": 0.10456444360250616,
+          "r6_signed_pct": 0.16727281785572368,
+          "delta3_signed": 0.26586751431055705,
+          "capacity_score_pct": 0.6343791407180915,
+          "vwap_signed_pct": 0.15639608311756037
+        },
+        "equity_after": 99.979549,
+        "n": 2,
+        "astro": {
+          "directional_vote": 0.0,
+          "activity_vote": -3.0,
+          "direction_label": "NEUTRAL",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "NEUTRAL"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T05:39:00+03:30",
+        "exit_time": "2026-09-07T05:46:00+03:30",
+        "entry": 79813.7,
+        "exit": 79830.0,
+        "score": 38.469,
+        "tp_pct": 0.33,
+        "reason": "EARLY_WEAK_PROGRESS",
+        "mfe_pct": 0.073,
+        "mae_pct": 0.02,
+        "gross_pnl": -0.001512,
+        "cost": 0.008146,
+        "net_pnl": -0.009659,
+        "diagnostics": {
+          "prototype_p": 0.2584295093120296,
+          "prototype_winner_days": 4,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 2.8197942730052823,
+          "delta": -0.004219742083053962,
+          "r3_signed_pct": 0.03719776813391196,
+          "r6_signed_pct": 0.08762727862219322,
+          "delta3_signed": 0.1270487146595691,
+          "capacity_score_pct": 0.6265352069543407,
+          "vwap_signed_pct": 0.07073645881653379
+        },
+        "equity_after": 99.96989,
+        "n": 3,
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T05:51:00+03:30",
+        "exit_time": "2026-09-07T05:53:00+03:30",
+        "entry": 79938.1,
+        "exit": 79895.3,
+        "score": 31.772,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.0,
+        "mae_pct": 0.066,
+        "gross_pnl": -0.003423,
+        "cost": 0.007033,
+        "net_pnl": -0.010457,
+        "diagnostics": {
+          "prototype_p": 0.2520222939600137,
+          "prototype_winner_days": 2,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 2.3985198175036038,
+          "delta": 0.31677757537454926,
+          "r3_signed_pct": 0.11810560118632463,
+          "r6_signed_pct": 0.17293211412015008,
+          "delta3_signed": 0.36907580717359584,
+          "capacity_score_pct": 0.5697270873867639,
+          "vwap_signed_pct": 0.1311793829782637
+        },
+        "equity_after": 99.959433,
+        "n": 4,
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "ALIGNED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T06:27:00+03:30",
+        "exit_time": "2026-09-07T06:31:00+03:30",
+        "entry": 80047.0,
+        "exit": 79782.84,
+        "score": 35.368,
+        "tp_pct": 0.33,
+        "reason": "3FEE_FLOOR",
+        "mfe_pct": 0.356,
+        "mae_pct": 0.0,
+        "gross_pnl": 0.018726,
+        "cost": 0.006242,
+        "net_pnl": 0.012484,
+        "diagnostics": {
+          "prototype_p": 0.25723885472250624,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "RANGE",
+          "volr": 0.7036548329668028,
+          "delta": -0.19231456125729235,
+          "r3_signed_pct": 0.1030830055310461,
+          "r6_signed_pct": 0.1917686606617397,
+          "delta3_signed": 0.11305916294038815,
+          "capacity_score_pct": 0.6446047132821903,
+          "vwap_signed_pct": 0.19304333631063875
+        },
+        "equity_after": 99.971917,
+        "n": 5,
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T06:33:00+03:30",
+        "exit_time": "2026-09-07T07:03:00+03:30",
+        "entry": 79921.8,
+        "exit": 79658.06,
+        "score": 35.775,
+        "tp_pct": 0.44,
+        "reason": "3FEE_FLOOR",
+        "mfe_pct": 0.33,
+        "mae_pct": 0.04,
+        "gross_pnl": 0.022238,
+        "cost": 0.007413,
+        "net_pnl": 0.014826,
+        "diagnostics": {
+          "prototype_p": 0.2605627855342517,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "RANGE",
+          "reg15": "RANGE",
+          "volr": 2.5574196250916326,
+          "delta": 0.5201140011793225,
+          "r3_signed_pct": -0.09894430187280534,
+          "r6_signed_pct": 0.15628318362962412,
+          "delta3_signed": -0.1561288325292973,
+          "capacity_score_pct": 0.7184552862111535,
+          "vwap_signed_pct": 0.031615977599352973
+        },
+        "equity_after": 99.986743,
+        "n": 6,
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T11:05:00+03:30",
+        "exit_time": "2026-09-07T11:11:00+03:30",
+        "entry": 79286.7,
+        "exit": 79025.05,
+        "score": 37.442,
+        "tp_pct": 0.33,
+        "reason": "TP",
+        "mfe_pct": 0.441,
+        "mae_pct": 0.015,
+        "gross_pnl": 0.016897,
+        "cost": 0.005632,
+        "net_pnl": 0.011264,
+        "diagnostics": {
+          "prototype_p": 0.2502944312879218,
+          "prototype_winner_days": 4,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 4.369108915846571,
+          "delta": 0.03564667775941715,
+          "r3_signed_pct": 0.23002535563958482,
+          "r6_signed_pct": 0.13137509289465887,
+          "delta3_signed": 0.08252839783341032,
+          "capacity_score_pct": 0.4128014156902976,
+          "vwap_signed_pct": 0.11797818072774025
+        },
+        "equity_after": 99.998007,
+        "n": 7,
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "OPPOSED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "LONG",
+        "entry_time": "2026-09-07T11:15:00+03:30",
+        "exit_time": "2026-09-07T12:15:00+03:30",
+        "entry": 79238.9,
+        "exit": 79428.2,
+        "score": 34.697,
+        "tp_pct": 0.33,
+        "reason": "DIAG_TIMEOUT",
+        "mfe_pct": 0.327,
+        "mae_pct": 0.0,
+        "gross_pnl": 0.011111,
+        "cost": 0.005116,
+        "net_pnl": 0.005995,
+        "diagnostics": {
+          "prototype_p": 0.2517980934745369,
+          "prototype_winner_days": 3,
+          "threshold": 0.25,
+          "reg5": "DOWN",
+          "reg15": "DOWN",
+          "volr": 0.5793002505496753,
+          "delta": 0.29424615214872835,
+          "r3_signed_pct": 0.2388358775004651,
+          "r6_signed_pct": 0.018554936496673058,
+          "delta3_signed": 0.3407804090194537,
+          "capacity_score_pct": 0.5171591857029769,
+          "vwap_signed_pct": 0.05480694107955486
+        },
+        "equity_after": 100.004002,
+        "n": 8,
+        "astro": {
+          "directional_vote": 1.0,
+          "activity_vote": -3.0,
+          "direction_label": "LONG_BIAS",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Mercury:SEXTILE",
+              "votes": [
+                {
+                  "type": "direction",
+                  "metric": "buy_imbalance",
+                  "vote": 1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "ALIGNED"
+      },
+      {
+        "setup": "PROTOTYPE_MEMORY",
+        "side": "SHORT",
+        "entry_time": "2026-09-07T21:05:00+03:30",
+        "exit_time": "2026-09-07T21:07:00+03:30",
+        "entry": 79061.8,
+        "exit": 79090.0,
+        "score": 33.558,
+        "tp_pct": 0.33,
+        "reason": "EARLY_NO_FOLLOW",
+        "mfe_pct": 0.03,
+        "mae_pct": 0.044,
+        "gross_pnl": -0.002641,
+        "cost": 0.008148,
+        "net_pnl": -0.01079,
+        "diagnostics": {
+          "prototype_p": 0.27128062160542127,
+          "prototype_winner_days": 2,
+          "threshold": 0.25,
+          "reg5": "UP",
+          "reg15": "RANGE",
+          "volr": 1.6304129534329108,
+          "delta": 0.3463695035733991,
+          "r3_signed_pct": 0.032622095779999416,
+          "r6_signed_pct": 0.058274910944311475,
+          "delta3_signed": -0.2831331852945973,
+          "capacity_score_pct": 0.4300815026118152,
+          "vwap_signed_pct": 0.03024112210054941
+        },
+        "equity_after": 99.993212,
+        "n": 9,
+        "astro": {
+          "directional_vote": 0.0,
+          "activity_vote": -4.0,
+          "direction_label": "NEUTRAL",
+          "activity_label": "LOWER",
+          "matched": [
+            {
+              "condition": "ASPECT:Moon-Venus:SQUARE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "MOON_PHASE:WAN_CRESCENT",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Neptune_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Pluto_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            },
+            {
+              "condition": "Saturn_RETROGRADE",
+              "votes": [
+                {
+                  "type": "activity",
+                  "metric": "volume_surprise",
+                  "vote": 1
+                },
+                {
+                  "type": "activity",
+                  "metric": "abs_return",
+                  "vote": -1
+                }
+              ]
+            }
+          ],
+          "policy": "weak research prior only; never opens a trade by itself"
+        },
+        "astro_alignment": "NEUTRAL"
+      }
+    ]
+  }
+}
