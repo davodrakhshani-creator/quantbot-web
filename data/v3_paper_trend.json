@@ -1,11 +1,11 @@
 {
   "version": "quantbot-v3-forward-paper-trend",
-  "updated": "2026-09-08T11:12:32.512160+00:00",
+  "updated": "2026-09-09T00:44:23.291634+00:00",
   "paper_start": "2026-09-08 00:00:00+00:00",
   "rule_frozen": "E_blend_top3_btc200_gate",
   "execution_rule": "signal at completed UTC close t; target position applies to next daily bar",
   "live_orders": false,
-  "data_end": "2026-09-07 00:00:00+00:00",
+  "data_end": "2026-09-08 00:00:00+00:00",
   "universe_frozen": [
     "BTCUSDT",
     "ETHUSDT",
@@ -30,7 +30,7 @@
   ],
   "asset_errors": {},
   "current_signal": {
-    "signal_date": "2026-09-07 00:00:00+00:00",
+    "signal_date": "2026-09-08 00:00:00+00:00",
     "effective_next_bar": true,
     "weights": {
       "LINKUSDT": 0.05027641594807373,
@@ -38,33 +38,37 @@
       "NEARUSDT": 0.04354195214497813
     },
     "gross_exposure": 0.1304597725895011,
-    "btc_close": 79112.01,
-    "btc_sma200": 69849.2147,
+    "btc_close": 78455.8,
+    "btc_sma200": 69901.39365,
     "btc_market_gate": true
   },
   "forward_metrics_13bps": {
-    "n_days": 0,
-    "net_pct": 0,
-    "ann_pct": 0,
-    "sharpe": 0,
-    "max_dd_pct": 0,
-    "pf": 0,
-    "avg_daily_bps": 0,
-    "positive_day_pct": 0
+    "n_days": 1,
+    "net_pct": -0.13605093889229591,
+    "ann_pct": -39.18078419346972,
+    "sharpe": 0.0,
+    "max_dd_pct": 0.0,
+    "pf": 0.0,
+    "avg_daily_bps": -13.60509388922979,
+    "positive_day_pct": 0.0,
+    "turnover_units": 0.09556188920860667,
+    "cost_pct": 0.012423045597118867
   },
   "forward_metrics_40bps": {
-    "n_days": 0,
-    "net_pct": 0,
-    "ann_pct": 0,
-    "sharpe": 0,
-    "max_dd_pct": 0,
-    "pf": 0,
-    "avg_daily_bps": 0,
-    "positive_day_pct": 0
+    "n_days": 1,
+    "net_pct": -0.16185264897862206,
+    "ann_pct": -44.65842362694992,
+    "sharpe": 0.0,
+    "max_dd_pct": 0.0,
+    "pf": 0.0,
+    "avg_daily_bps": -16.185264897862172,
+    "positive_day_pct": 0.0,
+    "turnover_units": 0.09556188920860667,
+    "cost_pct": 0.03822475568344267
   },
   "forward_exposure": {
-    "active_days": 0,
-    "active_day_pct": 0.0
+    "active_days": 1,
+    "active_day_pct": 100.0
   },
   "promotion_gate_pre_registered": {
     "registered_before_first_forward_completed_bar": true,
