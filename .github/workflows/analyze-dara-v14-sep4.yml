@@ -1,0 +1,24 @@
+name: Analyze DARA v14 Sep4
+on:
+  push:
+    paths:
+      - 'analyze_dara_v14_sep4.py'
+      - '.github/workflows/analyze-dara-v14-sep4.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python analyze_dara_v14_sep4.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v14_sep4_context_analysis.json
+          git diff --cached --quiet || git commit -m "Persist DARA v14 Sep4 context analysis"
+          git push
