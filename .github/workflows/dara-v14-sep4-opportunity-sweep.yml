@@ -1,0 +1,26 @@
+name: DARA v14 Sep4 Opportunity Sweep
+on:
+  push:
+    paths:
+      - 'dara_v14_sep4_opportunity_sweep.py'
+      - '.github/workflows/dara-v14-sep4-opportunity-sweep.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v14 Sep4
+        run: python dara_v14_sep4_opportunity_sweep.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v14_sep4_opportunity_sweep.json
+          git diff --cached --quiet || git commit -m "Persist DARA v14 Sep4 result"
+          git push
