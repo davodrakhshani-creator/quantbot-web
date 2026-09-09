@@ -1,0 +1,46 @@
+{
+  "version": "DARA-Astro-Hypothesis-Library-v1",
+  "scope": ["BTCUSDT futures", "timing feature research", "1m", "5m", "15m"],
+  "principle": "Astronomical positions are objective calculations; claimed market effects are hypotheses only. No astrology feature can open a production trade by itself. It receives non-zero production weight only after repeated out-of-sample BTC evidence survives transaction costs.",
+  "evidence_policy": {
+    "astronomical_ephemeris": "objective",
+    "market_causation": "unproven",
+    "single_backtest_correlation": "insufficient",
+    "production_requirement": "directionally stable across train/validation/OOS, adequate samples, and incremental after-fee improvement when fused with price/flow state"
+  },
+  "sources": [
+    {"name":"Astronomy Engine","url":"https://pypi.org/project/astronomy-engine/","role":"ephemeris calculations"},
+    {"name":"Yuan, Zheng & Zhu - Are investors moonstruck?","url":"https://doi.org/10.1016/j.jempfin.2005.06.001","role":"reported lunar association in 48 stock markets"},
+    {"name":"Keef & Khaled - Further international evidence","url":"https://doi.org/10.1016/j.jempfin.2010.11.002","role":"mixed replication / specification evidence"},
+    {"name":"Reschenhofer & Lingler - Detecting synchronous cycles","url":"https://doi.org/10.1016/j.jempfin.2013.07.003","role":"no lunar effect; warns about data snooping"}
+  ],
+  "features": {
+    "moon": ["phase_angle_deg", "illumination_proxy", "phase_octant", "distance_au", "ecliptic_latitude_deg", "geocentric_longitude_deg"],
+    "planets_geocentric": ["Sun", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"],
+    "retrograde": ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"],
+    "major_aspects_deg": [0, 60, 90, 120, 180],
+    "aspect_orb_deg": 3.0,
+    "research_pairs": [
+      "Moon-Mars", "Moon-Jupiter", "Moon-Saturn", "Moon-Mercury", "Moon-Venus",
+      "Mercury-Mars", "Mercury-Jupiter", "Mercury-Saturn",
+      "Venus-Mars", "Venus-Jupiter", "Venus-Saturn",
+      "Mars-Jupiter", "Mars-Saturn", "Jupiter-Saturn"
+    ],
+    "eclipse_proxy": "new/full moon proximity plus low absolute lunar ecliptic latitude; research-only"
+  },
+  "financial_astrology_labels_for_testing_only": {
+    "conjunction_0": "traditionally interpreted as merged/intensified themes",
+    "sextile_60": "traditionally interpreted as cooperative",
+    "square_90": "traditionally interpreted as tension/friction",
+    "trine_120": "traditionally interpreted as ease/flow",
+    "opposition_180": "traditionally interpreted as polarity/tension",
+    "retrograde": "traditionally interpreted as review/disruption; no assumed bullish/bearish sign"
+  },
+  "market_targets": [
+    "BTC daily close/open return",
+    "absolute daily return / volatility",
+    "daily volume surprise versus rolling baseline",
+    "taker-buy share and signed aggressor imbalance"
+  ],
+  "production_rule": "Astro may become a small timing/context modifier only. Price action, order-flow proxy, market state, capacity and the >=3x fee edge gate remain dominant."
+}
