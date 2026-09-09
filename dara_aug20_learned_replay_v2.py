@@ -35,30 +35,25 @@ def build_candidate(i,m,f5,f15,side,exz,mu,sd,base_threshold,ab,day_open,stage):
     if vec is None:return None
     p,wd,_=v18.knn_score(v18.zv(vec,mu,sd),exz)
     pol=b0.astro_policy(ab,side);th=b0.effective_threshold(base_threshold,pol)
-    # repair #1: prototype is mandatory; strong pattern cannot bypass it.
     if not (p>=th and wd>=2):
         stage['reject_prototype']+=1;return None
     stage['prototype_pass']+=1
     z=m[i];a5,a15=v18.b.ctx(z,f5,f15)
     if not a5 or not a15:return None
-    # repair #2: flow sign must support side.
     flow=(z.get('delta',0)>0 if side=='LONG' else z.get('delta',0)<0)
     if not flow:
         stage['reject_flow']+=1;return None
     stage['flow_pass']+=1
-    # repair #3: quarantine repeated toxic 1x-2x relative-volume state.
     vol=float(z.get('volr',0))
     if 1.0<=vol<2.0:
         stage['reject_vol_1_2']+=1;return None
-    # repair #4: live day-state uses only information available at this minute.
     ds,dtd=day_state(i,m,a15,day_open)
     if (ds=='STRONG_UP' and side=='SHORT') or (ds=='STRONG_DOWN' and side=='LONG'):
         stage['reject_counter_day']+=1;return None
     x=v19.fused_candidate(i,m,f5,f15,side,p,wd,th)
     if not x:return None
     setup,s,stop,ei,score,diag,tp=x
-    diag=dict(diag);diag.update({'learned_v2':True,'day_state_live':ds,'dtd_pct':round(dtd*100,4),'instant_flow_aligned':True,'risk_pct_equity':pol['risk_pct_equity'],'risk_fraction_equity':pol['risk_fraction_equity'],'astro_day_bias':ab.bias,'astro_score':ab.score,'effective_prototype_threshold':th})
-    # state ranking: aligned live intraday direction receives a small preference only.
+    diag=dict(diag);diag.update({'learned_v2':True,'day_state_live':ds,'dtd_pct':round(dtd*100,4),'instant_flow_aligned':True,'risk_pct_equity':pol['risk_pct_equity'],'risk_fraction_equity':pol['risk_fraction_equity'],'astro_day_bias':ab.bias,'astro_score':ab.score,'astro_aligned':None if ab.bias=='NEUTRAL' else side==ab.bias,'effective_prototype_threshold':th})
     if (ds=='STRONG_UP' and side=='LONG') or (ds=='STRONG_DOWN' and side=='SHORT'):score+=2
     stage['final']+=1
     return (setup,s,stop,ei,round(score,3),diag,tp),pol
@@ -73,7 +68,6 @@ def main():
     m,f5,f15,idx=v18.load_market((2026,8,19),(2026,8,21));pm.enrich_indicators(m)
     day_indices=[i for i,z in enumerate(m) if S<=z['t']<E];day_open=m[day_indices[0]]['o']
     stage={k:0 for k in ['seen','reject_prototype','prototype_pass','reject_flow','flow_pass','reject_vol_1_2','reject_counter_day','final']}
-    # opportunity inventory
     opp=[]
     for i in day_indices:
         if i<35 or i+1>=len(m):continue
@@ -84,7 +78,6 @@ def main():
         if not cs:continue
         x,pol=max(cs,key=lambda q:q[0][4]);sim=simulate(m,x,100.,pol)
         if sim and m[sim[0]]['t']<E:opp.append(row(x,sim,m))
-    # sequential one-position account
     seq=[];eq=START_EQUITY;i=day_indices[0];daily_stop_hit=False
     while i<len(m)-2 and m[i]['t']<E:
         if eq<=START_EQUITY*(1+DAILY_STOP):daily_stop_hit=True;break
@@ -97,9 +90,7 @@ def main():
         x,pol=max(cs,key=lambda q:q[0][4]);sim=simulate(m,x,eq,pol)
         if not sim or m[sim[0]]['t']>=E:break
         rr=row(x,sim,m,eq);eq=rr['equity_after'];rr['n']=len(seq)+1;seq.append(rr);i=sim[0]+1
-    out={'version':'DARA-Aug20-LearnedReplay-v2','warning':'INTENTIONALLY IN-SAMPLE learning replay. Rules were derived from Aug20 v1 failure analysis; this is not OOS evidence.',
-         'period_tehran':[START.isoformat(),END.isoformat()],'astro':asdict(ab),'learning_rules':['prototype p>=threshold and winner_days>=2 mandatory; no pattern-only bypass','instantaneous taker delta must align with side','quarantine volr 1.0-2.0','after live DTD >=0.50% plus agreeing 15m regime, suppress counter-day trades','risk/fee/TP/stop/exit logic unchanged'],
-         'stage':stage,'opportunity':b0.stats(opp),'opportunity_by_side':b0.group_side(opp),'sequential':{'stats':b0.stats(seq),'by_side':b0.group_side(seq),'start_equity':100.,'final_equity':round(eq,6),'return_pct':round((eq/100-1)*100,4),'max_drawdown_pct':b0.max_drawdown(seq,100.),'daily_stop_hit':daily_stop_hit,'trades':len(seq)},'trades':seq}
+    out={'version':'DARA-Aug20-LearnedReplay-v2','warning':'INTENTIONALLY IN-SAMPLE learning replay. Rules were derived from Aug20 v1 failure analysis; this is not OOS evidence.','period_tehran':[START.isoformat(),END.isoformat()],'astro':asdict(ab),'learning_rules':['prototype p>=threshold and winner_days>=2 mandatory; no pattern-only bypass','instantaneous taker delta must align with side','quarantine volr 1.0-2.0','after live DTD >=0.50% plus agreeing 15m regime, suppress counter-day trades','risk/fee/TP/stop/exit logic unchanged'],'stage':stage,'opportunity':b0.stats(opp),'opportunity_by_side':b0.group_side(opp),'sequential':{'stats':b0.stats(seq),'by_side':b0.group_side(seq),'start_equity':100.,'final_equity':round(eq,6),'return_pct':round((eq/100-1)*100,4),'max_drawdown_pct':b0.max_drawdown(seq,100.),'daily_stop_hit':daily_stop_hit,'trades':len(seq)},'trades':seq}
     OUT.write_text(json.dumps(out,indent=2))
     print(json.dumps({'stage':stage,'opp':out['opportunity'],'seq':out['sequential']},indent=2))
 if __name__=='__main__':main()
