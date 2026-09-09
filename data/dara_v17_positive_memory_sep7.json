@@ -1,0 +1,995 @@
+{
+  "version": "DARA-v17-PositiveMemory-Sep7-Frozen",
+  "period_tehran": [
+    "2026-09-07T00:00:00+03:30",
+    "2026-09-08T00:00:00+03:30"
+  ],
+  "training_scope": "Sep1-Sep6 result artifacts only; no Sep7 result artifact read by this script",
+  "positive_memory": {
+    "training_rows": 1707,
+    "valid_positive_rows": 132,
+    "baseline_valid_rate": 0.0773,
+    "day_counts": {
+      "2026-09-01": 30,
+      "2026-09-02": 100,
+      "2026-09-03": 500,
+      "2026-09-04": 64,
+      "2026-09-05": 1000,
+      "2026-09-06": 13
+    },
+    "day_valid_positives": {
+      "2026-09-01": 4,
+      "2026-09-02": 11,
+      "2026-09-03": 82,
+      "2026-09-04": 11,
+      "2026-09-05": 23,
+      "2026-09-06": 1
+    },
+    "selected_rules": [
+      {
+        "tpl": [
+          "side",
+          "state"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP"
+        ],
+        "n": 479,
+        "wins": 82,
+        "wr": 0.1712,
+        "lift": 2.21,
+        "win_days": 4,
+        "weight": 13.304
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "0-.15"
+        ],
+        "n": 62,
+        "wins": 15,
+        "wr": 0.2419,
+        "lift": 3.13,
+        "win_days": 4,
+        "weight": 11.312
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "SHORT",
+          "TREND_DOWN",
+          ">=.4"
+        ],
+        "n": 36,
+        "wins": 5,
+        "wr": 0.1389,
+        "lift": 1.8,
+        "win_days": 4,
+        "weight": 4.377
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "hour4"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "16-19"
+        ],
+        "n": 111,
+        "wins": 43,
+        "wr": 0.3874,
+        "lift": 5.01,
+        "win_days": 3,
+        "weight": 13.396
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4"
+        ],
+        "key": [
+          "LONG",
+          "16-19"
+        ],
+        "n": 213,
+        "wins": 48,
+        "wr": 0.2254,
+        "lift": 2.91,
+        "win_days": 3,
+        "weight": 13.383
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ".5-1"
+        ],
+        "n": 204,
+        "wins": 42,
+        "wr": 0.2059,
+        "lift": 2.66,
+        "win_days": 3,
+        "weight": 11.816
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "16-19",
+          ".5-1"
+        ],
+        "n": 71,
+        "wins": 20,
+        "wr": 0.2817,
+        "lift": 3.64,
+        "win_days": 3,
+        "weight": 10.778
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "2-4"
+        ],
+        "n": 81,
+        "wins": 19,
+        "wr": 0.2346,
+        "lift": 3.03,
+        "win_days": 3,
+        "weight": 10.605
+      },
+      {
+        "tpl": [
+          "side",
+          "reg15",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "UP",
+          ".5-1"
+        ],
+        "n": 274,
+        "wins": 47,
+        "wr": 0.1715,
+        "lift": 2.22,
+        "win_days": 3,
+        "weight": 10.133
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ">=.4"
+        ],
+        "n": 103,
+        "wins": 20,
+        "wr": 0.1942,
+        "lift": 2.51,
+        "win_days": 3,
+        "weight": 9.021
+      },
+      {
+        "tpl": [
+          "side",
+          "state"
+        ],
+        "key": [
+          "LONG",
+          "TRANSITION_DOWN"
+        ],
+        "n": 28,
+        "wins": 10,
+        "wr": 0.3571,
+        "lift": 4.62,
+        "win_days": 3,
+        "weight": 8.489
+      },
+      {
+        "tpl": [
+          "side",
+          "reg15",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "UP",
+          "2-4"
+        ],
+        "n": 133,
+        "wins": 22,
+        "wr": 0.1654,
+        "lift": 2.14,
+        "win_days": 3,
+        "weight": 7.914
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "<.05"
+        ],
+        "n": 248,
+        "wins": 32,
+        "wr": 0.129,
+        "lift": 1.67,
+        "win_days": 3,
+        "weight": 6.885
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TRANSITION_DOWN",
+          ".05-.12"
+        ],
+        "n": 13,
+        "wins": 5,
+        "wr": 0.3846,
+        "lift": 4.97,
+        "win_days": 3,
+        "weight": 6.343
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TRANSITION_DOWN",
+          ">=.4"
+        ],
+        "n": 15,
+        "wins": 5,
+        "wr": 0.3333,
+        "lift": 4.31,
+        "win_days": 3,
+        "weight": 6.343
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ">=4"
+        ],
+        "n": 44,
+        "wins": 7,
+        "wr": 0.1591,
+        "lift": 2.06,
+        "win_days": 3,
+        "weight": 5.048
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4",
+          "vol_bucket"
+        ],
+        "key": [
+          "SHORT",
+          "08-11",
+          "2-4"
+        ],
+        "n": 16,
+        "wins": 3,
+        "wr": 0.1875,
+        "lift": 2.42,
+        "win_days": 3,
+        "weight": 3.966
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "SHORT",
+          "TREND_DOWN",
+          ".12-.25"
+        ],
+        "n": 27,
+        "wins": 4,
+        "wr": 0.1481,
+        "lift": 1.92,
+        "win_days": 3,
+        "weight": 3.638
+      },
+      {
+        "tpl": [
+          "side",
+          "reg15",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "UP",
+          ">=4"
+        ],
+        "n": 63,
+        "wins": 7,
+        "wr": 0.1111,
+        "lift": 1.44,
+        "win_days": 3,
+        "weight": 3.526
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vol_bucket"
+        ],
+        "key": [
+          "SHORT",
+          "TREND_DOWN",
+          "2-4"
+        ],
+        "n": 31,
+        "wins": 4,
+        "wr": 0.129,
+        "lift": 1.67,
+        "win_days": 3,
+        "weight": 3.169
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ".12-.25"
+        ],
+        "n": 70,
+        "wins": 15,
+        "wr": 0.2143,
+        "lift": 2.77,
+        "win_days": 2,
+        "weight": 7.683
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ".05-.12"
+        ],
+        "n": 145,
+        "wins": 26,
+        "wr": 0.1793,
+        "lift": 2.32,
+        "win_days": 2,
+        "weight": 7.642
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "16-19",
+          "2-4"
+        ],
+        "n": 43,
+        "wins": 10,
+        "wr": 0.2326,
+        "lift": 3.01,
+        "win_days": 2,
+        "weight": 7.194
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "20-23",
+          ".5-1"
+        ],
+        "n": 89,
+        "wins": 17,
+        "wr": 0.191,
+        "lift": 2.47,
+        "win_days": 2,
+        "weight": 7.14
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ">=.25"
+        ],
+        "n": 16,
+        "wins": 9,
+        "wr": 0.5625,
+        "lift": 7.27,
+        "win_days": 2,
+        "weight": 6.908
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "<=0"
+        ],
+        "n": 218,
+        "wins": 33,
+        "wr": 0.1514,
+        "lift": 1.96,
+        "win_days": 2,
+        "weight": 6.903
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "16-19",
+          "<.5"
+        ],
+        "n": 41,
+        "wins": 9,
+        "wr": 0.2195,
+        "lift": 2.84,
+        "win_days": 2,
+        "weight": 6.536
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TRANSITION_DOWN",
+          ".5-1"
+        ],
+        "n": 13,
+        "wins": 7,
+        "wr": 0.5385,
+        "lift": 6.96,
+        "win_days": 2,
+        "weight": 6.238
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "hour4"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "20-23"
+        ],
+        "n": 142,
+        "wins": 19,
+        "wr": 0.1338,
+        "lift": 1.73,
+        "win_days": 2,
+        "weight": 5.184
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          ".15-.4"
+        ],
+        "n": 96,
+        "wins": 14,
+        "wr": 0.1458,
+        "lift": 1.89,
+        "win_days": 2,
+        "weight": 5.107
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4"
+        ],
+        "key": [
+          "LONG",
+          "20-23"
+        ],
+        "n": 219,
+        "wins": 25,
+        "wr": 0.1142,
+        "lift": 1.48,
+        "win_days": 2,
+        "weight": 4.81
+      },
+      {
+        "tpl": [
+          "side",
+          "hour4",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "12-15",
+          "2-4"
+        ],
+        "n": 35,
+        "wins": 6,
+        "wr": 0.1714,
+        "lift": 2.22,
+        "win_days": 2,
+        "weight": 4.314
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TRANSITION_DOWN",
+          ".15-.4"
+        ],
+        "n": 9,
+        "wins": 3,
+        "wr": 0.3333,
+        "lift": 4.31,
+        "win_days": 2,
+        "weight": 4.159
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "TREND_UP",
+          "<.5"
+        ],
+        "n": 92,
+        "wins": 11,
+        "wr": 0.1196,
+        "lift": 1.55,
+        "win_days": 2,
+        "weight": 3.842
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "vwap_bucket"
+        ],
+        "key": [
+          "SHORT",
+          "TRANSITION_UP",
+          ".05-.12"
+        ],
+        "n": 7,
+        "wins": 2,
+        "wr": 0.2857,
+        "lift": 3.69,
+        "win_days": 2,
+        "weight": 3.296
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "delta_bucket"
+        ],
+        "key": [
+          "SHORT",
+          "TRANSITION_UP",
+          "<=0"
+        ],
+        "n": 6,
+        "wins": 2,
+        "wr": 0.3333,
+        "lift": 4.31,
+        "win_days": 2,
+        "weight": 3.296
+      },
+      {
+        "tpl": [
+          "side",
+          "reg15",
+          "vol_bucket"
+        ],
+        "key": [
+          "LONG",
+          "UP",
+          "<.5"
+        ],
+        "n": 139,
+        "wins": 13,
+        "wr": 0.0935,
+        "lift": 1.21,
+        "win_days": 2,
+        "weight": 3.192
+      },
+      {
+        "tpl": [
+          "side",
+          "state"
+        ],
+        "key": [
+          "SHORT",
+          "TRANSITION_UP"
+        ],
+        "n": 17,
+        "wins": 3,
+        "wr": 0.1765,
+        "lift": 2.28,
+        "win_days": 2,
+        "weight": 3.164
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "hour4"
+        ],
+        "key": [
+          "SHORT",
+          "TREND_DOWN",
+          "08-11"
+        ],
+        "n": 10,
+        "wins": 2,
+        "wr": 0.2,
+        "lift": 2.59,
+        "win_days": 2,
+        "weight": 2.841
+      },
+      {
+        "tpl": [
+          "side",
+          "state",
+          "hour4"
+        ],
+        "key": [
+          "SHORT",
+          "DOWN_PAUSE",
+          "12-15"
+        ],
+        "n": 10,
+        "wins": 2,
+        "wr": 0.2,
+        "lift": 2.59,
+        "win_days": 2,
+        "weight": 2.841
+      }
+    ],
+    "entry_memory_threshold": 64.5858
+  },
+  "rules": {
+    "risk": 0.0002,
+    "fee": 0.0011,
+    "profit_floor_pct": 0.33,
+    "max_exposure": 3.0,
+    "min_stop_pct": 0.16,
+    "memory_rule_requires_winner_days": 2,
+    "capacity": "score >=0.245% and one timeframe >=0.30%",
+    "trigger": "fresh displacement or re-acceleration + positive-memory context",
+    "quarantined": [
+      "STATE_HYPOTHESIS",
+      "raw sweep",
+      "raw pullback",
+      "raw compression",
+      "accepted-break",
+      "retest-renewal",
+      "pause-reaccel",
+      "transition-extension"
+    ]
+  },
+  "opportunity_inventory": {
+    "n": 3,
+    "valid_positive": 0,
+    "negative": 3,
+    "valid_wr": 0.0,
+    "gross": -0.006533,
+    "cost": 0.024444,
+    "net": -0.030978,
+    "pf_net": 0.0,
+    "mfe": 0.011,
+    "mae": 0.039
+  },
+  "sequential": {
+    "stats": {
+      "n": 2,
+      "valid_positive": 0,
+      "negative": 2,
+      "valid_wr": 0.0,
+      "gross": -0.005221,
+      "cost": 0.016295,
+      "net": -0.021516,
+      "pf_net": 0.0,
+      "mfe": 0.014,
+      "mae": 0.046
+    },
+    "final_equity": 99.978484,
+    "net": -0.021516,
+    "trades": 2
+  },
+  "by_side": {
+    "LONG": {
+      "n": 3,
+      "valid_positive": 0,
+      "negative": 3,
+      "valid_wr": 0.0,
+      "gross": -0.006533,
+      "cost": 0.024444,
+      "net": -0.030978,
+      "pf_net": 0.0,
+      "mfe": 0.011,
+      "mae": 0.039
+    }
+  },
+  "by_4h": {
+    "16-19": {
+      "n": 3,
+      "valid_positive": 0,
+      "negative": 3,
+      "valid_wr": 0.0,
+      "gross": -0.006533,
+      "cost": 0.024444,
+      "net": -0.030978,
+      "pf_net": 0.0,
+      "mfe": 0.011,
+      "mae": 0.039
+    }
+  },
+  "opportunities": [
+    {
+      "setup": "POSITIVE_MEMORY",
+      "side": "LONG",
+      "entry_time": "2026-09-07T16:45:00+03:30",
+      "exit_time": "2026-09-07T16:47:00+03:30",
+      "entry": 79590.2,
+      "exit": 79535.2,
+      "score": 92.207,
+      "tp_pct": 0.33,
+      "reason": "EARLY_NO_FOLLOW",
+      "mfe_pct": 0.019,
+      "mae_pct": 0.069,
+      "gross_pnl": -0.005119,
+      "cost": 0.008148,
+      "net_pnl": -0.013267,
+      "diagnostics": {
+        "memory_score": 89.4735744239428,
+        "memory_threshold": 64.58580121201753,
+        "state": "TREND_UP",
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 0.803247218064684,
+        "delta": 0.6763883825495198,
+        "delta3_signed": 0.11533376196603058,
+        "r3_signed_pct": 0.028026377471324082,
+        "r6_signed_pct": 0.116355567519566,
+        "vwap_signed_pct": 0.0598378802328714,
+        "capacity_score_pct": 0.3240974660555889,
+        "cap5_pct": 0.3235502432639831,
+        "cap15_pct": 0.324766293911996,
+        "close_pos_directional": 1.0
+      },
+      "hour4": "16-19"
+    },
+    {
+      "setup": "POSITIVE_MEMORY",
+      "side": "LONG",
+      "entry_time": "2026-09-07T16:51:00+03:30",
+      "exit_time": "2026-09-07T16:55:00+03:30",
+      "entry": 79598.2,
+      "exit": 79597.1,
+      "score": 70.342,
+      "tp_pct": 0.33,
+      "reason": "EARLY_WEAK_PROGRESS",
+      "mfe_pct": 0.009,
+      "mae_pct": 0.023,
+      "gross_pnl": -0.000102,
+      "cost": 0.008148,
+      "net_pnl": -0.008251,
+      "diagnostics": {
+        "memory_score": 66.40299077016017,
+        "memory_threshold": 64.58580121201753,
+        "state": "TREND_UP",
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 0.3455281448102039,
+        "delta": 0.3204496652772516,
+        "delta3_signed": 0.45122672392799784,
+        "r3_signed_pct": 0.07921021132781814,
+        "r6_signed_pct": 0.010051488751128268,
+        "vwap_signed_pct": 0.057028574440720625,
+        "capacity_score_pct": 0.3199252762836087,
+        "cap5_pct": 0.31596444367856436,
+        "cap15_pct": 0.324766293911996,
+        "close_pos_directional": 0.9930069930065873
+      },
+      "hour4": "16-19"
+    },
+    {
+      "setup": "POSITIVE_MEMORY",
+      "side": "LONG",
+      "entry_time": "2026-09-07T16:54:00+03:30",
+      "exit_time": "2026-09-07T16:58:00+03:30",
+      "entry": 79595.2,
+      "exit": 79581.1,
+      "score": 68.872,
+      "tp_pct": 0.33,
+      "reason": "EARLY_WEAK_PROGRESS",
+      "mfe_pct": 0.006,
+      "mae_pct": 0.025,
+      "gross_pnl": -0.001312,
+      "cost": 0.008148,
+      "net_pnl": -0.00946,
+      "diagnostics": {
+        "memory_score": 65.64510642163044,
+        "memory_threshold": 64.58580121201753,
+        "state": "TREND_UP",
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 0.3062924721817953,
+        "delta": 0.2026339419335527,
+        "delta3_signed": 0.19312928680820948,
+        "r3_signed_pct": -0.003643298466537992,
+        "r6_signed_pct": 0.07556402699686604,
+        "vwap_signed_pct": 0.029946583264250926,
+        "capacity_score_pct": 0.3199252762836087,
+        "cap5_pct": 0.31596444367856436,
+        "cap15_pct": 0.324766293911996,
+        "close_pos_directional": 0.820224719101987
+      },
+      "hour4": "16-19"
+    }
+  ],
+  "sequential_trades": [
+    {
+      "setup": "POSITIVE_MEMORY",
+      "side": "LONG",
+      "entry_time": "2026-09-07T16:45:00+03:30",
+      "exit_time": "2026-09-07T16:47:00+03:30",
+      "entry": 79590.2,
+      "exit": 79535.2,
+      "score": 92.207,
+      "tp_pct": 0.33,
+      "reason": "EARLY_NO_FOLLOW",
+      "mfe_pct": 0.019,
+      "mae_pct": 0.069,
+      "gross_pnl": -0.005119,
+      "cost": 0.008148,
+      "net_pnl": -0.013267,
+      "diagnostics": {
+        "memory_score": 89.4735744239428,
+        "memory_threshold": 64.58580121201753,
+        "state": "TREND_UP",
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 0.803247218064684,
+        "delta": 0.6763883825495198,
+        "delta3_signed": 0.11533376196603058,
+        "r3_signed_pct": 0.028026377471324082,
+        "r6_signed_pct": 0.116355567519566,
+        "vwap_signed_pct": 0.0598378802328714,
+        "capacity_score_pct": 0.3240974660555889,
+        "cap5_pct": 0.3235502432639831,
+        "cap15_pct": 0.324766293911996,
+        "close_pos_directional": 1.0
+      },
+      "equity_after": 99.986733,
+      "n": 1
+    },
+    {
+      "setup": "POSITIVE_MEMORY",
+      "side": "LONG",
+      "entry_time": "2026-09-07T16:51:00+03:30",
+      "exit_time": "2026-09-07T16:55:00+03:30",
+      "entry": 79598.2,
+      "exit": 79597.1,
+      "score": 70.342,
+      "tp_pct": 0.33,
+      "reason": "EARLY_WEAK_PROGRESS",
+      "mfe_pct": 0.009,
+      "mae_pct": 0.023,
+      "gross_pnl": -0.000102,
+      "cost": 0.008147,
+      "net_pnl": -0.008249,
+      "diagnostics": {
+        "memory_score": 66.40299077016017,
+        "memory_threshold": 64.58580121201753,
+        "state": "TREND_UP",
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 0.3455281448102039,
+        "delta": 0.3204496652772516,
+        "delta3_signed": 0.45122672392799784,
+        "r3_signed_pct": 0.07921021132781814,
+        "r6_signed_pct": 0.010051488751128268,
+        "vwap_signed_pct": 0.057028574440720625,
+        "capacity_score_pct": 0.3199252762836087,
+        "cap5_pct": 0.31596444367856436,
+        "cap15_pct": 0.324766293911996,
+        "close_pos_directional": 0.9930069930065873
+      },
+      "equity_after": 99.978484,
+      "n": 2
+    }
+  ]
+}
