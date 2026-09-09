@@ -1,0 +1,107 @@
+{
+  "version": "DARA-v1.0-Event-First-Frozen",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-02T00:00:00+03:30"
+  ],
+  "symbol": "BTCUSDT USD-M perpetual",
+  "source": "Binance official USD-M 1m futures klines; taker-buy volume used as historical aggressor-flow proxy; 5m/15m aggregated from 1m; no historical L2 claimed",
+  "rules": {
+    "starting_equity": 100.0,
+    "roundtrip_cost_pct": 0.11,
+    "risk_per_full_stop_pct": 0.25,
+    "max_effective_exposure_x": 3.0,
+    "event_setups": [
+      "BREAK_ACCEPT",
+      "SWEEP_RECLAIM",
+      "IMPULSE_RETEST",
+      "EXTREME_REVERSION"
+    ],
+    "quality_gate": "5m/15m regime + flow + relative volume + 0.55% historical room + TP1/stop >=1.5",
+    "structural_stop_range_pct": [
+      0.12,
+      0.35
+    ],
+    "tp1_gross_pct": 0.33,
+    "tp1_fraction": 0.5,
+    "runner_fraction": 0.5,
+    "add_once": "after +1R and renewed flow; max +50% initial size; total exposure <=3x; stop to entry",
+    "max_trades_day": 5,
+    "daily_stop_pct": -1.0,
+    "two_losses": "pause until 15m regime changes",
+    "max_hold_minutes": 240
+  },
+  "methodology_notes": [
+    "Rules were frozen before the Sep-1 run and not retuned after seeing its result.",
+    "Stop is checked before target when both can occur in the same 1m bar (conservative).",
+    "Sep 1 was already inspected during prior strategy development, so this is a development/in-sample test, not clean blind validation."
+  ],
+  "summary": {
+    "start_equity": 100.0,
+    "final_equity": 99.766692,
+    "net_pnl": -0.233308,
+    "return_pct": -0.233,
+    "trades": 3,
+    "wins": 1,
+    "losses": 2,
+    "win_rate": 33.3,
+    "gross_pnl": 0.161036,
+    "modeled_costs": 0.394344,
+    "pf_net": 0.53,
+    "max_dd_pct": 0.499,
+    "add_events": 1
+  },
+  "trades": [
+    {
+      "setup": "SWEEP_RECLAIM",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T07:41:00+03:30",
+      "exit_time": "2026-09-01T07:55:00+03:30",
+      "entry": 78707.5,
+      "exit": 78803.63,
+      "structural_stop_pct": 0.122,
+      "reason": "STOP",
+      "added": false,
+      "notional": 107.693244,
+      "gross_pnl": -0.131537,
+      "cost": 0.118463,
+      "net_pnl": -0.25,
+      "equity_before": 100.0,
+      "equity_after": 99.75
+    },
+    {
+      "setup": "BREAK_ACCEPT",
+      "side": "LONG",
+      "entry_time": "2026-09-01T08:36:00+03:30",
+      "exit_time": "2026-09-01T08:42:00+03:30",
+      "entry": 78925.7,
+      "exit": 78828.64,
+      "structural_stop_pct": 0.123,
+      "reason": "STOP",
+      "added": false,
+      "notional": 107.041239,
+      "gross_pnl": -0.13163,
+      "cost": 0.117745,
+      "net_pnl": -0.249375,
+      "equity_before": 99.75,
+      "equity_after": 99.500625
+    },
+    {
+      "setup": "BREAK_ACCEPT",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T11:08:00+03:30",
+      "exit_time": "2026-09-01T11:46:00+03:30",
+      "entry": 78569.2,
+      "exit": 78300.0,
+      "structural_stop_pct": 0.15,
+      "reason": "TP1+RUNNER_TRAIL",
+      "added": true,
+      "notional": 143.760254,
+      "gross_pnl": 0.424203,
+      "cost": 0.158136,
+      "net_pnl": 0.266067,
+      "equity_before": 99.500625,
+      "equity_after": 99.766692
+    }
+  ]
+}
