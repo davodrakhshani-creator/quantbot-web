@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: seven-trader-styles-sep1-8-fee3
-  cancel-in_progress: true
+  cancel-in-progress: true
 
 jobs:
   backtest:
