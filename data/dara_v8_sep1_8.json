@@ -1,0 +1,205 @@
+{
+  "version": "DARA-v8.0-ProgressGuard",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-09T00:00:00+03:30"
+  ],
+  "design": [
+    "Entry logic identical to v7",
+    "At 60 minutes: if MFE never reached +0.22% (2x fee) and current PnL is non-positive, exit as NO_PROGRESS",
+    "TP +0.55% on 40%, 60% runner with 5-bar trail",
+    "Risk 0.25% incl cost; max 3/day; 45m cooldown; 120m side loss lock"
+  ],
+  "methodology_notes": [
+    "v8 was designed after studying v7 performance through Aug20-27 and Jul15-Aug09; those periods and Sep1-8 are development-contaminated for v8."
+  ],
+  "daily": [
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.335595,
+      "net_pnl": 0.335595,
+      "return_pct": 0.336,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 100.0,
+      "gross_pnl": 0.43285,
+      "modeled_costs": 0.097256,
+      "pf_net": 99.0,
+      "max_dd_pct": 0,
+      "day": "2026-09-01"
+    },
+    {
+      "start_equity": 100.335595,
+      "final_equity": 100.335595,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-09-02"
+    },
+    {
+      "start_equity": 100.335595,
+      "final_equity": 100.335595,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-09-03"
+    },
+    {
+      "start_equity": 100.335595,
+      "final_equity": 100.335595,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-09-04"
+    },
+    {
+      "start_equity": 100.335595,
+      "final_equity": 100.335595,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-09-05"
+    },
+    {
+      "start_equity": 100.335595,
+      "final_equity": 100.335595,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-09-06"
+    },
+    {
+      "start_equity": 100.335595,
+      "final_equity": 100.534099,
+      "net_pnl": 0.198505,
+      "return_pct": 0.198,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 100.0,
+      "gross_pnl": 0.284182,
+      "modeled_costs": 0.085677,
+      "pf_net": 99.0,
+      "max_dd_pct": 0,
+      "day": "2026-09-07"
+    },
+    {
+      "start_equity": 100.534099,
+      "final_equity": 100.534099,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-09-08"
+    }
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 100.534099,
+    "net_pnl": 0.534099,
+    "return_pct": 0.534,
+    "trades": 2,
+    "wins": 2,
+    "losses": 0,
+    "win_rate": 100.0,
+    "gross_pnl": 0.717032,
+    "modeled_costs": 0.182933,
+    "pf_net": 99.0,
+    "max_dd_pct": 0.0
+  },
+  "by_tier": {
+    "VALUE_PULLBACK": {
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "net_pnl": 0.335595,
+      "pf_net": 99
+    },
+    "CONFIRMED_EXPANSION": {
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "net_pnl": 0.198505,
+      "pf_net": 99
+    }
+  },
+  "exit_reasons": {
+    "TP055+RUNNER": 2
+  },
+  "trades": [
+    {
+      "day": "2026-09-01",
+      "setup": "VALUE_PULLBACK",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T19:29:00+03:30",
+      "exit_time": "2026-09-01T19:56:00+03:30",
+      "entry": 77916.6,
+      "exit": 77568.1,
+      "reason": "TP055+RUNNER",
+      "mfe_pct": 0.631,
+      "gross_pnl": 0.43285,
+      "cost": 0.097256,
+      "net_pnl": 0.335595,
+      "equity_before": 100.0,
+      "equity_after": 100.335595
+    },
+    {
+      "day": "2026-09-07",
+      "setup": "CONFIRMED_EXPANSION",
+      "side": "SHORT",
+      "entry_time": "2026-09-07T10:55:00+03:30",
+      "exit_time": "2026-09-07T11:14:00+03:30",
+      "entry": 79427.1,
+      "exit": 79235.8,
+      "reason": "TP055+RUNNER",
+      "mfe_pct": 0.619,
+      "gross_pnl": 0.284182,
+      "cost": 0.085677,
+      "net_pnl": 0.198505,
+      "equity_before": 100.335595,
+      "equity_after": 100.534099
+    }
+  ]
+}
