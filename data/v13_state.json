@@ -1,8 +1,8 @@
 {
   "version": "1.3-bg",
   "candidate": {
-    "direction": "NONE",
-    "count": 0
+    "direction": "LONG",
+    "count": 1
   },
   "open_observation": null,
   "closed_results": [
@@ -4806,9 +4806,30 @@
       "agreement": 2,
       "confidence": 70,
       "reason": "No clean medium+micro alignment."
+    },
+    {
+      "at": "2026-09-09T18:44:38.949556Z",
+      "btc_price": 78509.7,
+      "eth_price": 2488.34,
+      "numerai_rank": 0.9883333333333333,
+      "numerai_date": "2026-09-08",
+      "numerai_bias": "BULLISH",
+      "medium_score": 0.22493,
+      "medium_bias": "BULLISH",
+      "micro_score": 0.27485,
+      "micro_bias": "BULLISH",
+      "book_imbalance": -0.02989,
+      "aggressor_flow": 0.75512,
+      "microprice_bps": 0.0046,
+      "spread_bps": 0.0127,
+      "recent_trades": 42,
+      "decision": "LONG",
+      "agreement": 3,
+      "confidence": 77,
+      "reason": "Medium and micro bullish; Numerai does not veto."
     }
   ],
-  "last_update": "2026-09-09T18:30:37.435319Z",
+  "last_update": "2026-09-09T18:44:38.949556Z",
   "metrics": {
     "closed": 2,
     "win_rate": 0.0,
@@ -4818,24 +4839,24 @@
   },
   "research_gate": "COLLECTING",
   "latest": {
-    "at": "2026-09-09T18:30:37.435319Z",
-    "btc_price": 78602.3,
-    "eth_price": 2490.78,
+    "at": "2026-09-09T18:44:38.949556Z",
+    "btc_price": 78509.7,
+    "eth_price": 2488.34,
     "numerai_rank": 0.9883333333333333,
     "numerai_date": "2026-09-08",
     "numerai_bias": "BULLISH",
-    "medium_score": 0.2238,
+    "medium_score": 0.22493,
     "medium_bias": "BULLISH",
-    "micro_score": 0.18857,
-    "micro_bias": "NEUTRAL",
-    "book_imbalance": 0.13975,
-    "aggressor_flow": 0.34073,
-    "microprice_bps": 0.004,
+    "micro_score": 0.27485,
+    "micro_bias": "BULLISH",
+    "book_imbalance": -0.02989,
+    "aggressor_flow": 0.75512,
+    "microprice_bps": 0.0046,
     "spread_bps": 0.0127,
-    "recent_trades": 50,
-    "decision": "NO TRADE",
-    "agreement": 2,
-    "confidence": 70,
-    "reason": "No clean medium+micro alignment."
+    "recent_trades": 42,
+    "decision": "LONG",
+    "agreement": 3,
+    "confidence": 77,
+    "reason": "Medium and micro bullish; Numerai does not veto."
   }
 }
