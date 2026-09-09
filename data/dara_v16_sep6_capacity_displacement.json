@@ -1,0 +1,285 @@
+{
+  "version": "DARA-v16-Sep6-CapacityDisplacement-Frozen",
+  "period_tehran": [
+    "2026-09-06T00:00:00+03:30",
+    "2026-09-07T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "purpose": "Sep6 transfer test after Sep1-5 learning; every capacity-qualified primary opportunity is tested, plus a separate non-overlapping sequential account path.",
+  "rules": {
+    "risk_per_trade": 0.0002,
+    "modeled_roundtrip_fee": 0.0011,
+    "max_exposure": 3.0,
+    "min_stop_pct": 0.16,
+    "profit_floor_pct": 0.33,
+    "timeframes": "1m/5m/15m only",
+    "capacity_gate": "min(4x ATR5, 2.5x ATR15) >= 0.33%",
+    "quarantined": [
+      "raw SWEEP_RECLAIM",
+      "raw PULLBACK_RELOAD",
+      "old FLOW_EFF",
+      "raw COMPRESSION_RELEASE",
+      "ACCEPTED_BREAK v15",
+      "RETEST_RENEWAL v15",
+      "diagnostic STATE_HYPOTHESIS"
+    ]
+  },
+  "opportunity_inventory": {
+    "n": 1,
+    "valid_positive": 0,
+    "negative_or_invalid": 1,
+    "valid_wr": 0.0,
+    "net_positive": 0,
+    "gross": -0.00745,
+    "cost": 0.005116,
+    "net": -0.012567,
+    "pf_net": 0.0,
+    "mfe": 0.088,
+    "mae": 0.161
+  },
+  "sequential": {
+    "stats": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    },
+    "final_equity": 99.987433,
+    "net": -0.012567,
+    "trades": 1
+  },
+  "by_setup": {
+    "DOWNSIDE_DISPLACEMENT": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    }
+  },
+  "by_side": {
+    "SHORT": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    }
+  },
+  "by_state": {
+    "TREND_DOWN": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    }
+  },
+  "by_capacity": {
+    ">=.44": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    }
+  },
+  "by_4h": {
+    "16-19": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    }
+  },
+  "failure_taxonomy": {
+    "NO_FOLLOW": {
+      "n": 0,
+      "valid_positive": 0,
+      "negative_or_invalid": 0,
+      "valid_wr": null,
+      "net_positive": 0,
+      "gross": 0,
+      "cost": 0,
+      "net": 0,
+      "pf_net": null,
+      "mfe": null,
+      "mae": null
+    },
+    "WEAK_PROGRESS": {
+      "n": 1,
+      "valid_positive": 0,
+      "negative_or_invalid": 1,
+      "valid_wr": 0.0,
+      "net_positive": 0,
+      "gross": -0.00745,
+      "cost": 0.005116,
+      "net": -0.012567,
+      "pf_net": 0.0,
+      "mfe": 0.088,
+      "mae": 0.161
+    },
+    "FEE_INSUFFICIENT": {
+      "n": 0,
+      "valid_positive": 0,
+      "negative_or_invalid": 0,
+      "valid_wr": null,
+      "net_positive": 0,
+      "gross": 0,
+      "cost": 0,
+      "net": 0,
+      "pf_net": null,
+      "mfe": null,
+      "mae": null
+    },
+    "VALID_POSITIVE": {
+      "n": 0,
+      "valid_positive": 0,
+      "negative_or_invalid": 0,
+      "valid_wr": null,
+      "net_positive": 0,
+      "gross": 0,
+      "cost": 0,
+      "net": 0,
+      "pf_net": null,
+      "mfe": null,
+      "mae": null
+    },
+    "OTHER": {
+      "n": 0,
+      "valid_positive": 0,
+      "negative_or_invalid": 0,
+      "valid_wr": null,
+      "net_positive": 0,
+      "gross": 0,
+      "cost": 0,
+      "net": 0,
+      "pf_net": null,
+      "mfe": null,
+      "mae": null
+    }
+  },
+  "lessons_applied": [
+    "Capacity gate precedes every entry.",
+    "Pause and balance labels alone cannot create production trades.",
+    "Trend entries require multi-bar displacement confirmation rather than trend label + flow.",
+    "Range expansion requires break, hold and additional extension before entry.",
+    "Shorts require materially stronger downside displacement than longs.",
+    "Old Sep5 accepted-break and retest-renewal engines remain quarantined.",
+    "Early no-follow/weak-progress exits, >=0.16% stop and 3x-fee protection remain active."
+  ],
+  "opportunities": [
+    {
+      "setup": "DOWNSIDE_DISPLACEMENT",
+      "side": "SHORT",
+      "entry_time": "2026-09-06T18:31:00+03:30",
+      "exit_time": "2026-09-06T18:35:00+03:30",
+      "entry": 79407.0,
+      "exit": 79534.4,
+      "score": 14,
+      "tp_pct": 0.33,
+      "stop_pct": 0.32,
+      "reason": "EARLY_WEAK_PROGRESS",
+      "mfe_pct": 0.088,
+      "mae_pct": 0.161,
+      "gross_pnl": -0.00745,
+      "cost": 0.005116,
+      "net_pnl": -0.012567,
+      "diagnostics": {
+        "delta": -0.18500968528045655,
+        "volr": 2.6614374012583504,
+        "reg5": "DOWN",
+        "reg15": "DOWN",
+        "state": "TREND_DOWN",
+        "vwap_dist": -0.18926724188365052,
+        "hour": 18,
+        "r3_pct": -0.20648148264512667,
+        "r6_pct": -0.298826040554967,
+        "delta3": -0.26599603624175494,
+        "close_pos": 0.0009606147935236808,
+        "capacity_pct": 0.4502506598226137,
+        "atr5_pct": 0.16645371826594205,
+        "atr15_pct": 0.18010026392904546
+      },
+      "source_i": 2340,
+      "state": "TREND_DOWN",
+      "capacity_bucket": ">=.44",
+      "hour4": "16-19"
+    }
+  ],
+  "sequential_trades": [
+    {
+      "setup": "DOWNSIDE_DISPLACEMENT",
+      "side": "SHORT",
+      "entry_time": "2026-09-06T18:31:00+03:30",
+      "exit_time": "2026-09-06T18:35:00+03:30",
+      "entry": 79407.0,
+      "exit": 79534.4,
+      "score": 14,
+      "tp_pct": 0.33,
+      "stop_pct": 0.32,
+      "reason": "EARLY_WEAK_PROGRESS",
+      "mfe_pct": 0.088,
+      "mae_pct": 0.161,
+      "gross_pnl": -0.00745,
+      "cost": 0.005116,
+      "net_pnl": -0.012567,
+      "diagnostics": {
+        "delta": -0.18500968528045655,
+        "volr": 2.6614374012583504,
+        "reg5": "DOWN",
+        "reg15": "DOWN",
+        "state": "TREND_DOWN",
+        "vwap_dist": -0.18926724188365052,
+        "hour": 18,
+        "r3_pct": -0.20648148264512667,
+        "r6_pct": -0.298826040554967,
+        "delta3": -0.26599603624175494,
+        "close_pos": 0.0009606147935236808,
+        "capacity_pct": 0.4502506598226137,
+        "atr5_pct": 0.16645371826594205,
+        "atr15_pct": 0.18010026392904546
+      },
+      "equity_after": 99.987433,
+      "n": 1
+    }
+  ]
+}
