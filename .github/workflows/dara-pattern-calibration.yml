@@ -1,0 +1,29 @@
+name: DARA Pattern Calibration
+on:
+  push:
+    paths:
+      - 'dara_pattern_calibration.py'
+      - 'dara_pattern_memory.py'
+      - '.github/workflows/dara-pattern-calibration.yml'
+  workflow_dispatch:
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Calibrate patterns from Sep1-Sep6
+        run: python dara_pattern_calibration.py
+      - name: Persist calibrated memory
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/dara_pattern_performance_memory_v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist calibrated DARA pattern memory'
+            git push
+          fi
