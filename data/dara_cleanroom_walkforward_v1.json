@@ -1,0 +1,454 @@
+{
+  "version": "DARA-CLEANROOM-WALKFORWARD-v1",
+  "method": "No Aug/Sep hand rules, no prototype/pattern/astro memory. Generic 1m Binance archive only. Two supervised event models; chronological train/validation/test with embargo days; threshold chosen on validation net-after-cost only, then frozen.",
+  "periods": {
+    "train_utc": [
+      "2026-03-15T00:00:00+00:00",
+      "2026-05-15T00:00:00+00:00"
+    ],
+    "validation_utc": [
+      "2026-05-16T00:00:00+00:00",
+      "2026-05-31T00:00:00+00:00"
+    ],
+    "test_utc": [
+      "2026-06-01T00:00:00+00:00",
+      "2026-06-15T00:00:00+00:00"
+    ]
+  },
+  "economics": {
+    "cost_roundtrip_pct": 0.11,
+    "tp_pct": 0.44,
+    "stop_pct": 0.2,
+    "horizon_min": 45,
+    "risk_pct_equity": 0.2,
+    "max_leverage": 3.0,
+    "start_equity": 100.0,
+    "approx_event_breakeven_probability": 0.484375
+  },
+  "features": [
+    "r1",
+    "r3",
+    "r5",
+    "r10",
+    "r15",
+    "r30",
+    "accel3",
+    "accel5",
+    "delta1",
+    "delta3",
+    "delta5",
+    "delta15",
+    "abs_delta1",
+    "volr_log",
+    "vwap_dist",
+    "range1",
+    "body1",
+    "closepos",
+    "rv5",
+    "rv15",
+    "rv30",
+    "trend5",
+    "trend15",
+    "trend30",
+    "tod_sin",
+    "tod_cos"
+  ],
+  "samples": {
+    "train": 87840,
+    "validation": 21600,
+    "test": 20160,
+    "train_long_positive_rate": 0.14279371584699455,
+    "train_short_positive_rate": 0.13844489981785063
+  },
+  "validation_auc": {
+    "val_long": 0.6414676855343348,
+    "val_short": 0.6865453158786025
+  },
+  "validation_threshold_search": [
+    {
+      "threshold": 0.5,
+      "n": 462,
+      "wins": 63,
+      "losses": 399,
+      "wr": 0.136364,
+      "gross": -3.43693,
+      "cost": 27.408243,
+      "net": -30.845173,
+      "final_equity": 69.154827,
+      "pf": 0.320488,
+      "maxdd": 0.309035,
+      "objective": -41.661384250031716
+    },
+    {
+      "threshold": 0.525,
+      "n": 427,
+      "wins": 63,
+      "losses": 364,
+      "wr": 0.147541,
+      "gross": -0.435212,
+      "cost": 26.013971,
+      "net": -26.449183,
+      "final_equity": 73.550817,
+      "pf": 0.363394,
+      "maxdd": 0.265112,
+      "objective": -35.7280932531806
+    },
+    {
+      "threshold": 0.55,
+      "n": 383,
+      "wins": 58,
+      "losses": 325,
+      "wr": 0.151436,
+      "gross": -0.157911,
+      "cost": 23.675352,
+      "net": -23.833264,
+      "final_equity": 76.166736,
+      "pf": 0.377097,
+      "maxdd": 0.239951,
+      "objective": -32.23154166505974
+    },
+    {
+      "threshold": 0.575,
+      "n": 344,
+      "wins": 54,
+      "losses": 290,
+      "wr": 0.156977,
+      "gross": -0.697177,
+      "cost": 21.576543,
+      "net": -22.27372,
+      "final_equity": 77.72628,
+      "pf": 0.375099,
+      "maxdd": 0.224389,
+      "objective": -30.127317792610675
+    },
+    {
+      "threshold": 0.6,
+      "n": 310,
+      "wins": 50,
+      "losses": 260,
+      "wr": 0.16129,
+      "gross": -3.037611,
+      "cost": 19.390512,
+      "net": -22.428123,
+      "final_equity": 77.571877,
+      "pf": 0.340017,
+      "maxdd": 0.227174,
+      "objective": -30.379214565361348
+    },
+    {
+      "threshold": 0.625,
+      "n": 265,
+      "wins": 50,
+      "losses": 215,
+      "wr": 0.188679,
+      "gross": -1.017338,
+      "cost": 16.960675,
+      "net": -17.978014,
+      "final_equity": 82.021986,
+      "pf": 0.384498,
+      "maxdd": 0.182839,
+      "objective": -24.377375180079483
+    },
+    {
+      "threshold": 0.65,
+      "n": 218,
+      "wins": 50,
+      "losses": 168,
+      "wr": 0.229358,
+      "gross": 1.365514,
+      "cost": 14.479203,
+      "net": -13.113689,
+      "final_equity": 86.886311,
+      "pf": 0.459988,
+      "maxdd": 0.134933,
+      "objective": -17.83633405639566
+    },
+    {
+      "threshold": 0.675,
+      "n": 174,
+      "wins": 40,
+      "losses": 134,
+      "wr": 0.229885,
+      "gross": 1.024545,
+      "cost": 11.613728,
+      "net": -10.589183,
+      "final_equity": 89.410817,
+      "pf": 0.462077,
+      "maxdd": 0.111578,
+      "objective": -14.494425755913664
+    },
+    {
+      "threshold": 0.7,
+      "n": 128,
+      "wins": 35,
+      "losses": 93,
+      "wr": 0.273438,
+      "gross": 1.163146,
+      "cost": 8.688414,
+      "net": -7.525268,
+      "final_equity": 92.474732,
+      "pf": 0.50705,
+      "maxdd": 0.077563,
+      "objective": -10.239960729343576
+    },
+    {
+      "threshold": 0.725,
+      "n": 81,
+      "wins": 24,
+      "losses": 57,
+      "wr": 0.296296,
+      "gross": 1.517809,
+      "cost": 5.605206,
+      "net": -4.087397,
+      "final_equity": 95.912603,
+      "pf": 0.568333,
+      "maxdd": 0.047806,
+      "objective": -5.760606251676987
+    },
+    {
+      "threshold": 0.75,
+      "n": 38,
+      "wins": 15,
+      "losses": 23,
+      "wr": 0.394737,
+      "gross": 1.795651,
+      "cost": 2.669211,
+      "net": -0.873561,
+      "final_equity": 99.126439,
+      "pf": 0.790097,
+      "maxdd": 0.017991,
+      "objective": -1.5032324311016472
+    },
+    {
+      "threshold": 0.775,
+      "n": 9,
+      "wins": 5,
+      "losses": 4,
+      "wr": 0.555556,
+      "gross": 0.900922,
+      "cost": 0.637994,
+      "net": 0.262929,
+      "final_equity": 100.262929,
+      "pf": 1.328772,
+      "maxdd": 0.005988,
+      "objective": 0.0533482443649497
+    },
+    {
+      "threshold": 0.8,
+      "n": 3,
+      "wins": 1,
+      "losses": 2,
+      "wr": 0.333333,
+      "gross": 0.025223,
+      "cost": 0.21277,
+      "net": -0.187548,
+      "final_equity": 99.812452,
+      "pf": 0.53116,
+      "maxdd": 0.002,
+      "objective": -0.2575475354838737
+    },
+    {
+      "threshold": 0.825,
+      "n": 1,
+      "wins": 0,
+      "losses": 1,
+      "wr": 0.0,
+      "gross": -0.129032,
+      "cost": 0.070968,
+      "net": -0.2,
+      "final_equity": 99.8,
+      "pf": 0.0,
+      "maxdd": 0.002,
+      "objective": -0.27000000000000385
+    },
+    {
+      "threshold": 0.85,
+      "n": 0,
+      "wins": 0,
+      "losses": 0,
+      "wr": null,
+      "gross": 0,
+      "cost": 0,
+      "net": 0.0,
+      "final_equity": 100.0,
+      "pf": null,
+      "maxdd": 0.0,
+      "objective": 0.0
+    },
+    {
+      "threshold": 0.875,
+      "n": 0,
+      "wins": 0,
+      "losses": 0,
+      "wr": null,
+      "gross": 0,
+      "cost": 0,
+      "net": 0.0,
+      "final_equity": 100.0,
+      "pf": null,
+      "maxdd": 0.0,
+      "objective": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "n": 0,
+      "wins": 0,
+      "losses": 0,
+      "wr": null,
+      "gross": 0,
+      "cost": 0,
+      "net": 0.0,
+      "final_equity": 100.0,
+      "pf": null,
+      "maxdd": 0.0,
+      "objective": 0.0
+    }
+  ],
+  "frozen_threshold": 0.75,
+  "validation_result": {
+    "n": 38,
+    "wins": 15,
+    "losses": 23,
+    "wr": 0.394737,
+    "gross": 1.795651,
+    "cost": 2.669211,
+    "net": -0.873561,
+    "final_equity": 99.126439,
+    "pf": 0.790097,
+    "maxdd": 0.017991
+  },
+  "test_full": {
+    "n": 252,
+    "wins": 73,
+    "losses": 179,
+    "wr": 0.289683,
+    "gross": -1.221518,
+    "cost": 16.232995,
+    "net": -17.454513,
+    "final_equity": 82.545487,
+    "pf": 0.449518,
+    "maxdd": 0.176275
+  },
+  "test_week1": {
+    "n": 179,
+    "wins": 54,
+    "losses": 125,
+    "wr": 0.301676,
+    "gross": -0.722335,
+    "cost": 11.845232,
+    "net": -12.567568,
+    "final_equity": 87.432432,
+    "pf": 0.459469,
+    "maxdd": 0.128711
+  },
+  "test_week2": {
+    "n": 73,
+    "wins": 19,
+    "losses": 54,
+    "wr": 0.260274,
+    "gross": -0.570935,
+    "cost": 5.018461,
+    "net": -5.589396,
+    "final_equity": 94.410604,
+    "pf": 0.42216,
+    "maxdd": 0.057872
+  },
+  "test_daily": {
+    "2026-06-01": {
+      "n": 7,
+      "wins": 1,
+      "net": -0.983655,
+      "pf": 0.18
+    },
+    "2026-06-02": {
+      "n": 24,
+      "wins": 5,
+      "net": -2.676621,
+      "pf": 0.28
+    },
+    "2026-06-03": {
+      "n": 20,
+      "wins": 6,
+      "net": -1.459688,
+      "pf": 0.45
+    },
+    "2026-06-04": {
+      "n": 37,
+      "wins": 15,
+      "net": -1.145117,
+      "pf": 0.72
+    },
+    "2026-06-05": {
+      "n": 74,
+      "wins": 21,
+      "net": -5.586075,
+      "pf": 0.42
+    },
+    "2026-06-06": {
+      "n": 8,
+      "wins": 2,
+      "net": -0.681255,
+      "pf": 0.35
+    },
+    "2026-06-07": {
+      "n": 9,
+      "wins": 4,
+      "net": -0.035157,
+      "pf": 0.95
+    },
+    "2026-06-08": {
+      "n": 12,
+      "wins": 2,
+      "net": -1.075892,
+      "pf": 0.31
+    },
+    "2026-06-09": {
+      "n": 15,
+      "wins": 3,
+      "net": -1.303759,
+      "pf": 0.31
+    },
+    "2026-06-10": {
+      "n": 18,
+      "wins": 7,
+      "net": -0.574654,
+      "pf": 0.69
+    },
+    "2026-06-11": {
+      "n": 11,
+      "wins": 1,
+      "net": -1.328781,
+      "pf": 0.12
+    },
+    "2026-06-12": {
+      "n": 9,
+      "wins": 4,
+      "net": -0.124874,
+      "pf": 0.85
+    },
+    "2026-06-13": {
+      "n": 1,
+      "wins": 0,
+      "net": -0.166049,
+      "pf": 0.0
+    },
+    "2026-06-14": {
+      "n": 7,
+      "wins": 2,
+      "net": -0.312935,
+      "pf": 0.53
+    }
+  },
+  "test_side": {
+    "LONG": {
+      "n": 150,
+      "wins": 43,
+      "net": -10.481589
+    },
+    "SHORT": {
+      "n": 102,
+      "wins": 30,
+      "net": -6.972924
+    }
+  }
+}
