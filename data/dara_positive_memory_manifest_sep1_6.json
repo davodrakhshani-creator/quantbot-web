@@ -1,0 +1,39 @@
+{
+  "version": "DARA-Positive-Memory-1",
+  "training_period_tehran": ["2026-09-01", "2026-09-06"],
+  "training_examples": 1707,
+  "strict_valid_positive_examples": 132,
+  "strict_positive_definition": "net_pnl > 0 AND exit reason is TP or 3FEE_FLOOR; ordinary positive diagnostic/time exits are not counted as valid wins",
+  "day_examples": {
+    "2026-09-01": 30,
+    "2026-09-02": 100,
+    "2026-09-03": 500,
+    "2026-09-04": 64,
+    "2026-09-05": 1000,
+    "2026-09-06": 13
+  },
+  "day_valid_positives": {
+    "2026-09-01": 4,
+    "2026-09-02": 11,
+    "2026-09-03": 82,
+    "2026-09-04": 11,
+    "2026-09-05": 23,
+    "2026-09-06": 1
+  },
+  "prototype_features": [
+    "side_code", "r1", "r3", "r6", "r12", "acceleration",
+    "signed_delta_1m", "signed_delta_3m", "signed_delta_6m",
+    "relative_volume_log", "signed_vwap_distance",
+    "atr5", "atr15", "directional_close_position", "regime5", "regime15"
+  ],
+  "memory_policy": [
+    "Store the numeric pre-entry path of valid winners, not exact price/time labels.",
+    "A positive pattern must recur across multiple dates before it can gain production weight.",
+    "Direction is part of the pattern; long and short are not mirrored automatically.",
+    "Capacity is necessary but not sufficient; dead capacity is rejected while healthy capacity is scored.",
+    "Profit exits remain protected at >= 0.33% gross (3x modeled 0.11% roundtrip fee).",
+    "Raw sweep, raw pullback, raw compression, accepted-break v15, retest-renewal v15, pause-reaccel and transition-extension remain quarantined until new cross-day evidence revives them."
+  ],
+  "current_engine": "dara_v18_prototype_memory_sep7.py",
+  "note": "This file is the persistent project memory manifest. The executable engine reconstructs detailed numeric prototypes from the source trade artifacts so the memory can be recalculated and extended as new days are added."
+}
