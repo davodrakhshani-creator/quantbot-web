@@ -1,0 +1,32 @@
+name: DARA v8 Blind Jun15-Jul14
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dara_v8_blind_jun15_jul14.py'
+      - '.github/workflows/dara-v8-blind-jun15-jul14.yml'
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen DARA v8 blind test
+        run: python dara_v8_blind_jun15_jul14.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dara_v8_blind_jun15_jul14.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add DARA v8 blind Jun15-Jul14 result"
+          git pull --rebase origin main
+          git push origin HEAD:main
