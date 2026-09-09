@@ -1,0 +1,42 @@
+name: DARA v1.2 Sep3-8 Frozen Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dara_v1_2_sep3_8.py'
+      - '.github/workflows/dara-v1-2-sep3-8.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dara-v1-2-sep3-8
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen DARA v1.2 Sep3-8 validation
+        run: python dara_v1_2_sep3_8.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dara_v1_2_sep3_8.json
+          if git diff --cached --quiet; then
+            echo "No result change"
+            exit 0
+          fi
+          git commit -m "Add DARA v1.2 Sep3-8 validation result"
+          git pull --rebase origin main
+          git push origin HEAD:main
