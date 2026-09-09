@@ -1,0 +1,947 @@
+{
+  "version": "DARA-Pattern-Performance-Memory-v1",
+  "training_days": "Sep1-Sep6",
+  "training_trades": 1707,
+  "valid_positive_trades": 132,
+  "baseline_valid_rate": 0.0773,
+  "selection_rule": "n>=10, winner_days>=2, positive_net_days>=2, WR>=1.35x baseline, cumulative net>0",
+  "selected_patterns": [],
+  "patterns": {
+    "MACD_REACCEL_LONG": {
+      "pattern": "MACD_REACCEL_LONG",
+      "side": "LONG",
+      "family": [
+        "momentum_continuation"
+      ],
+      "n": 69,
+      "wins": 9,
+      "wr": 0.1304,
+      "lift": 1.69,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.027119,
+      "net": -0.450673,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.077162
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.042256
+        },
+        "2026-09-03": {
+          "n": 24,
+          "wins": 7,
+          "wr": 0.292,
+          "net": -0.113406
+        },
+        "2026-09-04": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.037917
+        },
+        "2026-09-05": {
+          "n": 34,
+          "wins": 1,
+          "wr": 0.029,
+          "net": -0.171663
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008269
+        }
+      },
+      "production_eligible": false
+    },
+    "SHOOTING_STAR_REJECT": {
+      "pattern": "SHOOTING_STAR_REJECT",
+      "side": "SHORT",
+      "family": [
+        "wick_reversal"
+      ],
+      "n": 39,
+      "wins": 1,
+      "wr": 0.0256,
+      "lift": 0.33,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.075736,
+      "net": -0.254105,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.024824
+        },
+        "2026-09-02": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.058166
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.052809
+        },
+        "2026-09-05": {
+          "n": 29,
+          "wins": 1,
+          "wr": 0.034,
+          "net": -0.118306
+        }
+      },
+      "production_eligible": false
+    },
+    "EMA_PULLBACK_SHORT": {
+      "pattern": "EMA_PULLBACK_SHORT",
+      "side": "SHORT",
+      "family": [
+        "trend_pullback"
+      ],
+      "n": 184,
+      "wins": 10,
+      "wr": 0.0543,
+      "lift": 0.7,
+      "winner_days": 4,
+      "positive_net_days": 0,
+      "gross": -0.166485,
+      "net": -1.541237,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 8,
+          "wins": 2,
+          "wr": 0.25,
+          "net": -0.283401
+        },
+        "2026-09-02": {
+          "n": 11,
+          "wins": 4,
+          "wr": 0.364,
+          "net": -0.093172
+        },
+        "2026-09-03": {
+          "n": 30,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.334678
+        },
+        "2026-09-04": {
+          "n": 22,
+          "wins": 3,
+          "wr": 0.136,
+          "net": -0.206275
+        },
+        "2026-09-05": {
+          "n": 108,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.596101
+        },
+        "2026-09-06": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.02761
+        }
+      },
+      "production_eligible": false
+    },
+    "BEAR_ENGULF": {
+      "pattern": "BEAR_ENGULF",
+      "side": "SHORT",
+      "family": [
+        "candlestick_reversal"
+      ],
+      "n": 69,
+      "wins": 2,
+      "wr": 0.029,
+      "lift": 0.37,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": -0.220137,
+      "net": -0.860073,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.297805
+        },
+        "2026-09-02": {
+          "n": 8,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.155056
+        },
+        "2026-09-03": {
+          "n": 17,
+          "wins": 1,
+          "wr": 0.059,
+          "net": -0.187873
+        },
+        "2026-09-04": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.041241
+        },
+        "2026-09-05": {
+          "n": 37,
+          "wins": 1,
+          "wr": 0.027,
+          "net": -0.178098
+        }
+      },
+      "production_eligible": false
+    },
+    "STOCH_RANGE_REV_SHORT": {
+      "pattern": "STOCH_RANGE_REV_SHORT",
+      "side": "SHORT",
+      "family": [
+        "range_reversal"
+      ],
+      "n": 57,
+      "wins": 2,
+      "wr": 0.0351,
+      "lift": 0.45,
+      "winner_days": 2,
+      "positive_net_days": 0,
+      "gross": -0.07585,
+      "net": -0.749327,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.243721
+        },
+        "2026-09-02": {
+          "n": 13,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.298012
+        },
+        "2026-09-03": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.051896
+        },
+        "2026-09-05": {
+          "n": 35,
+          "wins": 1,
+          "wr": 0.029,
+          "net": -0.155698
+        }
+      },
+      "production_eligible": false
+    },
+    "MACD_REACCEL_SHORT": {
+      "pattern": "MACD_REACCEL_SHORT",
+      "side": "SHORT",
+      "family": [
+        "momentum_continuation"
+      ],
+      "n": 41,
+      "wins": 2,
+      "wr": 0.0488,
+      "lift": 0.63,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": -0.093766,
+      "net": -0.463919,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.198455
+        },
+        "2026-09-02": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.026438
+        },
+        "2026-09-03": {
+          "n": 7,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.070628
+        },
+        "2026-09-04": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.080772
+        },
+        "2026-09-05": {
+          "n": 20,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.103431
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.015805
+        }
+      },
+      "production_eligible": false
+    },
+    "EMA_PULLBACK_LONG": {
+      "pattern": "EMA_PULLBACK_LONG",
+      "side": "LONG",
+      "family": [
+        "trend_pullback"
+      ],
+      "n": 347,
+      "wins": 42,
+      "wr": 0.121,
+      "lift": 1.57,
+      "winner_days": 4,
+      "positive_net_days": 0,
+      "gross": -0.03513,
+      "net": -2.259118,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.176822
+        },
+        "2026-09-02": {
+          "n": 11,
+          "wins": 1,
+          "wr": 0.091,
+          "net": -0.178824
+        },
+        "2026-09-03": {
+          "n": 148,
+          "wins": 31,
+          "wr": 0.209,
+          "net": -0.919158
+        },
+        "2026-09-04": {
+          "n": 28,
+          "wins": 4,
+          "wr": 0.143,
+          "net": -0.228876
+        },
+        "2026-09-05": {
+          "n": 152,
+          "wins": 6,
+          "wr": 0.039,
+          "net": -0.692657
+        },
+        "2026-09-06": {
+          "n": 6,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.062781
+        }
+      },
+      "production_eligible": false
+    },
+    "BULL_ENGULF": {
+      "pattern": "BULL_ENGULF",
+      "side": "LONG",
+      "family": [
+        "candlestick_reversal"
+      ],
+      "n": 102,
+      "wins": 8,
+      "wr": 0.0784,
+      "lift": 1.01,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.10131,
+      "net": -0.768993,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.027163
+        },
+        "2026-09-02": {
+          "n": 12,
+          "wins": 1,
+          "wr": 0.083,
+          "net": -0.157069
+        },
+        "2026-09-03": {
+          "n": 42,
+          "wins": 6,
+          "wr": 0.143,
+          "net": -0.350828
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.036301
+        },
+        "2026-09-05": {
+          "n": 42,
+          "wins": 1,
+          "wr": 0.024,
+          "net": -0.18902
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008612
+        }
+      },
+      "production_eligible": false
+    },
+    "MORNING_STAR": {
+      "pattern": "MORNING_STAR",
+      "side": "LONG",
+      "family": [
+        "three_candle_reversal"
+      ],
+      "n": 26,
+      "wins": 2,
+      "wr": 0.0769,
+      "lift": 0.99,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.07319,
+      "net": -0.266946,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.099432
+        },
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.033713
+        },
+        "2026-09-03": {
+          "n": 9,
+          "wins": 2,
+          "wr": 0.222,
+          "net": -0.067601
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.007453
+        },
+        "2026-09-05": {
+          "n": 14,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.058747
+        }
+      },
+      "production_eligible": false
+    },
+    "EVENING_STAR": {
+      "pattern": "EVENING_STAR",
+      "side": "SHORT",
+      "family": [
+        "three_candle_reversal"
+      ],
+      "n": 17,
+      "wins": 1,
+      "wr": 0.0588,
+      "lift": 0.76,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": 0.006258,
+      "net": -0.212052,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": -0.027675
+        },
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.108968
+        },
+        "2026-09-03": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.023583
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.008249
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.043577
+        }
+      },
+      "production_eligible": false
+    },
+    "VWAP_REJECT_SHORT": {
+      "pattern": "VWAP_REJECT_SHORT",
+      "side": "SHORT",
+      "family": [
+        "intraday_value"
+      ],
+      "n": 54,
+      "wins": 3,
+      "wr": 0.0556,
+      "lift": 0.72,
+      "winner_days": 3,
+      "positive_net_days": 1,
+      "gross": 0.160212,
+      "net": -0.329759,
+      "day_stats": {
+        "2026-09-01": {
+          "n": 3,
+          "wins": 1,
+          "wr": 0.333,
+          "net": 0.004699
+        },
+        "2026-09-02": {
+          "n": 6,
+          "wins": 1,
+          "wr": 0.167,
+          "net": -0.062187
+        },
+        "2026-09-03": {
+          "n": 11,
+          "wins": 1,
+          "wr": 0.091,
+          "net": -0.09756
+        },
+        "2026-09-05": {
+          "n": 34,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.174711
+        }
+      },
+      "production_eligible": false
+    },
+    "RSI_BEAR_DIVERGENCE": {
+      "pattern": "RSI_BEAR_DIVERGENCE",
+      "side": "SHORT",
+      "family": [
+        "momentum_divergence"
+      ],
+      "n": 14,
+      "wins": 1,
+      "wr": 0.0714,
+      "lift": 0.92,
+      "winner_days": 1,
+      "positive_net_days": 0,
+      "gross": -0.05224,
+      "net": -0.146516,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.049796
+        },
+        "2026-09-03": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.0486
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.017057
+        },
+        "2026-09-05": {
+          "n": 8,
+          "wins": 1,
+          "wr": 0.125,
+          "net": -0.031063
+        }
+      },
+      "production_eligible": false
+    },
+    "RSI_BULL_DIVERGENCE": {
+      "pattern": "RSI_BULL_DIVERGENCE",
+      "side": "LONG",
+      "family": [
+        "momentum_divergence"
+      ],
+      "n": 27,
+      "wins": 5,
+      "wr": 0.1852,
+      "lift": 2.39,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": -0.024486,
+      "net": -0.242142,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.142088
+        },
+        "2026-09-03": {
+          "n": 10,
+          "wins": 3,
+          "wr": 0.3,
+          "net": -0.047525
+        },
+        "2026-09-04": {
+          "n": 5,
+          "wins": 2,
+          "wr": 0.4,
+          "net": 0.007433
+        },
+        "2026-09-05": {
+          "n": 9,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.059962
+        }
+      },
+      "production_eligible": false
+    },
+    "HAMMER_RECLAIM": {
+      "pattern": "HAMMER_RECLAIM",
+      "side": "LONG",
+      "family": [
+        "wick_reversal"
+      ],
+      "n": 83,
+      "wins": 7,
+      "wr": 0.0843,
+      "lift": 1.09,
+      "winner_days": 3,
+      "positive_net_days": 1,
+      "gross": -0.000992,
+      "net": -0.499641,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.091378
+        },
+        "2026-09-03": {
+          "n": 29,
+          "wins": 5,
+          "wr": 0.172,
+          "net": -0.186371
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.010233
+        },
+        "2026-09-05": {
+          "n": 50,
+          "wins": 1,
+          "wr": 0.02,
+          "net": -0.232125
+        }
+      },
+      "production_eligible": false
+    },
+    "STOCH_RANGE_REV_LONG": {
+      "pattern": "STOCH_RANGE_REV_LONG",
+      "side": "LONG",
+      "family": [
+        "range_reversal"
+      ],
+      "n": 79,
+      "wins": 8,
+      "wr": 0.1013,
+      "lift": 1.31,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.048336,
+      "net": -0.648439,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 15,
+          "wins": 2,
+          "wr": 0.133,
+          "net": -0.305816
+        },
+        "2026-09-03": {
+          "n": 23,
+          "wins": 5,
+          "wr": 0.217,
+          "net": -0.15539
+        },
+        "2026-09-05": {
+          "n": 41,
+          "wins": 1,
+          "wr": 0.024,
+          "net": -0.187233
+        }
+      },
+      "production_eligible": false
+    },
+    "VWAP_RECLAIM_LONG": {
+      "pattern": "VWAP_RECLAIM_LONG",
+      "side": "LONG",
+      "family": [
+        "intraday_value"
+      ],
+      "n": 104,
+      "wins": 12,
+      "wr": 0.1154,
+      "lift": 1.49,
+      "winner_days": 3,
+      "positive_net_days": 0,
+      "gross": 0.12336,
+      "net": -0.547213,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 5,
+          "wins": 1,
+          "wr": 0.2,
+          "net": -0.017878
+        },
+        "2026-09-03": {
+          "n": 37,
+          "wins": 9,
+          "wr": 0.243,
+          "net": -0.216771
+        },
+        "2026-09-04": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.034707
+        },
+        "2026-09-05": {
+          "n": 58,
+          "wins": 2,
+          "wr": 0.034,
+          "net": -0.261604
+        },
+        "2026-09-06": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.016253
+        }
+      },
+      "production_eligible": false
+    },
+    "BB_SQUEEZE_EXPAND_LONG": {
+      "pattern": "BB_SQUEEZE_EXPAND_LONG",
+      "side": "LONG",
+      "family": [
+        "volatility_expansion"
+      ],
+      "n": 16,
+      "wins": 4,
+      "wr": 0.25,
+      "lift": 3.23,
+      "winner_days": 2,
+      "positive_net_days": 1,
+      "gross": 0.029084,
+      "net": -0.077607,
+      "day_stats": {
+        "2026-09-02": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.026233
+        },
+        "2026-09-03": {
+          "n": 9,
+          "wins": 3,
+          "wr": 0.333,
+          "net": -0.032399
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 1,
+          "wr": 1.0,
+          "net": 0.010233
+        },
+        "2026-09-05": {
+          "n": 5,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.029208
+        }
+      },
+      "production_eligible": false
+    },
+    "BB_SQUEEZE_EXPAND_SHORT": {
+      "pattern": "BB_SQUEEZE_EXPAND_SHORT",
+      "side": "SHORT",
+      "family": [
+        "volatility_expansion"
+      ],
+      "n": 8,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.031775,
+      "net": -0.074064,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 3,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.031883
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.019953
+        },
+        "2026-09-05": {
+          "n": 4,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.022228
+        }
+      },
+      "production_eligible": false
+    },
+    "DISPLACEMENT_CONT_LONG": {
+      "pattern": "DISPLACEMENT_CONT_LONG",
+      "side": "LONG",
+      "family": [
+        "price_action_core"
+      ],
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "BULL_FLAG_BREAK": {
+      "pattern": "BULL_FLAG_BREAK",
+      "side": "LONG",
+      "family": [
+        "continuation"
+      ],
+      "n": 3,
+      "wins": 1,
+      "wr": 0.3333,
+      "lift": 4.31,
+      "winner_days": 1,
+      "positive_net_days": 1,
+      "gross": -0.002406,
+      "net": -0.017754,
+      "day_stats": {
+        "2026-09-03": {
+          "n": 2,
+          "wins": 1,
+          "wr": 0.5,
+          "net": 0.002246
+        },
+        "2026-09-04": {
+          "n": 1,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.02
+        }
+      },
+      "production_eligible": false
+    },
+    "DISPLACEMENT_CONT_SHORT": {
+      "pattern": "DISPLACEMENT_CONT_SHORT",
+      "side": "SHORT",
+      "family": [
+        "price_action_core"
+      ],
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    },
+    "BEAR_FLAG_BREAK": {
+      "pattern": "BEAR_FLAG_BREAK",
+      "side": "SHORT",
+      "family": [
+        "continuation"
+      ],
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "lift": 0.0,
+      "winner_days": 0,
+      "positive_net_days": 0,
+      "gross": -0.015192,
+      "net": -0.025425,
+      "day_stats": {
+        "2026-09-04": {
+          "n": 2,
+          "wins": 0,
+          "wr": 0.0,
+          "net": -0.025425
+        }
+      },
+      "production_eligible": false
+    }
+  }
+}
