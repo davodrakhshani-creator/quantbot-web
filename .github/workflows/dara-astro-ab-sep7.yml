@@ -1,0 +1,26 @@
+name: DARA Astro AB Sep7
+on:
+  push:
+    paths:
+      - 'dara_astro_memory.py'
+      - 'dara_astro_ab_sep7.py'
+      - '.github/workflows/dara-astro-ab-sep7.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install astronomy-engine
+      - run: python dara_astro_ab_sep7.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_astro_ab_sep7.json
+          git diff --cached --quiet || git commit -m "Persist DARA astro Sep7 A/B"
+          git push
