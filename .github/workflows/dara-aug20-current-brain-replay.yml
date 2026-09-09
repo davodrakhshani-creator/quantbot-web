@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install astro dependency
-        run: pip install astronomy-engine
+      - name: Install astro dependencies
+        run: pip install astronomy-engine pyswisseph
       - name: Run Aug20 replay
         run: python dara_aug20_current_brain_replay.py
       - name: Persist result
