@@ -1,0 +1,21 @@
+name: DARA Discovery30 Learned Sep1
+on:
+  push:
+    paths: ['dara_discovery30_learned_sep1.py','.github/workflows/dara-discovery30-learned-sep1.yml']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python dara_discovery30_learned_sep1.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_discovery30_learned_sep1.json
+          git diff --cached --quiet || git commit -m "Persist learned Discovery30 Sep1 result"
+          git pull --rebase origin main || true
+          git push
