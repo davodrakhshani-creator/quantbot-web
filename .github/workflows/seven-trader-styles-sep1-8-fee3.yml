@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'seven_trader_styles_sep1_8_fee3.py'
+      - 'seven_trader_styles_sep1_8_fee3_fixed.py'
       - '.github/workflows/seven-trader-styles-sep1-8-fee3.yml'
 
 permissions:
@@ -13,7 +14,7 @@ permissions:
 
 concurrency:
   group: seven-trader-styles-sep1-8-fee3
-  cancel-in-progress: true
+  cancel-in_progress: true
 
 jobs:
   backtest:
@@ -26,8 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run Sep1-8 seven trader styles with 3x-fee profit gate
-        run: python seven_trader_styles_sep1_8_fee3.py
+      - name: Run warmup-fixed Sep1-8 seven trader styles with 3x-fee profit gate
+        run: python seven_trader_styles_sep1_8_fee3_fixed.py
       - name: Persist result
         run: |
           git config user.name "quantbot-research-bot"
@@ -37,6 +38,6 @@ jobs:
             echo "No result change"
             exit 0
           fi
-          git commit -m "Add Sep1-8 seven trader 3x-fee results"
+          git commit -m "Add warmup-fixed Sep1-8 seven trader 3x-fee results"
           git pull --rebase origin main
           git push origin HEAD:main
