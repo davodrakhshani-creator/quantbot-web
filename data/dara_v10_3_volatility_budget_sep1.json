@@ -1,0 +1,119 @@
+{
+  "version": "DARA-v10.3-ImpactAbsorption-VolatilityBudget",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-02T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "change_from_v10_2": "Add volatility budget: fixed +0.55% target is tradable only if 2x 15m ATR and 3.5x 5m ATR each cover the target. Flow/absorption, risk, fee and exit logic unchanged.",
+  "timeframes": [
+    "1m flow/impact",
+    "5m value + ATR budget",
+    "15m regime + ATR budget"
+  ],
+  "risk_cost_exit": [
+    "0.25% max stop loss incl 0.11% friction",
+    "max 3x notional",
+    "TP +0.55% on 40%, 60% runner",
+    "max 4 trades/day"
+  ],
+  "methodology_notes": [
+    "Sep1 remains development/in-sample data; v10.3 was designed after inspecting v10.2 Sep1 outcomes and is not proof of generalization.",
+    "Historical full L2 unavailable; 1m taker-buy volume is aggressor-flow proxy.",
+    "No maker-fee advantage credited."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 100.045365,
+    "net_pnl": 0.045365,
+    "return_pct": 0.045,
+    "trades": 2,
+    "wins": 1,
+    "losses": 1,
+    "win_rate": 50.0,
+    "gross_pnl": 0.224656,
+    "modeled_costs": 0.179291,
+    "pf_net": 1.18,
+    "max_dd_pct": 0.25
+  },
+  "by_setup": {
+    "VALUE_INFORMED": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "gross_pnl": 0.224656,
+      "net_pnl": 0.045365,
+      "pf_net": 1.18
+    },
+    "SWEEP_ABSORPTION": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "trades": [
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T19:38:00+03:30",
+      "exit_time": "2026-09-01T20:09:00+03:30",
+      "entry": 77811.0,
+      "exit": 77465.0,
+      "score": 6,
+      "diagnostics": {
+        "avg_delta": 0.3954844535344908,
+        "persistence": 2,
+        "progress": 0.0014582719573533742,
+        "efficiency": 1.0,
+        "impact_ratio": 0.0036873053904410836,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.172,
+        "atr15_pct": 0.394,
+        "target_to_atr15": 1.4,
+        "target_to_atr5": 3.19
+      },
+      "structural_stop_pct": 0.209,
+      "reason": "TP055+RUNNER",
+      "notional": 78.258885,
+      "gross_pnl": 0.381897,
+      "cost": 0.086085,
+      "net_pnl": 0.295812,
+      "equity_before": 100.0,
+      "equity_after": 100.295812
+    },
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T20:47:00+03:30",
+      "exit_time": "2026-09-01T20:50:00+03:30",
+      "entry": 77402.8,
+      "exit": 77546.71,
+      "score": 7,
+      "diagnostics": {
+        "avg_delta": 0.30151011372309516,
+        "persistence": 3,
+        "progress": 0.0010984347131817174,
+        "efficiency": 1.0,
+        "impact_ratio": 0.0036431106725345616,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.194,
+        "atr15_pct": 0.357,
+        "target_to_atr15": 1.54,
+        "target_to_atr5": 2.84
+      },
+      "structural_stop_pct": 0.186,
+      "reason": "STOP",
+      "notional": 84.732574,
+      "gross_pnl": -0.157241,
+      "cost": 0.093206,
+      "net_pnl": -0.250447,
+      "equity_before": 100.295812,
+      "equity_after": 100.045365
+    }
+  ]
+}
