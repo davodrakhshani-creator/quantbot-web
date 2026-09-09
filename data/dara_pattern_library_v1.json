@@ -1,0 +1,42 @@
+{
+  "version": "DARA-Pattern-Memory-v1",
+  "scope": ["BTCUSDT futures", "1m", "5m", "15m"],
+  "principle": "Pattern is evidence, not permission. Production entry requires pattern + market state + capacity + confirmation + fee edge.",
+  "profit_floor": {"round_trip_cost_pct": 0.11, "minimum_normal_profit_pct": 0.33, "preferred_edge_pct": 0.44},
+  "sources": [
+    {"name":"Binance Academy Candlestick Patterns","url":"https://www.binance.com/en/academy/articles/a-beginners-guide-to-candlestick-charts"},
+    {"name":"Binance Academy Popular Candlestick Patterns","url":"https://academy.binance.com/articles/how-to-read-the-most-popular-crypto-candlestick-patterns"},
+    {"name":"Fidelity Technical Indicator Guide","url":"https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/overview"},
+    {"name":"Fidelity EMA","url":"https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/ema"},
+    {"name":"Fidelity MACD","url":"https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd"},
+    {"name":"Fidelity RSI","url":"https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/RSI"},
+    {"name":"Fidelity Bollinger Bands","url":"https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/bollinger-bands"},
+    {"name":"Fidelity ATR","url":"https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/atr"},
+    {"name":"TradingView VWAP","url":"https://www.tradingview.com/support/solutions/43000502018-volume-weighted-average-price-vwap/"},
+    {"name":"StockCharts Candlestick Introduction","url":"https://chartschool.stockcharts.com/table-of-contents/chart-analysis/candlestick-charts/introduction-to-candlesticks"}
+  ],
+  "patterns": [
+    {"id":"BULL_ENGULF","family":"candlestick_reversal","side":"LONG","logic":"bullish candle body engulfs previous bearish body","confirmation":"close above pattern high or positive follow-through; prefer support/reclaim context"},
+    {"id":"BEAR_ENGULF","family":"candlestick_reversal","side":"SHORT","logic":"bearish candle body engulfs previous bullish body","confirmation":"close below pattern low or negative follow-through; prefer resistance/rejection context"},
+    {"id":"HAMMER_RECLAIM","family":"wick_reversal","side":"LONG","logic":"long lower wick, small body near candle high after weakness","confirmation":"next close holds/reclaims; avoid raw hammer in strong downside expansion"},
+    {"id":"SHOOTING_STAR_REJECT","family":"wick_reversal","side":"SHORT","logic":"long upper wick, small body near candle low after strength","confirmation":"next close rejects high; avoid raw star in strong upside expansion"},
+    {"id":"MORNING_STAR","family":"three_candle_reversal","side":"LONG","logic":"bearish impulse + indecision + bullish recovery","confirmation":"third close reclaims meaningful fraction of first body"},
+    {"id":"EVENING_STAR","family":"three_candle_reversal","side":"SHORT","logic":"bullish impulse + indecision + bearish recovery","confirmation":"third close rejects meaningful fraction of first body"},
+    {"id":"BULL_FLAG_BREAK","family":"continuation","side":"LONG","logic":"up impulse + shallow/contracting pause + break of pause high","confirmation":"break-hold or retest-renewal; no one-bar chase"},
+    {"id":"BEAR_FLAG_BREAK","family":"continuation","side":"SHORT","logic":"down impulse + shallow/contracting pause + break of pause low","confirmation":"break-hold or retest-renewal; no one-bar chase"},
+    {"id":"EMA_PULLBACK_LONG","family":"trend_pullback","side":"LONG","logic":"rising fast EMA above slow EMA; price pulls to EMA and reclaims","confirmation":"directional close + momentum renewal"},
+    {"id":"EMA_PULLBACK_SHORT","family":"trend_pullback","side":"SHORT","logic":"falling fast EMA below slow EMA; price rallies to EMA and rejects","confirmation":"directional close + momentum renewal"},
+    {"id":"VWAP_RECLAIM_LONG","family":"intraday_value","side":"LONG","logic":"price crosses/reclaims VWAP after trading below","confirmation":"hold above VWAP plus follow-through; raw VWAP cross forbidden"},
+    {"id":"VWAP_REJECT_SHORT","family":"intraday_value","side":"SHORT","logic":"price tests/rejects VWAP after trading below or loses it after failed reclaim","confirmation":"hold below VWAP plus downside follow-through"},
+    {"id":"BB_SQUEEZE_EXPAND_LONG","family":"volatility_expansion","side":"LONG","logic":"Bollinger bandwidth contracts then expands with upside close","confirmation":"ATR/volume/capacity expansion and no immediate return inside range"},
+    {"id":"BB_SQUEEZE_EXPAND_SHORT","family":"volatility_expansion","side":"SHORT","logic":"Bollinger bandwidth contracts then expands with downside close","confirmation":"ATR/volume/capacity expansion and no immediate return inside range"},
+    {"id":"RSI_BULL_DIVERGENCE","family":"momentum_divergence","side":"LONG","logic":"price lower low while RSI makes higher low","confirmation":"reclaim/engulf/structure break; divergence alone is not entry"},
+    {"id":"RSI_BEAR_DIVERGENCE","family":"momentum_divergence","side":"SHORT","logic":"price higher high while RSI makes lower high","confirmation":"rejection/engulf/structure break; divergence alone is not entry"},
+    {"id":"MACD_REACCEL_LONG","family":"momentum_continuation","side":"LONG","logic":"MACD histogram turns up / bullish cross in non-range context","confirmation":"price displacement and capacity"},
+    {"id":"MACD_REACCEL_SHORT","family":"momentum_continuation","side":"SHORT","logic":"MACD histogram turns down / bearish cross in non-range context","confirmation":"price displacement and capacity"},
+    {"id":"STOCH_RANGE_REV_LONG","family":"range_reversal","side":"LONG","logic":"stochastic exits oversold in range/slow trend","confirmation":"support/reclaim; disabled in strong trend without reversal structure"},
+    {"id":"STOCH_RANGE_REV_SHORT","family":"range_reversal","side":"SHORT","logic":"stochastic exits overbought in range/slow trend","confirmation":"resistance/rejection; disabled in strong trend without reversal structure"},
+    {"id":"DISPLACEMENT_CONT_LONG","family":"price_action_core","side":"LONG","logic":"large directional move + controlled pause + renewed directional flow","confirmation":"positive follow-through; preferred DARA continuation pattern"},
+    {"id":"DISPLACEMENT_CONT_SHORT","family":"price_action_core","side":"SHORT","logic":"large directional move + controlled pause + renewed directional flow","confirmation":"negative follow-through; stronger downside expansion required"}
+  ]
+}
