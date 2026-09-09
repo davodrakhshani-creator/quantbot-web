@@ -1,0 +1,402 @@
+{
+  "version": "DARA-Aug22-Transfer-v5-FROZEN",
+  "warning": "Aug22 was not used to tune v5 in this run. v5 was derived from Aug20-21 diagnostics; prototype memory still contains earlier project history, so this is diagnostic transfer rather than pristine OOS evidence.",
+  "period_tehran": [
+    "2026-08-22T00:00:00+03:30",
+    "2026-08-23T00:00:00+03:30"
+  ],
+  "astro_first": {
+    "tehran_date": "2026-08-22",
+    "bias": "SHORT",
+    "score": -1.0,
+    "confidence": "STRONG",
+    "long_preference": 0.25,
+    "short_preference": 0.75,
+    "aligned_risk_pct": 0.25,
+    "opposed_risk_pct": 0.1,
+    "aligned_entry_threshold_delta": -0.08,
+    "opposed_entry_threshold_delta": 0.14,
+    "activity_score": 0.0,
+    "activity_regime": "NORMAL_ACTIVITY",
+    "active_directional_rules": [
+      {
+        "condition": "ASPECT:Moon-Mercury:TRINE",
+        "strength": 0.9812,
+        "side": "SHORT",
+        "weight": 0.35,
+        "contribution": -0.3434,
+        "samples": [
+          37,
+          8,
+          6
+        ],
+        "edges": [
+          -0.0010699,
+          -0.0037982,
+          -0.011245
+        ],
+        "persistence": 2.14
+      }
+    ],
+    "active_activity_rules": [],
+    "sample_times_tehran": [
+      "2026-08-22T00:00:00+03:30",
+      "2026-08-22T06:00:00+03:30",
+      "2026-08-22T12:00:00+03:30",
+      "2026-08-22T18:00:00+03:30"
+    ]
+  },
+  "market_after_freeze": {
+    "open": 77456.8,
+    "close": 77304.8,
+    "return_pct": -0.1962,
+    "high": 78831.8,
+    "low": 76510.0
+  },
+  "rules_frozen_before_aug22": [
+    "prototype p>=0.32 mandatory; pattern count cannot override weak memory",
+    "flow sign aligned and abs delta>=0.05",
+    "volr 1-2 quarantined",
+    "live day-direction lock",
+    "real 3m/6m price response",
+    "after abs DTD>=2%, require p>=0.40 and both r3/r6 >=0.25% in trade direction",
+    "volr>=8 requires pullback/continuation structure; lone candlestick reversal rejected",
+    "after abs DTD>=2%, volr>=8 rejected as exhaustion",
+    "5-minute cooldown after loss",
+    "fee/risk/TP unchanged"
+  ],
+  "stage": {
+    "seen": 2880,
+    "reject_base_memory": 2492,
+    "reject_memory_floor": 363,
+    "reject_flow_sign": 10,
+    "reject_weak_flow": 3,
+    "reject_vol_1_2": 3,
+    "reject_day_lock": 0,
+    "reject_counter_day": 0,
+    "reject_no_price_response": 4,
+    "reject_late_extension": 0,
+    "reject_highvol_no_structure": 0,
+    "reject_exhaustion_chase": 0,
+    "final": 4
+  },
+  "opportunity": {
+    "n": 4,
+    "valid_positive": 1,
+    "net_positive": 1,
+    "negative_or_invalid": 3,
+    "valid_wr": 25.0,
+    "gross": -0.111724,
+    "cost": 0.195764,
+    "net": -0.30749,
+    "pf_net": 0.2,
+    "mfe": 0.156,
+    "mae": 0.21
+  },
+  "opportunity_by_side": {
+    "LONG": {
+      "n": 2,
+      "valid_positive": 1,
+      "net_positive": 1,
+      "negative_or_invalid": 1,
+      "valid_wr": 50.0,
+      "gross": 0.027907,
+      "cost": 0.051162,
+      "net": -0.023256,
+      "pf_net": 0.77,
+      "mfe": 0.278,
+      "mae": 0.268
+    },
+    "SHORT": {
+      "n": 2,
+      "valid_positive": 0,
+      "net_positive": 0,
+      "negative_or_invalid": 2,
+      "valid_wr": 0.0,
+      "gross": -0.139631,
+      "cost": 0.144602,
+      "net": -0.284234,
+      "pf_net": 0.0,
+      "mfe": 0.035,
+      "mae": 0.151
+    }
+  },
+  "sequential": {
+    "stats": {
+      "n": 4,
+      "valid_positive": 1,
+      "net_positive": 1,
+      "negative_or_invalid": 3,
+      "valid_wr": 25.0,
+      "gross": -0.111646,
+      "cost": 0.195653,
+      "net": -0.307299,
+      "pf_net": 0.2,
+      "mfe": 0.156,
+      "mae": 0.21
+    },
+    "by_side": {
+      "LONG": {
+        "n": 2,
+        "valid_positive": 1,
+        "net_positive": 1,
+        "negative_or_invalid": 1,
+        "valid_wr": 50.0,
+        "gross": 0.02785,
+        "cost": 0.051182,
+        "net": -0.023333,
+        "pf_net": 0.77,
+        "mfe": 0.278,
+        "mae": 0.268
+      },
+      "SHORT": {
+        "n": 2,
+        "valid_positive": 0,
+        "net_positive": 0,
+        "negative_or_invalid": 2,
+        "valid_wr": 0.0,
+        "gross": -0.139496,
+        "cost": 0.144471,
+        "net": -0.283966,
+        "pf_net": 0.0,
+        "mfe": 0.035,
+        "mae": 0.151
+      }
+    },
+    "start_equity": 100.0,
+    "final_equity": 99.692701,
+    "return_pct": -0.3073,
+    "max_drawdown_pct": 0.3837,
+    "trades": 4
+  },
+  "trades": [
+    {
+      "setup": "PATTERN_PROTOTYPE_FUSION",
+      "side": "LONG",
+      "entry_time": "2026-08-22T00:55:00+03:30",
+      "exit_time": "2026-08-22T01:02:00+03:30",
+      "entry": 78014.4,
+      "exit": 78357.66,
+      "score": 68.574,
+      "tp_pct": 0.44,
+      "reason": "TP",
+      "mfe_pct": 0.451,
+      "mae_pct": 0.167,
+      "gross_pnl": 0.102326,
+      "cost": 0.025581,
+      "net_pnl": 0.076744,
+      "diagnostics": {
+        "prototype_p": 0.4378,
+        "prototype_winner_days": 3,
+        "prototype_threshold": 0.39,
+        "pattern_score": 0.85,
+        "pattern_primary_families": 1,
+        "patterns": [
+          "EMA_PULLBACK_LONG"
+        ],
+        "families": [
+          "trend_pullback"
+        ],
+        "capacity_score_pct": 0.9926,
+        "expected_move_pct": 0.689,
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 8.878508823737864,
+        "delta": 0.5596149629714775,
+        "transfer_v5": true,
+        "memory_floor": true,
+        "day_state_live": "STRONG_UP",
+        "dtd_pct": 0.72,
+        "r3_signed_pct": 0.3905,
+        "r6_signed_pct": 0.4693,
+        "material_flow": true,
+        "risk_pct_equity": 0.1,
+        "risk_fraction_equity": 0.001,
+        "astro_day_bias": "SHORT",
+        "astro_score": -1.0,
+        "astro_aligned": false,
+        "patterns_v5": [
+          null
+        ],
+        "families_v5": [
+          "trend_pullback"
+        ]
+      },
+      "equity_after": 100.076744,
+      "risk_pct_equity": 0.1,
+      "astro_aligned": false,
+      "n": 1
+    },
+    {
+      "setup": "PATTERN_PROTOTYPE_FUSION",
+      "side": "LONG",
+      "entry_time": "2026-08-22T01:04:00+03:30",
+      "exit_time": "2026-08-22T01:06:00+03:30",
+      "entry": 78362.1,
+      "exit": 78111.34,
+      "score": 66.559,
+      "tp_pct": 0.44,
+      "reason": "STOP",
+      "mfe_pct": 0.104,
+      "mae_pct": 0.369,
+      "gross_pnl": -0.074476,
+      "cost": 0.025601,
+      "net_pnl": -0.100077,
+      "diagnostics": {
+        "prototype_p": 0.4171,
+        "prototype_winner_days": 3,
+        "prototype_threshold": 0.39,
+        "pattern_score": 0.85,
+        "pattern_primary_families": 1,
+        "patterns": [
+          "EMA_PULLBACK_LONG"
+        ],
+        "families": [
+          "trend_pullback"
+        ],
+        "capacity_score_pct": 1.049,
+        "expected_move_pct": 0.7099,
+        "reg5": "UP",
+        "reg15": "UP",
+        "volr": 3.2737554733321486,
+        "delta": 0.07117192832042611,
+        "transfer_v5": true,
+        "memory_floor": true,
+        "day_state_live": "STRONG_UP",
+        "dtd_pct": 1.1688,
+        "r3_signed_pct": 0.2821,
+        "r6_signed_pct": 0.3073,
+        "material_flow": true,
+        "risk_pct_equity": 0.1,
+        "risk_fraction_equity": 0.001,
+        "astro_day_bias": "SHORT",
+        "astro_score": -1.0,
+        "astro_aligned": false,
+        "patterns_v5": [
+          null
+        ],
+        "families_v5": [
+          "trend_pullback"
+        ]
+      },
+      "equity_after": 99.976667,
+      "risk_pct_equity": 0.1,
+      "astro_aligned": false,
+      "n": 2
+    },
+    {
+      "setup": "PATTERN_PROTOTYPE_FUSION",
+      "side": "SHORT",
+      "entry_time": "2026-08-22T09:25:00+03:30",
+      "exit_time": "2026-08-22T09:27:00+03:30",
+      "entry": 77342.4,
+      "exit": 77418.0,
+      "score": 60.644,
+      "tp_pct": 0.44,
+      "reason": "EARLY_NO_FOLLOW",
+      "mfe_pct": 0.035,
+      "mae_pct": 0.152,
+      "gross_pnl": -0.071579,
+      "cost": 0.08063,
+      "net_pnl": -0.152208,
+      "diagnostics": {
+        "prototype_p": 0.3867,
+        "prototype_winner_days": 2,
+        "prototype_threshold": 0.16999999999999998,
+        "pattern_score": 1.0,
+        "pattern_primary_families": 1,
+        "patterns": [
+          "BEAR_ENGULF"
+        ],
+        "families": [
+          "candlestick_reversal"
+        ],
+        "capacity_score_pct": 1.9741,
+        "expected_move_pct": 1.2005,
+        "reg5": "DOWN",
+        "reg15": "DOWN",
+        "volr": 0.7037059422674411,
+        "delta": -0.2115944979577294,
+        "transfer_v5": true,
+        "memory_floor": true,
+        "day_state_live": "NEUTRAL",
+        "dtd_pct": -0.1477,
+        "r3_signed_pct": 0.1375,
+        "r6_signed_pct": 0.0436,
+        "material_flow": true,
+        "risk_pct_equity": 0.25,
+        "risk_fraction_equity": 0.0025,
+        "astro_day_bias": "SHORT",
+        "astro_score": -1.0,
+        "astro_aligned": true,
+        "patterns_v5": [
+          null
+        ],
+        "families_v5": [
+          "candlestick_reversal"
+        ]
+      },
+      "equity_after": 99.824459,
+      "risk_pct_equity": 0.25,
+      "astro_aligned": true,
+      "n": 3
+    },
+    {
+      "setup": "PATTERN_PROTOTYPE_FUSION",
+      "side": "SHORT",
+      "entry_time": "2026-08-22T13:18:00+03:30",
+      "exit_time": "2026-08-22T13:20:00+03:30",
+      "entry": 76904.0,
+      "exit": 76994.1,
+      "score": 58.099,
+      "tp_pct": 0.44,
+      "reason": "EARLY_NO_FOLLOW",
+      "mfe_pct": 0.035,
+      "mae_pct": 0.151,
+      "gross_pnl": -0.067917,
+      "cost": 0.063841,
+      "net_pnl": -0.131758,
+      "diagnostics": {
+        "prototype_p": 0.3352,
+        "prototype_winner_days": 3,
+        "prototype_threshold": 0.16999999999999998,
+        "pattern_score": 0.85,
+        "pattern_primary_families": 1,
+        "patterns": [
+          "EMA_PULLBACK_SHORT"
+        ],
+        "families": [
+          "trend_pullback"
+        ],
+        "capacity_score_pct": 0.7796,
+        "expected_move_pct": 0.519,
+        "reg5": "DOWN",
+        "reg15": "DOWN",
+        "volr": 20.049360674245804,
+        "delta": -0.3692281501270264,
+        "transfer_v5": true,
+        "memory_floor": true,
+        "day_state_live": "STRONG_DOWN",
+        "dtd_pct": -0.7139,
+        "r3_signed_pct": 0.3652,
+        "r6_signed_pct": 0.3378,
+        "material_flow": true,
+        "risk_pct_equity": 0.25,
+        "risk_fraction_equity": 0.0025,
+        "astro_day_bias": "SHORT",
+        "astro_score": -1.0,
+        "astro_aligned": true,
+        "patterns_v5": [
+          null
+        ],
+        "families_v5": [
+          "trend_pullback"
+        ]
+      },
+      "equity_after": 99.692701,
+      "risk_pct_equity": 0.25,
+      "astro_aligned": true,
+      "n": 4
+    }
+  ]
+}
