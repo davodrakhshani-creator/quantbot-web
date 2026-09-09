@@ -1,0 +1,27 @@
+name: DARA Discovery100 Sep2
+on:
+  push:
+    paths:
+      - 'dara_discovery100_sep2.py'
+      - '.github/workflows/dara-discovery100-sep2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Discovery100
+        run: python dara_discovery100_sep2.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add data/dara_discovery100_sep2.json
+          git diff --cached --quiet || git commit -m "Persist DARA Discovery100 Sep2 result"
+          git push
