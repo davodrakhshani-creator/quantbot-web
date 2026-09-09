@@ -1,0 +1,415 @@
+{
+  "losses": [
+    {
+      "n": 3,
+      "side": "LONG",
+      "entry_time": "2026-08-20T00:53:00+03:30",
+      "reason": "THESIS_FAIL",
+      "net": -0.058018,
+      "mfe": 0.209,
+      "mae": 0.248,
+      "p": 0.3615,
+      "wd": 2,
+      "pattern_score": 1.6,
+      "primary": 1,
+      "patterns": [
+        "HAMMER_RECLAIM",
+        "MACD_REACCEL_LONG"
+      ],
+      "families": [
+        "momentum_continuation",
+        "wick_reversal"
+      ],
+      "cap": 1.4706,
+      "expected_move": 0.8705,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 0.4690232962097983,
+      "delta": 0.02851232764110503,
+      "dtd": 1.4282,
+      "r3": 0.32,
+      "r6": 0.52,
+      "memory_strong": true,
+      "triple": false
+    },
+    {
+      "n": 5,
+      "side": "LONG",
+      "entry_time": "2026-08-20T11:44:00+03:30",
+      "reason": "STOP",
+      "net": -0.200704,
+      "mfe": 0.126,
+      "mae": 0.369,
+      "p": 0.2637,
+      "wd": 2,
+      "pattern_score": 3.4,
+      "primary": 3,
+      "patterns": [
+        "DISPLACEMENT_CONT_LONG",
+        "BULL_FLAG_BREAK",
+        "BULL_ENGULF"
+      ],
+      "families": [
+        "candlestick_reversal",
+        "continuation",
+        "price_action_core"
+      ],
+      "cap": 0.9403,
+      "expected_move": 0.5134,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 12.64687853872286,
+      "delta": 0.3425935027635494,
+      "dtd": 3.806,
+      "r3": 0.5105,
+      "r6": 1.2912,
+      "memory_strong": false,
+      "triple": true
+    },
+    {
+      "n": 7,
+      "side": "LONG",
+      "entry_time": "2026-08-20T13:46:00+03:30",
+      "reason": "STOP",
+      "net": -0.200507,
+      "mfe": 0.22,
+      "mae": 0.322,
+      "p": 0.3414,
+      "wd": 2,
+      "pattern_score": 3.25,
+      "primary": 3,
+      "patterns": [
+        "DISPLACEMENT_CONT_LONG",
+        "BULL_FLAG_BREAK",
+        "EMA_PULLBACK_LONG"
+      ],
+      "families": [
+        "continuation",
+        "price_action_core",
+        "trend_pullback"
+      ],
+      "cap": 1.4501,
+      "expected_move": 1.0327,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 14.255612069295191,
+      "delta": 0.3693852777852296,
+      "dtd": 5.3223,
+      "r3": 0.4458,
+      "r6": 0.6849,
+      "memory_strong": true,
+      "triple": true
+    },
+    {
+      "n": 9,
+      "side": "SHORT",
+      "entry_time": "2026-08-20T18:13:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.092484,
+      "mfe": 0.014,
+      "mae": 0.114,
+      "p": 0.2518,
+      "wd": 3,
+      "pattern_score": 3.3,
+      "primary": 3,
+      "patterns": [
+        "BEAR_ENGULF",
+        "EMA_PULLBACK_SHORT",
+        "VWAP_REJECT_SHORT",
+        "MACD_REACCEL_SHORT"
+      ],
+      "families": [
+        "candlestick_reversal",
+        "intraday_value",
+        "momentum_continuation",
+        "trend_pullback"
+      ],
+      "cap": 1.521,
+      "expected_move": 1.0126,
+      "reg5": "DOWN",
+      "reg15": "RANGE",
+      "volr": 0.9204198280387484,
+      "delta": -0.24687378228063342,
+      "dtd": 4.0238,
+      "r3": 0.1137,
+      "r6": 0.2758,
+      "memory_strong": false,
+      "triple": true
+    }
+  ],
+  "wins": [
+    {
+      "n": 1,
+      "side": "LONG",
+      "entry_time": "2026-08-20T00:26:00+03:30",
+      "reason": "TP",
+      "net": 0.153488,
+      "mfe": 0.517,
+      "mae": 0.162,
+      "p": 0.3456,
+      "wd": 2,
+      "pattern_score": 0.9,
+      "primary": 1,
+      "patterns": [
+        "HAMMER_RECLAIM"
+      ],
+      "families": [
+        "wick_reversal"
+      ],
+      "cap": 0.9758,
+      "expected_move": 0.6472,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 4.6231985251641365,
+      "delta": 0.09502213278803585,
+      "dtd": 0.5609,
+      "r3": 0.0038,
+      "r6": 0.5619,
+      "memory_strong": true,
+      "triple": false
+    },
+    {
+      "n": 2,
+      "side": "LONG",
+      "entry_time": "2026-08-20T00:37:00+03:30",
+      "reason": "TP",
+      "net": 0.153724,
+      "mfe": 0.63,
+      "mae": 0.044,
+      "p": 0.3376,
+      "wd": 2,
+      "pattern_score": 1.0,
+      "primary": 1,
+      "patterns": [
+        "BULL_ENGULF"
+      ],
+      "families": [
+        "candlestick_reversal"
+      ],
+      "cap": 1.1596,
+      "expected_move": 0.743,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 2.8280666951962337,
+      "delta": 0.2659944468800235,
+      "dtd": 1.1486,
+      "r3": 0.5623,
+      "r6": 0.7443,
+      "memory_strong": true,
+      "triple": false
+    },
+    {
+      "n": 4,
+      "side": "LONG",
+      "entry_time": "2026-08-20T01:15:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.102581,
+      "mfe": 0.575,
+      "mae": 0.062,
+      "p": 0.2768,
+      "wd": 3,
+      "pattern_score": 2.6,
+      "primary": 3,
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG",
+        "VWAP_RECLAIM_LONG"
+      ],
+      "families": [
+        "candlestick_reversal",
+        "intraday_value",
+        "trend_pullback"
+      ],
+      "cap": 1.7073,
+      "expected_move": 0.965,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 0.49307005389335623,
+      "delta": 0.6222390546886835,
+      "dtd": 1.4187,
+      "r3": 0.1212,
+      "r6": 0.1735,
+      "memory_strong": false,
+      "triple": true
+    },
+    {
+      "n": 6,
+      "side": "LONG",
+      "entry_time": "2026-08-20T12:36:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.10248,
+      "mfe": 0.38,
+      "mae": 0.071,
+      "p": 0.3165,
+      "wd": 2,
+      "pattern_score": 2.6,
+      "primary": 3,
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG",
+        "VWAP_RECLAIM_LONG"
+      ],
+      "families": [
+        "candlestick_reversal",
+        "intraday_value",
+        "trend_pullback"
+      ],
+      "cap": 1.7005,
+      "expected_move": 0.9194,
+      "reg5": "UP",
+      "reg15": "UP",
+      "volr": 0.5853787318618555,
+      "delta": 0.31387819455138777,
+      "dtd": 4.3679,
+      "r3": 0.1718,
+      "r6": 0.1569,
+      "memory_strong": false,
+      "triple": true
+    },
+    {
+      "n": 8,
+      "side": "LONG",
+      "entry_time": "2026-08-20T15:02:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.10238,
+      "mfe": 0.355,
+      "mae": 0.089,
+      "p": 0.2998,
+      "wd": 2,
+      "pattern_score": 3.9,
+      "primary": 3,
+      "patterns": [
+        "BB_SQUEEZE_EXPAND_LONG",
+        "EMA_PULLBACK_LONG",
+        "VWAP_RECLAIM_LONG",
+        "MACD_REACCEL_LONG",
+        "STOCH_RANGE_REV_LONG"
+      ],
+      "families": [
+        "intraday_value",
+        "momentum_continuation",
+        "range_reversal",
+        "trend_pullback",
+        "volatility_expansion"
+      ],
+      "cap": 1.301,
+      "expected_move": 0.7541,
+      "reg5": "RANGE",
+      "reg15": "UP",
+      "volr": 2.3672603901611535,
+      "delta": 0.16524977470875,
+      "dtd": 4.9087,
+      "r3": 0.2184,
+      "r6": 0.2213,
+      "memory_strong": false,
+      "triple": true
+    }
+  ],
+  "buckets": {
+    "delta": {
+      ".05-.15": {
+        "n": 1,
+        "wr": 1.0,
+        "net": 0.153488,
+        "mfe": 0.517,
+        "mae": 0.162
+      },
+      ".15-.35": {
+        "n": 5,
+        "wr": 0.6,
+        "net": 0.06539600000000002,
+        "mfe": 0.30100000000000005,
+        "mae": 0.1374
+      },
+      "<.05": {
+        "n": 1,
+        "wr": 0.0,
+        "net": -0.058018,
+        "mfe": 0.209,
+        "mae": 0.248
+      },
+      ">=.35": {
+        "n": 2,
+        "wr": 0.5,
+        "net": -0.09792599999999999,
+        "mfe": 0.39749999999999996,
+        "mae": 0.192
+      }
+    },
+    "volr": {
+      ">=4": {
+        "n": 3,
+        "wr": 0.3333333333333333,
+        "net": -0.24772299999999997,
+        "mfe": 0.2876666666666667,
+        "mae": 0.2843333333333333
+      },
+      "2-4": {
+        "n": 2,
+        "wr": 1.0,
+        "net": 0.256104,
+        "mfe": 0.4925,
+        "mae": 0.0665
+      },
+      "<.5": {
+        "n": 2,
+        "wr": 0.5,
+        "net": 0.044563000000000005,
+        "mfe": 0.39199999999999996,
+        "mae": 0.155
+      },
+      ".5-1": {
+        "n": 2,
+        "wr": 0.5,
+        "net": 0.009996000000000005,
+        "mfe": 0.197,
+        "mae": 0.0925
+      }
+    },
+    "r3": {
+      "<.05": {
+        "n": 9,
+        "wr": 0.5555555555555556,
+        "net": 0.0629400000000001,
+        "mfe": 0.3362222222222222,
+        "mae": 0.16455555555555557
+      }
+    },
+    "r6": {
+      "<.10": {
+        "n": 9,
+        "wr": 0.5555555555555556,
+        "net": 0.0629400000000001,
+        "mfe": 0.3362222222222222,
+        "mae": 0.16455555555555557
+      }
+    },
+    "dtd": {
+      "<1": {
+        "n": 9,
+        "wr": 0.5555555555555556,
+        "net": 0.0629400000000001,
+        "mfe": 0.3362222222222222,
+        "mae": 0.16455555555555557
+      }
+    },
+    "primary": {
+      "0": {
+        "n": 9,
+        "wr": 0.5555555555555556,
+        "net": 0.0629400000000001,
+        "mfe": 0.3362222222222222,
+        "mae": 0.16455555555555557
+      }
+    },
+    "p": {
+      "<.30": {
+        "n": 9,
+        "wr": 0.5555555555555556,
+        "net": 0.0629400000000001,
+        "mfe": 0.3362222222222222,
+        "mae": 0.16455555555555557
+      }
+    }
+  }
+}
