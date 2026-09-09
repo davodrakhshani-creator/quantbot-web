@@ -1,0 +1,30 @@
+name: DARA Astro FullGrid
+on:
+  push:
+    paths:
+      - 'dara_astro_fullgrid_features.py'
+      - 'dara_astro_fullgrid_calibration.py'
+      - '.github/workflows/dara-astro-fullgrid.yml'
+permissions:
+  contents: write
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Swiss Ephemeris
+        run: pip install pyswisseph
+      - name: Smoke test 11-factor grid
+        run: python dara_astro_fullgrid_features.py 2026-09-07T12:00:00+00:00 > /tmp/fullgrid.json
+      - name: Calibrate 11-factor grid on BTC
+        run: python dara_astro_fullgrid_calibration.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_astro_fullgrid_summary_2022_2026.json
+          git diff --cached --quiet || git commit -m "Persist DARA full-grid astro calibration"
+          git push
