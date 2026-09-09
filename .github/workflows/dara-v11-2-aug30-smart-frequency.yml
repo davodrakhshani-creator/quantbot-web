@@ -1,0 +1,26 @@
+name: DARA v11.2 Smart Frequency Aug30
+on:
+  push:
+    paths:
+      - 'dara_v11_2_aug30_smart_frequency.py'
+      - '.github/workflows/dara-v11-2-aug30-smart-frequency.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v11.2 Aug30
+        run: python dara_v11_2_aug30_smart_frequency.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v11_2_aug30_smart_frequency.json
+          git diff --cached --quiet || git commit -m "Persist DARA v11.2 Aug30 result"
+          git push
