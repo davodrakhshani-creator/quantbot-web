@@ -1,3 +1,4 @@
+# trigger-only change; trading rules remain frozen
 import json
 from dataclasses import asdict
 from datetime import date,datetime,timezone
@@ -49,7 +50,6 @@ def build_candidate(i,m,f5,f15,side,exz,mu,sd,base_threshold,ab,day_open,stage):
  return (setup,s,stop,ei,round(score,3),diag,tp),pol
 
 def main():
- # Astro is computed first, before any Aug21 market bars are used by the trading engine.
  ab=astro.day_bias(DAY)
  ex,counts,wins=v18.build_training();mu,sd=v18.scaling(ex);exz=[{**q,'z':v18.zv(q['vec'],mu,sd)} for q in ex];th,cv=v18.choose_threshold(ex,exz)
  m,f5,f15,idx=v18.load_market((2026,8,20),(2026,8,22));pm.enrich_indicators(m);inds=[i for i,z in enumerate(m) if S<=z['t']<E];day_open=m[inds[0]]['o']
