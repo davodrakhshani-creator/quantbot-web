@@ -1,0 +1,136 @@
+{
+  "version": "DARA-v14-Control-Persistence-Aug30-Development",
+  "period_tehran": [
+    "2026-08-30T00:00:00+03:30",
+    "2026-08-31T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "architecture": [
+    "Decision context remains 1m/5m/15m",
+    "5s aggTrades micro-bars used only for execution/flow trigger inside the 1m decision horizon",
+    "Three playbooks: micro sweep reversal, absorption flip, micro failed pullback"
+  ],
+  "rules": [
+    "Decision context 1m/5m/15m; 5s aggTrades only for intra-minute execution confirmation.",
+    "0.25% full-stop risk including 0.11% modeled friction, max 3x notional, -1% daily stop.",
+    "No normal profitable exit before +0.385% gross move = 3.5x modeled round-trip friction.",
+    "50% first TP + 50% runner; negative thesis may exit early only when non-positive."
+  ],
+  "methodology_notes": [
+    "Aug30 is development data for v14 because v13 Aug30 diagnostics were inspected before this revision.",
+    "Historical full L2 remains unavailable; raw Binance futures aggTrades give actual aggressor-side trade flow but not resting liquidity."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 100.051123,
+    "net_pnl": 0.051123,
+    "return_pct": 0.051,
+    "trades": 2,
+    "wins": 1,
+    "losses": 1,
+    "win_rate": 50.0,
+    "gross_pnl": 0.20406,
+    "modeled_costs": 0.152936,
+    "pf_net": 1.38,
+    "max_dd_pct": 0.134
+  },
+  "by_setup": {
+    "MICRO_SWEEP_REVERSAL": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    },
+    "ABSORPTION_FLIP": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    },
+    "MICRO_FAILED_PULLBACK": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "net_pnl": 0.051122,
+      "pf_net": 1.38
+    }
+  },
+  "reject_counts": {
+    "no_signal": 16033,
+    "activity_gate": 280,
+    "long_persistence": 140,
+    "short_persistence": 31
+  },
+  "trades": [
+    {
+      "setup": "MICRO_FAILED_PULLBACK",
+      "side": "LONG",
+      "entry_time": "2026-08-30T19:42:30+03:30",
+      "exit_time": "2026-08-30T19:44:20+03:30",
+      "entry": 78819.9,
+      "exit": 79066.6,
+      "tp_pct": 0.385,
+      "profit_floor_pct": 0.385,
+      "stop_pct": 0.213,
+      "mfe_pct": 0.453,
+      "reason": "TP3.5FEE+RUNNER",
+      "diagnostics": {
+        "one_delta": -0.7068451394871117,
+        "one_volr": 1.1642343743972843,
+        "y_delta": 0.6672443674176777,
+        "w_delta": 0.8734473184275903,
+        "r5": "UP",
+        "r15": "UP",
+        "tp_pct": 0.38546509912937726,
+        "confirm30_delta": 0.38352518876098557,
+        "confirm30_progress_pct": 0.07173373453439602,
+        "v14": "30s persistent control + >=0.07% price impact + activity gate"
+      },
+      "notional": 77.490413,
+      "gross_pnl": 0.270619,
+      "cost": 0.085239,
+      "net_pnl": 0.185379,
+      "equity_before": 100.0,
+      "equity_after": 100.185379
+    },
+    {
+      "setup": "MICRO_FAILED_PULLBACK",
+      "side": "LONG",
+      "entry_time": "2026-08-30T20:27:20+03:30",
+      "exit_time": "2026-08-30T20:30:20+03:30",
+      "entry": 79334.0,
+      "exit": 79248.2,
+      "tp_pct": 0.421,
+      "profit_floor_pct": 0.385,
+      "stop_pct": 0.297,
+      "mfe_pct": 0.064,
+      "reason": "MICRO_VELOCITY_FAIL",
+      "diagnostics": {
+        "one_delta": -0.20294376449884008,
+        "one_volr": 0.35644072508500413,
+        "y_delta": 0.8629638060550872,
+        "w_delta": 0.8003342618384404,
+        "r5": "UP",
+        "r15": "UP",
+        "tp_pct": 0.4210000032027556,
+        "confirm30_delta": 0.5630062997804428,
+        "confirm30_progress_pct": 0.16919191919191334,
+        "v14": "30s persistent control + >=0.07% price impact + activity gate"
+      },
+      "notional": 61.543169,
+      "gross_pnl": -0.066559,
+      "cost": 0.067697,
+      "net_pnl": -0.134257,
+      "equity_before": 100.185379,
+      "equity_after": 100.051123
+    }
+  ],
+  "change_from_v13": [
+    "Candidate micro reversal/pullback must be followed by 30 seconds of persistent opposite-side control before entry.",
+    "Confirmation must move price at least 0.07% in the intended direction; flow flip without price impact is rejected.",
+    "5m ATR must be >=0.10% and 15m ATR >=0.18% to avoid paying friction in dead micro-noise.",
+    "Max 6 trades/day, 30m cooldown, 60m same-side lock after loss."
+  ]
+}
