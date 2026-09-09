@@ -1,0 +1,32 @@
+name: DARA Astro Calibration
+on:
+  push:
+    paths:
+      - 'dara_astro_features.py'
+      - 'dara_astro_daily_calibration.py'
+      - 'data/dara_astro_hypothesis_library_v1.json'
+      - '.github/workflows/dara-astro-calibration.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install astronomy engine
+        run: pip install astronomy-engine
+      - name: Smoke test ephemeris
+        run: python dara_astro_features.py 2026-09-06T12:00:00+00:00 > /tmp/astro.json
+      - name: Calibrate BTC astronomy hypotheses
+        run: python dara_astro_daily_calibration.py
+      - name: Persist calibration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_astro_calibration_2022_2026.json
+          git diff --cached --quiet || git commit -m "Persist DARA astro calibration"
+          git push
