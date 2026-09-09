@@ -12,6 +12,7 @@ TEHRAN=v18.TEHRAN;DAY=date(2026,8,22)
 START=datetime(2026,8,22,0,0,tzinfo=TEHRAN);END=datetime(2026,8,23,0,0,tzinfo=TEHRAN)
 S=int(START.astimezone(timezone.utc).timestamp()*1000);E=int(END.astimezone(timezone.utc).timestamp()*1000)
 OUT=Path('data/dara_aug22_transfer_v5.json')
+# Frozen transfer replay: rules below were derived before inspecting Aug22.
 
 def day_state(i,m,a15,day_open):
  dtd=m[i]['c']/day_open-1
@@ -29,7 +30,6 @@ def build_candidate(i,m,f5,f15,side,exz,mu,sd,base_threshold,ab,day_open,stage):
  ps,primary,weak,matches=v19.pattern_side(m,i,side)
  z=m[i];a5,a15=v18.b.ctx(z,f5,f15)
  if not a5 or not a15:return None
- # v5 lesson 1: pattern count cannot override weak memory. Require p>=0.32 always.
  if p<.32:stage['reject_memory_floor']+=1;return None
  patterns=[x.get('name') for x in matches]
  families=set(x.get('family') for x in matches)
@@ -45,15 +45,12 @@ def build_candidate(i,m,f5,f15,side,exz,mu,sd,base_threshold,ab,day_open,stage):
  sg=1 if side=='LONG' else -1
  r3=sg*(z['c']/m[i-3]['c']-1);r6=sg*(z['c']/m[i-6]['c']-1)
  if max(r3,r6)<.00025:stage['reject_no_price_response']+=1;return None
- # v5 lesson 2: after >=2% day extension, no ordinary chase. Require p>=0.40 AND both 3m/6m signed response >=0.25%.
  if abs(dtd)>=.02:
   if p<.40 or min(r3,r6)<.0025:
    stage['reject_late_extension']+=1;return None
- # v5 lesson 3: extreme volume is only accepted with true pullback/continuation context, not a lone candle reversal.
  if vol>=8:
   if not(('trend_pullback' in families) or ('continuation' in families) or ('price_action_core' in families)):
    stage['reject_highvol_no_structure']+=1;return None
- # keep v4 exhaustion guard for large extension + extreme volume
  if abs(dtd)>=.02 and vol>=8:stage['reject_exhaustion_chase']+=1;return None
  x=v19.fused_candidate(i,m,f5,f15,side,p,wd,th)
  if not x:return None
@@ -63,7 +60,6 @@ def build_candidate(i,m,f5,f15,side,exz,mu,sd,base_threshold,ab,day_open,stage):
  return (setup,s,stop,ei,round(score+2,3),diag,tp),pol
 
 def main():
- # Freeze astro first, before Aug22 market bars are loaded.
  ab=astro.day_bias(DAY)
  ex,counts,wins=v18.build_training();mu,sd=v18.scaling(ex);exz=[{**q,'z':v18.zv(q['vec'],mu,sd)} for q in ex];th,cv=v18.choose_threshold(ex,exz)
  m,f5,f15,idx=v18.load_market((2026,8,21),(2026,8,23));pm.enrich_indicators(m)
