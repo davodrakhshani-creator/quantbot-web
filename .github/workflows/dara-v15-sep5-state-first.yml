@@ -1,0 +1,26 @@
+name: DARA v15 Sep5 State First
+on:
+  push:
+    paths:
+      - 'dara_v15_sep5_state_first.py'
+      - '.github/workflows/dara-v15-sep5-state-first.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v15 Sep5
+        run: python dara_v15_sep5_state_first.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v15_sep5_state_first.json
+          git diff --cached --quiet || git commit -m "Persist DARA v15 Sep5 result"
+          git push
