@@ -1,0 +1,39 @@
+name: DARA v1.1 Sep1 InSample
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dara_v1_1_sep1.py'
+      - '.github/workflows/dara-v1-1-sep1.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dara-v1-1-sep1
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run DARA v1.1 Sep1 in-sample replay
+        run: python dara_v1_1_sep1.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dara_v1_1_sep1.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add DARA v1.1 Sep1 in-sample result"
+          git pull --rebase origin main
+          git push origin HEAD:main
