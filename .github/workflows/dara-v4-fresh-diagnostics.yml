@@ -1,0 +1,30 @@
+name: DARA v4 Fresh Diagnostics
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dara_v4_fresh_diagnostics.py'
+      - '.github/workflows/dara-v4-fresh-diagnostics.yml'
+permissions:
+  contents: write
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python dara_v4_fresh_diagnostics.py
+      - run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dara_v4_fresh_diagnostics.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add DARA v4 Fresh diagnostics"
+          git pull --rebase origin main
+          git push origin HEAD:main
