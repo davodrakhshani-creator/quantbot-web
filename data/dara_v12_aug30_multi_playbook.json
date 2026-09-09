@@ -1,0 +1,191 @@
+{
+  "version": "DARA-v12-MultiPlaybook-Aug30-Frozen",
+  "period_tehran": [
+    "2026-08-30T00:00:00+03:30",
+    "2026-08-31T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "design": [
+    "5 independent 1m/5m/15m playbooks: liquidity reversal, failed pullback, VWAP reclaim, compression breakout, micro pullback",
+    "No timeframe above 15m",
+    "Max 15 trades/day, 5m cooldown, 20m same-side loss lock",
+    "Normal profit target never below 0.33% gross (=3x 0.11% roundtrip fee); target prefers 0.44% (=4x fee) when ATR capacity allows"
+  ],
+  "research_basis": [
+    "Recent crypto evidence shows short-horizon taker-flow moves can mean-revert, so reversal and continuation are separate playbooks.",
+    "Breakout only accepted with participation + next-minute hold; failed pressure/reclaim handled separately."
+  ],
+  "overall": {
+    "final_equity": 99.05051,
+    "net_pnl": -0.94949,
+    "return_pct": -0.949,
+    "candidate_signals_seen": 24,
+    "trades": 5,
+    "wins": 0,
+    "losses": 5,
+    "win_rate": 0.0,
+    "gross_pnl": -0.510803,
+    "modeled_costs": 0.438687,
+    "pf_net": 0.0,
+    "max_dd_pct": 0.949
+  },
+  "by_setup": {
+    "LIQUIDITY_REVERSAL": {
+      "trades": 0,
+      "wins": 0,
+      "net": 0
+    },
+    "FAILED_PULLBACK": {
+      "trades": 0,
+      "wins": 0,
+      "net": 0
+    },
+    "VWAP_RECLAIM": {
+      "trades": 5,
+      "wins": 0,
+      "net": -0.949489
+    },
+    "COMPRESSION_BREAK": {
+      "trades": 0,
+      "wins": 0,
+      "net": 0
+    },
+    "MICRO_PULLBACK": {
+      "trades": 0,
+      "wins": 0,
+      "net": 0
+    }
+  },
+  "trades": [
+    {
+      "setup": "VWAP_RECLAIM",
+      "side": "LONG",
+      "entry_time": "2026-08-30T17:14:00+03:30",
+      "exit_time": "2026-08-30T18:45:00+03:30",
+      "entry": 78786.3,
+      "exit": 78607.14,
+      "score": 9,
+      "tp_pct": 0.359,
+      "stop_pct": 0.227,
+      "reason": "STOP",
+      "mfe_pct": 0.195,
+      "gross_pnl": -0.168493,
+      "cost": 0.081507,
+      "net_pnl": -0.25,
+      "equity_before": 100.0,
+      "equity_after": 99.75,
+      "diagnostics": {
+        "delta": 0.7148106507253134,
+        "hold_delta": 0.5150412019723996,
+        "volr": 1.259589313161667,
+        "regime5": "UP",
+        "regime15": "UP"
+      }
+    },
+    {
+      "setup": "VWAP_RECLAIM",
+      "side": "LONG",
+      "entry_time": "2026-08-30T19:34:00+03:30",
+      "exit_time": "2026-08-30T19:41:00+03:30",
+      "entry": 78888.7,
+      "exit": 78740.29,
+      "score": 9,
+      "tp_pct": 0.355,
+      "stop_pct": 0.188,
+      "reason": "STOP",
+      "mfe_pct": 0.131,
+      "gross_pnl": -0.157362,
+      "cost": 0.092013,
+      "net_pnl": -0.249375,
+      "equity_before": 99.75,
+      "equity_after": 99.500625,
+      "diagnostics": {
+        "delta": 0.48987750935692415,
+        "hold_delta": 0.5768809429911045,
+        "volr": 2.3076998576826813,
+        "regime5": "UP",
+        "regime15": "UP"
+      }
+    },
+    {
+      "setup": "VWAP_RECLAIM",
+      "side": "LONG",
+      "entry_time": "2026-08-30T20:04:00+03:30",
+      "exit_time": "2026-08-30T20:17:00+03:30",
+      "entry": 79139.4,
+      "exit": 79116.0,
+      "score": 8,
+      "tp_pct": 0.427,
+      "stop_pct": 0.24,
+      "reason": "VELOCITY_FAIL",
+      "mfe_pct": 0.116,
+      "gross_pnl": -0.020995,
+      "cost": 0.078106,
+      "net_pnl": -0.099101,
+      "equity_before": 99.500625,
+      "equity_after": 99.401524,
+      "diagnostics": {
+        "delta": 0.6787053264414227,
+        "hold_delta": 0.5915860501945122,
+        "volr": 0.9084395987525254,
+        "regime5": "UP",
+        "regime15": "UP"
+      }
+    },
+    {
+      "setup": "VWAP_RECLAIM",
+      "side": "LONG",
+      "entry_time": "2026-08-30T22:05:00+03:30",
+      "exit_time": "2026-08-30T22:17:00+03:30",
+      "entry": 79128.4,
+      "exit": 79027.2,
+      "score": 9,
+      "tp_pct": 0.44,
+      "stop_pct": 0.234,
+      "reason": "VELOCITY_FAIL",
+      "mfe_pct": 0.024,
+      "gross_pnl": -0.092346,
+      "cost": 0.079426,
+      "net_pnl": -0.171771,
+      "equity_before": 99.401524,
+      "equity_after": 99.229752,
+      "diagnostics": {
+        "delta": 0.18763398397833703,
+        "hold_delta": 0.4067207012905695,
+        "volr": 1.9298436615424812,
+        "regime5": "RANGE",
+        "regime15": "UP"
+      }
+    },
+    {
+      "setup": "VWAP_RECLAIM",
+      "side": "LONG",
+      "entry_time": "2026-08-30T22:39:00+03:30",
+      "exit_time": "2026-08-30T22:51:00+03:30",
+      "entry": 78983.7,
+      "exit": 78925.9,
+      "score": 8,
+      "tp_pct": 0.343,
+      "stop_pct": 0.144,
+      "reason": "VELOCITY_FAIL",
+      "mfe_pct": 0.032,
+      "gross_pnl": -0.071607,
+      "cost": 0.107635,
+      "net_pnl": -0.179242,
+      "equity_before": 99.229752,
+      "equity_after": 99.05051,
+      "diagnostics": {
+        "delta": 0.4482552077556182,
+        "hold_delta": -0.017440479019151304,
+        "volr": 4.541992039901254,
+        "regime5": "RANGE",
+        "regime15": "UP"
+      }
+    }
+  ],
+  "methodology_notes": [
+    "Aug30 was already checked by narrower DARA and produced zero trades, so this is development evidence, not pristine OOS.",
+    "v12 playbook definitions were fixed before this run; no parameter changed after seeing v12 Aug30 output.",
+    "Historical full L2 unavailable; Binance USD-M 1m taker-buy volume/delta is aggressor-flow proxy."
+  ]
+}
