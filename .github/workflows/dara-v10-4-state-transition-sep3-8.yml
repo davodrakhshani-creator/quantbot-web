@@ -1,0 +1,29 @@
+name: DARA v10.4 State Transition Sep3-8
+
+on:
+  push:
+    paths:
+      - 'dara_v10_4_state_transition_sep3_8.py'
+      - '.github/workflows/dara-v10-4-state-transition-sep3-8.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v10.4 Sep3-8
+        run: python dara_v10_4_state_transition_sep3_8.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v10_4_state_transition_sep3_8.json
+          git diff --cached --quiet || git commit -m "Persist DARA v10.4 Sep3-8 result"
+          git push
