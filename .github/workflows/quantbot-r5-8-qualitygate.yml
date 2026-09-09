@@ -1,0 +1,42 @@
+name: QuantBot R5.8 HTF QualityGate Sep1-8
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'r5_8_qualitygate.py'
+      - '.github/workflows/quantbot-r5-8-qualitygate.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quantbot-r5-8-qualitygate
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run frozen R5.8 Sep1-8 backtest
+        run: python r5_8_qualitygate.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/r5_8_qualitygate_sep1_8.json
+          if git diff --cached --quiet; then
+            echo "No result change"
+            exit 0
+          fi
+          git commit -m "Add R5.8 HTF QualityGate Sep1-8 result"
+          git pull --rebase origin main
+          git push origin HEAD:main
