@@ -1,0 +1,1103 @@
+{
+  "baseline": {
+    "stats": {
+      "n": 25,
+      "valid_positive": 8,
+      "net_positive": 8,
+      "negative_or_invalid": 17,
+      "valid_wr": 32.0,
+      "gross": 0.495007,
+      "cost": 1.555185,
+      "net": -1.060181,
+      "pf_net": 0.52,
+      "mfe": 0.196,
+      "mae": 0.123
+    },
+    "by_side": {
+      "LONG": {
+        "n": 16,
+        "valid_positive": 6,
+        "net_positive": 6,
+        "negative_or_invalid": 10,
+        "valid_wr": 37.5,
+        "gross": 0.505642,
+        "cost": 1.010102,
+        "net": -0.504463,
+        "pf_net": 0.64,
+        "mfe": 0.224,
+        "mae": 0.13
+      },
+      "SHORT": {
+        "n": 9,
+        "valid_positive": 2,
+        "net_positive": 2,
+        "negative_or_invalid": 7,
+        "valid_wr": 22.2,
+        "gross": -0.010635,
+        "cost": 0.545083,
+        "net": -0.555718,
+        "pf_net": 0.3,
+        "mfe": 0.147,
+        "mae": 0.112
+      }
+    },
+    "start_equity": 100.0,
+    "final_equity": 98.939819,
+    "return_pct": -1.0602,
+    "max_drawdown_pct": 1.3083,
+    "daily_stop_hit": true,
+    "trades": 25
+  },
+  "all": {
+    "n": 25,
+    "wins": 8,
+    "wr": 32.0,
+    "gross": 0.495007,
+    "cost": 1.555185,
+    "net": -1.060181,
+    "pf": 0.52,
+    "mfe": 0.196,
+    "mae": 0.123
+  },
+  "losses": {
+    "n": 17,
+    "wins": 0,
+    "wr": 0.0,
+    "gross": -1.115624,
+    "cost": 1.096572,
+    "net": -2.212197,
+    "pf": 0.0,
+    "mfe": 0.072,
+    "mae": 0.154
+  },
+  "wins": {
+    "n": 8,
+    "wins": 8,
+    "wr": 100.0,
+    "gross": 1.610631,
+    "cost": 0.458613,
+    "net": 1.152016,
+    "pf": 99,
+    "mfe": 0.461,
+    "mae": 0.058
+  },
+  "by_exit_reason": {
+    "3FEE_FLOOR": {
+      "n": 4,
+      "wins": 4,
+      "wr": 100.0,
+      "gross": 0.671465,
+      "cost": 0.223822,
+      "net": 0.447643,
+      "pf": 99,
+      "mfe": 0.392,
+      "mae": 0.035
+    },
+    "EARLY_NO_FOLLOW": {
+      "n": 10,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.671663,
+      "cost": 0.624418,
+      "net": -1.29608,
+      "pf": 0.0,
+      "mfe": 0.01,
+      "mae": 0.161
+    },
+    "STOP": {
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.372603,
+      "cost": 0.22807,
+      "net": -0.600674,
+      "pf": 0.0,
+      "mfe": 0.112,
+      "mae": 0.218
+    },
+    "THESIS_FAIL": {
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.071358,
+      "cost": 0.244084,
+      "net": -0.315443,
+      "pf": 0.0,
+      "mfe": 0.196,
+      "mae": 0.088
+    },
+    "TP": {
+      "n": 4,
+      "wins": 4,
+      "wr": 100.0,
+      "gross": 0.939166,
+      "cost": 0.234791,
+      "net": 0.704373,
+      "pf": 99,
+      "mfe": 0.529,
+      "mae": 0.081
+    }
+  },
+  "by_side": {
+    "LONG": {
+      "n": 16,
+      "wins": 6,
+      "wr": 37.5,
+      "gross": 0.505642,
+      "cost": 1.010102,
+      "net": -0.504463,
+      "pf": 0.64,
+      "mfe": 0.224,
+      "mae": 0.13
+    },
+    "SHORT": {
+      "n": 9,
+      "wins": 2,
+      "wr": 22.2,
+      "gross": -0.010635,
+      "cost": 0.545083,
+      "net": -0.555718,
+      "pf": 0.3,
+      "mfe": 0.147,
+      "mae": 0.112
+    }
+  },
+  "by_hour4": {
+    "00-03": {
+      "n": 23,
+      "wins": 8,
+      "wr": 34.8,
+      "gross": 0.523146,
+      "cost": 1.451484,
+      "net": -0.928341,
+      "pf": 0.55,
+      "mfe": 0.207,
+      "mae": 0.121
+    },
+    "04-07": {
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.028139,
+      "cost": 0.103701,
+      "net": -0.13184,
+      "pf": 0.0,
+      "mfe": 0.07,
+      "mae": 0.157
+    }
+  },
+  "by_regime_pair": {
+    "UP/DOWN": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.118395,
+      "cost": 0.081527,
+      "net": -0.199922,
+      "pf": 0.0,
+      "mfe": 0.065,
+      "mae": 0.165
+    },
+    "UP/RANGE": {
+      "n": 7,
+      "wins": 2,
+      "wr": 28.6,
+      "gross": 0.176226,
+      "cost": 0.451934,
+      "net": -0.275712,
+      "pf": 0.56,
+      "mfe": 0.176,
+      "mae": 0.109
+    },
+    "UP/UP": {
+      "n": 17,
+      "wins": 6,
+      "wr": 35.3,
+      "gross": 0.437176,
+      "cost": 1.021724,
+      "net": -0.584547,
+      "pf": 0.58,
+      "mfe": 0.213,
+      "mae": 0.127
+    }
+  },
+  "by_regime_alignment": {
+    "ALIGNED": {
+      "n": 12,
+      "wins": 4,
+      "wr": 33.3,
+      "gross": 0.222343,
+      "cost": 0.741025,
+      "net": -0.518682,
+      "pf": 0.52,
+      "mfe": 0.227,
+      "mae": 0.129
+    },
+    "MIXED_OR_OPPOSED": {
+      "n": 13,
+      "wins": 4,
+      "wr": 30.8,
+      "gross": 0.272664,
+      "cost": 0.81416,
+      "net": -0.541499,
+      "pf": 0.52,
+      "mfe": 0.169,
+      "mae": 0.118
+    }
+  },
+  "by_flow_sign": {
+    "ALIGNED": {
+      "n": 20,
+      "wins": 7,
+      "wr": 35.0,
+      "gross": 0.557174,
+      "cost": 1.192837,
+      "net": -0.635665,
+      "pf": 0.62,
+      "mfe": 0.201,
+      "mae": 0.123
+    },
+    "OPPOSED": {
+      "n": 5,
+      "wins": 1,
+      "wr": 20.0,
+      "gross": -0.062167,
+      "cost": 0.362348,
+      "net": -0.424516,
+      "pf": 0.24,
+      "mfe": 0.179,
+      "mae": 0.123
+    }
+  },
+  "by_proto_bucket": {
+    ".25-.35": {
+      "n": 9,
+      "wins": 4,
+      "wr": 44.4,
+      "gross": 0.665614,
+      "cost": 0.539813,
+      "net": 0.125797,
+      "pf": 1.23,
+      "mfe": 0.267,
+      "mae": 0.119
+    },
+    "<.25": {
+      "n": 16,
+      "wins": 4,
+      "wr": 25.0,
+      "gross": -0.170607,
+      "cost": 1.015372,
+      "net": -1.185978,
+      "pf": 0.28,
+      "mfe": 0.157,
+      "mae": 0.126
+    }
+  },
+  "by_pattern_bucket": {
+    "1.8-2.5": {
+      "n": 12,
+      "wins": 3,
+      "wr": 25.0,
+      "gross": -0.186384,
+      "cost": 0.762481,
+      "net": -0.948863,
+      "pf": 0.25,
+      "mfe": 0.168,
+      "mae": 0.119
+    },
+    "2.5-3.5": {
+      "n": 4,
+      "wins": 1,
+      "wr": 25.0,
+      "gross": 0.015777,
+      "cost": 0.252891,
+      "net": -0.237115,
+      "pf": 0.39,
+      "mfe": 0.125,
+      "mae": 0.145
+    },
+    "<1.8": {
+      "n": 9,
+      "wins": 4,
+      "wr": 44.4,
+      "gross": 0.665614,
+      "cost": 0.539813,
+      "net": 0.125797,
+      "pf": 1.23,
+      "mfe": 0.267,
+      "mae": 0.119
+    }
+  },
+  "by_vol_bucket": {
+    ".5-1": {
+      "n": 10,
+      "wins": 3,
+      "wr": 30.0,
+      "gross": 0.341938,
+      "cost": 0.659091,
+      "net": -0.317154,
+      "pf": 0.63,
+      "mfe": 0.206,
+      "mae": 0.093
+    },
+    "1-2": {
+      "n": 8,
+      "wins": 1,
+      "wr": 12.5,
+      "gross": -0.334335,
+      "cost": 0.512617,
+      "net": -0.846953,
+      "pf": 0.11,
+      "mfe": 0.11,
+      "mae": 0.155
+    },
+    "2-4": {
+      "n": 3,
+      "wins": 2,
+      "wr": 66.7,
+      "gross": 0.270084,
+      "cost": 0.153557,
+      "net": 0.116526,
+      "pf": 1.84,
+      "mfe": 0.329,
+      "mae": 0.113
+    },
+    "<.5": {
+      "n": 3,
+      "wins": 1,
+      "wr": 33.3,
+      "gross": 0.013161,
+      "cost": 0.17888,
+      "net": -0.165719,
+      "pf": 0.38,
+      "mfe": 0.158,
+      "mae": 0.139
+    },
+    ">=4": {
+      "n": 1,
+      "wins": 1,
+      "wr": 100.0,
+      "gross": 0.204159,
+      "cost": 0.05104,
+      "net": 0.153119,
+      "pf": 99,
+      "mfe": 0.517,
+      "mae": 0.162
+    }
+  },
+  "by_delta_bucket": {
+    ".2-.4": {
+      "n": 7,
+      "wins": 3,
+      "wr": 42.9,
+      "gross": 0.362533,
+      "cost": 0.441147,
+      "net": -0.078614,
+      "pf": 0.83,
+      "mfe": 0.286,
+      "mae": 0.068
+    },
+    ".4-.6": {
+      "n": 11,
+      "wins": 3,
+      "wr": 27.3,
+      "gross": -0.08824,
+      "cost": 0.630774,
+      "net": -0.719016,
+      "pf": 0.34,
+      "mfe": 0.159,
+      "mae": 0.145
+    },
+    "<.2": {
+      "n": 6,
+      "wins": 2,
+      "wr": 33.3,
+      "gross": 0.269094,
+      "cost": 0.409202,
+      "net": -0.140109,
+      "pf": 0.74,
+      "mfe": 0.192,
+      "mae": 0.148
+    },
+    ">=.6": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.04838,
+      "cost": 0.074062,
+      "net": -0.122442,
+      "pf": 0.0,
+      "mfe": 0.003,
+      "mae": 0.132
+    }
+  },
+  "by_dtd_state": {
+    "NEUTRAL": {
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.089957,
+      "cost": 0.15052,
+      "net": -0.240477,
+      "pf": 0.0,
+      "mfe": 0.008,
+      "mae": 0.108
+    },
+    "UP_STRONG": {
+      "n": 23,
+      "wins": 8,
+      "wr": 34.8,
+      "gross": 0.584964,
+      "cost": 1.404665,
+      "net": -0.819704,
+      "pf": 0.58,
+      "mfe": 0.213,
+      "mae": 0.125
+    }
+  },
+  "by_side_vs_dtd": {
+    "AGAINST": {
+      "n": 9,
+      "wins": 2,
+      "wr": 22.2,
+      "gross": -0.010635,
+      "cost": 0.545083,
+      "net": -0.555718,
+      "pf": 0.3,
+      "mfe": 0.147,
+      "mae": 0.112
+    },
+    "NEUTRAL": {
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.089957,
+      "cost": 0.15052,
+      "net": -0.240477,
+      "pf": 0.0,
+      "mfe": 0.008,
+      "mae": 0.108
+    },
+    "WITH": {
+      "n": 14,
+      "wins": 6,
+      "wr": 42.9,
+      "gross": 0.595599,
+      "cost": 0.859582,
+      "net": -0.263986,
+      "pf": 0.78,
+      "mfe": 0.255,
+      "mae": 0.133
+    }
+  },
+  "failure_families": {
+    "NO_FOLLOW": {
+      "n": 11,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.790427,
+      "cost": 0.706068,
+      "net": -1.496495,
+      "pf": 0.0,
+      "mfe": 0.011,
+      "mae": 0.164
+    },
+    "FEE_INSUFFICIENT": {
+      "n": 4,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.19862,
+      "cost": 0.255933,
+      "net": -0.454554,
+      "pf": 0.0,
+      "mfe": 0.231,
+      "mae": 0.112
+    },
+    "WEAK_PROGRESS": {
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "gross": -0.126577,
+      "cost": 0.134571,
+      "net": -0.261148,
+      "pf": 0.0,
+      "mfe": 0.091,
+      "mae": 0.185
+    }
+  },
+  "trade_digest": [
+    {
+      "n": 1,
+      "side": "LONG",
+      "entry": "2026-08-20T00:04:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.122442,
+      "mfe": 0.003,
+      "mae": 0.132,
+      "p": 0.0797,
+      "wd": 1,
+      "ps": 2.6,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 1.1795600230169048,
+      "delta": 0.6712515692374869,
+      "dtd": 0.1048,
+      "side_vs_dtd": "NEUTRAL",
+      "patterns": [
+        "MORNING_STAR",
+        "EMA_PULLBACK_LONG",
+        "VWAP_RECLAIM_LONG"
+      ]
+    },
+    {
+      "n": 2,
+      "side": "LONG",
+      "entry": "2026-08-20T00:11:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.118035,
+      "mfe": 0.013,
+      "mae": 0.084,
+      "p": 0.095,
+      "wd": 1,
+      "ps": 2.6,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.2902274507296645,
+      "delta": 0.08643811097342705,
+      "dtd": 0.0387,
+      "side_vs_dtd": "NEUTRAL",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG",
+        "VWAP_RECLAIM_LONG"
+      ]
+    },
+    {
+      "n": 3,
+      "side": "LONG",
+      "entry": "2026-08-20T00:26:00+03:30",
+      "reason": "TP",
+      "net": 0.153119,
+      "mfe": 0.517,
+      "mae": 0.162,
+      "p": 0.3456,
+      "wd": 2,
+      "ps": 0.9,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 4.6231985251641365,
+      "delta": 0.09502213278803585,
+      "dtd": 0.7785,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "HAMMER_RECLAIM"
+      ]
+    },
+    {
+      "n": 4,
+      "side": "LONG",
+      "entry": "2026-08-20T00:37:00+03:30",
+      "reason": "TP",
+      "net": 0.153354,
+      "mfe": 0.63,
+      "mae": 0.044,
+      "p": 0.3376,
+      "wd": 2,
+      "ps": 1.0,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 2.8280666951962337,
+      "delta": 0.2659944468800235,
+      "dtd": 1.5416,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF"
+      ]
+    },
+    {
+      "n": 5,
+      "side": "LONG",
+      "entry": "2026-08-20T00:50:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.102393,
+      "mfe": 0.462,
+      "mae": 0.027,
+      "p": 0.2002,
+      "wd": 2,
+      "ps": 2.4,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.4918460617807646,
+      "delta": 0.29589511902044463,
+      "dtd": 1.154,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG",
+        "STOCH_RANGE_REV_LONG"
+      ]
+    },
+    {
+      "n": 6,
+      "side": "LONG",
+      "entry": "2026-08-20T00:59:00+03:30",
+      "reason": "STOP",
+      "net": -0.200337,
+      "mfe": 0.257,
+      "mae": 0.302,
+      "p": 0.1946,
+      "wd": 1,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 1.6336411056239157,
+      "delta": 0.5726126472643729,
+      "dtd": 1.3606,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 7,
+      "side": "LONG",
+      "entry": "2026-08-20T01:12:00+03:30",
+      "reason": "TP",
+      "net": 0.153439,
+      "mfe": 0.484,
+      "mae": 0.057,
+      "p": 0.0925,
+      "wd": 2,
+      "ps": 2.55,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.5648948649619941,
+      "delta": 0.4444297734938603,
+      "dtd": 1.3304,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "MORNING_STAR",
+        "STOCH_RANGE_REV_LONG"
+      ]
+    },
+    {
+      "n": 8,
+      "side": "LONG",
+      "entry": "2026-08-20T01:26:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.150077,
+      "mfe": 0.0,
+      "mae": 0.307,
+      "p": 0.2275,
+      "wd": 2,
+      "ps": 2.6,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.4834297786776255,
+      "delta": 0.43273626405221244,
+      "dtd": 1.5363,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG",
+        "VWAP_RECLAIM_LONG"
+      ]
+    },
+    {
+      "n": 9,
+      "side": "SHORT",
+      "entry": "2026-08-20T01:32:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.102296,
+      "mfe": 0.356,
+      "mae": 0.053,
+      "p": 0.2398,
+      "wd": 2,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 2.008128447920955,
+      "delta": -0.5178820372696885,
+      "dtd": 1.336,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "BEAR_ENGULF",
+        "EMA_PULLBACK_SHORT"
+      ]
+    },
+    {
+      "n": 10,
+      "side": "SHORT",
+      "entry": "2026-08-20T01:43:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.133657,
+      "mfe": 0.381,
+      "mae": 0.027,
+      "p": 0.2888,
+      "wd": 3,
+      "ps": 0.9,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "OPPOSED",
+      "volr": 0.6172963228710189,
+      "delta": 0.2932881199627277,
+      "dtd": 1.011,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "SHOOTING_STAR_REJECT"
+      ]
+    },
+    {
+      "n": 11,
+      "side": "LONG",
+      "entry": "2026-08-20T02:01:00+03:30",
+      "reason": "STOP",
+      "net": -0.200415,
+      "mfe": 0.013,
+      "mae": 0.188,
+      "p": 0.2635,
+      "wd": 2,
+      "ps": 1.55,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "OPPOSED",
+      "volr": 1.2046554513665386,
+      "delta": -0.14934839872452507,
+      "dtd": 0.6537,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "STOCH_RANGE_REV_LONG"
+      ]
+    },
+    {
+      "n": 12,
+      "side": "LONG",
+      "entry": "2026-08-20T02:06:00+03:30",
+      "reason": "TP",
+      "net": 0.244461,
+      "mfe": 0.487,
+      "mae": 0.061,
+      "p": 0.3372,
+      "wd": 2,
+      "ps": 0.9,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "ALIGNED",
+      "volr": 0.9534610978164337,
+      "delta": 0.05348179116363082,
+      "dtd": 0.6323,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "HAMMER_RECLAIM"
+      ]
+    },
+    {
+      "n": 13,
+      "side": "LONG",
+      "entry": "2026-08-20T02:11:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.139124,
+      "mfe": 0.0,
+      "mae": 0.243,
+      "p": 0.2898,
+      "wd": 2,
+      "ps": 0.85,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "ALIGNED",
+      "volr": 2.0384242531065477,
+      "delta": 0.5043998802753666,
+      "dtd": 1.0214,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 14,
+      "side": "SHORT",
+      "entry": "2026-08-20T02:16:00+03:30",
+      "reason": "THESIS_FAIL",
+      "net": -0.056735,
+      "mfe": 0.225,
+      "mae": 0.04,
+      "p": 0.2977,
+      "wd": 2,
+      "ps": 1.0,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "ALIGNED",
+      "volr": 0.7120255774896974,
+      "delta": -0.42185356811862834,
+      "dtd": 0.7834,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "BEAR_ENGULF"
+      ]
+    },
+    {
+      "n": 15,
+      "side": "SHORT",
+      "entry": "2026-08-20T02:30:00+03:30",
+      "reason": "STOP",
+      "net": -0.199922,
+      "mfe": 0.065,
+      "mae": 0.165,
+      "p": 0.1253,
+      "wd": 1,
+      "ps": 1.9,
+      "reg15": "UP",
+      "reg5": "DOWN",
+      "flow": "OPPOSED",
+      "volr": 1.3405109156184964,
+      "delta": 0.23717334158033088,
+      "dtd": 0.7699,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "EVENING_STAR",
+        "SHOOTING_STAR_REJECT"
+      ]
+    },
+    {
+      "n": 16,
+      "side": "LONG",
+      "entry": "2026-08-20T02:42:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.134179,
+      "mfe": 0.0,
+      "mae": 0.113,
+      "p": 0.1909,
+      "wd": 2,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.692420957912389,
+      "delta": 0.5072065686100775,
+      "dtd": 0.9423,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 17,
+      "side": "LONG",
+      "entry": "2026-08-20T02:48:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.158013,
+      "mfe": 0.007,
+      "mae": 0.186,
+      "p": 0.1773,
+      "wd": 1,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.9927135889946048,
+      "delta": 0.09836108356386047,
+      "dtd": 1.0729,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 18,
+      "side": "SHORT",
+      "entry": "2026-08-20T02:56:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.169978,
+      "mfe": 0.018,
+      "mae": 0.213,
+      "p": 0.2351,
+      "wd": 3,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 0.8742685411278552,
+      "delta": -0.4883075245004875,
+      "dtd": 0.9073,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "BEAR_ENGULF",
+        "EMA_PULLBACK_SHORT"
+      ]
+    },
+    {
+      "n": 19,
+      "side": "SHORT",
+      "entry": "2026-08-20T03:08:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.132324,
+      "mfe": 0.013,
+      "mae": 0.124,
+      "p": 0.118,
+      "wd": 3,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "ALIGNED",
+      "volr": 0.9632743395693926,
+      "delta": -0.4968774575565527,
+      "dtd": 0.8565,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "BEAR_ENGULF",
+        "EMA_PULLBACK_SHORT"
+      ]
+    },
+    {
+      "n": 20,
+      "side": "SHORT",
+      "entry": "2026-08-20T03:16:00+03:30",
+      "reason": "THESIS_FAIL",
+      "net": -0.100872,
+      "mfe": 0.124,
+      "mae": 0.074,
+      "p": 0.0967,
+      "wd": 2,
+      "ps": 2.3,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "ALIGNED",
+      "volr": 0.9232596408385206,
+      "delta": -0.22317969064815107,
+      "dtd": 0.8006,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "EMA_PULLBACK_SHORT",
+        "VWAP_REJECT_SHORT",
+        "MACD_REACCEL_SHORT"
+      ]
+    },
+    {
+      "n": 21,
+      "side": "LONG",
+      "entry": "2026-08-20T03:30:00+03:30",
+      "reason": "3FEE_FLOOR",
+      "net": 0.109297,
+      "mfe": 0.369,
+      "mae": 0.034,
+      "p": 0.1257,
+      "wd": 1,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "RANGE",
+      "flow": "ALIGNED",
+      "volr": 1.7058141426225295,
+      "delta": 0.48144912736153744,
+      "dtd": 1.0039,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 22,
+      "side": "LONG",
+      "entry": "2026-08-20T03:40:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.101294,
+      "mfe": 0.028,
+      "mae": 0.104,
+      "p": 0.2802,
+      "wd": 2,
+      "ps": 0.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 1.6010969745189294,
+      "delta": 0.5783798521541432,
+      "dtd": 1.3851,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 23,
+      "side": "LONG",
+      "entry": "2026-08-20T03:45:00+03:30",
+      "reason": "THESIS_FAIL",
+      "net": -0.09661,
+      "mfe": 0.318,
+      "mae": 0.032,
+      "p": 0.1337,
+      "wd": 2,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "OPPOSED",
+      "volr": 0.6711485461463462,
+      "delta": -0.232402269795152,
+      "dtd": 1.3497,
+      "side_vs_dtd": "WITH",
+      "patterns": [
+        "BULL_ENGULF",
+        "EMA_PULLBACK_LONG"
+      ]
+    },
+    {
+      "n": 24,
+      "side": "SHORT",
+      "entry": "2026-08-20T04:03:00+03:30",
+      "reason": "THESIS_FAIL",
+      "net": -0.061226,
+      "mfe": 0.118,
+      "mae": 0.205,
+      "p": 0.2865,
+      "wd": 3,
+      "ps": 0.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "OPPOSED",
+      "volr": 1.3066337886386095,
+      "delta": 0.18544539549480138,
+      "dtd": 1.2768,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "EMA_PULLBACK_SHORT"
+      ]
+    },
+    {
+      "n": 25,
+      "side": "SHORT",
+      "entry": "2026-08-20T04:24:00+03:30",
+      "reason": "EARLY_NO_FOLLOW",
+      "net": -0.070614,
+      "mfe": 0.023,
+      "mae": 0.108,
+      "p": 0.2208,
+      "wd": 3,
+      "ps": 1.85,
+      "reg15": "UP",
+      "reg5": "UP",
+      "flow": "ALIGNED",
+      "volr": 1.0032862369720765,
+      "delta": -0.23146358416727764,
+      "dtd": 1.1812,
+      "side_vs_dtd": "AGAINST",
+      "patterns": [
+        "BEAR_ENGULF",
+        "EMA_PULLBACK_SHORT"
+      ]
+    }
+  ]
+}
