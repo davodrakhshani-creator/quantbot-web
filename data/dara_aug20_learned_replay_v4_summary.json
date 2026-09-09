@@ -1,0 +1,51 @@
+{
+  "version": "DARA-Aug20-LearnedReplay-v4",
+  "warning": "INTENTIONALLY IN-SAMPLE. v4 rules were derived from Aug20 v1-v3 losses; NOT OOS evidence.",
+  "sequential": {
+    "trades": 5,
+    "valid_positive": 5,
+    "negative_or_invalid": 0,
+    "valid_wr_pct": 100.0,
+    "gross": 0.871968,
+    "cost": 0.256521,
+    "net": 0.615447,
+    "pf_net": 99.0,
+    "avg_mfe_pct": 0.491,
+    "avg_mae_pct": 0.086,
+    "start_equity": 100.0,
+    "final_equity": 100.615447,
+    "return_pct": 0.6154,
+    "max_drawdown_pct": 0.0,
+    "long_trades": 5,
+    "long_wins": 5,
+    "short_trades": 0
+  },
+  "opportunity_inventory": {
+    "trades": 6,
+    "valid_positive": 6,
+    "negative_or_invalid": 0,
+    "valid_wr_pct": 100.0,
+    "gross": 1.074417,
+    "cost": 0.306978,
+    "net": 0.767442,
+    "pf_net": 99.0
+  },
+  "new_lessons": [
+    "Require abs instantaneous taker delta >= 0.05 so weak-flow false confirmations are rejected.",
+    "After abs day-to-date move >= 2%, reject extreme-volume volr >= 8 as exhaustion/chase rather than continuation.",
+    "After day-to-date >= +1.5%, shorts require actual 15m DOWN plus prototype p >= 0.32; mirror rule for strong down days.",
+    "Retain prior prototype, confluence, volume 1-2 quarantine, price-response, late-chase and fee-aware gates."
+  ],
+  "stage_rejections": {
+    "base_memory": 2650,
+    "quality": 160,
+    "flow_sign": 27,
+    "weak_flow": 4,
+    "vol_1_2": 7,
+    "day_lock": 1,
+    "no_price_response": 9,
+    "exhaustion_chase": 2,
+    "late_chase": 13,
+    "final_candidates": 6
+  }
+}
