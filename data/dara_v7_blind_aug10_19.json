@@ -1,0 +1,199 @@
+{
+  "version": "DARA-v7.0-ConfirmedExpansion",
+  "period_tehran": [
+    "2026-08-10T00:00:00+03:30",
+    "2026-08-20T00:00:00+03:30"
+  ],
+  "design": [
+    "VALUE_PULLBACK unchanged from v6",
+    "VOLUME_EXPANSION requires one additional closed-minute acceptance: no full signal-candle reversal + directional flow",
+    "TP first +0.55% on 40%; 60% runner, 5-bar trail",
+    "Risk 0.25% incl cost; max 3/day; 45m cooldown; 120m same-side loss lock"
+  ],
+  "methodology_notes": [
+    "v7 was designed after v6 Sep development and Aug20-27 blind results; those periods are development-contaminated for v7."
+  ],
+  "daily": [
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-10"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-11"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-12"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-13"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-14"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-15"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-16"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-17"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-18"
+    },
+    {
+      "start_equity": 100.0,
+      "final_equity": 100.0,
+      "net_pnl": 0.0,
+      "return_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "gross_pnl": 0,
+      "modeled_costs": 0,
+      "pf_net": null,
+      "max_dd_pct": 0,
+      "day": "2026-08-19"
+    }
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 100.0,
+    "net_pnl": 0.0,
+    "return_pct": 0.0,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "gross_pnl": 0,
+    "modeled_costs": 0,
+    "pf_net": null,
+    "max_dd_pct": 0.0
+  },
+  "by_tier": {
+    "VALUE_PULLBACK": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    },
+    "CONFIRMED_EXPANSION": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "trades": []
+}
