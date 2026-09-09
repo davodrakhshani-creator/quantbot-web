@@ -1,0 +1,26 @@
+name: Analyze DARA Aug20 v2
+on:
+  push:
+    paths:
+      - 'analyze_dara_aug20_v2.py'
+      - '.github/workflows/analyze-dara-aug20-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Analyze v2
+        run: python analyze_dara_aug20_v2.py
+      - name: Persist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_aug20_v2_analysis.json
+          git diff --cached --quiet || git commit -m "Persist Aug20 v2 analysis"
+          git push
