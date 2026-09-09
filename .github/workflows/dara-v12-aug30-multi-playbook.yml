@@ -1,0 +1,26 @@
+name: DARA v12 MultiPlaybook Aug30
+on:
+  push:
+    paths:
+      - 'dara_v12_aug30_multi_playbook.py'
+      - '.github/workflows/dara-v12-aug30-multi-playbook.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v12 Aug30
+        run: python dara_v12_aug30_multi_playbook.py
+      - name: Persist result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_v12_aug30_multi_playbook.json
+          git diff --cached --quiet || git commit -m "Persist DARA v12 Aug30 result"
+          git push
