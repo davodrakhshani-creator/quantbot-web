@@ -1,0 +1,27 @@
+name: DARA Astro Calibration Archive
+on:
+  push:
+    paths:
+      - 'dara_astro_daily_calibration_archive.py'
+      - '.github/workflows/dara-astro-calibration-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install astronomy-engine
+      - name: Calibrate from official Binance Vision archives
+        run: python dara_astro_daily_calibration_archive.py
+      - name: Persist calibration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_astro_calibration_2022_2026.json
+          git diff --cached --quiet || git commit -m "Persist DARA astro archive calibration"
+          git push
