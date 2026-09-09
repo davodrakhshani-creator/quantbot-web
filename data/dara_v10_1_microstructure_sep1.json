@@ -1,0 +1,162 @@
+{
+  "version": "DARA-v10.1-Microstructure-CapacityFix",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-02T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "change_from_v10": "Replace contradictory prior-15m room hard gate with 5m/15m ATR volatility-capacity gate; no other conceptual change.",
+  "timeframes": [
+    "1m trigger/flow",
+    "5m location/capacity",
+    "15m regime/capacity"
+  ],
+  "risk_cost_exit": [
+    "0.25% max stop loss incl 0.11% friction",
+    "max 3x notional",
+    "TP +0.55% on 40%, 60% runner",
+    "max 4 trades/day"
+  ],
+  "methodology_notes": [
+    "Sep1 is development data. Historical full L2 unavailable; 1m taker-buy volume is aggressor-flow proxy.",
+    "No maker-fee advantage is credited."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 99.004507,
+    "net_pnl": -0.995493,
+    "return_pct": -0.995,
+    "trades": 4,
+    "wins": 0,
+    "losses": 4,
+    "win_rate": 0.0,
+    "gross_pnl": -0.618808,
+    "modeled_costs": 0.376685,
+    "pf_net": 0.0,
+    "max_dd_pct": 0.995
+  },
+  "by_setup": {
+    "VALUE_PERSISTENT": {
+      "trades": 4,
+      "wins": 0,
+      "losses": 4,
+      "gross_pnl": -0.618808,
+      "net_pnl": -0.995493,
+      "pf_net": 0.0
+    },
+    "SWEEP_ABSORPTION": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "trades": [
+    {
+      "setup": "VALUE_PERSISTENT",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T05:31:00+03:30",
+      "exit_time": "2026-09-01T06:34:00+03:30",
+      "entry": 78314.0,
+      "exit": 78445.67,
+      "score": 10,
+      "diagnostics": {
+        "avg_delta": 0.26021848312725565,
+        "persistence": 3,
+        "progress": 0.0005256047040543832,
+        "efficiency": 0.5011185998277855,
+        "capacity": true,
+        "atr5_pct": 0.147,
+        "atr15_pct": 0.224
+      },
+      "structural_stop_pct": 0.168,
+      "reason": "STOP",
+      "notional": 89.887514,
+      "gross_pnl": -0.15087,
+      "cost": 0.098876,
+      "net_pnl": -0.249746,
+      "equity_before": 100.0,
+      "equity_after": 99.750254
+    },
+    {
+      "setup": "VALUE_PERSISTENT",
+      "side": "LONG",
+      "entry_time": "2026-09-01T08:33:00+03:30",
+      "exit_time": "2026-09-01T11:07:00+03:30",
+      "entry": 78795.7,
+      "exit": 78620.74,
+      "score": 9,
+      "diagnostics": {
+        "avg_delta": 0.5079045887266729,
+        "persistence": 3,
+        "progress": 0.000830644372598055,
+        "efficiency": 1.0,
+        "capacity": true,
+        "atr5_pct": 0.106,
+        "atr15_pct": 0.231
+      },
+      "structural_stop_pct": 0.222,
+      "reason": "STOP",
+      "notional": 75.103259,
+      "gross_pnl": -0.166762,
+      "cost": 0.082614,
+      "net_pnl": -0.249376,
+      "equity_before": 99.750254,
+      "equity_after": 99.500878
+    },
+    {
+      "setup": "VALUE_PERSISTENT",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T13:37:00+03:30",
+      "exit_time": "2026-09-01T13:55:00+03:30",
+      "entry": 77852.3,
+      "exit": 77989.18,
+      "score": 10,
+      "diagnostics": {
+        "avg_delta": -0.025278962407637533,
+        "persistence": 2,
+        "progress": 0.00042479668303530005,
+        "efficiency": 0.44063705545339577,
+        "capacity": true,
+        "atr5_pct": 0.124,
+        "atr15_pct": 0.256
+      },
+      "structural_stop_pct": 0.176,
+      "reason": "STOP",
+      "notional": 87.029782,
+      "gross_pnl": -0.152751,
+      "cost": 0.095733,
+      "net_pnl": -0.248484,
+      "equity_before": 99.500878,
+      "equity_after": 99.252394
+    },
+    {
+      "setup": "VALUE_PERSISTENT",
+      "side": "SHORT",
+      "entry_time": "2026-09-01T16:01:00+03:30",
+      "exit_time": "2026-09-01T16:18:00+03:30",
+      "entry": 77912.7,
+      "exit": 78040.8,
+      "score": 11,
+      "diagnostics": {
+        "avg_delta": 0.46532572799386474,
+        "persistence": 3,
+        "progress": 0.0008773152866442535,
+        "efficiency": 1.0,
+        "capacity": true,
+        "atr5_pct": 0.145,
+        "atr15_pct": 0.24
+      },
+      "structural_stop_pct": 0.164,
+      "reason": "STOP",
+      "notional": 90.420247,
+      "gross_pnl": -0.148425,
+      "cost": 0.099462,
+      "net_pnl": -0.247887,
+      "equity_before": 99.252394,
+      "equity_after": 99.004507
+    }
+  ]
+}
