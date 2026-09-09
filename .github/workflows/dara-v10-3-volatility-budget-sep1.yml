@@ -1,0 +1,29 @@
+name: DARA v10.3 Volatility Budget Sep1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'dara_v10_3_volatility_budget_sep1.py'
+      - '.github/workflows/dara-v10-3-volatility-budget-sep1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run DARA v10.3 Sep1
+        run: python dara_v10_3_volatility_budget_sep1.py
+      - name: Persist result
+        run: |
+          git config user.name "quantbot-research-bot"
+          git config user.email "quantbot@users.noreply.github.com"
+          git add data/dara_v10_3_volatility_budget_sep1.json
+          git diff --cached --quiet || git commit -m "Persist DARA v10.3 Sep1 result"
+          git push
