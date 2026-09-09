@@ -1,0 +1,2562 @@
+{
+  "version": "DARA-Astro-FullGrid-v2",
+  "period": "2022-01-01 through 2026-08-31 UTC",
+  "days": 1704,
+  "factors": [
+    "Sun",
+    "Moon",
+    "Mercury",
+    "Venus",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune",
+    "Pluto",
+    "TrueNode"
+  ],
+  "factor_count": 11,
+  "pair_count": 55,
+  "features": [
+    "11 geocentric factor longitudes/signs",
+    "55 all-pairs major aspects",
+    "Mercury-through-Pluto retrograde/direct",
+    "true lunar node axis"
+  ],
+  "splits": {
+    "train_2022_2024": 1096,
+    "validation_2025": 365,
+    "oos_2026_jan_aug": 243
+  },
+  "baselines": {
+    "train_2022_2024": {
+      "return": 0.0010496335450659287,
+      "abs_return": 0.01942241970262034,
+      "volume_surprise": 1.0830765720412243,
+      "buy_imbalance": -0.0030214416681478913
+    },
+    "validation_2025": {
+      "return": 5.7807316281376866e-05,
+      "abs_return": 0.015657455089511073,
+      "volume_surprise": 1.0589429314496352,
+      "buy_imbalance": -0.008861032712886465
+    },
+    "oos_2026_jan_aug": {
+      "return": -0.00015260902684142635,
+      "abs_return": 0.016647934107013887,
+      "volume_surprise": 1.067912234730092,
+      "buy_imbalance": 0.001821991170058655
+    }
+  },
+  "selection": {
+    "minimum_samples": [
+      15,
+      5,
+      5
+    ],
+    "requires_same_edge_sign_all_three_splits": true,
+    "minimum_oos_effect": {
+      "return": 0.0005,
+      "abs_return": 0.0005,
+      "volume_surprise": 0.03,
+      "buy_imbalance": 0.005
+    }
+  },
+  "warning": "Exploratory multi-hypothesis screen. Recurrence across chronological splits reduces overfit but does not prove astrology, causality, or tradability. Slow-body sign effects are especially confounded with calendar regimes.",
+  "candidate_count": 138,
+  "top_by_metric": {
+    "return": [
+      {
+        "condition": "ASPECT:Moon-Saturn:OPPOSITION",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          22,
+          6,
+          5
+        ],
+        "edges": [
+          -0.0094218,
+          -0.0149546,
+          -0.0308706
+        ],
+        "oos_edge": -0.0308706,
+        "persistence_score": 18.844,
+        "t_train": -1.141,
+        "t_validation": -2.035,
+        "t_oos": -1.116
+      },
+      {
+        "condition": "ASPECT:Mars-Jupiter:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          28,
+          12,
+          10
+        ],
+        "edges": [
+          0.0062695,
+          0.0041662,
+          0.0064772
+        ],
+        "oos_edge": 0.0064772,
+        "persistence_score": 8.332,
+        "t_train": 1.256,
+        "t_validation": 1.525,
+        "t_oos": 1.826
+      },
+      {
+        "condition": "ASPECT:Sun-TrueNode:SQUARE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          36,
+          10,
+          6
+        ],
+        "edges": [
+          -0.0049367,
+          -0.0052676,
+          -0.0040512
+        ],
+        "oos_edge": -0.0040512,
+        "persistence_score": 8.102,
+        "t_train": -1.046,
+        "t_validation": -0.985,
+        "t_oos": -0.702
+      },
+      {
+        "condition": "ASPECT:Mars-Pluto:SQUARE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          -0.0055432,
+          -0.0032723,
+          -0.0066176
+        ],
+        "oos_edge": -0.0066176,
+        "persistence_score": 6.545,
+        "t_train": -1.618,
+        "t_validation": -0.542,
+        "t_oos": -1.297
+      },
+      {
+        "condition": "ASPECT:Venus-Pluto:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          30,
+          11,
+          5
+        ],
+        "edges": [
+          0.007992,
+          0.0031888,
+          0.0024576
+        ],
+        "oos_edge": 0.0024576,
+        "persistence_score": 4.915,
+        "t_train": 1.495,
+        "t_validation": 0.49,
+        "t_oos": 0.35
+      },
+      {
+        "condition": "ASPECT:Venus-Neptune:TRINE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          30,
+          10,
+          5
+        ],
+        "edges": [
+          -0.0051874,
+          -0.0022751,
+          -0.0065087
+        ],
+        "oos_edge": -0.0065087,
+        "persistence_score": 4.55,
+        "t_train": -0.66,
+        "t_validation": -0.259,
+        "t_oos": -0.952
+      },
+      {
+        "condition": "SIGN:Venus:CANCER",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          79,
+          26,
+          25
+        ],
+        "edges": [
+          -0.0021649,
+          -0.0024836,
+          -0.0072247
+        ],
+        "oos_edge": -0.0072247,
+        "persistence_score": 4.33,
+        "t_train": -0.792,
+        "t_validation": -0.666,
+        "t_oos": -1.575
+      },
+      {
+        "condition": "SIGN:Mercury:GEMINI",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          74,
+          14,
+          15
+        ],
+        "edges": [
+          -0.0032113,
+          -0.0021398,
+          -0.00369
+        ],
+        "oos_edge": -0.00369,
+        "persistence_score": 4.28,
+        "t_train": -0.788,
+        "t_validation": -0.55,
+        "t_oos": -1.244
+      },
+      {
+        "condition": "ASPECT:Sun-Pluto:TRINE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          38,
+          12,
+          6
+        ],
+        "edges": [
+          -0.0020957,
+          -0.0048947,
+          -0.007074
+        ],
+        "oos_edge": -0.007074,
+        "persistence_score": 4.191,
+        "t_train": -0.496,
+        "t_validation": -0.891,
+        "t_oos": -1.662
+      },
+      {
+        "condition": "ASPECT:Mars-TrueNode:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          35,
+          7,
+          7
+        ],
+        "edges": [
+          0.0017571,
+          0.0076678,
+          0.0061344
+        ],
+        "oos_edge": 0.0061344,
+        "persistence_score": 3.514,
+        "t_train": 0.48,
+        "t_validation": 1.041,
+        "t_oos": 0.855
+      },
+      {
+        "condition": "ASPECT:Sun-TrueNode:SEXTILE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          35,
+          14,
+          8
+        ],
+        "edges": [
+          0.0033824,
+          0.0068936,
+          0.0017239
+        ],
+        "oos_edge": 0.0017239,
+        "persistence_score": 3.448,
+        "t_train": 0.828,
+        "t_validation": 1.303,
+        "t_oos": 0.396
+      },
+      {
+        "condition": "ASPECT:Venus-TrueNode:SEXTILE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          33,
+          6,
+          8
+        ],
+        "edges": [
+          0.002874,
+          0.0014215,
+          0.0119874
+        ],
+        "oos_edge": 0.0119874,
+        "persistence_score": 2.843,
+        "t_train": 0.612,
+        "t_validation": 0.462,
+        "t_oos": 1.953
+      },
+      {
+        "condition": "ASPECT:Moon-Mercury:TRINE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          37,
+          8,
+          6
+        ],
+        "edges": [
+          -0.0010699,
+          -0.0037982,
+          -0.011245
+        ],
+        "oos_edge": -0.011245,
+        "persistence_score": 2.14,
+        "t_train": -0.214,
+        "t_validation": -0.595,
+        "t_oos": -2.015
+      },
+      {
+        "condition": "ASPECT:Venus-Pluto:SEXTILE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          30,
+          34,
+          5
+        ],
+        "edges": [
+          0.0010663,
+          0.0046403,
+          0.009814
+        ],
+        "oos_edge": 0.009814,
+        "persistence_score": 2.133,
+        "t_train": 0.283,
+        "t_validation": 1.115,
+        "t_oos": 1.029
+      },
+      {
+        "condition": "SIGN:Sun:GEMINI",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          94,
+          31,
+          31
+        ],
+        "edges": [
+          -0.0041889,
+          -0.001001,
+          -0.0056313
+        ],
+        "oos_edge": -0.0056313,
+        "persistence_score": 2.002,
+        "t_train": -1.261,
+        "t_validation": -0.319,
+        "t_oos": -1.415
+      },
+      {
+        "condition": "ASPECT:Venus-Saturn:SQUARE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          31,
+          10,
+          6
+        ],
+        "edges": [
+          -0.010505,
+          -0.0008751,
+          -0.0077887
+        ],
+        "oos_edge": -0.0077887,
+        "persistence_score": 1.75,
+        "t_train": -1.323,
+        "t_validation": -0.18,
+        "t_oos": -1.922
+      },
+      {
+        "condition": "ASPECT:Sun-Jupiter:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          33,
+          13,
+          6
+        ],
+        "edges": [
+          0.0008438,
+          0.0027395,
+          0.0104634
+        ],
+        "oos_edge": 0.0104634,
+        "persistence_score": 1.688,
+        "t_train": 0.263,
+        "t_validation": 0.24,
+        "t_oos": 1.225
+      },
+      {
+        "condition": "ASPECT:Moon-Uranus:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          36,
+          11,
+          8
+        ],
+        "edges": [
+          0.0008169,
+          0.0067516,
+          0.0124076
+        ],
+        "oos_edge": 0.0124076,
+        "persistence_score": 1.634,
+        "t_train": 0.133,
+        "t_validation": 1.802,
+        "t_oos": 1.396
+      },
+      {
+        "condition": "ASPECT:Sun-TrueNode:CONJ",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          19,
+          6,
+          6
+        ],
+        "edges": [
+          0.0035591,
+          0.0007882,
+          0.0127064
+        ],
+        "oos_edge": 0.0127064,
+        "persistence_score": 1.576,
+        "t_train": 0.513,
+        "t_validation": 0.065,
+        "t_oos": 0.885
+      },
+      {
+        "condition": "SIGN:Sun:CANCER",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          94,
+          32,
+          32
+        ],
+        "edges": [
+          0.0007209,
+          0.0047608,
+          0.0011573
+        ],
+        "oos_edge": 0.0011573,
+        "persistence_score": 1.442,
+        "t_train": 0.292,
+        "t_validation": 1.775,
+        "t_oos": 0.391
+      }
+    ],
+    "abs_return": [
+      {
+        "condition": "ASPECT:Sun-Venus:CONJ",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          53,
+          11,
+          18
+        ],
+        "edges": [
+          -0.0084008,
+          -0.0071734,
+          -0.0050158
+        ],
+        "oos_edge": -0.0050158,
+        "persistence_score": 10.032,
+        "t_train": -6.564,
+        "t_validation": -2.99,
+        "t_oos": -1.874
+      },
+      {
+        "condition": "ASPECT:Venus-Saturn:CONJ",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          18,
+          38,
+          5
+        ],
+        "edges": [
+          0.0099569,
+          0.0044614,
+          0.009407
+        ],
+        "oos_edge": 0.009407,
+        "persistence_score": 8.923,
+        "t_train": 1.404,
+        "t_validation": 1.381,
+        "t_oos": 1.806
+      },
+      {
+        "condition": "SIGN:Mercury:VIRGO",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          144,
+          15,
+          7
+        ],
+        "edges": [
+          -0.0043554,
+          -0.008849,
+          -0.0050297
+        ],
+        "oos_edge": -0.0050297,
+        "persistence_score": 8.711,
+        "t_train": -2.89,
+        "t_validation": -6.052,
+        "t_oos": -1.491
+      },
+      {
+        "condition": "ASPECT:Sun-Saturn:CONJ",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          21,
+          7,
+          7
+        ],
+        "edges": [
+          0.0137609,
+          0.0163749,
+          0.0043056
+        ],
+        "oos_edge": 0.0043056,
+        "persistence_score": 8.611,
+        "t_train": 1.902,
+        "t_validation": 1.977,
+        "t_oos": 0.66
+      },
+      {
+        "condition": "SIGN:Sun:PISCES",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          90,
+          30,
+          30
+        ],
+        "edges": [
+          0.0091828,
+          0.0118519,
+          0.0042329
+        ],
+        "oos_edge": 0.0042329,
+        "persistence_score": 8.466,
+        "t_train": 3.198,
+        "t_validation": 2.652,
+        "t_oos": 1.368
+      },
+      {
+        "condition": "ASPECT:Moon-Jupiter:SQUARE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          37,
+          13,
+          6
+        ],
+        "edges": [
+          0.0061267,
+          0.0041637,
+          0.0153499
+        ],
+        "oos_edge": 0.0153499,
+        "persistence_score": 8.327,
+        "t_train": 1.479,
+        "t_validation": 0.971,
+        "t_oos": 0.839
+      },
+      {
+        "condition": "ASPECT:Sun-TrueNode:CONJ",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          19,
+          6,
+          6
+        ],
+        "edges": [
+          0.0041122,
+          0.0073859,
+          0.0122578
+        ],
+        "oos_edge": 0.0122578,
+        "persistence_score": 8.224,
+        "t_train": 0.956,
+        "t_validation": 1.153,
+        "t_oos": 1.461
+      },
+      {
+        "condition": "ASPECT:Moon-Venus:OPPOSITION",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          17,
+          8,
+          7
+        ],
+        "edges": [
+          0.0040286,
+          0.007415,
+          0.0087919
+        ],
+        "oos_edge": 0.0087919,
+        "persistence_score": 8.057,
+        "t_train": 0.607,
+        "t_validation": 0.892,
+        "t_oos": 1.182
+      },
+      {
+        "condition": "ASPECT:Mars-Pluto:SEXTILE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          0.0033706,
+          0.0066939,
+          0.0040058
+        ],
+        "oos_edge": 0.0040058,
+        "persistence_score": 6.741,
+        "t_train": 0.84,
+        "t_validation": 1.504,
+        "t_oos": 0.714
+      },
+      {
+        "condition": "ASPECT:Mars-Pluto:SQUARE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          -0.0072385,
+          -0.0032522,
+          -0.0040561
+        ],
+        "oos_edge": -0.0040561,
+        "persistence_score": 6.504,
+        "t_train": -2.917,
+        "t_validation": -0.757,
+        "t_oos": -1.287
+      },
+      {
+        "condition": "ASPECT:Moon-Pluto:TRINE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          35,
+          12,
+          8
+        ],
+        "edges": [
+          0.003177,
+          0.0093123,
+          0.0117518
+        ],
+        "oos_edge": 0.0117518,
+        "persistence_score": 6.354,
+        "t_train": 0.606,
+        "t_validation": 1.235,
+        "t_oos": 0.703
+      },
+      {
+        "condition": "ASPECT:Sun-Pluto:OPPOSITION",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          18,
+          6,
+          6
+        ],
+        "edges": [
+          -0.0031635,
+          -0.0059035,
+          -0.0061038
+        ],
+        "oos_edge": -0.0061038,
+        "persistence_score": 6.327,
+        "t_train": -0.707,
+        "t_validation": -1.922,
+        "t_oos": -1.544
+      },
+      {
+        "condition": "ASPECT:Venus-Mars:SEXTILE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          60,
+          11,
+          14
+        ],
+        "edges": [
+          -0.0029853,
+          -0.0099234,
+          -0.0048205
+        ],
+        "oos_edge": -0.0048205,
+        "persistence_score": 5.971,
+        "t_train": -1.262,
+        "t_validation": -6.763,
+        "t_oos": -2.147
+      },
+      {
+        "condition": "SIGN:Venus:GEMINI",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          76,
+          26,
+          25
+        ],
+        "edges": [
+          -0.0027716,
+          -0.0062574,
+          -0.0049446
+        ],
+        "oos_edge": -0.0049446,
+        "persistence_score": 5.543,
+        "t_train": -1.726,
+        "t_validation": -3.456,
+        "t_oos": -3.674
+      },
+      {
+        "condition": "ASPECT:Sun-Moon:SQUARE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          37,
+          11,
+          7
+        ],
+        "edges": [
+          -0.0027354,
+          -0.0038561,
+          -0.0085934
+        ],
+        "oos_edge": -0.0085934,
+        "persistence_score": 5.471,
+        "t_train": -0.937,
+        "t_validation": -1.728,
+        "t_oos": -3.136
+      },
+      {
+        "condition": "SIGN:Venus:PISCES",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          75,
+          67,
+          24
+        ],
+        "edges": [
+          0.0043795,
+          0.0026203,
+          0.0046588
+        ],
+        "oos_edge": 0.0046588,
+        "persistence_score": 5.241,
+        "t_train": 1.783,
+        "t_validation": 1.204,
+        "t_oos": 1.308
+      },
+      {
+        "condition": "ASPECT:Mercury-Neptune:SEXTILE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          53,
+          7,
+          6
+        ],
+        "edges": [
+          -0.0038678,
+          -0.0079198,
+          -0.0024404
+        ],
+        "oos_edge": -0.0024404,
+        "persistence_score": 4.881,
+        "t_train": -1.313,
+        "t_validation": -3.224,
+        "t_oos": -0.382
+      },
+      {
+        "condition": "ASPECT:Venus-Neptune:SQUARE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          31,
+          10,
+          5
+        ],
+        "edges": [
+          -0.0023885,
+          -0.0074025,
+          -0.0052531
+        ],
+        "oos_edge": -0.0052531,
+        "persistence_score": 4.777,
+        "t_train": -0.659,
+        "t_validation": -3.063,
+        "t_oos": -1.144
+      },
+      {
+        "condition": "ASPECT:Moon-Saturn:OPPOSITION",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          22,
+          6,
+          5
+        ],
+        "edges": [
+          0.0073914,
+          0.0022927,
+          0.0176522
+        ],
+        "oos_edge": 0.0176522,
+        "persistence_score": 4.585,
+        "t_train": 1.21,
+        "t_validation": 0.393,
+        "t_oos": 0.662
+      },
+      {
+        "condition": "SIGN:Mercury:PISCES",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          49,
+          33,
+          67
+        ],
+        "edges": [
+          0.0090739,
+          0.0072522,
+          0.0021113
+        ],
+        "oos_edge": 0.0021113,
+        "persistence_score": 4.223,
+        "t_train": 2.366,
+        "t_validation": 1.756,
+        "t_oos": 1.133
+      }
+    ],
+    "volume_surprise": [
+      {
+        "condition": "ASPECT:Venus-Mars:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          24,
+          11,
+          17
+        ],
+        "edges": [
+          -0.1672827,
+          -0.1466558,
+          -0.1686752
+        ],
+        "oos_edge": -0.1686752,
+        "persistence_score": 4.889,
+        "t_train": -2.008,
+        "t_validation": -1.061,
+        "t_oos": -2.307
+      },
+      {
+        "condition": "SIGN:Mercury:ARIES",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          98,
+          52,
+          18
+        ],
+        "edges": [
+          -0.1277078,
+          -0.1118965,
+          -0.2085041
+        ],
+        "oos_edge": -0.2085041,
+        "persistence_score": 3.73,
+        "t_train": -3.344,
+        "t_validation": -1.443,
+        "t_oos": -2.752
+      },
+      {
+        "condition": "ASPECT:Sun-Pluto:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          36,
+          12,
+          6
+        ],
+        "edges": [
+          -0.1455401,
+          -0.1084561,
+          -0.1361898
+        ],
+        "oos_edge": -0.1361898,
+        "persistence_score": 3.615,
+        "t_train": -2.218,
+        "t_validation": -0.543,
+        "t_oos": -1.115
+      },
+      {
+        "condition": "ASPECT:Moon-Venus:OPPOSITION",
+        "metric": "volume_surprise",
+        "direction": "higher",
+        "samples": [
+          17,
+          8,
+          7
+        ],
+        "edges": [
+          0.108274,
+          0.2537954,
+          0.3682915
+        ],
+        "oos_edge": 0.3682915,
+        "persistence_score": 3.609,
+        "t_train": 0.597,
+        "t_validation": 1.109,
+        "t_oos": 1.228
+      },
+      {
+        "condition": "ASPECT:Venus-Neptune:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          31,
+          10,
+          5
+        ],
+        "edges": [
+          -0.1068311,
+          -0.203859,
+          -0.0956068
+        ],
+        "oos_edge": -0.0956068,
+        "persistence_score": 3.187,
+        "t_train": -1.239,
+        "t_validation": -1.804,
+        "t_oos": -1.073
+      },
+      {
+        "condition": "ASPECT:Moon-Mars:TRINE",
+        "metric": "volume_surprise",
+        "direction": "higher",
+        "samples": [
+          32,
+          15,
+          9
+        ],
+        "edges": [
+          0.091792,
+          0.1467198,
+          0.133106
+        ],
+        "oos_edge": 0.133106,
+        "persistence_score": 3.06,
+        "t_train": 0.93,
+        "t_validation": 0.615,
+        "t_oos": 0.417
+      },
+      {
+        "condition": "ASPECT:Venus-Pluto:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          30,
+          34,
+          5
+        ],
+        "edges": [
+          -0.0713666,
+          -0.1123013,
+          -0.1233581
+        ],
+        "oos_edge": -0.1233581,
+        "persistence_score": 2.379,
+        "t_train": -0.893,
+        "t_validation": -1.351,
+        "t_oos": -1.39
+      },
+      {
+        "condition": "ASPECT:Moon-Jupiter:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "higher",
+        "samples": [
+          37,
+          13,
+          6
+        ],
+        "edges": [
+          0.1855646,
+          0.0697844,
+          0.3455476
+        ],
+        "oos_edge": 0.3455476,
+        "persistence_score": 2.326,
+        "t_train": 1.532,
+        "t_validation": 0.516,
+        "t_oos": 0.771
+      },
+      {
+        "condition": "ASPECT:Venus-Saturn:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          31,
+          5,
+          11
+        ],
+        "edges": [
+          -0.0649783,
+          -0.3718659,
+          -0.0869981
+        ],
+        "oos_edge": -0.0869981,
+        "persistence_score": 2.166,
+        "t_train": -0.833,
+        "t_validation": -2.858,
+        "t_oos": -0.506
+      },
+      {
+        "condition": "ASPECT:Sun-Venus:CONJ",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          53,
+          11,
+          18
+        ],
+        "edges": [
+          -0.1981265,
+          -0.4386868,
+          -0.0648886
+        ],
+        "oos_edge": -0.0648886,
+        "persistence_score": 2.163,
+        "t_train": -3.173,
+        "t_validation": -3.845,
+        "t_oos": -0.476
+      },
+      {
+        "condition": "ASPECT:Venus-Pluto:TRINE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          30,
+          9,
+          11
+        ],
+        "edges": [
+          -0.0670841,
+          -0.0644239,
+          -0.3038346
+        ],
+        "oos_edge": -0.3038346,
+        "persistence_score": 2.147,
+        "t_train": -0.761,
+        "t_validation": -0.419,
+        "t_oos": -3.184
+      },
+      {
+        "condition": "ASPECT:Sun-Jupiter:CONJ",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          24,
+          8,
+          9
+        ],
+        "edges": [
+          -0.1746909,
+          -0.0571767,
+          -0.2368806
+        ],
+        "oos_edge": -0.2368806,
+        "persistence_score": 1.906,
+        "t_train": -2.51,
+        "t_validation": -0.279,
+        "t_oos": -1.817
+      },
+      {
+        "condition": "ASPECT:Sun-Pluto:OPPOSITION",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          18,
+          6,
+          6
+        ],
+        "edges": [
+          -0.0670435,
+          -0.0555456,
+          -0.1713468
+        ],
+        "oos_edge": -0.1713468,
+        "persistence_score": 1.852,
+        "t_train": -0.756,
+        "t_validation": -0.25,
+        "t_oos": -1.059
+      },
+      {
+        "condition": "ASPECT:Moon-Mars:OPPOSITION",
+        "metric": "volume_surprise",
+        "direction": "higher",
+        "samples": [
+          19,
+          6,
+          9
+        ],
+        "edges": [
+          0.0847328,
+          0.0545777,
+          0.0912695
+        ],
+        "oos_edge": 0.0912695,
+        "persistence_score": 1.819,
+        "t_train": 0.493,
+        "t_validation": 0.353,
+        "t_oos": 0.578
+      },
+      {
+        "condition": "ASPECT:Mars-Jupiter:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          28,
+          12,
+          10
+        ],
+        "edges": [
+          -0.0533166,
+          -0.1598099,
+          -0.2014427
+        ],
+        "oos_edge": -0.2014427,
+        "persistence_score": 1.777,
+        "t_train": -0.422,
+        "t_validation": -1.377,
+        "t_oos": -1.303
+      },
+      {
+        "condition": "ASPECT:Moon-Mars:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          40,
+          12,
+          6
+        ],
+        "edges": [
+          -0.0453009,
+          -0.1038109,
+          -0.0666376
+        ],
+        "oos_edge": -0.0666376,
+        "persistence_score": 1.51,
+        "t_train": -0.671,
+        "t_validation": -0.61,
+        "t_oos": -0.339
+      },
+      {
+        "condition": "ASPECT:Sun-Uranus:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          37,
+          12,
+          12
+        ],
+        "edges": [
+          -0.0631678,
+          -0.039635,
+          -0.214803
+        ],
+        "oos_edge": -0.214803,
+        "persistence_score": 1.321,
+        "t_train": -0.625,
+        "t_validation": -0.402,
+        "t_oos": -1.989
+      },
+      {
+        "condition": "SIGN:Moon:CANCER",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          97,
+          27,
+          19
+        ],
+        "edges": [
+          -0.0996127,
+          -0.1153019,
+          -0.035085
+        ],
+        "oos_edge": -0.035085,
+        "persistence_score": 1.169,
+        "t_train": -2.067,
+        "t_validation": -1.411,
+        "t_oos": -0.339
+      },
+      {
+        "condition": "ASPECT:Moon-Uranus:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          32,
+          11,
+          7
+        ],
+        "edges": [
+          -0.0682767,
+          -0.0308377,
+          -0.1987167
+        ],
+        "oos_edge": -0.1987167,
+        "persistence_score": 1.028,
+        "t_train": -0.779,
+        "t_validation": -0.231,
+        "t_oos": -1.835
+      },
+      {
+        "condition": "ASPECT:Sun-Uranus:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          39,
+          13,
+          12
+        ],
+        "edges": [
+          -0.0277897,
+          -0.1161565,
+          -0.1916962
+        ],
+        "oos_edge": -0.1916962,
+        "persistence_score": 0.926,
+        "t_train": -0.389,
+        "t_validation": -0.991,
+        "t_oos": -2.011
+      }
+    ],
+    "buy_imbalance": [
+      {
+        "condition": "ASPECT:Moon-Venus:OPPOSITION",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          17,
+          8,
+          7
+        ],
+        "edges": [
+          0.0113612,
+          0.0091086,
+          0.0143188
+        ],
+        "oos_edge": 0.0143188,
+        "persistence_score": 1.822,
+        "t_train": 1.688,
+        "t_validation": 0.858,
+        "t_oos": 1.08
+      },
+      {
+        "condition": "ASPECT:Venus-Pluto:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          30,
+          11,
+          5
+        ],
+        "edges": [
+          0.0056953,
+          0.0106103,
+          0.0120473
+        ],
+        "oos_edge": 0.0120473,
+        "persistence_score": 1.139,
+        "t_train": 1.523,
+        "t_validation": 0.788,
+        "t_oos": 0.619
+      },
+      {
+        "condition": "ASPECT:Sun-Moon:OPPOSITION",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          18,
+          6,
+          5
+        ],
+        "edges": [
+          0.0056646,
+          0.0078364,
+          0.0116083
+        ],
+        "oos_edge": 0.0116083,
+        "persistence_score": 1.133,
+        "t_train": 0.8,
+        "t_validation": 0.806,
+        "t_oos": 1.194
+      },
+      {
+        "condition": "ASPECT:Sun-TrueNode:CONJ",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          19,
+          6,
+          6
+        ],
+        "edges": [
+          0.0077838,
+          0.0149809,
+          0.0051436
+        ],
+        "oos_edge": 0.0051436,
+        "persistence_score": 1.029,
+        "t_train": 1.578,
+        "t_validation": 1.964,
+        "t_oos": 0.479
+      },
+      {
+        "condition": "ASPECT:Venus-Saturn:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          31,
+          5,
+          11
+        ],
+        "edges": [
+          0.0057476,
+          0.0050556,
+          0.0137241
+        ],
+        "oos_edge": 0.0137241,
+        "persistence_score": 1.011,
+        "t_train": 1.402,
+        "t_validation": 0.526,
+        "t_oos": 1.338
+      },
+      {
+        "condition": "ASPECT:Mars-Pluto:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          -0.0041099,
+          -0.0057941,
+          -0.0070334
+        ],
+        "oos_edge": -0.0070334,
+        "persistence_score": 0.822,
+        "t_train": -0.948,
+        "t_validation": -0.394,
+        "t_oos": -0.557
+      },
+      {
+        "condition": "ASPECT:Sun-Uranus:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          39,
+          13,
+          12
+        ],
+        "edges": [
+          -0.0036574,
+          -0.0038406,
+          -0.007694
+        ],
+        "oos_edge": -0.007694,
+        "persistence_score": 0.731,
+        "t_train": -0.798,
+        "t_validation": -0.68,
+        "t_oos": -0.584
+      },
+      {
+        "condition": "SIGN:Venus:TAURUS",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          75,
+          29,
+          24
+        ],
+        "edges": [
+          0.0035057,
+          0.0131711,
+          0.0153716
+        ],
+        "oos_edge": 0.0153716,
+        "persistence_score": 0.701,
+        "t_train": 1.296,
+        "t_validation": 2.391,
+        "t_oos": 2.186
+      },
+      {
+        "condition": "ASPECT:Mars-Jupiter:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          28,
+          12,
+          10
+        ],
+        "edges": [
+          0.003416,
+          0.0036885,
+          0.0293299
+        ],
+        "oos_edge": 0.0293299,
+        "persistence_score": 0.683,
+        "t_train": 0.665,
+        "t_validation": 0.453,
+        "t_oos": 2.411
+      },
+      {
+        "condition": "ASPECT:Venus-Uranus:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          32,
+          40,
+          11
+        ],
+        "edges": [
+          0.0025734,
+          0.0073781,
+          0.0081736
+        ],
+        "oos_edge": 0.0081736,
+        "persistence_score": 0.515,
+        "t_train": 0.586,
+        "t_validation": 1.891,
+        "t_oos": 0.96
+      },
+      {
+        "condition": "SIGN:Moon:CANCER",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          97,
+          27,
+          19
+        ],
+        "edges": [
+          -0.002319,
+          -0.0031372,
+          -0.0092354
+        ],
+        "oos_edge": -0.0092354,
+        "persistence_score": 0.464,
+        "t_train": -0.995,
+        "t_validation": -0.727,
+        "t_oos": -1.109
+      },
+      {
+        "condition": "SIGN:Moon:SCORPIO",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          92,
+          33,
+          22
+        ],
+        "edges": [
+          0.0017829,
+          0.0035238,
+          0.0109125
+        ],
+        "oos_edge": 0.0109125,
+        "persistence_score": 0.357,
+        "t_train": 0.772,
+        "t_validation": 0.649,
+        "t_oos": 1.242
+      },
+      {
+        "condition": "ASPECT:Venus-Saturn:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          31,
+          10,
+          6
+        ],
+        "edges": [
+          -0.0017811,
+          -0.0133612,
+          -0.0097904
+        ],
+        "oos_edge": -0.0097904,
+        "persistence_score": 0.356,
+        "t_train": -0.355,
+        "t_validation": -1.443,
+        "t_oos": -0.609
+      },
+      {
+        "condition": "ASPECT:Sun-Uranus:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          37,
+          12,
+          12
+        ],
+        "edges": [
+          -0.001717,
+          -0.0097245,
+          -0.0056593
+        ],
+        "oos_edge": -0.0056593,
+        "persistence_score": 0.343,
+        "t_train": -0.395,
+        "t_validation": -1.505,
+        "t_oos": -0.849
+      },
+      {
+        "condition": "ASPECT:Venus-Mars:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          60,
+          11,
+          14
+        ],
+        "edges": [
+          -0.0016923,
+          -0.0109109,
+          -0.0080322
+        ],
+        "oos_edge": -0.0080322,
+        "persistence_score": 0.338,
+        "t_train": -0.481,
+        "t_validation": -1.065,
+        "t_oos": -0.845
+      },
+      {
+        "condition": "ASPECT:Moon-Uranus:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          36,
+          11,
+          8
+        ],
+        "edges": [
+          0.0013465,
+          0.0131763,
+          0.0057492
+        ],
+        "oos_edge": 0.0057492,
+        "persistence_score": 0.269,
+        "t_train": 0.314,
+        "t_validation": 1.452,
+        "t_oos": 0.417
+      },
+      {
+        "condition": "SIGN:Moon:AQUARIUS",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          83,
+          33,
+          22
+        ],
+        "edges": [
+          0.0012043,
+          0.0076188,
+          0.0057855
+        ],
+        "oos_edge": 0.0057855,
+        "persistence_score": 0.241,
+        "t_train": 0.465,
+        "t_validation": 1.515,
+        "t_oos": 0.887
+      },
+      {
+        "condition": "SIGN:Moon:TAURUS",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          92,
+          30,
+          16
+        ],
+        "edges": [
+          -0.000855,
+          -0.0008866,
+          -0.0064754
+        ],
+        "oos_edge": -0.0064754,
+        "persistence_score": 0.171,
+        "t_train": -0.371,
+        "t_validation": -0.189,
+        "t_oos": -0.761
+      },
+      {
+        "condition": "SIGN:Moon:SAGITTARIUS",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          91,
+          32,
+          23
+        ],
+        "edges": [
+          0.0008668,
+          0.0008477,
+          0.0065745
+        ],
+        "oos_edge": 0.0065745,
+        "persistence_score": 0.17,
+        "t_train": 0.374,
+        "t_validation": 0.223,
+        "t_oos": 0.813
+      },
+      {
+        "condition": "ASPECT:Sun-Pluto:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          36,
+          12,
+          6
+        ],
+        "edges": [
+          -0.0007264,
+          -0.002702,
+          -0.0061349
+        ],
+        "oos_edge": -0.0061349,
+        "persistence_score": 0.145,
+        "t_train": -0.194,
+        "t_validation": -0.298,
+        "t_oos": -0.376
+      }
+    ]
+  },
+  "best_recurrent_signal_touching_each_factor": {
+    "Sun": {
+      "return": {
+        "condition": "ASPECT:Sun-TrueNode:SQUARE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          36,
+          10,
+          6
+        ],
+        "edges": [
+          -0.0049367,
+          -0.0052676,
+          -0.0040512
+        ],
+        "oos_edge": -0.0040512,
+        "persistence_score": 8.102,
+        "t_train": -1.046,
+        "t_validation": -0.985,
+        "t_oos": -0.702
+      },
+      "abs_return": {
+        "condition": "ASPECT:Sun-Venus:CONJ",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          53,
+          11,
+          18
+        ],
+        "edges": [
+          -0.0084008,
+          -0.0071734,
+          -0.0050158
+        ],
+        "oos_edge": -0.0050158,
+        "persistence_score": 10.032,
+        "t_train": -6.564,
+        "t_validation": -2.99,
+        "t_oos": -1.874
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Sun-Pluto:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          36,
+          12,
+          6
+        ],
+        "edges": [
+          -0.1455401,
+          -0.1084561,
+          -0.1361898
+        ],
+        "oos_edge": -0.1361898,
+        "persistence_score": 3.615,
+        "t_train": -2.218,
+        "t_validation": -0.543,
+        "t_oos": -1.115
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Sun-Moon:OPPOSITION",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          18,
+          6,
+          5
+        ],
+        "edges": [
+          0.0056646,
+          0.0078364,
+          0.0116083
+        ],
+        "oos_edge": 0.0116083,
+        "persistence_score": 1.133,
+        "t_train": 0.8,
+        "t_validation": 0.806,
+        "t_oos": 1.194
+      }
+    },
+    "Moon": {
+      "return": {
+        "condition": "ASPECT:Moon-Saturn:OPPOSITION",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          22,
+          6,
+          5
+        ],
+        "edges": [
+          -0.0094218,
+          -0.0149546,
+          -0.0308706
+        ],
+        "oos_edge": -0.0308706,
+        "persistence_score": 18.844,
+        "t_train": -1.141,
+        "t_validation": -2.035,
+        "t_oos": -1.116
+      },
+      "abs_return": {
+        "condition": "ASPECT:Moon-Jupiter:SQUARE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          37,
+          13,
+          6
+        ],
+        "edges": [
+          0.0061267,
+          0.0041637,
+          0.0153499
+        ],
+        "oos_edge": 0.0153499,
+        "persistence_score": 8.327,
+        "t_train": 1.479,
+        "t_validation": 0.971,
+        "t_oos": 0.839
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Moon-Venus:OPPOSITION",
+        "metric": "volume_surprise",
+        "direction": "higher",
+        "samples": [
+          17,
+          8,
+          7
+        ],
+        "edges": [
+          0.108274,
+          0.2537954,
+          0.3682915
+        ],
+        "oos_edge": 0.3682915,
+        "persistence_score": 3.609,
+        "t_train": 0.597,
+        "t_validation": 1.109,
+        "t_oos": 1.228
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Moon-Venus:OPPOSITION",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          17,
+          8,
+          7
+        ],
+        "edges": [
+          0.0113612,
+          0.0091086,
+          0.0143188
+        ],
+        "oos_edge": 0.0143188,
+        "persistence_score": 1.822,
+        "t_train": 1.688,
+        "t_validation": 0.858,
+        "t_oos": 1.08
+      }
+    },
+    "Mercury": {
+      "return": {
+        "condition": "SIGN:Mercury:GEMINI",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          74,
+          14,
+          15
+        ],
+        "edges": [
+          -0.0032113,
+          -0.0021398,
+          -0.00369
+        ],
+        "oos_edge": -0.00369,
+        "persistence_score": 4.28,
+        "t_train": -0.788,
+        "t_validation": -0.55,
+        "t_oos": -1.244
+      },
+      "abs_return": {
+        "condition": "SIGN:Mercury:VIRGO",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          144,
+          15,
+          7
+        ],
+        "edges": [
+          -0.0043554,
+          -0.008849,
+          -0.0050297
+        ],
+        "oos_edge": -0.0050297,
+        "persistence_score": 8.711,
+        "t_train": -2.89,
+        "t_validation": -6.052,
+        "t_oos": -1.491
+      },
+      "volume_surprise": {
+        "condition": "SIGN:Mercury:ARIES",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          98,
+          52,
+          18
+        ],
+        "edges": [
+          -0.1277078,
+          -0.1118965,
+          -0.2085041
+        ],
+        "oos_edge": -0.2085041,
+        "persistence_score": 3.73,
+        "t_train": -3.344,
+        "t_validation": -1.443,
+        "t_oos": -2.752
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Moon-Mercury:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          37,
+          8,
+          7
+        ],
+        "edges": [
+          0.0004888,
+          0.0034347,
+          0.0105254
+        ],
+        "oos_edge": 0.0105254,
+        "persistence_score": 0.098,
+        "t_train": 0.106,
+        "t_validation": 0.26,
+        "t_oos": 1.045
+      }
+    },
+    "Venus": {
+      "return": {
+        "condition": "ASPECT:Venus-Pluto:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          30,
+          11,
+          5
+        ],
+        "edges": [
+          0.007992,
+          0.0031888,
+          0.0024576
+        ],
+        "oos_edge": 0.0024576,
+        "persistence_score": 4.915,
+        "t_train": 1.495,
+        "t_validation": 0.49,
+        "t_oos": 0.35
+      },
+      "abs_return": {
+        "condition": "ASPECT:Sun-Venus:CONJ",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          53,
+          11,
+          18
+        ],
+        "edges": [
+          -0.0084008,
+          -0.0071734,
+          -0.0050158
+        ],
+        "oos_edge": -0.0050158,
+        "persistence_score": 10.032,
+        "t_train": -6.564,
+        "t_validation": -2.99,
+        "t_oos": -1.874
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Venus-Mars:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          24,
+          11,
+          17
+        ],
+        "edges": [
+          -0.1672827,
+          -0.1466558,
+          -0.1686752
+        ],
+        "oos_edge": -0.1686752,
+        "persistence_score": 4.889,
+        "t_train": -2.008,
+        "t_validation": -1.061,
+        "t_oos": -2.307
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Moon-Venus:OPPOSITION",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          17,
+          8,
+          7
+        ],
+        "edges": [
+          0.0113612,
+          0.0091086,
+          0.0143188
+        ],
+        "oos_edge": 0.0143188,
+        "persistence_score": 1.822,
+        "t_train": 1.688,
+        "t_validation": 0.858,
+        "t_oos": 1.08
+      }
+    },
+    "Mars": {
+      "return": {
+        "condition": "ASPECT:Mars-Jupiter:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          28,
+          12,
+          10
+        ],
+        "edges": [
+          0.0062695,
+          0.0041662,
+          0.0064772
+        ],
+        "oos_edge": 0.0064772,
+        "persistence_score": 8.332,
+        "t_train": 1.256,
+        "t_validation": 1.525,
+        "t_oos": 1.826
+      },
+      "abs_return": {
+        "condition": "ASPECT:Mars-Pluto:SEXTILE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          0.0033706,
+          0.0066939,
+          0.0040058
+        ],
+        "oos_edge": 0.0040058,
+        "persistence_score": 6.741,
+        "t_train": 0.84,
+        "t_validation": 1.504,
+        "t_oos": 0.714
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Venus-Mars:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          24,
+          11,
+          17
+        ],
+        "edges": [
+          -0.1672827,
+          -0.1466558,
+          -0.1686752
+        ],
+        "oos_edge": -0.1686752,
+        "persistence_score": 4.889,
+        "t_train": -2.008,
+        "t_validation": -1.061,
+        "t_oos": -2.307
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Mars-Pluto:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          -0.0041099,
+          -0.0057941,
+          -0.0070334
+        ],
+        "oos_edge": -0.0070334,
+        "persistence_score": 0.822,
+        "t_train": -0.948,
+        "t_validation": -0.394,
+        "t_oos": -0.557
+      }
+    },
+    "Jupiter": {
+      "return": {
+        "condition": "ASPECT:Mars-Jupiter:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          28,
+          12,
+          10
+        ],
+        "edges": [
+          0.0062695,
+          0.0041662,
+          0.0064772
+        ],
+        "oos_edge": 0.0064772,
+        "persistence_score": 8.332,
+        "t_train": 1.256,
+        "t_validation": 1.525,
+        "t_oos": 1.826
+      },
+      "abs_return": {
+        "condition": "ASPECT:Moon-Jupiter:SQUARE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          37,
+          13,
+          6
+        ],
+        "edges": [
+          0.0061267,
+          0.0041637,
+          0.0153499
+        ],
+        "oos_edge": 0.0153499,
+        "persistence_score": 8.327,
+        "t_train": 1.479,
+        "t_validation": 0.971,
+        "t_oos": 0.839
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Moon-Jupiter:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "higher",
+        "samples": [
+          37,
+          13,
+          6
+        ],
+        "edges": [
+          0.1855646,
+          0.0697844,
+          0.3455476
+        ],
+        "oos_edge": 0.3455476,
+        "persistence_score": 2.326,
+        "t_train": 1.532,
+        "t_validation": 0.516,
+        "t_oos": 0.771
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Mars-Jupiter:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          28,
+          12,
+          10
+        ],
+        "edges": [
+          0.003416,
+          0.0036885,
+          0.0293299
+        ],
+        "oos_edge": 0.0293299,
+        "persistence_score": 0.683,
+        "t_train": 0.665,
+        "t_validation": 0.453,
+        "t_oos": 2.411
+      }
+    },
+    "Saturn": {
+      "return": {
+        "condition": "ASPECT:Moon-Saturn:OPPOSITION",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          22,
+          6,
+          5
+        ],
+        "edges": [
+          -0.0094218,
+          -0.0149546,
+          -0.0308706
+        ],
+        "oos_edge": -0.0308706,
+        "persistence_score": 18.844,
+        "t_train": -1.141,
+        "t_validation": -2.035,
+        "t_oos": -1.116
+      },
+      "abs_return": {
+        "condition": "ASPECT:Venus-Saturn:CONJ",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          18,
+          38,
+          5
+        ],
+        "edges": [
+          0.0099569,
+          0.0044614,
+          0.009407
+        ],
+        "oos_edge": 0.009407,
+        "persistence_score": 8.923,
+        "t_train": 1.404,
+        "t_validation": 1.381,
+        "t_oos": 1.806
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Venus-Saturn:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          31,
+          5,
+          11
+        ],
+        "edges": [
+          -0.0649783,
+          -0.3718659,
+          -0.0869981
+        ],
+        "oos_edge": -0.0869981,
+        "persistence_score": 2.166,
+        "t_train": -0.833,
+        "t_validation": -2.858,
+        "t_oos": -0.506
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Venus-Saturn:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          31,
+          5,
+          11
+        ],
+        "edges": [
+          0.0057476,
+          0.0050556,
+          0.0137241
+        ],
+        "oos_edge": 0.0137241,
+        "persistence_score": 1.011,
+        "t_train": 1.402,
+        "t_validation": 0.526,
+        "t_oos": 1.338
+      }
+    },
+    "Uranus": {
+      "return": {
+        "condition": "ASPECT:Moon-Uranus:SQUARE",
+        "metric": "return",
+        "direction": "higher",
+        "samples": [
+          36,
+          11,
+          8
+        ],
+        "edges": [
+          0.0008169,
+          0.0067516,
+          0.0124076
+        ],
+        "oos_edge": 0.0124076,
+        "persistence_score": 1.634,
+        "t_train": 0.133,
+        "t_validation": 1.802,
+        "t_oos": 1.396
+      },
+      "abs_return": {
+        "condition": "ASPECT:Uranus-Pluto:TRINE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          50,
+          149,
+          88
+        ],
+        "edges": [
+          -0.0028542,
+          -0.0007867,
+          -0.002446
+        ],
+        "oos_edge": -0.002446,
+        "persistence_score": 1.573,
+        "t_train": -1.333,
+        "t_validation": -0.741,
+        "t_oos": -1.636
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Sun-Uranus:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          37,
+          12,
+          12
+        ],
+        "edges": [
+          -0.0631678,
+          -0.039635,
+          -0.214803
+        ],
+        "oos_edge": -0.214803,
+        "persistence_score": 1.321,
+        "t_train": -0.625,
+        "t_validation": -0.402,
+        "t_oos": -1.989
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Sun-Uranus:SEXTILE",
+        "metric": "buy_imbalance",
+        "direction": "lower",
+        "samples": [
+          39,
+          13,
+          12
+        ],
+        "edges": [
+          -0.0036574,
+          -0.0038406,
+          -0.007694
+        ],
+        "oos_edge": -0.007694,
+        "persistence_score": 0.731,
+        "t_train": -0.798,
+        "t_validation": -0.68,
+        "t_oos": -0.584
+      }
+    },
+    "Neptune": {
+      "return": {
+        "condition": "ASPECT:Venus-Neptune:TRINE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          30,
+          10,
+          5
+        ],
+        "edges": [
+          -0.0051874,
+          -0.0022751,
+          -0.0065087
+        ],
+        "oos_edge": -0.0065087,
+        "persistence_score": 4.55,
+        "t_train": -0.66,
+        "t_validation": -0.259,
+        "t_oos": -0.952
+      },
+      "abs_return": {
+        "condition": "ASPECT:Mercury-Neptune:SEXTILE",
+        "metric": "abs_return",
+        "direction": "lower",
+        "samples": [
+          53,
+          7,
+          6
+        ],
+        "edges": [
+          -0.0038678,
+          -0.0079198,
+          -0.0024404
+        ],
+        "oos_edge": -0.0024404,
+        "persistence_score": 4.881,
+        "t_train": -1.313,
+        "t_validation": -3.224,
+        "t_oos": -0.382
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Venus-Neptune:SQUARE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          31,
+          10,
+          5
+        ],
+        "edges": [
+          -0.1068311,
+          -0.203859,
+          -0.0956068
+        ],
+        "oos_edge": -0.0956068,
+        "persistence_score": 3.187,
+        "t_train": -1.239,
+        "t_validation": -1.804,
+        "t_oos": -1.073
+      },
+      "buy_imbalance": null
+    },
+    "Pluto": {
+      "return": {
+        "condition": "ASPECT:Mars-Pluto:SQUARE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          -0.0055432,
+          -0.0032723,
+          -0.0066176
+        ],
+        "oos_edge": -0.0066176,
+        "persistence_score": 6.545,
+        "t_train": -1.618,
+        "t_validation": -0.542,
+        "t_oos": -1.297
+      },
+      "abs_return": {
+        "condition": "ASPECT:Mars-Pluto:SEXTILE",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          24,
+          9,
+          8
+        ],
+        "edges": [
+          0.0033706,
+          0.0066939,
+          0.0040058
+        ],
+        "oos_edge": 0.0040058,
+        "persistence_score": 6.741,
+        "t_train": 0.84,
+        "t_validation": 1.504,
+        "t_oos": 0.714
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Sun-Pluto:SEXTILE",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          36,
+          12,
+          6
+        ],
+        "edges": [
+          -0.1455401,
+          -0.1084561,
+          -0.1361898
+        ],
+        "oos_edge": -0.1361898,
+        "persistence_score": 3.615,
+        "t_train": -2.218,
+        "t_validation": -0.543,
+        "t_oos": -1.115
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Venus-Pluto:SQUARE",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          30,
+          11,
+          5
+        ],
+        "edges": [
+          0.0056953,
+          0.0106103,
+          0.0120473
+        ],
+        "oos_edge": 0.0120473,
+        "persistence_score": 1.139,
+        "t_train": 1.523,
+        "t_validation": 0.788,
+        "t_oos": 0.619
+      }
+    },
+    "TrueNode": {
+      "return": {
+        "condition": "ASPECT:Sun-TrueNode:SQUARE",
+        "metric": "return",
+        "direction": "lower",
+        "samples": [
+          36,
+          10,
+          6
+        ],
+        "edges": [
+          -0.0049367,
+          -0.0052676,
+          -0.0040512
+        ],
+        "oos_edge": -0.0040512,
+        "persistence_score": 8.102,
+        "t_train": -1.046,
+        "t_validation": -0.985,
+        "t_oos": -0.702
+      },
+      "abs_return": {
+        "condition": "ASPECT:Sun-TrueNode:CONJ",
+        "metric": "abs_return",
+        "direction": "higher",
+        "samples": [
+          19,
+          6,
+          6
+        ],
+        "edges": [
+          0.0041122,
+          0.0073859,
+          0.0122578
+        ],
+        "oos_edge": 0.0122578,
+        "persistence_score": 8.224,
+        "t_train": 0.956,
+        "t_validation": 1.153,
+        "t_oos": 1.461
+      },
+      "volume_surprise": {
+        "condition": "ASPECT:Moon-TrueNode:OPPOSITION",
+        "metric": "volume_surprise",
+        "direction": "lower",
+        "samples": [
+          17,
+          6,
+          5
+        ],
+        "edges": [
+          -0.0902045,
+          -0.0216818,
+          -0.0452954
+        ],
+        "oos_edge": -0.0452954,
+        "persistence_score": 0.723,
+        "t_train": -0.997,
+        "t_validation": -0.086,
+        "t_oos": -0.298
+      },
+      "buy_imbalance": {
+        "condition": "ASPECT:Sun-TrueNode:CONJ",
+        "metric": "buy_imbalance",
+        "direction": "higher",
+        "samples": [
+          19,
+          6,
+          6
+        ],
+        "edges": [
+          0.0077838,
+          0.0149809,
+          0.0051436
+        ],
+        "oos_edge": 0.0051436,
+        "persistence_score": 1.029,
+        "t_train": 1.578,
+        "t_validation": 1.964,
+        "t_oos": 0.479
+      }
+    }
+  }
+}
