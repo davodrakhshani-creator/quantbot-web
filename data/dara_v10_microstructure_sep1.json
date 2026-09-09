@@ -1,0 +1,59 @@
+{
+  "version": "DARA-v10.0-Microstructure",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-02T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "timeframes": [
+    "1m trigger/flow",
+    "5m location",
+    "15m regime"
+  ],
+  "design": [
+    "No 1h/4h/60m regime or signal logic",
+    "Continuation: 15m+5m trend, value pullback, 1m persistent flow/efficiency re-acceleration",
+    "Reversal: 15m liquidity sweep, aggressive-flow absorption, next-minute delta flip and reclaim hold",
+    "Clock phase is a score feature, not a standalone signal",
+    "TP +0.55% on 40%, 60% runner with 3-bar 1m structural trail",
+    "Risk 0.25% including conservative 0.11% all-in modeled friction; max 3x notional",
+    "Max 4 trades/day, 30m cooldown, 90m same-side lock after a loss"
+  ],
+  "methodology_notes": [
+    "This is a development test on Sep1. Historical full L2 is unavailable; Binance 1m taker-buy volume is used as the aggressor-flow proxy.",
+    "No maker-fill advantage is assumed in the reported PnL; 0.11% all-in friction is retained for comparability and conservatism."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 100.0,
+    "net_pnl": 0.0,
+    "return_pct": 0.0,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "gross_pnl": 0,
+    "modeled_costs": 0,
+    "pf_net": null,
+    "max_dd_pct": 0.0
+  },
+  "by_setup": {
+    "VALUE_PERSISTENT": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    },
+    "SWEEP_ABSORPTION": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "trades": []
+}
