@@ -1,0 +1,25 @@
+name: Analyze DARA Aug20 v3 losses
+on:
+  push:
+    paths:
+      - 'analyze_dara_aug20_v3_losses.py'
+      - '.github/workflows/analyze-dara-aug20-v3-losses.yml'
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Analyze
+        run: python analyze_dara_aug20_v3_losses.py
+      - name: Persist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dara_aug20_v3_loss_analysis.json
+          git diff --cached --quiet || git commit -m "Persist Aug20 v3 loss analysis"
+          git push
