@@ -1,0 +1,149 @@
+{
+  "version": "DARA-v10.3-FROZEN",
+  "period_tehran": [
+    "2026-09-02T00:00:00+03:30",
+    "2026-09-03T00:00:00+03:30"
+  ],
+  "starting_equity": 100.0,
+  "frozen_from": "Sep1 v10.3; zero strategy changes for Sep2",
+  "timeframes": [
+    "1m flow/impact",
+    "5m value + ATR budget",
+    "15m regime + ATR budget"
+  ],
+  "risk_cost_exit": [
+    "0.25% max stop loss incl 0.11% friction",
+    "max 3x notional",
+    "TP +0.55% on 40%, 60% runner",
+    "max 4 trades/day"
+  ],
+  "methodology_notes": [
+    "Sep2 is the first forward day after freezing v10.3 from Sep1.",
+    "Historical full L2 unavailable; 1m taker-buy volume is aggressor-flow proxy.",
+    "No maker-fee advantage credited."
+  ],
+  "overall": {
+    "start_equity": 100.0,
+    "final_equity": 99.252122,
+    "net_pnl": -0.747878,
+    "return_pct": -0.748,
+    "trades": 3,
+    "wins": 0,
+    "losses": 3,
+    "win_rate": 0.0,
+    "gross_pnl": -0.499692,
+    "modeled_costs": 0.248187,
+    "pf_net": 0.0,
+    "max_dd_pct": 0.748
+  },
+  "by_setup": {
+    "VALUE_INFORMED": {
+      "trades": 3,
+      "wins": 0,
+      "losses": 3,
+      "gross_pnl": -0.499692,
+      "net_pnl": -0.747878,
+      "pf_net": 0.0
+    },
+    "SWEEP_ABSORPTION": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "gross_pnl": 0,
+      "net_pnl": 0,
+      "pf_net": null
+    }
+  },
+  "trades": [
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "LONG",
+      "entry_time": "2026-09-02T07:10:00+03:30",
+      "exit_time": "2026-09-02T07:35:00+03:30",
+      "entry": 77621.0,
+      "exit": 77445.21,
+      "score": 6,
+      "diagnostics": {
+        "avg_delta": 0.2912972376033263,
+        "persistence": 2,
+        "progress": 0.0014321960878854734,
+        "efficiency": 0.8995214103912403,
+        "impact_ratio": 0.004916614038873121,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.158,
+        "atr15_pct": 0.298,
+        "target_to_atr15": 1.85,
+        "target_to_atr5": 3.47
+      },
+      "structural_stop_pct": 0.226,
+      "reason": "STOP",
+      "notional": 74.300203,
+      "gross_pnl": -0.16827,
+      "cost": 0.08173,
+      "net_pnl": -0.25,
+      "equity_before": 100.0,
+      "equity_after": 99.75
+    },
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "SHORT",
+      "entry_time": "2026-09-02T14:17:00+03:30",
+      "exit_time": "2026-09-02T14:28:00+03:30",
+      "entry": 76483.4,
+      "exit": 76610.53,
+      "score": 7,
+      "diagnostics": {
+        "avg_delta": 0.2748255550498305,
+        "persistence": 2,
+        "progress": 0.001217444766487219,
+        "efficiency": 1.0,
+        "impact_ratio": 0.004429881952813579,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.161,
+        "atr15_pct": 0.289,
+        "target_to_atr15": 1.9,
+        "target_to_atr5": 3.42
+      },
+      "structural_stop_pct": 0.166,
+      "reason": "STOP",
+      "notional": 90.280762,
+      "gross_pnl": -0.149817,
+      "cost": 0.099309,
+      "net_pnl": -0.249126,
+      "equity_before": 99.75,
+      "equity_after": 99.500874
+    },
+    {
+      "setup": "VALUE_INFORMED",
+      "side": "LONG",
+      "entry_time": "2026-09-02T17:33:00+03:30",
+      "exit_time": "2026-09-02T18:30:00+03:30",
+      "entry": 77172.6,
+      "exit": 76943.01,
+      "score": 5,
+      "diagnostics": {
+        "avg_delta": 0.16206173540206217,
+        "persistence": 3,
+        "progress": 0.0011915428626948499,
+        "efficiency": 0.6145741223379442,
+        "impact_ratio": 0.007352400983111329,
+        "informed": true,
+        "absorbed": false,
+        "atr5_pct": 0.268,
+        "atr15_pct": 0.412,
+        "target_to_atr15": 1.33,
+        "target_to_atr5": 2.05
+      },
+      "structural_stop_pct": 0.298,
+      "reason": "STOP",
+      "notional": 61.04328,
+      "gross_pnl": -0.181605,
+      "cost": 0.067148,
+      "net_pnl": -0.248752,
+      "equity_before": 99.500874,
+      "equity_after": 99.252122
+    }
+  ]
+}
