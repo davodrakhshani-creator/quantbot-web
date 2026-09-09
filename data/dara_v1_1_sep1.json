@@ -1,0 +1,36 @@
+{
+  "version": "DARA-v1.1-FollowThrough-NoiseGuard-InSample",
+  "period_tehran": [
+    "2026-09-01T00:00:00+03:30",
+    "2026-09-02T00:00:00+03:30"
+  ],
+  "symbol": "BTCUSDT USD-M perpetual",
+  "source": "Binance official USD-M 1m futures klines; 5m/15m aggregated; taker-buy volume as aggressor-flow proxy; no historical L2 claimed",
+  "changes_from_v1.0": [
+    "BREAK_ACCEPT and SWEEP_RECLAIM require one additional closed 1m follow-through/hold confirmation before entry.",
+    "Noise/Cost Guard rejects structural stop distances below 0.14% instead of widening the stop.",
+    "Risk, TP1=0.33%, 50/50 runner, add-once, max exposure, daily stop, and all other event logic unchanged."
+  ],
+  "methodology_notes": [
+    "These changes were designed after inspecting the Sep-1 DARA v1.0 losses, so this rerun is explicitly in-sample and cannot validate the strategy.",
+    "No parameter was changed after seeing the v1.1 rerun result.",
+    "Stop is checked before target when both occur in one 1m bar."
+  ],
+  "summary": {
+    "start_equity": 100.0,
+    "final_equity": 100.0,
+    "net_pnl": 0.0,
+    "return_pct": 0.0,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "gross_pnl": 0,
+    "modeled_costs": 0,
+    "pf_net": null,
+    "max_dd_pct": 0,
+    "add_events": 0,
+    "noise_guard_rejections": 1
+  },
+  "trades": []
+}
