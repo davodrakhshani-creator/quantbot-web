@@ -1,8 +1,8 @@
 {
   "version": "1.3-bg",
   "candidate": {
-    "direction": "LONG",
-    "count": 1
+    "direction": "NONE",
+    "count": 0
   },
   "open_observation": null,
   "closed_results": [
@@ -5704,9 +5704,30 @@
       "agreement": 3,
       "confidence": 59,
       "reason": "Medium and micro bullish; Numerai does not veto."
+    },
+    {
+      "at": "2026-09-10T01:55:01.211024Z",
+      "btc_price": 77997.8,
+      "eth_price": 2459.03,
+      "numerai_rank": 0.9883333333333333,
+      "numerai_date": "2026-09-08",
+      "numerai_bias": "BULLISH",
+      "medium_score": 0.11068,
+      "medium_bias": "BULLISH",
+      "micro_score": 0.09215,
+      "micro_bias": "NEUTRAL",
+      "book_imbalance": -0.66409,
+      "aggressor_flow": 0.97874,
+      "microprice_bps": -0.0085,
+      "spread_bps": 0.0513,
+      "recent_trades": 73,
+      "decision": "NO TRADE",
+      "agreement": 2,
+      "confidence": 42,
+      "reason": "No clean medium+micro alignment."
     }
   ],
-  "last_update": "2026-09-10T01:45:42.788185Z",
+  "last_update": "2026-09-10T01:55:01.211024Z",
   "metrics": {
     "closed": 3,
     "win_rate": 0.0,
@@ -5716,24 +5737,24 @@
   },
   "research_gate": "COLLECTING",
   "latest": {
-    "at": "2026-09-10T01:45:42.788185Z",
-    "btc_price": 78089.9,
-    "eth_price": 2460.63,
+    "at": "2026-09-10T01:55:01.211024Z",
+    "btc_price": 77997.8,
+    "eth_price": 2459.03,
     "numerai_rank": 0.9883333333333333,
     "numerai_date": "2026-09-08",
     "numerai_bias": "BULLISH",
-    "medium_score": 0.08823,
+    "medium_score": 0.11068,
     "medium_bias": "BULLISH",
-    "micro_score": 0.35186,
-    "micro_bias": "BULLISH",
-    "book_imbalance": 0.08705,
-    "aggressor_flow": 0.8292,
-    "microprice_bps": 0.0021,
-    "spread_bps": 0.0128,
-    "recent_trades": 84,
-    "decision": "LONG",
-    "agreement": 3,
-    "confidence": 59,
-    "reason": "Medium and micro bullish; Numerai does not veto."
+    "micro_score": 0.09215,
+    "micro_bias": "NEUTRAL",
+    "book_imbalance": -0.66409,
+    "aggressor_flow": 0.97874,
+    "microprice_bps": -0.0085,
+    "spread_bps": 0.0513,
+    "recent_trades": 73,
+    "decision": "NO TRADE",
+    "agreement": 2,
+    "confidence": 42,
+    "reason": "No clean medium+micro alignment."
   }
 }
