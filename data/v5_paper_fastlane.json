@@ -1,15 +1,15 @@
 {
   "version": "quantbot-v5-forward-paper-fastlane",
-  "updated": "2026-09-09T00:48:14.645899+00:00",
+  "updated": "2026-09-10T00:46:41.495852+00:00",
   "paper_start": "2026-09-08 00:00:00+00:00",
   "rule_frozen": "F0_weekly_14_28",
   "rule_description": "Shorter-horizon 14d/28d momentum blend, BTC positive 20d/40d and above SMA100; top3; inverse-vol; 10% target; weekly rebalance.",
   "frozen_before_first_forward_completed_bar": true,
   "live_orders": false,
-  "data_end": "2026-09-08 00:00:00+00:00",
+  "data_end": "2026-09-09 00:00:00+00:00",
   "asset_errors": {},
   "current_signal": {
-    "signal_date": "2026-09-08 00:00:00+00:00",
+    "signal_date": "2026-09-09 00:00:00+00:00",
     "weights": {
       "DOTUSDT": 0.0316471563559422,
       "UNIUSDT": 0.030576914481058502,
@@ -18,42 +18,42 @@
     "gross_exposure": 0.09413040313542785
   },
   "forward_metrics_13bps": {
-    "n_days": 1,
-    "net_pct": -0.13290135772551226,
-    "ann_pct": -38.47613646802224,
-    "sharpe": 0.0,
-    "max_dd_pct": 0.0,
+    "n_days": 2,
+    "net_pct": -0.5062481074643022,
+    "ann_pct": -60.42148464874442,
+    "sharpe": -28.42212921012225,
+    "max_dd_pct": 0.37384359294958536,
     "pf": 0.0,
-    "avg_daily_bps": -13.290135772550983,
+    "avg_daily_bps": -25.337247533754756,
     "positive_day_pct": 0.0,
-    "turnover_units": 0.0,
-    "cost_pct": 0.0
+    "turnover_units": 0.13590463503005024,
+    "cost_pct": 0.01766760255390653
   },
   "forward_metrics_40bps": {
-    "n_days": 1,
-    "net_pct": -0.13290135772551226,
-    "ann_pct": -38.47613646802224,
-    "sharpe": 0.0,
-    "max_dd_pct": 0.0,
+    "n_days": 2,
+    "net_pct": -0.5428935917640154,
+    "ann_pct": -62.9966037556297,
+    "sharpe": -26.451757853046686,
+    "max_dd_pct": 0.410537844407699,
     "pf": 0.0,
-    "avg_daily_bps": -13.290135772550983,
+    "avg_daily_bps": -27.171960106660435,
     "positive_day_pct": 0.0,
-    "turnover_units": 0.0,
-    "cost_pct": 0.0
+    "turnover_units": 0.13590463503005024,
+    "cost_pct": 0.0543618540120201
   },
   "forward_metrics_75bps": {
-    "n_days": 1,
-    "net_pct": -0.13290135772551226,
-    "ann_pct": -38.47613646802224,
-    "sharpe": 0.0,
-    "max_dd_pct": 0.0,
+    "n_days": 2,
+    "net_pct": -0.5903969973377277,
+    "ann_pct": -66.08822771995064,
+    "sharpe": -24.559367994397846,
+    "max_dd_pct": 0.4581044666682188,
     "pf": 0.0,
-    "avg_daily_bps": -13.290135772550983,
+    "avg_daily_bps": -29.55029121968631,
     "positive_day_pct": 0.0,
-    "turnover_units": 0.0,
-    "cost_pct": 0.0
+    "turnover_units": 0.13590463503005024,
+    "cost_pct": 0.10192847627253766
   },
-  "forward_active_days": 1,
+  "forward_active_days": 2,
   "promotion_gate_pre_registered": {
     "criteria": "n_days>=90; active_days>=30; net>0; PF>=1.15; maxDD<=10%; 40bps>0; 75bps>0",
     "passed": false
