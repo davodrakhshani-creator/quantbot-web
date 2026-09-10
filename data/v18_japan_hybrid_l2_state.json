@@ -3,8 +3,8 @@
   "purpose": "PUBLIC_METHOD_INSPIRED_FORWARD_PAPER_NO_LIVE",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 1,
-  "observations": 129,
+  "runs": 2,
+  "observations": 258,
   "signals": {
     "jun": 0,
     "hansan": 0
@@ -49,9 +49,9 @@
   "daily": {},
   "last_context": {
     "trend15": -1,
-    "level_hi_5m": 78495.6,
-    "level_lo_5m": 78300.0,
-    "last5_close": 78375.4
+    "level_hi_5m": 77207.4,
+    "level_lo_5m": 76692.3,
+    "last5_close": 77137.6
   },
-  "updated_at": "2026-09-08T19:47:53.411246+00:00"
+  "updated_at": "2026-09-10T14:02:21.358418+00:00"
 }
