@@ -4,12 +4,12 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 293,
-  "ws_success_runs": 293,
-  "observations": 59440,
-  "orderbook_messages": 1952781,
-  "trade_messages": 382265,
-  "trade_events": 1310187,
+  "runs": 294,
+  "ws_success_runs": 294,
+  "observations": 59642,
+  "orderbook_messages": 1958173,
+  "trade_messages": 382316,
+  "trade_events": 1310309,
   "raw_events": [
     {
       "tier": "base",
@@ -127979,12 +127979,12 @@
     "maker_miss": 1371
   },
   "gate_diagnostics": {
-    "base:warmup": 293,
-    "strong:warmup": 586,
-    "elite:warmup": 586,
-    "base:imbalance": 15768,
-    "strong:imbalance": 27397,
-    "elite:imbalance": 33017,
+    "base:warmup": 294,
+    "strong:warmup": 588,
+    "elite:warmup": 588,
+    "base:imbalance": 15770,
+    "strong:imbalance": 27403,
+    "elite:imbalance": 33063,
     "base:pass_long": 7519,
     "strong:pass_long": 4863,
     "elite:pass_long": 3552,
@@ -127994,9 +127994,9 @@
     "base:flow5_long": 1777,
     "strong:flow5_long": 974,
     "base:pass_short": 7406,
-    "strong:micro_ratio": 6678,
-    "elite:micro_ratio": 7395,
-    "base:micro_ratio": 5885,
+    "strong:micro_ratio": 6872,
+    "elite:micro_ratio": 7549,
+    "base:micro_ratio": 6084,
     "base:flow2_short": 9457,
     "strong:flow2_short": 6552,
     "elite:flow2_short": 4925,
@@ -128216,5 +128216,5 @@
       "slippage": 0.5
     }
   },
-  "updated_at": "2026-09-12T16:04:45.383801+00:00"
+  "updated_at": "2026-09-12T16:26:46.601463+00:00"
 }
