@@ -4,12 +4,12 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 272,
-  "ws_success_runs": 272,
-  "observations": 55234,
-  "orderbook_messages": 1845997,
-  "trade_messages": 376984,
-  "trade_events": 1293452,
+  "runs": 273,
+  "ws_success_runs": 273,
+  "observations": 55435,
+  "orderbook_messages": 1850915,
+  "trade_messages": 377090,
+  "trade_events": 1293567,
   "raw_events": [
     {
       "tier": "base",
@@ -120416,6 +120416,28 @@
       },
       "mfe_bps": 2.352787568490333,
       "mae_bps": 0.0
+    },
+    {
+      "tier": "base",
+      "side": -1,
+      "signal_ts": "2026-09-12T10:23:00.865308+00:00",
+      "entry_mid": 77341.05,
+      "spread_bps": 0.01292974429566456,
+      "imb10": -0.2108053007135576,
+      "microedge_bps": -0.0009968885839040098,
+      "micro_ratio": -0.15420081961532278,
+      "flow2": -1.0,
+      "flow5": -1.0,
+      "resolved": {
+        "1": -0.0,
+        "3": -0.0,
+        "5": -0.0,
+        "10": -0.0,
+        "30": -0.0,
+        "60": -0.0
+      },
+      "mfe_bps": 0.0,
+      "mae_bps": 0.0
     }
   ],
   "maker_candidates": 1330,
@@ -120816,25 +120838,25 @@
     "maker_miss": 1300
   },
   "gate_diagnostics": {
-    "base:warmup": 272,
-    "strong:warmup": 544,
-    "elite:warmup": 544,
-    "base:imbalance": 15087,
-    "strong:imbalance": 26056,
-    "elite:imbalance": 31187,
-    "base:pass_long": 7027,
+    "base:warmup": 273,
+    "strong:warmup": 546,
+    "elite:warmup": 546,
+    "base:imbalance": 15183,
+    "strong:imbalance": 26210,
+    "elite:imbalance": 31385,
+    "base:pass_long": 7035,
     "strong:pass_long": 4496,
     "elite:pass_long": 3276,
-    "base:flow2_long": 8629,
-    "strong:flow2_long": 5933,
+    "base:flow2_long": 8655,
+    "strong:flow2_long": 5934,
     "elite:flow2_long": 4490,
-    "base:flow5_long": 1708,
+    "base:flow5_long": 1709,
     "strong:flow5_long": 930,
-    "base:pass_short": 6982,
-    "strong:micro_ratio": 6176,
-    "elite:micro_ratio": 6777,
-    "base:micro_ratio": 5413,
-    "base:flow2_short": 8427,
+    "base:pass_short": 6988,
+    "strong:micro_ratio": 6220,
+    "elite:micro_ratio": 6778,
+    "base:micro_ratio": 5456,
+    "base:flow2_short": 8447,
     "strong:flow2_short": 5752,
     "elite:flow2_short": 4309,
     "elite:flow5_long": 711,
@@ -120854,64 +120876,64 @@
     "raw_alpha": {
       "base": {
         "1": {
-          "n": 2408,
-          "mean_bps": 0.1405956377231068,
+          "n": 2409,
+          "mean_bps": 0.14053727506734795,
           "median_bps": 0.0,
-          "p10": -0.0,
-          "p90": 0.7247605618577736,
-          "positive_pct": 23.33887043189369,
-          "gt4bps_pct": 0.20764119601328904,
-          "gt8bps_pct": 0.04152823920265781
+          "p10": 0.0,
+          "p90": 0.724669758689789,
+          "positive_pct": 23.32918223329182,
+          "gt4bps_pct": 0.20755500207555003,
+          "gt8bps_pct": 0.04151100041511
         },
         "3": {
-          "n": 2408,
-          "mean_bps": 0.22697280151957375,
+          "n": 2409,
+          "mean_bps": 0.22687858283899276,
           "median_bps": 0.0,
-          "p10": -0.5832961149691007,
-          "p90": 1.3230685894124463,
-          "positive_pct": 37.41694352159468,
-          "gt4bps_pct": 1.0382059800664452,
-          "gt8bps_pct": 0.24916943521594684
+          "p10": -0.583284848561183,
+          "p90": 1.3229767070919165,
+          "positive_pct": 37.40141137401412,
+          "gt4bps_pct": 1.03777501037775,
+          "gt8bps_pct": 0.24906600249066002
         },
         "5": {
-          "n": 2408,
-          "mean_bps": 0.25088830631166037,
+          "n": 2409,
+          "mean_bps": 0.2507841600657859,
           "median_bps": 0.0,
-          "p10": -1.042239203729922,
-          "p90": 1.6875720539868413,
-          "positive_pct": 43.604651162790695,
-          "gt4bps_pct": 1.910299003322259,
-          "gt8bps_pct": 0.33222591362126247
+          "p10": -1.0411102797072134,
+          "p90": 1.6874565247801956,
+          "positive_pct": 43.586550435865504,
+          "gt4bps_pct": 1.9095060190950601,
+          "gt8bps_pct": 0.33208800332088
         },
         "10": {
-          "n": 2408,
-          "mean_bps": 0.38518461427477513,
+          "n": 2409,
+          "mean_bps": 0.3850247202879446,
           "median_bps": 0.0,
-          "p10": -1.671650270249181,
-          "p90": 2.498811330435724,
-          "positive_pct": 49.7093023255814,
-          "gt4bps_pct": 4.028239202657807,
-          "gt8bps_pct": 0.8305647840531561
+          "p10": -1.6714712644665397,
+          "p90": 2.4987788839399006,
+          "positive_pct": 49.68866749688667,
+          "gt4bps_pct": 4.026567040265671,
+          "gt8bps_pct": 0.8302200083022001
         },
         "30": {
-          "n": 2408,
-          "mean_bps": 0.4492834171519924,
-          "median_bps": 0.14261886414290714,
-          "p10": -3.186806666057418,
-          "p90": 4.102642982731665,
-          "positive_pct": 52.325581395348834,
-          "gt4bps_pct": 10.382059800664452,
-          "gt8bps_pct": 2.4916943521594686
+          "n": 2409,
+          "mean_bps": 0.4490969151108334,
+          "median_bps": 0.14258983321635554,
+          "p10": -3.1867200880579816,
+          "p90": 4.101639906287205,
+          "positive_pct": 52.30386052303861,
+          "gt4bps_pct": 10.377750103777501,
+          "gt8bps_pct": 2.4906600249066004
         },
         "60": {
-          "n": 2408,
-          "mean_bps": 0.43734921581800085,
-          "median_bps": 0.20711633020087383,
-          "p10": -4.755963522445228,
-          "p90": 5.615727139632544,
-          "positive_pct": 52.9485049833887,
-          "gt4bps_pct": 16.44518272425249,
-          "gt8bps_pct": 5.3156146179401995
+          "n": 2409,
+          "mean_bps": 0.43716766778320715,
+          "median_bps": 0.2068021091217176,
+          "p10": -4.753460480608318,
+          "p90": 5.61486558572333,
+          "positive_pct": 52.926525529265255,
+          "gt4bps_pct": 16.438356164383563,
+          "gt8bps_pct": 5.31340805313408
         }
       },
       "strong": {
@@ -121053,5 +121075,5 @@
       "slippage": 0.5
     }
   },
-  "updated_at": "2026-09-12T10:05:16.758409+00:00"
+  "updated_at": "2026-09-12T10:26:02.870683+00:00"
 }
