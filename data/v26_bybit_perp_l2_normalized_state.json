@@ -4,12 +4,12 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 336,
-  "ws_success_runs": 336,
-  "observations": 68045,
-  "orderbook_messages": 2172113,
-  "trade_messages": 390315,
-  "trade_events": 1335616,
+  "runs": 337,
+  "ws_success_runs": 337,
+  "observations": 68243,
+  "orderbook_messages": 2176252,
+  "trade_messages": 390365,
+  "trade_events": 1335726,
   "raw_events": [
     {
       "tier": "base",
@@ -141316,6 +141316,72 @@
       },
       "mfe_bps": 0.0,
       "mae_bps": 0.0
+    },
+    {
+      "tier": "base",
+      "side": 1,
+      "signal_ts": "2026-09-13T05:04:26.608248+00:00",
+      "entry_mid": 77188.15,
+      "spread_bps": 0.012955356488174526,
+      "imb10": 0.8668397144711226,
+      "microedge_bps": 0.005664206370603608,
+      "micro_ratio": 0.8744192220065606,
+      "flow2": 1.0,
+      "flow5": 1.0,
+      "resolved": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0,
+        "30": 0.0,
+        "60": 0.0
+      },
+      "mfe_bps": 0.0,
+      "mae_bps": 0.0
+    },
+    {
+      "tier": "base",
+      "side": 1,
+      "signal_ts": "2026-09-13T05:05:10.348455+00:00",
+      "entry_mid": 77188.15,
+      "spread_bps": 0.012955356488174526,
+      "imb10": 0.16582278481012655,
+      "microedge_bps": 0.0010351231094496427,
+      "micro_ratio": 0.1597984756952831,
+      "flow2": 0.9487180134521032,
+      "flow5": 0.9487180134521032,
+      "resolved": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0,
+        "30": 0.0,
+        "60": 0.7254999634009884
+      },
+      "mfe_bps": 0.7254999634009884,
+      "mae_bps": 0.0
+    },
+    {
+      "tier": "base",
+      "side": 1,
+      "signal_ts": "2026-09-13T05:05:53.428809+00:00",
+      "entry_mid": 77193.75,
+      "spread_bps": 0.012954416647179437,
+      "imb10": 0.40670079106561186,
+      "microedge_bps": 0.0023378309110810847,
+      "micro_ratio": 0.360931869763522,
+      "flow2": 0.9774718990483784,
+      "flow5": 0.9788732932458364,
+      "resolved": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0,
+        "30": 0.0,
+        "60": 0.0
+      },
+      "mfe_bps": 0.0,
+      "mae_bps": 0.0
     }
   ],
   "maker_candidates": 1583,
@@ -141742,26 +141808,26 @@
     "maker_miss": 1551
   },
   "gate_diagnostics": {
-    "base:warmup": 336,
-    "strong:warmup": 672,
-    "elite:warmup": 672,
-    "base:imbalance": 17074,
-    "strong:imbalance": 29707,
-    "elite:imbalance": 36282,
-    "base:pass_long": 8307,
-    "strong:pass_long": 5478,
+    "base:warmup": 337,
+    "strong:warmup": 674,
+    "elite:warmup": 674,
+    "base:imbalance": 17188,
+    "strong:imbalance": 29869,
+    "elite:imbalance": 36456,
+    "base:pass_long": 8319,
+    "strong:pass_long": 5484,
     "elite:pass_long": 4063,
-    "base:flow2_long": 12264,
-    "strong:flow2_long": 8793,
-    "elite:flow2_long": 6846,
+    "base:flow2_long": 12276,
+    "strong:flow2_long": 8800,
+    "elite:flow2_long": 6851,
     "base:flow5_long": 1889,
     "strong:flow5_long": 1052,
-    "base:pass_short": 8034,
-    "strong:micro_ratio": 8011,
-    "elite:micro_ratio": 8667,
-    "base:micro_ratio": 6963,
-    "base:flow2_short": 11329,
-    "strong:flow2_short": 8053,
+    "base:pass_short": 8035,
+    "strong:micro_ratio": 8023,
+    "elite:micro_ratio": 8684,
+    "base:micro_ratio": 6999,
+    "base:flow2_short": 11351,
+    "strong:flow2_short": 8062,
     "elite:flow2_short": 6052,
     "elite:flow5_long": 818,
     "base:flow5_short": 1848,
@@ -141780,64 +141846,64 @@
     "raw_alpha": {
       "base": {
         "1": {
-          "n": 2798,
-          "mean_bps": 0.12790221265996746,
+          "n": 2801,
+          "mean_bps": 0.12776522349967473,
           "median_bps": 0.0,
           "p10": 0.0,
-          "p90": 0.6485515954834932,
-          "positive_pct": 20.943531093638313,
-          "gt4bps_pct": 0.17869907076483202,
-          "gt8bps_pct": 0.035739814152966405
+          "p90": 0.6483230152720676,
+          "positive_pct": 20.921099607283114,
+          "gt4bps_pct": 0.1785076758300607,
+          "gt8bps_pct": 0.03570153516601214
         },
         "3": {
-          "n": 2798,
-          "mean_bps": 0.20948317048633538,
+          "n": 2801,
+          "mean_bps": 0.2092588043630012,
           "median_bps": 0.0,
-          "p10": -0.4399021901737577,
-          "p90": 1.231193773651773,
-          "positive_pct": 34.20300214438885,
-          "gt4bps_pct": 0.9292351679771265,
-          "gt8bps_pct": 0.21443888491779842
+          "p10": -0.4390459016023751,
+          "p90": 1.2310841042029175,
+          "positive_pct": 34.16636915387362,
+          "gt4bps_pct": 0.9282399143163156,
+          "gt8bps_pct": 0.21420921099607282
         },
         "5": {
-          "n": 2798,
-          "mean_bps": 0.23218347714851725,
+          "n": 2801,
+          "mean_bps": 0.23193479795128571,
           "median_bps": 0.0,
-          "p10": -0.885283370213763,
-          "p90": 1.5494039944263795,
-          "positive_pct": 40.35025017869907,
-          "gt4bps_pct": 1.679771265189421,
-          "gt8bps_pct": 0.28591851322373124
+          "p10": -0.8850948109695445,
+          "p90": 1.5490283752073175,
+          "positive_pct": 40.307033202427704,
+          "gt4bps_pct": 1.6779721528025706,
+          "gt8bps_pct": 0.28561228132809713
         },
         "10": {
-          "n": 2798,
-          "mean_bps": 0.35099593943065643,
+          "n": 2801,
+          "mean_bps": 0.3506200066144151,
           "median_bps": 0.0,
-          "p10": -1.477416451463709,
-          "p90": 2.1970227071749227,
-          "positive_pct": 46.74767691208006,
-          "gt4bps_pct": 3.538241601143674,
-          "gt8bps_pct": 0.7147962830593281
+          "p10": -1.4759969182187582,
+          "p90": 2.1969109133457287,
+          "positive_pct": 46.697607997143876,
+          "gt4bps_pct": 3.534451981435202,
+          "gt8bps_pct": 0.7140307033202428
         },
         "30": {
-          "n": 2798,
-          "mean_bps": 0.4095556240355182,
-          "median_bps": 0.02575207527333312,
-          "p10": -2.968931444681022,
-          "p90": 3.78920191734733,
-          "positive_pct": 50.78627591136526,
-          "gt4bps_pct": 9.006433166547534,
-          "gt8bps_pct": 2.144388849177984
+          "n": 2801,
+          "mean_bps": 0.4091169711001,
+          "median_bps": 0.025497504112514946,
+          "p10": -2.9682686892384957,
+          "p90": 3.788003663891537,
+          "positive_pct": 50.73188147090325,
+          "gt4bps_pct": 8.996786861835059,
+          "gt8bps_pct": 2.1420921099607284
         },
         "60": {
-          "n": 2798,
-          "mean_bps": 0.39017898878172885,
-          "median_bps": 0.12910817827282983,
-          "p10": -4.432259617490608,
-          "p90": 5.202457014260591,
-          "positive_pct": 52.00142959256612,
-          "gt4bps_pct": 14.260185847033595,
-          "gt8bps_pct": 4.5746962115797
+          "n": 2801,
+          "mean_bps": 0.390020103739621,
+          "median_bps": 0.12886589634941714,
+          "p10": -4.428253552477557,
+          "p90": 5.195831673194817,
+          "positive_pct": 51.98143520171367,
+          "gt4bps_pct": 14.244912531238842,
+          "gt8bps_pct": 4.569796501249554
         }
       },
       "strong": {
@@ -141979,5 +142045,5 @@
       "slippage": 0.5
     }
   },
-  "updated_at": "2026-09-13T04:53:15.373990+00:00"
+  "updated_at": "2026-09-13T05:07:43.133797+00:00"
 }
