@@ -1,15 +1,15 @@
 {
   "version": "quantbot-v5-forward-paper-precision",
-  "updated": "2026-09-15T00:43:34.904893+00:00",
+  "updated": "2026-09-16T00:42:00.912459+00:00",
   "paper_start": "2026-09-08 00:00:00+00:00",
   "rule_frozen": "P4_asset_dual",
   "rule_description": "Frozen T2 market regime plus selected-asset dual confirmation: each chosen asset must have positive 60d and 120d momentum; top3 positive blend; inverse-vol; 12% target; weekly rebalance.",
   "frozen_before_first_forward_completed_bar": true,
   "live_orders": false,
-  "data_end": "2026-09-14 00:00:00+00:00",
+  "data_end": "2026-09-15 00:00:00+00:00",
   "asset_errors": {},
   "current_signal": {
-    "signal_date": "2026-09-14 00:00:00+00:00",
+    "signal_date": "2026-09-15 00:00:00+00:00",
     "weights": {
       "UNIUSDT": 0.0367760038770629,
       "NEARUSDT": 0.04052164136407933,
@@ -18,42 +18,42 @@
     "gross_exposure": 0.1132995568418389
   },
   "forward_metrics_13bps": {
-    "n_days": 7,
-    "net_pct": -0.018061908476063593,
-    "ann_pct": -0.9381018146421893,
-    "sharpe": -7.223473640055138,
-    "max_dd_pct": 0.0,
+    "n_days": 8,
+    "net_pct": -0.5118070163648958,
+    "ann_pct": -20.885333693683073,
+    "sharpe": -7.036206021101337,
+    "max_dd_pct": 0.4938343037888093,
     "pf": 0.0,
-    "avg_daily_bps": -0.2580272639437099,
+    "avg_daily_bps": -6.398702653310845,
     "positive_day_pct": 0.0,
-    "turnover_units": 0.13893775750815152,
-    "cost_pct": 0.018061908476059697
+    "turnover_units": 0.2522373143499904,
+    "cost_pct": 0.03279085086549875
   },
   "forward_metrics_40bps": {
-    "n_days": 7,
-    "net_pct": -0.055575103003258075,
-    "ann_pct": -2.8589709564702526,
-    "sharpe": -7.223473640055136,
-    "max_dd_pct": 0.0,
+    "n_days": 8,
+    "net_pct": -0.5797088373031056,
+    "ann_pct": -23.31342006485686,
+    "sharpe": -7.545201706061619,
+    "max_dd_pct": 0.5244251841361014,
     "pf": 0.0,
-    "avg_daily_bps": -0.793930042903723,
+    "avg_daily_bps": -7.250003589242063,
     "positive_day_pct": 0.0,
-    "turnover_units": 0.13893775750815152,
-    "cost_pct": 0.055575103003260615
+    "turnover_units": 0.2522373143499904,
+    "cost_pct": 0.10089492573999617
   },
   "forward_metrics_75bps": {
-    "n_days": 7,
-    "net_pct": -0.10420331813111305,
-    "ann_pct": -5.294693364494874,
-    "sharpe": -7.223473640055137,
-    "max_dd_pct": 0.0,
+    "n_days": 8,
+    "net_pct": -0.6676955570546927,
+    "ann_pct": -26.351545168190103,
+    "sharpe": -8.080888453016945,
+    "max_dd_pct": 0.5640800290307446,
     "pf": 0.0,
-    "avg_daily_bps": -1.4886188304444805,
+    "avg_daily_bps": -8.35354183952327,
     "positive_day_pct": 0.0,
-    "turnover_units": 0.13893775750815152,
-    "cost_pct": 0.10420331813111364
+    "turnover_units": 0.2522373143499904,
+    "cost_pct": 0.1891779857624928
   },
-  "forward_active_days": 0,
+  "forward_active_days": 1,
   "promotion_gate_pre_registered": {
     "criteria": "n_days>=180; active_days>=20; net>0; PF>=1.12; maxDD<=10%; 40bps>0; 75bps>0",
     "passed": false
