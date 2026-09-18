@@ -1,8 +1,8 @@
 {
   "version": "1.3-bg",
   "candidate": {
-    "direction": "NONE",
-    "count": 0
+    "direction": "LONG",
+    "count": 1
   },
   "open_observation": null,
   "closed_results": [
@@ -184,27 +184,6 @@
     }
   ],
   "snapshots": [
-    {
-      "at": "2026-09-15T18:04:42.502245Z",
-      "btc_price": 76840.4,
-      "eth_price": 2435.91,
-      "numerai_rank": 0.9883333333333333,
-      "numerai_date": "2026-09-14",
-      "numerai_bias": "BULLISH",
-      "medium_score": 0.09757,
-      "medium_bias": "BULLISH",
-      "micro_score": -0.71767,
-      "micro_bias": "BEARISH",
-      "book_imbalance": -0.99664,
-      "aggressor_flow": -0.78534,
-      "microprice_bps": -0.0065,
-      "spread_bps": 0.013,
-      "recent_trades": 86,
-      "decision": "NO TRADE",
-      "agreement": 2,
-      "confidence": 72,
-      "reason": "No clean medium+micro alignment."
-    },
     {
       "at": "2026-09-15T18:21:06.683193Z",
       "btc_price": 76572.1,
@@ -6483,9 +6462,30 @@
       "agreement": 2,
       "confidence": 47,
       "reason": "No clean medium+micro alignment."
+    },
+    {
+      "at": "2026-09-18T01:58:14.957845Z",
+      "btc_price": 76688.4,
+      "eth_price": 2456.85,
+      "numerai_rank": 0.9883333333333333,
+      "numerai_date": "2026-09-15",
+      "numerai_bias": "BULLISH",
+      "medium_score": 0.08872,
+      "medium_bias": "BULLISH",
+      "micro_score": 0.33293,
+      "micro_bias": "BULLISH",
+      "book_imbalance": 0.08083,
+      "aggressor_flow": 0.78575,
+      "microprice_bps": 0.004,
+      "spread_bps": 0.013,
+      "recent_trades": 63,
+      "decision": "LONG",
+      "agreement": 3,
+      "confidence": 57,
+      "reason": "Medium and micro bullish; Numerai does not veto."
     }
   ],
-  "last_update": "2026-09-18T01:51:19.298950Z",
+  "last_update": "2026-09-18T01:58:14.957845Z",
   "metrics": {
     "closed": 11,
     "win_rate": 9.09,
@@ -6495,24 +6495,24 @@
   },
   "research_gate": "COLLECTING",
   "latest": {
-    "at": "2026-09-18T01:51:19.298950Z",
-    "btc_price": 76683.0,
-    "eth_price": 2456.17,
+    "at": "2026-09-18T01:58:14.957845Z",
+    "btc_price": 76688.4,
+    "eth_price": 2456.85,
     "numerai_rank": 0.9883333333333333,
     "numerai_date": "2026-09-15",
     "numerai_bias": "BULLISH",
-    "medium_score": 0.08782,
+    "medium_score": 0.08872,
     "medium_bias": "BULLISH",
-    "micro_score": -0.20563,
-    "micro_bias": "NEUTRAL",
-    "book_imbalance": -0.4612,
-    "aggressor_flow": -0.03212,
-    "microprice_bps": 0.0028,
+    "micro_score": 0.33293,
+    "micro_bias": "BULLISH",
+    "book_imbalance": 0.08083,
+    "aggressor_flow": 0.78575,
+    "microprice_bps": 0.004,
     "spread_bps": 0.013,
-    "recent_trades": 27,
-    "decision": "NO TRADE",
-    "agreement": 2,
-    "confidence": 47,
-    "reason": "No clean medium+micro alignment."
+    "recent_trades": 63,
+    "decision": "LONG",
+    "agreement": 3,
+    "confidence": 57,
+    "reason": "Medium and micro bullish; Numerai does not veto."
   }
 }
