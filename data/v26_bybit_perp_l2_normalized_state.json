@@ -4,7 +4,7 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 822,
+  "runs": 823,
   "ws_success_runs": 822,
   "observations": 167102,
   "orderbook_messages": 5683016,
@@ -221105,8 +221105,8 @@
     "elite:spread": 1
   },
   "created_at": "2026-09-08T20:13:06.488907+00:00",
-  "ws_access_ok": true,
-  "subscription_ok": true,
+  "ws_access_ok": false,
+  "subscription_ok": false,
   "summary": {
     "raw_alpha": {
       "base": {
@@ -221310,5 +221310,6 @@
       "slippage": 0.5
     }
   },
-  "updated_at": "2026-09-19T14:43:59.571562+00:00"
+  "updated_at": "2026-09-19T14:58:11.518535+00:00",
+  "last_error": "ConnectionResetError(104, 'Connection reset by peer')"
 }
