@@ -9,9 +9,9 @@
     "testa": "order-book/tape confirmation and expected-value veto",
     "note": "Publicly described principles translated to BTC microstructure; not proprietary/private code or an exact secret strategy."
   },
-  "runs": 13,
-  "observations": 1524,
-  "signals": 8,
+  "runs": 14,
+  "observations": 1649,
+  "signals": 10,
   "paper_trades": [
     {
       "side": -1,
@@ -138,17 +138,59 @@
       "net_bps_maker_maker_diagnostic": -4.354145270389239,
       "pnl_usd_100_primary": -0.0735414527038924,
       "reason": "hypothesis_failed_immediately"
+    },
+    {
+      "side": -1,
+      "setup": "HANSAN_BREAK_ACCEL",
+      "entry_px": 80917.4,
+      "entry_ts": "2026-09-19T04:38:27.675239+00:00",
+      "signal_mid": 80917.35,
+      "entry_imb": -0.1352951124640622,
+      "entry_microedge_bps": -0.0007990132247036196,
+      "entry_flow5": -0.6372168236086541,
+      "entry_flow15": -0.6577990004658426,
+      "regime15": 0,
+      "mfe_bps": 2.0020415880883657,
+      "mae_bps": 0.0,
+      "exit_ts": "2026-09-19T04:38:57.936477+00:00",
+      "exit_px": 80912.4,
+      "gross_bps": 0.6179140703976849,
+      "net_bps_primary": -6.382085929602315,
+      "net_bps_maker_maker_diagnostic": -3.382085929602315,
+      "pnl_usd_100_primary": -0.06382085929602314,
+      "reason": "time_stop"
+    },
+    {
+      "side": -1,
+      "setup": "HANSAN_BREAK_ACCEL",
+      "entry_px": 80890.7,
+      "entry_ts": "2026-09-19T04:39:16.035966+00:00",
+      "signal_mid": 80890.65,
+      "entry_imb": -0.8337514999454565,
+      "entry_microedge_bps": -0.005164864348886029,
+      "entry_flow5": -0.741959553800414,
+      "entry_flow15": -0.7531713320490557,
+      "regime15": 0,
+      "mfe_bps": 0.0,
+      "mae_bps": 0.0,
+      "exit_ts": "2026-09-19T04:39:25.528241+00:00",
+      "exit_px": 80890.7,
+      "gross_bps": -0.0,
+      "net_bps_primary": -7.0,
+      "net_bps_maker_maker_diagnostic": -4.0,
+      "pnl_usd_100_primary": -0.07,
+      "reason": "hypothesis_failed_immediately"
     }
   ],
   "open_paper": null,
   "created_at": "2026-09-10T05:09:40.739133+00:00",
   "summary": {
     "ALL": {
-      "closed": 6,
-      "avg_net_bps": -7.121698508610731,
+      "closed": 8,
+      "avg_net_bps": -7.014034622658338,
       "win_pct": 0.0,
       "pf": 0.0,
-      "net_usd_100": -0.4273019105166439
+      "net_usd_100": -0.5611227698126671
     },
     "JUN": {
       "closed": 2,
@@ -158,15 +200,15 @@
       "net_usd_100": -0.1637129808511094
     },
     "HANSAN": {
-      "closed": 4,
-      "avg_net_bps": -6.589723241638362,
+      "closed": 6,
+      "avg_net_bps": -6.623496482692627,
       "win_pct": 0.0,
       "pf": 0.0,
-      "net_usd_100": -0.2635889296655345
+      "net_usd_100": -0.39740978896155765
     },
     "primary_roundtrip_fee_bps": 7.0,
     "maker_maker_diagnostic_roundtrip_bps": 4.0,
     "notional_usd": 100.0
   },
-  "updated_at": "2026-09-18T20:17:08.250170+00:00"
+  "updated_at": "2026-09-19T04:40:53.051379+00:00"
 }
