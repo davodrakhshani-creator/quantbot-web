@@ -9,9 +9,9 @@
     "testa": "order-book/tape confirmation and expected-value veto",
     "note": "Publicly described principles translated to BTC microstructure; not proprietary/private code or an exact secret strategy."
   },
-  "runs": 20,
-  "observations": 2382,
-  "signals": 12,
+  "runs": 21,
+  "observations": 2495,
+  "signals": 13,
   "paper_trades": [
     {
       "side": -1,
@@ -180,24 +180,45 @@
       "net_bps_maker_maker_diagnostic": -4.0,
       "pnl_usd_100_primary": -0.07,
       "reason": "hypothesis_failed_immediately"
+    },
+    {
+      "side": -1,
+      "setup": "JUN_DISTORTION_SNAPBACK",
+      "entry_px": 86024.2,
+      "entry_ts": "2026-09-22T12:50:19.934242+00:00",
+      "signal_mid": 86024.15,
+      "entry_imb": -0.6115503609487796,
+      "entry_microedge_bps": -0.00291571274638003,
+      "entry_flow5": -0.27896335455780535,
+      "entry_flow15": 0.6589436598388108,
+      "regime15": 0,
+      "mfe_bps": 3.394393670618223,
+      "mae_bps": 0.0,
+      "exit_ts": "2026-09-22T12:50:43.333615+00:00",
+      "exit_px": 85995.0,
+      "gross_bps": 3.394393670618223,
+      "net_bps_primary": -3.605606329381777,
+      "net_bps_maker_maker_diagnostic": -0.6056063293817768,
+      "pnl_usd_100_primary": -0.03605606329381777,
+      "reason": "run_end_flatten"
     }
   ],
   "open_paper": null,
   "created_at": "2026-09-10T05:09:40.739133+00:00",
   "summary": {
     "ALL": {
-      "closed": 8,
-      "avg_net_bps": -7.014034622658338,
+      "closed": 9,
+      "avg_net_bps": -6.635320367849831,
       "win_pct": 0.0,
       "pf": 0.0,
-      "net_usd_100": -0.5611227698126671
+      "net_usd_100": -0.5971788331064848
     },
     "JUN": {
-      "closed": 2,
-      "avg_net_bps": -8.18564904255547,
+      "closed": 3,
+      "avg_net_bps": -6.658968138164238,
       "win_pct": 0.0,
       "pf": 0.0,
-      "net_usd_100": -0.1637129808511094
+      "net_usd_100": -0.19976904414492716
     },
     "HANSAN": {
       "closed": 6,
@@ -210,5 +231,5 @@
     "maker_maker_diagnostic_roundtrip_bps": 4.0,
     "notional_usd": 100.0
   },
-  "updated_at": "2026-09-22T01:58:03.618116+00:00"
+  "updated_at": "2026-09-22T12:50:43.333774+00:00"
 }
