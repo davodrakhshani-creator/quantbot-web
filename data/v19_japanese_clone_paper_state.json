@@ -9,9 +9,9 @@
     "testa": "order-book/tape confirmation and expected-value veto",
     "note": "Publicly described principles translated to BTC microstructure; not proprietary/private code or an exact secret strategy."
   },
-  "runs": 22,
-  "observations": 2623,
-  "signals": 13,
+  "runs": 23,
+  "observations": 2736,
+  "signals": 14,
   "paper_trades": [
     {
       "side": -1,
@@ -231,5 +231,5 @@
     "maker_maker_diagnostic_roundtrip_bps": 4.0,
     "notional_usd": 100.0
   },
-  "updated_at": "2026-09-22T19:47:09.419103+00:00"
+  "updated_at": "2026-09-23T07:46:50.694760+00:00"
 }
