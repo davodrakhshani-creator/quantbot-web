@@ -9,9 +9,9 @@
     "testa": "order-book/tape confirmation and expected-value veto",
     "note": "Publicly described principles translated to BTC microstructure; not proprietary/private code or an exact secret strategy."
   },
-  "runs": 23,
-  "observations": 2736,
-  "signals": 14,
+  "runs": 24,
+  "observations": 2842,
+  "signals": 15,
   "paper_trades": [
     {
       "side": -1,
@@ -201,17 +201,38 @@
       "net_bps_maker_maker_diagnostic": -0.6056063293817768,
       "pnl_usd_100_primary": -0.03605606329381777,
       "reason": "run_end_flatten"
+    },
+    {
+      "side": -1,
+      "setup": "HANSAN_BREAK_ACCEL",
+      "entry_px": 84009.7,
+      "entry_ts": "2026-09-24T02:01:13.460835+00:00",
+      "signal_mid": 84009.65,
+      "entry_imb": -0.2686554107252209,
+      "entry_microedge_bps": -0.001148898081102946,
+      "entry_flow5": -0.8650851411799749,
+      "entry_flow15": -0.8955704516179177,
+      "regime15": -1,
+      "mfe_bps": 5.225587045304403,
+      "mae_bps": -1.2260488967341665,
+      "exit_ts": "2026-09-24T02:01:44.439420+00:00",
+      "exit_px": 84012.2,
+      "gross_bps": -0.29758468367280244,
+      "net_bps_primary": -7.297584683672802,
+      "net_bps_maker_maker_diagnostic": -4.297584683672802,
+      "pnl_usd_100_primary": -0.07297584683672802,
+      "reason": "time_stop"
     }
   ],
   "open_paper": null,
   "created_at": "2026-09-10T05:09:40.739133+00:00",
   "summary": {
     "ALL": {
-      "closed": 9,
-      "avg_net_bps": -6.635320367849831,
+      "closed": 10,
+      "avg_net_bps": -6.701546799432128,
       "win_pct": 0.0,
       "pf": 0.0,
-      "net_usd_100": -0.5971788331064848
+      "net_usd_100": -0.6701546799432128
     },
     "JUN": {
       "closed": 3,
@@ -221,15 +242,15 @@
       "net_usd_100": -0.19976904414492716
     },
     "HANSAN": {
-      "closed": 6,
-      "avg_net_bps": -6.623496482692627,
+      "closed": 7,
+      "avg_net_bps": -6.719794797118366,
       "win_pct": 0.0,
       "pf": 0.0,
-      "net_usd_100": -0.39740978896155765
+      "net_usd_100": -0.47038563579828563
     },
     "primary_roundtrip_fee_bps": 7.0,
     "maker_maker_diagnostic_roundtrip_bps": 4.0,
     "notional_usd": 100.0
   },
-  "updated_at": "2026-09-23T07:46:50.694760+00:00"
+  "updated_at": "2026-09-24T02:03:39.234580+00:00"
 }
