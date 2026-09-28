@@ -4,8 +4,8 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 772,
-  "observations": 276767,
+  "runs": 773,
+  "observations": 277126,
   "signals": {
     "jun": 0,
     "hansan": 0
@@ -27,5 +27,5 @@
     "win_pct": null,
     "pf": null
   },
-  "updated_at": "2026-09-28T15:35:25.320528+00:00"
+  "updated_at": "2026-09-28T16:05:03.032296+00:00"
 }
