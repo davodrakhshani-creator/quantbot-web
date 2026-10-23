@@ -4,12 +4,12 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 3010,
-  "ws_success_runs": 3010,
-  "observations": 613632,
-  "orderbook_messages": 21616699,
-  "trade_messages": 4305299,
-  "trade_events": 13024196,
+  "runs": 3011,
+  "ws_success_runs": 3011,
+  "observations": 613834,
+  "orderbook_messages": 21622403,
+  "trade_messages": 4305795,
+  "trade_events": 13025298,
   "raw_events": [],
   "maker_candidates": 0,
   "maker_fills": 0,
@@ -221,5 +221,5 @@
       "slippage": 0.5
     }
   },
-  "updated_at": "2026-10-23T17:14:59.547704+00:00"
+  "updated_at": "2026-10-23T20:32:44.613728+00:00"
 }
