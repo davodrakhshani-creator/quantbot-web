@@ -1,11 +1,11 @@
 {
   "version": "quantbot-v3-forward-paper-trend",
-  "updated": "2026-10-23T05:05:30.382963+00:00",
+  "updated": "2026-10-24T04:50:33.765869+00:00",
   "paper_start": "2026-09-08 00:00:00+00:00",
   "rule_frozen": "E_blend_top3_btc200_gate",
   "execution_rule": "signal at completed UTC close t; target position applies to next daily bar",
   "live_orders": false,
-  "data_end": "2026-10-22 00:00:00+00:00",
+  "data_end": "2026-10-23 00:00:00+00:00",
   "universe_frozen": [
     "BTCUSDT",
     "ETHUSDT",
@@ -30,7 +30,7 @@
   ],
   "asset_errors": {},
   "current_signal": {
-    "signal_date": "2026-10-22 00:00:00+00:00",
+    "signal_date": "2026-10-23 00:00:00+00:00",
     "effective_next_bar": true,
     "weights": {
       "UNIUSDT": 0.03910233035651626,
@@ -38,36 +38,36 @@
       "AAVEUSDT": 0.050051876670670306
     },
     "gross_exposure": 0.11684838731214285,
-    "btc_close": 81416.09,
-    "btc_sma200": 72835.85639999999,
+    "btc_close": 81189.43,
+    "btc_sma200": 72897.53525,
     "btc_market_gate": true
   },
   "forward_metrics_13bps": {
-    "n_days": 45,
-    "net_pct": 1.9061482165992905,
-    "ann_pct": 16.56275551610158,
-    "sharpe": 1.4914074032724607,
-    "max_dd_pct": 2.7646860997127654,
-    "pf": 1.2278794597229756,
-    "avg_daily_bps": 4.3482873072579356,
-    "positive_day_pct": 53.333333333333336,
+    "n_days": 46,
+    "net_pct": 1.688480525398628,
+    "ann_pct": 14.219259180046295,
+    "sharpe": 1.3113101962251863,
+    "max_dd_pct": 2.972377064882614,
+    "pf": 1.198076957096158,
+    "avg_daily_bps": 3.7894196908763216,
+    "positive_day_pct": 52.17391304347826,
     "turnover_units": 0.49519292818988775,
     "cost_pct": 0.0643750806646854
   },
   "forward_metrics_40bps": {
-    "n_days": 45,
-    "net_pct": 1.769800022065282,
-    "ann_pct": 15.302903377924594,
-    "sharpe": 1.3870730283298254,
-    "max_dd_pct": 2.822362931678468,
-    "pf": 1.2098139863604047,
-    "avg_daily_bps": 4.051171550344002,
-    "positive_day_pct": 53.333333333333336,
+    "n_days": 46,
+    "net_pct": 1.5524235654684526,
+    "ann_pct": 13.01143143746617,
+    "sharpe": 1.2086898593682098,
+    "max_dd_pct": 3.02993070130938,
+    "pf": 1.1807867073900307,
+    "avg_daily_bps": 3.4987629721561686,
+    "positive_day_pct": 52.17391304347826,
     "turnover_units": 0.49519292818988775,
     "cost_pct": 0.19807717127595512
   },
   "forward_exposure": {
-    "active_days": 45,
+    "active_days": 46,
     "active_day_pct": 100.0
   },
   "promotion_gate_pre_registered": {
