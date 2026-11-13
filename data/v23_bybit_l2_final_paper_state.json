@@ -4,14 +4,26 @@
   "venue": "BYBIT_USDT_PERPETUAL",
   "symbol": "BTCUSDT",
   "live_orders": false,
-  "runs": 1250,
-  "observations": 448162,
+  "runs": 1251,
+  "observations": 448490,
   "signals": {
     "jun": 0,
-    "hansan": 0
+    "hansan": 1
   },
-  "paper_fills": 0,
-  "paper_trades": [],
+  "paper_fills": 1,
+  "paper_trades": [
+    {
+      "engine": "hansan",
+      "side": -1,
+      "entry_ts": "2026-11-13T02:44:26.416124+00:00",
+      "entry_px": 70176.4,
+      "exit_px": 70226.3,
+      "gross_bps": -7.110652584061405,
+      "net_bps": -15.110652584061405,
+      "pnl_usd_100": -0.15110652584061407,
+      "reason": "stop_taker"
+    }
+  ],
   "created_at": "2026-09-08T21:26:54.986965+00:00",
   "assumptions": {
     "maker_bps": 2.0,
@@ -21,11 +33,11 @@
     "notional_usd": 100.0
   },
   "summary": {
-    "closed": 0,
-    "net_usd_100": 0.0,
-    "avg_net_bps": null,
-    "win_pct": null,
-    "pf": null
+    "closed": 1,
+    "net_usd_100": -0.15110652584061404,
+    "avg_net_bps": -15.110652584061405,
+    "win_pct": 0.0,
+    "pf": 0.0
   },
-  "updated_at": "2026-11-12T22:22:13.816621+00:00"
+  "updated_at": "2026-11-13T02:45:17.695732+00:00"
 }
