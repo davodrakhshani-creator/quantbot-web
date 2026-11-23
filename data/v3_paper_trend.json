@@ -1,11 +1,11 @@
 {
   "version": "quantbot-v3-forward-paper-trend",
-  "updated": "2026-11-22T07:09:45.897246+00:00",
+  "updated": "2026-11-23T07:56:48.867399+00:00",
   "paper_start": "2026-09-08 00:00:00+00:00",
   "rule_frozen": "E_blend_top3_btc200_gate",
   "execution_rule": "signal at completed UTC close t; target position applies to next daily bar",
   "live_orders": false,
-  "data_end": "2026-11-21 00:00:00+00:00",
+  "data_end": "2026-11-22 00:00:00+00:00",
   "universe_frozen": [
     "BTCUSDT",
     "ETHUSDT",
@@ -30,41 +30,41 @@
   ],
   "asset_errors": {},
   "current_signal": {
-    "signal_date": "2026-11-21 00:00:00+00:00",
+    "signal_date": "2026-11-22 00:00:00+00:00",
     "effective_next_bar": true,
     "weights": {},
     "gross_exposure": 0.0,
-    "btc_close": 60215.77,
-    "btc_sma200": 72485.7365,
+    "btc_close": 61271.08,
+    "btc_sma200": 72384.85685,
     "btc_market_gate": false
   },
   "forward_metrics_13bps": {
-    "n_days": 75,
+    "n_days": 76,
     "net_pct": -1.901788543306182,
-    "ann_pct": -8.92702888492174,
-    "sharpe": -0.805124577694153,
+    "ann_pct": -8.814905271260475,
+    "sharpe": -0.7998718042695144,
     "max_dd_pct": 7.136058195277595,
     "pf": 0.8903351850947578,
-    "avg_daily_bps": -2.3997568771677167,
-    "positive_day_pct": 48.0,
+    "avg_daily_bps": -2.368181128783931,
+    "positive_day_pct": 47.368421052631575,
     "turnover_units": 0.655165039957277,
     "cost_pct": 0.08517145519444601
   },
   "forward_metrics_40bps": {
-    "n_days": 75,
+    "n_days": 76,
     "net_pct": -2.075370854360825,
-    "ann_pct": -9.709153257896485,
-    "sharpe": -0.8836568581351394,
+    "ann_pct": -9.587732558047247,
+    "sharpe": -0.8778896009624894,
     "max_dd_pct": 7.198730602927661,
     "pf": 0.880600684504568,
-    "avg_daily_bps": -2.635616291552337,
-    "positive_day_pct": 48.0,
+    "avg_daily_bps": -2.6009371298213853,
+    "positive_day_pct": 47.368421052631575,
     "turnover_units": 0.655165039957277,
     "cost_pct": 0.2620660159829108
   },
   "forward_exposure": {
     "active_days": 70,
-    "active_day_pct": 93.33333333333333
+    "active_day_pct": 92.10526315789474
   },
   "promotion_gate_pre_registered": {
     "registered_before_first_forward_completed_bar": true,
